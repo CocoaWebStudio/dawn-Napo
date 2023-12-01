@@ -79,9 +79,6 @@
                       {%- endif -%}
                       <h3 class="announcement-bar__message">
                         <span>{{ block.settings.cad_title | escape }}</span>
-                        {%- if block.settings.cad_title_link != blank -%}
-                          {% render 'icon-arrow' %}
-                        {%- endif -%}
                       </h3>
                       {%- if block.settings.cad_title_link != blank -%}
                         </a>
@@ -96,9 +93,6 @@
                       {%- endif -%}
                       <p class="announcement-bar__message">
                         <span>{{ block.settings.cad_sub_title | escape }}</span>
-                        {%- if block.settings.cad_sub_title_link != blank -%}
-                          {% render 'icon-arrow' %}
-                        {%- endif -%}
                       </p>
                       {%- if block.settings.cad_sub_title_link != blank -%}
                         </a>
@@ -115,9 +109,6 @@
                       {%- endif -%}
                       <h3 class="announcement-bar__message">
                         <span>{{ block.settings.title | escape }}</span>
-                        {%- if block.settings.title_link != blank -%}
-                          {% render 'icon-arrow' %}
-                        {%- endif -%}
                       </h3>
                       {%- if block.settings.title_link != blank -%}
                         </a>
@@ -132,9 +123,6 @@
                       {%- endif -%}
                       <p class="announcement-bar__message">
                         <span>{{ block.settings.sub_title | escape }}</span>
-                        {%- if block.settings.sub_title_link != blank -%}
-                          {% render 'icon-arrow' %}
-                        {%- endif -%}
                       </p>
                       {%- if block.settings.sub_title_link != blank -%}
                         </a>

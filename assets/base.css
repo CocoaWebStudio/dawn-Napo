@@ -2180,7 +2180,7 @@ product-info .loading__spinner:not(.hidden) ~ *,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-content: center;
   grid-area: announcements;
 }
