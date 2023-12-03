@@ -2674,18 +2674,54 @@ details[open] .modal-overlay::after {
   opacity: 0;
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   min-height: calc(100% + var(--inputs-margin-offset) + (2 * var(--inputs-border-width)));
-  height: 100%;
+  height: 90vh;
+}
+
+.search-modal form .field::after {
+  border-radius: 0.5rem;
+  outline: none;
+  border: thin solid #ced4da;
+  box-shadow: none;
+}
+
+.search-modal form .field:hover::after,
+.search-modal form .field:focus::after {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0.35rem rgba(13, 110, 253, 0.25);
+}
+
+.search-modal form .field input.search__input {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: #495057AA;
+  border-width: 0.5px;
+  border-radius: 0.5rem;
+}
+
+.search-modal form .field input.search__input:focus {
+  border: thin solid #ced4da;
+  outline: 0;
+  box-shadow: 0 0 0 0.35rem rgba(13, 110, 253, 0.25);
+}
+
+.search-modal form .field input.search__input::placeholder {
+  font-weight: 50;
+  opacity: 1;
 }
 
 .search-modal__content {
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   width: 100%;
   height: 100%;
   padding: 0 5rem 0 1rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   position: relative;
+  padding: 1rem .5rem;
 }
 
 .search-modal__content-bottom {
@@ -2711,14 +2747,14 @@ details[open] .modal-overlay::after {
   }
 
   .search-modal__content {
-    padding: 0 6rem;
+    padding: 1rem 6rem;
   }
 }
 
 @media screen and (min-width: 990px) {
-  .search-modal__form {
+  /* .search-modal__form {
     max-width: 74.2rem;
-  }
+  } */
 
   .search-modal__close-button {
     position: initial;
@@ -3508,4 +3544,60 @@ details-disclosure>details {
     --border-offset: 0px;
     /* Prevent the border from growing on buttons when this effect is on. */
   }
+}
+
+/* Custom CSS properties */
+
+.custom__grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.custom__grid-item {
+  padding: 0.75rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  border: thin solid black;
+}
+
+.custom__product-card-img img {
+  max-width: 260px;
+}
+
+.custom_quick-add-form-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: .5rem;
+}
+
+.custom_quick-add-form-content select {
+  width: 20%;
+  background-color: #ffffff;
+  color: #495057;
+  font-size: 1.5rem;
+  grid-area: auto;
+  letter-spacing: .25rem;
+  margin: 0 .5rem 0 0;
+  padding: .30rem .60rem;
+}
+
+.custom_quick-add-form-content select:focus,
+.custom_quick-add-form-content select:hover {
+  outline: none;
+  border: thin solid #719ECE;
+  box-shadow: 0 0 3pt 2pt #719ECE;
+}
+
+.custom_quick-add-form-content button {
+  width: 60%;
+  font-size: 1.5rem;
+  grid-area: auto;
+  justify-content: center;
+  letter-spacing: 0.1rem;
+  padding: .5rem 1.25rem;
+  text-align: center;
+  text-transform: uppercase;
 }
