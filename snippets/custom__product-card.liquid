@@ -2,20 +2,22 @@
 {%- assign selected_variant = product.selected_or_first_available_variant -%}
 <div class="custom__product-card">
   <div class="custom__product-card-img">
-    <img
-      class="predictive-search__image"
-      src="{{ product.featured_media | image_url }}"
-      alt="{{ product.featured_media.alt }}"
-      width="100%"
-      height="auto"
-    >
+    <a href="{{ product.url }}">
+      <img
+        class="predictive-search__image"
+        src="{{ product.featured_media | image_url }}"
+        alt="{{ product.featured_media.alt }}"
+        width="100%"
+        height="auto"
+      >
+    </a>
   </div>
   <div class="custom__product-card-title">
-    {{ product.title }}
+    <a href="{{ product.url }}">{{ product.title }}</a>
   </div>
   <div class="custom__product-card-action-buttons">
     <form class="custom__quick-add-form" id="custom__add-to-card-form-product-{{ product.id }}">
-      <div class="custom_quick-add-form-content">
+      <div class="custom__quick-add-form-content">
         <select name="quantity" value="1">
           <option value="1">1</option>
           <option value="2">2</option>

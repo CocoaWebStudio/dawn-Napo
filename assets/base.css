@@ -3559,22 +3559,34 @@ details-disclosure>details {
   padding: 0.75rem;
   text-align: center;
   border-radius: 0.5rem;
-  border: thin solid black;
 }
 
 .custom__product-card-img img {
   max-width: 260px;
 }
 
-.custom_quick-add-form-content {
+.custom__product-card-title {
+  text-align: left;
+}
+
+.custom__product-card-title a {
+  text-decoration: none;
+  color: #495057;
+}
+
+.custom__product-card-title:hover a {
+  text-decoration: underline;
+}
+
+.custom__quick-add-form-content {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  margin-top: .5rem;
+  margin-top: 1rem;
 }
 
-.custom_quick-add-form-content select {
-  width: 20%;
+.custom__quick-add-form-content select {
+  width: 25%;
   background-color: #ffffff;
   color: #495057;
   font-size: 1.5rem;
@@ -3584,15 +3596,16 @@ details-disclosure>details {
   padding: .30rem .60rem;
 }
 
-.custom_quick-add-form-content select:focus,
-.custom_quick-add-form-content select:hover {
+.custom__quick-add-form-content select:focus,
+.custom__quick-add-form-content select:hover {
   outline: none;
   border: thin solid #719ECE;
   box-shadow: 0 0 3pt 2pt #719ECE;
 }
 
-.custom_quick-add-form-content button {
-  width: 60%;
+.custom__quick-add-form-content button {
+  position: relative;
+  width: 65%;
   font-size: 1.5rem;
   grid-area: auto;
   justify-content: center;
@@ -3600,4 +3613,35 @@ details-disclosure>details {
   padding: .5rem 1.25rem;
   text-align: center;
   text-transform: uppercase;
+  background-color: transparent;
+  border: thin solid #323131;
+  padding: 1rem;
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+.custom__quick-add-form-content button::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #323131;
+  transform-origin: left center;
+  transform: scale(1, 1);
+  transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  z-index: -1;
+}
+
+.custom__quick-add-form-content button:hover::before {
+  transform-origin: right center;
+  transform: scale(0, 1)
+}
+
+.custom__quick-add-form-content button:hover {
+  cursor: pointer;
+  color: #323131;
 }
