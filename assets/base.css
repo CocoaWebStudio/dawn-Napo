@@ -3550,7 +3550,7 @@ details-disclosure>details {
 
 .custom__grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   gap: 1rem;
   padding: 1rem;
 }
@@ -3644,4 +3644,32 @@ details-disclosure>details {
 .custom__quick-add-form-content button:hover {
   cursor: pointer;
   color: #323131;
+}
+
+.custom__quick-add-form-content button.loading {
+  color: transparent;
+  position: relative;
+}
+
+.custom__quick-add-form-content button.loading::before {
+  transform-origin: right center;
+  transform: scale(0, 1)
+}
+
+.custom__quick-add-form-content button.loading>.loading__spinner {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+predictive-search {
+  position: relative;
+}
+
+.predictive-search {
+  overflow-x: hidden;
 }

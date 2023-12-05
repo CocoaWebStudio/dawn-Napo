@@ -16,24 +16,65 @@
     <a href="{{ product.url }}">{{ product.title }}</a>
   </div>
   <div class="custom__product-card-action-buttons">
-    <form class="custom__quick-add-form" id="custom__add-to-card-form-product-{{ product.id }}">
-      <div class="custom__quick-add-form-content">
-        <select name="quantity" value="1">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-        </select>
-        <button
-          onclick="addToCart(event)"
-          data-product_id="{{ product.id }}"
-          data-variant_id="{{ selected_variant.id }}"
-        >
-          {{ 'products.product.add_to_cart' | t }}
-        </button>
-      </div>
-    </form>
+    <custom-product-form>
+      <form
+        method="post"
+        action="/cart/add"
+        class="custom__quick-add-form"
+        id="custom__add-to-card-form-product-{{ product.id }}"
+      >
+        <div class="custom__quick-add-form-content">
+          <input type="hidden" name="id" value="{{ selected_variant.id }}">
+          <select name="quantity" value="1">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+          </select>
+          <button
+            data-product_id="{{ product.id }}"
+            data-variant_id="{{ selected_variant.id }}"
+            type="submit"
+          >
+            {{ 'products.product.add_to_cart' | t }}
+            {% render 'loading-spinner' %}
+          </button>
+        </div>
+      </form>
+    </custom-product-form>
   </div>
+  {% render 'custom__cart-notification' %}
 </div>
+{% style %}
+  .custom__product-card {
+    position: relative;
+  }
+
+  custom-cart-notification {
+    position: absolute;
+    width: 100%;
+    max-width: 36.8rem;
+    z-index: 2;
+  }
+
+  @media screen and (min-width: 886px) {
+    custom-cart-notification {
+      top: 0;
+      left: 100%;
+    }
+  }
+
+  @media screen and (max-width: 885px) {
+    custom-cart-notification {
+      top: -3rem;
+      left: 5%;
+    }
+  }
+  .cart-notification {
+    background-color: white;
+    border: thin solid black;
+    box-shadow: 0 0 2px black;
+  }
+{% endstyle %}
