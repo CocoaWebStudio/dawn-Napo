@@ -795,6 +795,10 @@
           "label": "Enable quick add button",
           "info": "Optimal with popup or drawer cart type."
         },
+        "show_quantity_select": {
+          "label": "Enable quantity selector",
+          "info": "How many products you want to quick add to your cart."
+        },
         "header_mobile": {
           "content": "Mobile Layout"
         },
