@@ -15,11 +15,11 @@
   </div>
 </div>
 {% stylesheet %}
-  .tabs {
+  .tab-container .tabs {
     display: flex;
     flex-wrap: wrap; // make sure it wraps
   }
-  .tabs label {
+  .tab-container .tabs label {
     order: 1; // Put the labels first
     display: block;
     padding: 1rem 2rem;
@@ -28,7 +28,7 @@
     font-weight: bold;
     transition: background 0.2s ease;
   }
-  .tabs .tab {
+  .tab-container .tabs .tab {
     order: 99; // Put the tabs last
     flex-grow: 1;
     width: 100%;
