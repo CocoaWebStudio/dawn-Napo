@@ -1,0 +1,118 @@
+<div class="tab-container">
+  <div class="tabs">
+    {% for block in section.blocks %}
+      <input
+        type="radio"
+        name="tabs"
+        id="tab-{{ forloop.index0 }}"
+        {% if forloop.first %}
+          checked
+        {% endif %}
+      >
+      <label for="tab-{{ forloop.index0 }}">{{ block.settings.title }}</label>
+      <div class="tab">{{ block.settings.tab_page.content }}</div>
+    {% endfor %}
+  </div>
+</div>
+{% stylesheet %}
+  .tabs {
+    display: flex;
+    flex-wrap: wrap; // make sure it wraps
+  }
+  .tabs label {
+    order: 1; // Put the labels first
+    display: block;
+    padding: 1rem 2rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+  }
+  .tabs .tab {
+    order: 99; // Put the tabs last
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background: #fff;
+  }
+  .tab-container .tabs input {
+    display: none;
+  }
+  .tab-container .tabs input:checked + label {
+    background: #fff;
+    border-left: thin solid rgb(222, 226, 230);
+    border-top: thin solid rgb(222, 226, 230);
+    border-right: thin solid rgb(222, 226, 230);
+  }
+  .tab-container .tabs input:checked + label + .tab {
+    display: block;
+  }
+
+  /**
+ * Generic Styling
+*/
+  .tab-container {
+    /* background: #eee; */
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    padding: 0 5rem;
+    /* font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+      sans-serif; */
+    font-weight: 300;
+    line-height: 1.5em;
+    /* max-width: 60rem; */
+    /* margin: 0 auto; */
+    font-size: 112%;
+  }
+
+  @media (max-width: 750px) {
+    .tab-container .tabs .tab,
+    .tab-container .tabs label {
+      order: initial;
+    }
+    .tab-container .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+    .tab-container {
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Custom tabs",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Custom tab",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Tab title",
+          "default": "New tab"
+        },
+        {
+          "id": "tab_page",
+          "type": "page",
+          "label": "Tab content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom tabs"
+    }
+  ]
+}
+{% endschema %}
