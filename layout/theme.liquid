@@ -348,7 +348,6 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
-    {{ 'add-product-to-cart.js' | asset_url | script_tag }}
     {{ 'custom-product-form.js' | asset_url | script_tag }}
     {{ 'custom-cart-notification.js' | asset_url | script_tag }}
   </body>
