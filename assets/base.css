@@ -3603,9 +3603,9 @@ details-disclosure>details {
   box-shadow: 0 0 3pt 2pt #719ECE;
 }
 
-.custom__quick-add-form-content button {
+.custom__quick-add-form-content button[type="submit"] {
   position: relative;
-  width: 65%;
+  width: 50%;
   font-size: 1.5rem;
   grid-area: auto;
   justify-content: center;
@@ -3620,7 +3620,7 @@ details-disclosure>details {
   font-weight: lighter;
 }
 
-.custom__quick-add-form-content button::before {
+.custom__quick-add-form-content button[type="submit"]::before {
   content: '';
   position: absolute;
   left: 0;
@@ -3636,27 +3636,27 @@ details-disclosure>details {
   z-index: -1;
 }
 
-.custom__quick-add-form-content button:hover::before {
+.custom__quick-add-form-content button[type="submit"]:hover::before {
   transform-origin: right center;
   transform: scale(0, 1)
 }
 
-.custom__quick-add-form-content button:hover {
+.custom__quick-add-form-content button[type="submit"]:hover {
   cursor: pointer;
   color: #323131;
 }
 
-.custom__quick-add-form-content button.loading {
+.custom__quick-add-form-content button[type="submit"].loading {
   color: transparent;
   position: relative;
 }
 
-.custom__quick-add-form-content button.loading::before {
+.custom__quick-add-form-content button[type="submit"].loading::before {
   transform-origin: right center;
   transform: scale(0, 1)
 }
 
-.custom__quick-add-form-content button.loading>.loading__spinner {
+.custom__quick-add-form-content button[type="submit"].loading>.loading__spinner {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

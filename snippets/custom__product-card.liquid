@@ -25,14 +25,12 @@
       >
         <div class="custom__quick-add-form-content">
           <input type="hidden" name="id" value="{{ selected_variant.id }}">
-          <select name="quantity" value="1">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
+          {%
+            render 'quantity-input',
+            variant: selected_variant,
+            form_id: "custom__add-to-card-form-product-{{ product.id }}",
+            input_name: 'quantity'
+          %}
           <button
             data-product_id="{{ product.id }}"
             data-variant_id="{{ selected_variant.id }}"
@@ -59,19 +57,11 @@
     z-index: 2;
   }
 
-  @media screen and (min-width: 886px) {
-    custom-cart-notification {
-      top: 0;
-      left: 100%;
-    }
+  custom-cart-notification {
+    top: -3rem;
+    right: 0;
   }
 
-  @media screen and (max-width: 885px) {
-    custom-cart-notification {
-      top: -3rem;
-      left: 5%;
-    }
-  }
   .cart-notification {
     background-color: white;
     border: thin solid black;

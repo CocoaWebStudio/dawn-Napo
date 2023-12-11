@@ -39,6 +39,15 @@ customElements.define(
                 formData.append('sections_url', window.location.pathname);
                 this.cart.setActiveElement(document.activeElement);
             }
+            if (!formData.has('quantity')) {
+
+                const quantity = this.form.querySelector("input[name='quantity']")
+                    ? this.form.querySelector("input[name='quantity']").value
+                    : 1
+
+                formData.append('quantity', quantity)
+
+            }
             config.body = formData;
 
             fetch(`${routes.cart_add_url}`, config)
