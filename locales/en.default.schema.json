@@ -2345,6 +2345,9 @@
           },
           "options__3": {
             "label": "No zoom"
+          },
+          "options__4": {
+            "label": "Hover"
           }
         },
         "media_position": {
