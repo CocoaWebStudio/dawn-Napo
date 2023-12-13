@@ -1,0 +1,285 @@
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- if section.settings.enable_section -%}
+  {% comment %}
+    <div class="container-fluid ingredients-page-content">
+      <div class="row">
+        <div class="col-md-8 offset-md-2" style="min-height:500px">
+          <b-carousel
+            id="carouselIngredients"
+            controls
+            background="#ffffff"
+            :interval="0"
+            v-model="slide"
+            @sliding-start="onSlideStart"
+            @sliding-end="onSlideEnd"
+            fade
+          >
+            {%- for block in section.blocks -%}
+              {%- assign collection = collections[block.settings.collection] -%}
+              <b-carousel-slide>
+                <template v-slot:img>
+                  <h1 id="ingredient-title" class="text-center my-5">
+                    {{ collection.title | escape }}
+                  </h1>
+                  <lazy-image
+                    lazy-class="img-fluid mx-auto d-block"
+                    lazy-src="{{ collection.image | img_url: '1x1' }}"
+                    :lazy-widths="[400, 600, 800, 1000]"
+                    lazy-alt="{{ collection.title | escape }}"
+                    lazy-style="min-width:300px"
+                  ></lazy-image>
+                  <hr class="delimiter mt-5 border-dark">
+                  <b-tabs lazy nav-class="offset-md-2 col-md-8 mb-4 border-0">
+                    <b-tab
+                      active
+                      title="{{- 'page.ingredients.titles.products' | t -}}"
+                      title-item-class="col-6 text-center rahua-tabs-header"
+                      title-link-class="border-0 pb-4 rahua-tabs-header font-weight-bold"
+                    >
+                      <div class="container">
+                        <div class="row">
+                          {%- for product in collection.products -%}
+                            <div class="col-xl-3 col-lg-4 col-6 md-2 mb-3">
+                              {%- render 'product-item',
+                                show_product_info: true,
+                                show_labels: true,
+                                card_img: true,
+                                product: product
+                              -%}
+                            </div>
+                          {%- endfor -%}
+                        </div>
+                      </div>
+                    </b-tab>
+                    <b-tab
+                      title="{{- 'page.ingredients.titles.benefits' | t -}}"
+                      title-item-class="col-6 text-center"
+                      title-link-class="border-0 pb-4 rahua-tabs-header font-weight-bold"
+                    >
+                      <p class="text-center">
+                        {{ collection.description }}
+                      </p>
+                    </b-tab>
+                  </b-tabs>
+                </template>
+              </b-carousel-slide>
+            {%- endfor -%}
+          </b-carousel>
+        </div>
+      </div>
+      <div class="row mb-5 mt-2">
+        <div
+          class="col-10 offset-1 text-center"
+          style="height: 15px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); margin-top: 40px;"
+        >
+          <h2>
+            <span style="background-color: #ffffff; padding: 0 15px;">
+              {{- 'page.ingredients.titles.star_ingredients' | t -}}
+            </span>
+          </h2>
+        </div>
+      </div>
+      <div class="row">
+        {% assign count = 0 %}
+        {%- for block in section.blocks -%}
+          {%- assign collection = collections[block.settings.collection] -%}
+          <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-4">
+            <div class="card border-white" ref="{{ collection.handle | escape }}" @click="changeImage({{ count }})">
+              <div class="card-body p-0" style="min-height:100px">
+                <lazy-image
+                  lazy-class="img-fluid"
+                  lazy-src="{{ collection.image | img_url: '1x1' }}"
+                  :lazy-widths="[200, 400, 600]"
+                  lazy-alt="{{ collection.title | escape }}"
+                ></lazy-image>
+              </div>
+              <div class="card-footer bg-white border-white px-0">
+                <h4 class="text-center">
+                  {{ collection.title | escape }}
+                </h4>
+              </div>
+            </div>
+          </div>
+          {% assign count = count | plus: 1 %}
+        {%- endfor -%}
+      </div>
+    </div>
+  {% endcomment %}
+  {% comment %}
+    <div class="custom-slider-container">
+      <button class="before">\2039</button>
+      <div class="custom-slider-wrapper">
+        {% for block in section.blocks %}
+          {%- assign collection = collections[block.settings.collection] -%}
+          <div class="custom-slider-slide">
+            <img src="{{ collection.image | image_url }}">
+          </div>
+        {% endfor %}
+      </div>
+      <button class="after">\203A</button>
+    </div>
+  {% endcomment %}
+  {% comment %}
+    <div class="ingredients-page">
+      <ul class="collection-list grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+        {% for block in section.blocks %}
+          {%- assign collection = collections[block.settings.collection] -%}
+          <li class="collection-list__item grid__item scroll-trigger animate--slide-in">
+            {% render 'custom-card-collection', card_collection: collection, columns: 1, media_aspect_ratio: 'adapt' %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endcomment %}
+  {% render 'custom-slideshow' %}
+  {% render 'custom-collection-list' %}
+{%- endif -%}
+
+{% javascript %}
+  /* document.addEventListener('DOMContentLoaded', function () {
+    const sliderWrapper = document.querySelector('.custom-slider-wrapper');
+    const sliderContainer = document.querySelector('.custom-slider-container');
+
+    // Clona el primer slide y lo añade al final para lograr un efecto infinito
+    const firstSlideClone = sliderWrapper.firstElementChild.cloneNode(true);
+    sliderWrapper.appendChild(firstSlideClone);
+
+    let slideIndex = 0;
+    // Función para avanzar al siguiente slide
+    const nextSlide = () => {
+      slideIndex++;
+      if (slideIndex >= sliderWrapper.children.length - 1) {
+        slideIndex = 0;
+      }
+      updateSlider();
+    };
+
+    // Función para retroceder al slide anterior
+    const prevSlide = () => {
+      slideIndex--;
+      if (slideIndex < 0) {
+        slideIndex = sliderWrapper.children.length - 2;
+      }
+      updateSlider();
+    };
+
+    // Actualiza la posición del slider
+    const updateSlider = () => {
+      sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+      sliderWrapper.style.transform = `translateX(${-slideIndex * 100}%)`;
+    };
+
+    // Reinicia el slider al último slide cuando llega al clon del primer slide
+    sliderWrapper.addEventListener('transitionend', () => {
+      if (slideIndex >= sliderWrapper.children.length - 1) {
+        slideIndex = 0;
+        sliderWrapper.style.transition = 'none';
+        sliderWrapper.style.transform = `translateX(${0}%)`;
+        setTimeout(() => {
+          sliderWrapper.style.transition = 'transform 0.5s ease-in-out';
+        });
+      }
+    });
+
+    // Evento de clic para el botón "next"
+    sliderContainer.querySelector('button.after').addEventListener('click', nextSlide);
+
+    // Evento de clic para el botón "prev"
+    sliderContainer.querySelector('button.before').addEventListener('click', prevSlide);
+  }); */
+{% endjavascript %}
+
+{% style %}
+  .ingredients-page {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .custom-slider-container {
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .custom-slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .custom-slider-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .custom-slider-slide img {
+    width: 50%;
+    height: auto;
+  }
+
+  button.before,
+  button.after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px; /* Ancho del botón */
+    height: 30px; /* Altura del botón */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    color: #fff; /* Color del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    text-align: center;
+    line-height: 30px; /* Alinea verticalmente el ícono */
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  button.before {
+    left: 10px; /* Posición izquierda */
+  }
+
+  button.after {
+    right: 10px; /* Posición derecha */
+  }
+
+  /* Estilo al pasar el mouse sobre los botones */
+  button.before:hover,
+  button.after:hover {
+    background-color: rgb(0, 0, 255);
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Ingredients List",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable section",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select a collection Ingredient"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients List"
+    }
+  ]
+}
+{% endschema %}
