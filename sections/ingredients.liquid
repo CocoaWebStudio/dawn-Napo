@@ -1,0 +1,26 @@
+{% schema %}
+{
+  "name": "t:sections.ingredients.title",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "t:sections.ingredients.enable_section",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "t:sections.ingredients.blocks.add_ingredient.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.ingredients.blocks.add_ingredient.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
