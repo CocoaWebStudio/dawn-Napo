@@ -86,19 +86,37 @@
             "page": ""
           }
         },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Key Benefits",
-            "icon": "none",
-            "content": "<p>{{ product.metafields.tabs.key_benefits | metafield_tag }}<\/p>",
-            "page": ""
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
+          }
+        },
+        "Key-Benefits":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "Key Benefits",
+            "icon": "none",
+            "content": "{{ product.metafields.tabs.key_benefits.value }}",
+            "page": ""
+          }
+        },
+        "Ingredients":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "Ingredients",
+            "icon": "none",
+            "content": "{{ product.metafields.tabs.ingredients.value }}",
+            "page": ""
+          }
+        },
+        "How-to":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "How to",
+            "icon": "none",
+            "content": "{{ product.metafields.tabs.how_to.value }}",
+            "page": ""
           }
         }
       },
@@ -116,7 +134,10 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share"
+        "share",
+        "Key-Benefits",
+        "Ingredients",
+        "How-to"
       ],
       "settings": {
         "enable_sticky_info": false,
