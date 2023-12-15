@@ -36,6 +36,24 @@
           >{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
+      {% for block in section.blocks %}
+        {%- if block.type == 'order_note' -%}
+          <div class="cart__note_container">
+            <h3>Add Order Note</h3>
+            <textarea
+              name="note"
+              id="cart-note"
+              rows="4"
+              placeholder="How can we help you?"
+              class="form__textarea"
+            ></textarea>
+            <div>
+              <p>Global supply chain strain has impacted shipping times.</p>
+              <p><strong>Shipping times may be delayed.</strong></p>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
 
       <div class="cart__blocks">
         {% for block in section.blocks %}
@@ -75,7 +93,7 @@
                   {%- endif -%}
                 </small>
               </div>
-            {%- else -%}
+            {%- when 'buttons' -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
                   <button type="submit" class="cart__update-button button button--secondary" form="cart">
@@ -173,6 +191,11 @@
     {
       "type": "buttons",
       "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "order_note",
+      "name": "Order note",
       "limit": 1
     },
     {
