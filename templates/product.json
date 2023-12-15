@@ -92,6 +92,16 @@
             "share_label": "Share"
           }
         },
+        "collapsible-description":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "mobile-exclusive": true,
+            "page": ""
+          }
+        },
         "Key-Benefits":{
           "type": "left-col-tab",
           "settings": {
@@ -135,6 +145,7 @@
         "collapsible-row-2",
         "collapsible-row-3",
         "share",
+        "collapsible-description",
         "Key-Benefits",
         "Ingredients",
         "How-to"
