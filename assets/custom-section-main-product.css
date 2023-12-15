@@ -1,6 +1,16 @@
 .desktop-collapsible-metafields.mobile-exclusive {
     display: none;
 }
+.badge-images-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1;
+}
+
+.badge-images-wrapper img {
+	width: 100px;
+}
 
 /* Mobile */
 @media screen and (max-width: 749px) {

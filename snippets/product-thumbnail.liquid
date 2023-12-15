@@ -77,9 +77,11 @@
     {%- endif -%}
   </noscript>
 
-  <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+  <modal-opener class="product__modal-opener asd product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+
     <span class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}" aria-hidden="true">
-      {%- liquid
+     
+{%- liquid
         case media.media_type
         when 'video' or 'external_video'
           render 'icon-play'
@@ -91,7 +93,17 @@
       -%}
     </span>
     {%- render 'loading-spinner' -%}
+	<div class="badge-images-wrapper">
+	{%- if product.metafields.img.badge -%}
+		<img src="{{ product.metafields.img.badge | img_url: width: 500 }}" alt="">
+	{%- endif -%}
+	{%- if product.metafields.img.badge2 -%}
+		<img src="{{ product.metafields.img.badge2 | img_url: width: 500 }}" alt="">
+	{%- endif -%}
+		
+	</div> 
     <div class="product__media media media--transparent">
+
       {{ media.preview_image | image_url: width: 1946 | image_tag:
         class: image_class,
         loading: lazy,
