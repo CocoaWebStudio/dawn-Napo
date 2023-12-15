@@ -20,6 +20,38 @@
         display: none;
     }
 
+    .product__title {
+        margin-bottom: 0;
+    }
+
+    .product__title h1 {
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: left;
+        font-size: 15px;
+        margin-bottom: 7.5px;
+        letter-spacing: 3px;
+    }
+
+    .shopify-app-block {
+        margin: 0px auto !important;
+    }
+
+    .jdgm-prev-badge {
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center !important;
+    }
+
+    .jdgm-prev-badge__stars,
+    .jdgm-prev-badge__text {
+        display: flex;
+        justify-content: center;
+    }
+
+    .price-item--regular {
+        color: #939393;
+    }
 }
 
 /* Desktop */

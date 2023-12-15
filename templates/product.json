@@ -128,6 +128,13 @@
             "content": "{{ product.metafields.tabs.how_to.value }}",
             "page": ""
           }
+        },
+        "Facebook-link":{
+          "type": "custom-share",
+          "settings": {
+            "show_facebook": true,
+            "facebook_link": "https://www.facebook.com"
+          }
         }
       },
       "block_order": [
@@ -148,7 +155,8 @@
         "collapsible-description",
         "Key-Benefits",
         "Ingredients",
-        "How-to"
+        "How-to",
+        "Facebook-link"
       ],
       "settings": {
         "enable_sticky_info": false,
