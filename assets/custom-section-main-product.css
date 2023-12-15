@@ -96,4 +96,9 @@
     .mobile-exclusive {
         display: none;
     }
+
+    .share-buttons-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
 }

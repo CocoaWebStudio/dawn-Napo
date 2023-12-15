@@ -447,6 +447,22 @@
                 share_link: share_url
               %}
 
+            {%- when "custom-share" -%}
+              <div class="share-buttons-wrapper">
+                {%- if block.settings.show_facebook -%}
+                  <a href="{{ block.settings.facebook_link }}">facebook-icon</a>
+                {%- endif -%}
+                {%- if block.settings.show_instagram -%}
+                  <a href="{{ block.settings.instagram_link }}">instagram-icon</a>
+                {%- endif -%}
+                {%- if block.settings.show_pinterest -%}
+                  <a href="{{ block.settings.pinterest_link }}">pinterest-icon</a>
+                {%- endif -%}
+                {%- if block.settings.show_twitter -%}
+                  <a href="{{ block.settings.twitter_link }}">twitter-icon</a>
+                {%- endif -%}
+              </div>
+
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
@@ -938,7 +954,6 @@
     {
       "type": "custom-share",
       "name": "custom share",
-      "limit": 1,
       "settings": [
         {
           "type": "checkbox",
@@ -949,6 +964,39 @@
         {
           "id": "facebook_link",
           "label": "Facebook link",
+          "type": "url"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pinterest",
+          "label": "Show pinterest share button",
+          "default": true
+        },
+        {
+          "id": "pinterest_link",
+          "label": "Pinterest link",
+          "type": "url"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_instagram",
+          "label": "Show Instagram share button",
+          "default": true
+        },
+        {
+          "id": "instagram_link",
+          "label": "Instagram link",
+          "type": "url"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_twitter",
+          "label": "Show Twitter share button",
+          "default": true
+        },
+        {
+          "id": "twitter_link",
+          "label": "Twitter link",
           "type": "url"
         }
       ]
