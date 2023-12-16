@@ -24,36 +24,27 @@
 >
   <div class="page-width">
     <div class="cart__footer isolate section-{{ section.id }}-padding">
-      {%- if settings.show_cart_note -%}
-        <cart-note class="cart__note field">
-          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
-          <textarea
-            class="text-area field__input"
-            name="note"
-            form="cart"
-            id="Cart-note"
-            placeholder="{{ 'sections.cart.note' | t }}"
-          >{{ cart.note }}</textarea>
-        </cart-note>
-      {%- endif -%}
       {% for block in section.blocks %}
         {%- if block.type == 'order_note' -%}
           <div class="cart__note_container">
-            <h3>Add Order Note</h3>
-            <textarea
-              name="note"
-              id="cart-note"
-              rows="4"
-              placeholder="How can we help you?"
-              class="form__textarea"
-            ></textarea>
+            <cart-note class="cart__note field">
+              <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+              <textarea
+                class="text-area"
+                name="note"
+                form="cart"
+                rows="4"
+                id="Cart-note"
+                placeholder="How can we help you?"
+              >{{ cart.note }}</textarea>
+            </cart-note>
             <div>
               <p>Global supply chain strain has impacted shipping times.</p>
               <p><strong>Shipping times may be delayed.</strong></p>
             </div>
           </div>
         {%- endif -%}
-      {%- endfor -%}
+      {% endfor %}
 
       <div class="cart__blocks">
         {% for block in section.blocks %}
