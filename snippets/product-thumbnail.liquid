@@ -93,6 +93,7 @@
       -%}
     </span>
     {%- render 'loading-spinner' -%}
+{% if position == 1 %} 
 	<div class="badge-images-wrapper">
 	{%- if product.metafields.img.badge -%}
 		<img src="{{ product.metafields.img.badge | img_url: width: 500 }}" alt="">
@@ -102,6 +103,7 @@
 	{%- endif -%}
 		
 	</div> 
+{% endif %} 
     <div class="product__media media media--transparent">
 
       {{ media.preview_image | image_url: width: 1946 | image_tag:

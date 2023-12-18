@@ -6,10 +6,25 @@
 	top: 0;
 	right: 0;
 	z-index: 1;
+	display: flex;
+		flex-direction: column;
 }
 
 .badge-images-wrapper img {
 	width: 100px;
+	margin: 10px auto;
+	}
+	
+	.accordion {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		border-top: 1px solid #939393 !important;
+		border-bottom: 1px solid #939393 !important;
+	}
+	
+	.accordion__title {
+		letter-spacing: 3px;
+		text-transform: uppercase;
 }
 
 /* Mobile */
