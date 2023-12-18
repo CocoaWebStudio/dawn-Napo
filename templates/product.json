@@ -151,12 +151,11 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share",
+		"Facebook-link",
         "collapsible-description",
         "Key-Benefits",
         "Ingredients",
-        "How-to",
-        "Facebook-link"
+        "How-to"
       ],
       "settings": {
         "enable_sticky_info": false,

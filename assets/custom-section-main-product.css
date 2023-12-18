@@ -12,7 +12,7 @@
 
 .badge-images-wrapper img {
 	width: 100px;
-	margin: 10px auto;
+	margin: 5px auto;
 	}
 	
 	.accordion {
@@ -25,6 +25,39 @@
 	.accordion__title {
 		letter-spacing: 3px;
 		text-transform: uppercase;
+}
+.share-buttons-wrapper {
+	display: flex;
+	justify-content: space-around;
+}
+
+.share-buttons-wrapper svg {
+	width: 20px;
+	color: rgb(85, 85, 85);
+}
+
+.custom-share-wrapper {
+	text-align: center;
+	padding-top: 0;
+	padding-bottom: 1rem;
+	border-top: 1px solid #dddddd !important;
+	border-bottom: 1px solid #dddddd !important;
+}
+
+.custom-share-wrapper h3 {
+	letter-spacing: 3.5px;
+}
+
+.product__accordion i {
+	font-size: 30px;
+	margin: 5px;
+	font-weight: 400;
+	color: #adb5bd !important;
+}
+
+.product__accordion summary {
+	display: flex;
+	align-items: center;
 }
 
 /* Mobile */
@@ -122,8 +155,5 @@
         display: none;
     }
 
-    .share-buttons-wrapper {
-        display: flex;
-        justify-content: space-between;
-    }
+	
 }
