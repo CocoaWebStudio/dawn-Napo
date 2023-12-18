@@ -111,6 +111,32 @@
                   {{ content_for_additional_checkout_buttons }}
                 </div>
               {%- endif -%}
+            {%- when 'free_shipping' -%}
+              {%- liquid
+                assign free_shipping = block.settings.free_shipping | round: 2 | times: 100
+
+                assign alert_threshold = 2000
+                assign warning_shipping = free_shipping | minus: alert_threshold
+              -%}
+              <div
+                class="alert_container"
+                id="alert_container"
+              >
+                {%- if cart.total_price > free_shipping -%}
+                  <div class="alert alert-info" role="alert">Congratulations! You Qualify For Free Shipping!</div>
+                {%- elsif cart.total_price > warning_shipping -%}
+                  <div class="alert alert-warning" role="alert">
+                    You are only
+                    {{ free_shipping | minus: cart.total_price | money_without_trailing_zeros }} away from Free
+                    Shipping!
+                  </div>
+
+                {%- else -%}
+                  <div class="alert alert-danger" role="alert">
+                    Free shipping on orders over {{ free_shipping | money_with_currency }}
+                  </div>
+                {%- endif -%}
+              </div>
           {%- endcase -%}
         {% endfor %}
 
@@ -188,6 +214,19 @@
       "type": "order_note",
       "name": "Order note",
       "limit": 1
+    },
+    {
+      "type": "free_shipping",
+      "name": "Free shipping",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "number",
+          "id": "free_shipping",
+          "label": "Free shipping",
+          "default": 85
+        }
+      ]
     },
     {
       "type": "@app"
