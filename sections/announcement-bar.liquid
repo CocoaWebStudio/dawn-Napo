@@ -169,14 +169,14 @@
                 name="country_code"
                 aria-labelledby="AnnouncementCountryMobileLabelNoScript"
               >
-                {%- for country in c -%}
+                {%- for country in localization.available_countries -%}
                   <option
                     value="{{ country.iso_code }}"
                     {%- if country.iso_code == localization.country.iso_code %}
                       selected
                     {% endif %}
                   >
-                    {{ country.name }} ({{ country.currency.iso_code }}
+                    {{ country | image_url: width: 32 | image_tag }} ({{ country.currency.iso_code }}
                     {{ country.currency.symbol }})
                   </option>
                 {%- endfor -%}
