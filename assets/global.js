@@ -716,6 +716,8 @@ class SlideshowComponent extends SliderComponent {
     super();
     this.sliderControlWrapper = this.querySelector('.slider-buttons');
     this.enableSliderLooping = true;
+    this.sliderProductGrid = document.querySelector("#products-slide-show-component")
+    this.sliderBenefits = document.querySelector("#benefits-slide-show-component")
 
     if (!this.sliderControlWrapper) return;
 
@@ -728,7 +730,13 @@ class SlideshowComponent extends SliderComponent {
 
     this.sliderControlLinksArray = Array.from(this.sliderControlWrapper.querySelectorAll('.slider-counter__link'));
     this.sliderControlLinksArray.forEach((link) => link.addEventListener('click', this.linkToSlide.bind(this)));
-    this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
+    if (this.sliderProductGrid && this.sliderBenefits) {
+      this.slider.addEventListener('scrollend', this.setSlideVisibility.bind(this));
+    }
+    else {
+      this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
+
+    }
     this.setSlideVisibility();
 
     if (this.announcementBarSlider) {
@@ -751,6 +759,37 @@ class SlideshowComponent extends SliderComponent {
     }
 
     if (this.slider.getAttribute('data-autoplay') === 'true') this.setAutoPlay();
+
+    if (this.sliderProductGrid) {
+      window.addEventListener("load", () => {
+        const slide = document.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+        const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
+        const slideShowContainer = sliderContainer.querySelector(".slideshow")
+        const slideHeight = slide.clientHeight
+        sliderContainer.style.height = `${slideHeight}px`
+        // slide.parentElement.style.height = `${slideHeight}px`
+        slideShowContainer.style.height = `${slideHeight}px`
+        sliderContainer.style.overflow = "hidden"
+        // slide.parentElement.style.overflow = "hidden"
+        slideShowContainer.style.overflow = "hidden"
+      })
+    }
+
+    if (this.sliderBenefits) {
+      window.addEventListener("load", () => {
+        const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
+        const sliderContainer = this.sliderBenefits.closest("slideshow-component")
+        const slideShowContainer = sliderContainer.querySelector(".slideshow")
+        const slideHeight = slide.clientHeight
+        sliderContainer.style.height = `${slideHeight}px`
+        slide.parentElement.style.height = `${slideHeight}px`
+        // slideShowContainer.style.height = `${slideHeight}px`
+        sliderContainer.style.overflow = "hidden"
+        slide.parentElement.style.overflow = "hidden"
+        // slideShowContainer.style.overflow = "hidden"
+      })
+    }
+
   }
 
   setAutoPlay() {
@@ -797,6 +836,12 @@ class SlideshowComponent extends SliderComponent {
   }
 
   setSlidePosition(position) {
+    if (this.sliderProductGrid) {
+      this.sliderProductGrid.slider.scrollTo({ left: position })
+    }
+    if (this.sliderBenefits) {
+      this.sliderBenefits.slider.scrollTo({ left: position })
+    }
     if (this.setPositionTimeout) clearTimeout(this.setPositionTimeout);
     this.setPositionTimeout = setTimeout(() => {
       this.slider.scrollTo({
@@ -818,6 +863,34 @@ class SlideshowComponent extends SliderComponent {
     });
     this.sliderControlButtons[this.currentPage - 1].classList.add('slider-counter__link--active');
     this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', true);
+    if (this.sliderProductGrid) {
+      setTimeout(() => {
+        const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+        const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
+        const slideShowContainer = sliderContainer.querySelector(".slideshow")
+        const slideHeight = slide.clientHeight
+        sliderContainer.style.height = `${slideHeight}px`
+        // slide.parentElement.style.height = `${slideHeight}px`
+        slideShowContainer.style.height = `${slideHeight}px`
+        sliderContainer.style.overflow = "hidden"
+        // slide.parentElement.style.overflow = "hidden"
+        slideShowContainer.style.overflow = "hidden"
+      }, 750)
+    }
+    if (this.sliderBenefits) {
+      setTimeout(() => {
+        const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
+        const sliderContainer = this.sliderBenefits.closest("slideshow-component")
+        const slideShowContainer = sliderContainer.querySelector(".slideshow")
+        const slideHeight = slide.clientHeight
+        sliderContainer.style.height = `${slideHeight}px`
+        slide.parentElement.style.height = `${slideHeight}px`
+        // slideShowContainer.style.height = `${slideHeight}px`
+        sliderContainer.style.overflow = "hidden"
+        slide.parentElement.style.overflow = "hidden"
+        // slideShowContainer.style.overflow = "hidden"
+      }, 750)
+    }
   }
 
   autoPlayToggle() {
@@ -893,6 +966,16 @@ class SlideshowComponent extends SliderComponent {
           linkElements.forEach((button) => {
             button.removeAttribute('tabindex');
           });
+        const slideScrollPosition =
+          this.slider.scrollLeft +
+          this.sliderFirstItemNode.clientWidth *
+          (index + 1 - this.currentPage);
+        if (this.sliderProductGrid && this.sliderProductGrid.slider) {
+          this.sliderProductGrid.slider.scrollTo({ left: slideScrollPosition })
+        }
+        if (this.sliderBenefits && this.sliderBenefits.slider) {
+          this.sliderBenefits.slider.scrollTo({ left: slideScrollPosition })
+        }
         item.setAttribute('aria-hidden', 'false');
         item.removeAttribute('tabindex');
       } else {
@@ -947,6 +1030,12 @@ class SlideshowComponent extends SliderComponent {
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
+    if (this.sliderProductGrid) {
+      this.sliderProductGrid.slider.scrollTo({ left: slideScrollPosition })
+    }
+    if (this.sliderBenefits) {
+      this.sliderBenefits.slider.scrollTo({ left: slideScrollPosition })
+    }
   }
 }
 

@@ -1,6 +1,9 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'component-slider.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 
 {%- if section.settings.enable_section -%}
   {% comment %}
@@ -190,6 +193,33 @@
     // Evento de clic para el botón "prev"
     sliderContainer.querySelector('button.before').addEventListener('click', prevSlide);
   }); */
+  const tabLabels = document.querySelectorAll('.tab-container .tabs label');
+
+  tabLabels.forEach((tabLabel) => {
+    tabLabel.onclick = (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const tabInputSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
+
+      const tabInputs = document.querySelectorAll('.tab-container .tabs input[type="radio"]');
+
+      tabInputs.forEach((tabInput) => {
+        if (tabInput != tabInputSelected) {
+          tabInput.checked = false;
+        }
+      });
+
+      tabInputSelected.checked = !tabInputSelected.checked;
+    };
+    // tabLabel.onmousedown = (event) => {
+    //   event.preventDefault();
+    //   event.stopPropagation();
+
+    //   const tabSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
+    //   console.log('mouse', { tabSelected });
+    // };
+  });
 {% endjavascript %}
 
 {% style %}
@@ -252,33 +282,111 @@
   }
 {% endstyle %}
 
+{% stylesheet %}
+  .tab-container .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center !important;
+  }
+  .tab-container .tabs label {
+    order: 1;
+    display: block;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    width: 25%;
+    min-width: min-content;
+    transition: background 0.2s ease;
+    text-transform: uppercase;
+  }
+  .tab-container .tabs label:hover {
+    cursor: pointer;
+  }
+  .tab-container .tabs .tab {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    padding: 1rem;
+    background: #fff;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    display: block;
+  }
+  .tab-container .tabs input {
+    display: none;
+  }
+  .tab-container .tabs input:checked + label {
+    background: #fff;
+    border-bottom: medium solid black;
+  }
+  .tab-container .tabs input:checked + label + .tab {
+    display: block;
+    width: auto;
+    height: auto;
+    overflow: auto;
+  }
+  .tab-container .tabs input:not(:checked) + label {
+    border-bottom: thin solid rgba(0, 0, 0, 0.1);
+  }
+  /**
+ * Generic Styling
+*/
+  .tab-container {
+    /* background: #eee; */
+    /* min-height: 100vh; */
+    box-sizing: border-box;
+    padding: 0 5rem;
+    /* font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
+      sans-serif; */
+    font-weight: 300;
+    line-height: 1.5em;
+    /* max-width: 60rem; */
+    /* margin: 0 auto; */
+    font-size: 112%;
+  }
+
+  @media (max-width: 750px) {
+    .tab-container .tabs .tab,
+    .tab-container .tabs label {
+      order: initial;
+    }
+    .tab-container .tabs label {
+      width: 100%;
+      margin-right: 0;
+      margin-top: 0.2rem;
+    }
+    .tab-container {
+      box-sizing: border-box;
+      padding: 0 1.5rem;
+    }
+    .tab-container .tabs input:not(:checked) + label {
+      border-bottom: thin solid black;
+    }
+  }
+{% endstylesheet %}
+
 {% schema %}
 {
-  "name": "Ingredients List",
+  "name": "t:sections.ingredients.title",
   "settings": [
     {
       "type": "checkbox",
       "id": "enable_section",
-      "label": "Enable section",
+      "label": "t:sections.ingredients.enable_section",
       "default": true
     }
   ],
   "blocks": [
     {
       "type": "ingredient",
-      "name": "Ingredient",
+      "name": "t:sections.ingredients.blocks.add_ingredient.name",
       "settings": [
         {
           "type": "collection",
           "id": "collection",
-          "label": "Select a collection Ingredient"
+          "label": "t:sections.ingredients.blocks.add_ingredient.label"
         }
       ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Ingredients List"
     }
   ]
 }
