@@ -69,7 +69,7 @@
                   aria-label="{{ 'sections.header.announcement' | t }}"
                   {{ block.shopify_attributes }}
                 >
-                  {% if section.settings.country == 'CAD' %}
+                  {% if localization.country.iso_code == 'CA' %}
                     {%- if block.settings.cad_title != blank -%}
                       {%- if block.settings.cad_title_link != blank -%}
                         <a
@@ -254,22 +254,6 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-4"
-    },
-    {
-      "type": "select",
-      "id": "country",
-      "label": "Country",
-      "options": [
-        {
-          "value": "USD",
-          "label": "USD"
-        },
-        {
-          "value": "CAD",
-          "label": "CAD"
-        }
-      ],
-      "default": "USD"
     },
     {
       "type": "checkbox",
