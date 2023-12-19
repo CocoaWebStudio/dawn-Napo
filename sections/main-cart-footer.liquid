@@ -114,10 +114,28 @@
             {%- when 'free_shipping' -%}
               {%- liquid
                 assign free_shipping = block.settings.free_shipping | round: 2 | times: 100
-
-                assign alert_threshold = 2000
+                assign alert_threshold = block.settings.alert_threshold | round: 2 | times: 100
                 assign warning_shipping = free_shipping | minus: alert_threshold
               -%}
+              {% style %}
+                .alert-info {
+                  color: {{ block.settings.alert_info_color }};
+                  border-color: {{ block.settings.alert_info_color }};
+                  background: {{ block.settings.alert_info_background }};
+                }
+
+                .alert-warning {
+                  color: {{ block.settings.alert_warning_color }};
+                  border-color: {{ block.settings.alert_warning_color }};
+                  background-color: {{ block.settings.alert_warning_background }};
+                }
+
+                .alert-danger {
+                  color: {{ block.settings.alert_danger_color }};
+                  border-color: {{ block.settings.alert_danger_color }};
+                  background-color: {{ block.settings.alert_danger_background }};
+                }
+              {% endstyle %}
               <div
                 class="alert_container"
                 id="alert_container"
@@ -130,7 +148,6 @@
                     {{ free_shipping | minus: cart.total_price | money_without_trailing_zeros }} away from Free
                     Shipping!
                   </div>
-
                 {%- else -%}
                   <div class="alert alert-danger" role="alert">
                     Free shipping on orders over {{ free_shipping | money_with_currency }}
@@ -223,8 +240,65 @@
         {
           "type": "number",
           "id": "free_shipping",
-          "label": "Free shipping",
+          "label": "Free shipping price",
           "default": 85
+        },
+        {
+          "type": "header",
+          "content": "Alert info",
+          "info": "The alert shows a message indicating free shipping."
+        },
+        {
+          "type": "color",
+          "id": "alert_info_color",
+          "label": "Alert info text color",
+          "default": "#0c5460"
+        },
+        {
+          "type": "color",
+          "id": "alert_info_background",
+          "label": "Alert info background color",
+          "default": "#d1ecf1"
+        },
+        {
+          "type": "header",
+          "content": "Alert warning",
+          "info": "The amount of money left before the alert changes to free shipping."
+        },
+        {
+          "type": "number",
+          "id": "alert_threshold",
+          "label": "Alert warning threshold",
+          "default": 20
+        },
+        {
+          "type": "color",
+          "id": "alert_warning_color",
+          "label": "Alert warning text color",
+          "default": "#726c1c"
+        },
+        {
+          "type": "color",
+          "id": "alert_warning_background",
+          "label": "Alert warning background color",
+          "default": "#f3f8d7"
+        },
+        {
+          "type": "header",
+          "content": "Alert danger",
+          "info": "The alert displays the amount of money required for free shipping."
+        },
+        {
+          "type": "color",
+          "id": "alert_danger_color",
+          "label": "Alert danger text color",
+          "default": "#721c24"
+        },
+        {
+          "type": "color",
+          "id": "alert_danger_background",
+          "label": "Alert danger background color",
+          "default": "#f8d7da"
         }
       ]
     },
