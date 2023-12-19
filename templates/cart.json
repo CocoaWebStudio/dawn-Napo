@@ -26,6 +26,9 @@
         "buttons"
       ]
     },
+    "cart-gift":{
+      "type": "main-cart-gift"
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -50,6 +53,7 @@
   "order": [
     "cart-items",
     "cart-footer",
+    "cart-gift",
     "featured-collection"
   ]
 }
