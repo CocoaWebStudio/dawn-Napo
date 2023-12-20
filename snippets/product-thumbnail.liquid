@@ -60,7 +60,7 @@
         {{ media.preview_image | image_url: width: 1946 | image_tag:
           loading: lazy,
           sizes: sizes,
-          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          widths: '1100, 1206, 1346, 1426, 1646, 1946'
         }}
       </div>
       <a href="{% if media.media_type == 'video' %}{{ media.sources[1].url }}{% else %}{{ media | external_video_url }}{% endif %}" class="product__media-toggle">
@@ -71,7 +71,7 @@
         {{ media.preview_image | image_url: width: 1946 | image_tag:
           loading: lazy,
           sizes: sizes,
-          widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          widths: '1100, 1206, 1346, 1426, 1646, 1946'
         }}
       </div>
     {%- endif -%}
@@ -96,10 +96,14 @@
 {% if position == 1 %} 
 	<div class="badge-images-wrapper">
 	{%- if product.metafields.img.badge -%}
-		<img src="{{ product.metafields.img.badge | img_url: width: 500 }}" alt="">
+		<img src="{{ product.metafields.img.badge | img_url: width: 5000 }}" alt="">
 	{%- endif -%}
 	{%- if product.metafields.img.badge2 -%}
-		<img src="{{ product.metafields.img.badge2 | img_url: width: 500 }}" alt="">
+		<img src="{{ product.metafields.img.badge2 | img_url: width: 5000 | image_tag:
+        class: image_class,
+        loading: lazy,
+        sizes: sizes,
+        widths: '1100, 1206, 1346, 1426, 1646, 1946'}}" alt="">
 	{%- endif -%}
 		
 	</div> 
@@ -110,7 +114,7 @@
         class: image_class,
         loading: lazy,
         sizes: sizes,
-        widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+        widths: '1100, 1206, 1346, 1426, 1646, 1946'
       }}
     </div>
     {%- if section.settings.image_zoom != 'noClick-hover' -%}
