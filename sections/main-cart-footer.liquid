@@ -154,6 +154,19 @@
                   </div>
                 {%- endif -%}
               </div>
+            {%- when 'discount_code' -%}
+              <div class="discount_code_container">
+                <label for="discount-code" class="sr-only">Discount Code</label>
+                <input
+                  id="discount-code"
+                  autocomplete="off"
+                  type="text"
+                  name="discount"
+                  form="cart"
+                  placeholder="Enter discount code here..."
+                  class="form-control"
+                >
+              </div>
           {%- endcase -%}
         {% endfor %}
 
@@ -301,6 +314,11 @@
           "default": "#f8d7da"
         }
       ]
+    },
+    {
+      "type": "discount_code",
+      "name": "Discount code",
+      "limit": 1
     },
     {
       "type": "@app"
