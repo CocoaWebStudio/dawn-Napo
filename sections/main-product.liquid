@@ -110,7 +110,7 @@
                 {{- block.settings.text -}}
               </p>
             {%- when 'left-col-tab' -%}
-			{% if block.settings.content and block.settings.page.content.size > 1 %}
+			{% if block.settings.content != blank %}
               <div class="{%- if block.settings.mobile-exclusive -%}product__accordion accordion mobile-collapsible-metafields quick-add-hidden mobile-exclusive{%- else -%}product__accordion accordion mobile-collapsible-metafields quick-add-hidden{%- endif -%}" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
                   <summary>

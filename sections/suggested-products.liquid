@@ -20,6 +20,7 @@
   }
 {%- endstyle -%}
 
+{% if product.metafields.related_products != empty %}
 <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
@@ -56,6 +57,8 @@
     {% render 'mask-arch' %}
   {%- endif -%}
 </div>
+	
+{% endif %}
 
 {% schema %}
 {
