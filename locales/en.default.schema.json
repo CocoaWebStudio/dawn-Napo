@@ -3326,6 +3326,16 @@
       "presets": {
         "name": "Collapsible content"
       }
+    },
+    "ingredients": {
+      "title": "Ingredients List",
+      "enable_section": "Enable section",
+      "blocks": {
+        "add_ingredient": {
+          "name": "Ingredient",
+          "label": "Select a collection ingredient"
+        }
+      }
     }
   }
 }
