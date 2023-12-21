@@ -133,7 +133,8 @@
           "type": "custom-share",
           "settings": {
             "show_facebook": true,
-            "facebook_link": "https://www.facebook.com"
+            "facebook_link": "https://www.facebook.com",
+			"desktop-exclusive": true
 			
           }
         },
@@ -142,8 +143,8 @@
           "settings": {
             "show_facebook": true,
             "facebook_link": "https://www.facebook.com",
-			"mobile-exclusive": true,
-			"desktop-exclusive": true
+			"mobile-exclusive": true
+			
           }
         }
       },
