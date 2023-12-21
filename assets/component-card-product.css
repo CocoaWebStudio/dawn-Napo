@@ -1,0 +1,33 @@
+.card__content h3 {
+	font-size: 13.5px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 2.7px;
+	color: rgb(85, 85, 85);
+}
+
+.jdgm-star {
+	color: rgb(84, 117, 43) !important;
+}
+
+.rating-star {
+	--color-rating-star: rgb(84, 117, 43);
+	font-size: 22px;
+	-webkit-font-smoothing: antialiased;
+	letter-spacing: 2px;
+}
+
+.card-information {
+	display: flex;
+	flex-direction: column;
+}
+
+.quick-add__submit span {
+	text-transform: uppercase;
+}
+
+.quick-add__submit {
+	padding: 9px 15px !important;
+	font-size: 13px;
+	letter-spacing: 2.5px;
+}
