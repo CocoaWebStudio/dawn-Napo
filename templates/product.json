@@ -129,7 +129,7 @@
             "page": ""
           }
         },
-        "Facebook-link":{
+        "Share-Buttons":{
           "type": "custom-share",
           "settings": {
             "show_facebook": true,
@@ -151,11 +151,11 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-		"Facebook-link",
         "collapsible-description",
         "Key-Benefits",
         "Ingredients",
-        "How-to"
+        "How-to",
+		"Share-Buttons"
       ],
       "settings": {
         "enable_sticky_info": false,
