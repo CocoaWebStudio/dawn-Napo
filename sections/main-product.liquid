@@ -145,7 +145,8 @@
               </div>
 				{% endif %}
             {%- when "custom-share" -%}
-				<div class="{%- if block.settings.mobile-exclusive -%}custom-share-wrapper mobile-collapsible-metafields mobile-exclusive{%- else -%}custom-share-wrapper mobile-collapsible-metafields{%- endif -%}">
+				{% assign hiddenClass = ' hidden' %}
+				<div class="{%- if block.settings.mobile-exclusive -%}custom-share-wrapper mobile-collapsible-metafields mobile-exclusive{%- else -%}custom-share-wrapper mobile-collapsible-metafields{%- endif -%} {% if block.settings.desktop-exclusive %}{{hiddenClass}}{% endif %}">
 			  		<h3>SHARE</h3>
               		<div class="share-buttons-wrapper">
 						{%- if block.settings.show_facebook -%}
@@ -964,6 +965,11 @@
             "type": "checkbox",
             "id": "mobile-exclusive",
             "label": "mobile exclusive"
+        },
+        {
+            "type": "checkbox",
+            "id": "desktop-exclusive",
+            "label": "desktop exclusive"
         }
       ]
     },
@@ -1208,6 +1214,11 @@
 		{
             "type": "checkbox",
             "id": "mobile-exclusive",
+            "label": "mobile exclusive"
+        },
+		{
+            "type": "checkbox",
+            "id": "desktop-exclusive",
             "label": "mobile exclusive"
         }
       ]

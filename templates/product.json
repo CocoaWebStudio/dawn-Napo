@@ -134,6 +134,16 @@
           "settings": {
             "show_facebook": true,
             "facebook_link": "https://www.facebook.com"
+			
+          }
+        },
+        "Share-Buttons-Mobile":{
+          "type": "custom-share",
+          "settings": {
+            "show_facebook": true,
+            "facebook_link": "https://www.facebook.com",
+			"mobile-exclusive": true,
+			"desktop-exclusive": true
           }
         }
       },
@@ -151,6 +161,7 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
+		"Share-Buttons-Mobile",
         "collapsible-description",
         "Key-Benefits",
         "Ingredients",
