@@ -4,7 +4,6 @@
 {{ 'component-list-menu.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-payment.css' | asset_url | stylesheet_tag }}
 {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .footer {
@@ -26,9 +25,17 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .footer-background{
+    background-image: url({{ section.settings.test_image | img_url: 'master' }});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+  }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer class="footer footer-background color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
     if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
@@ -155,26 +162,33 @@
             endif
           -%}
           <div
-            class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            class="footer__blocks-wrapper {{ footer_grid_class }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {% if settings.animations_reveal_on_scroll %}
               data-cascade
             {% endif %}
           >
             {%- for block in section.blocks -%}
-              <div
-                class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              <details
+                class="footer-block {% if block.type == 'link_list' %} footer-block--menu{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                name="footer"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
-                {%- endif -%}
+                <summary class="footer-block__heading inline-richtext">
+                  <div>
+                    <span>
+                      {{- block.settings.heading | upcase -}}
+                    </span>
+                    {% render 'icon-caret' %}
+                  </div>
+                </summary>
 
                 {%- case block.type -%}
                   {%- when '@app' -%}
+                    {{ block.name }}
                     {% render block %}
                   {%- when 'text' -%}
                     <div class="footer-block__details-content rte">
@@ -248,23 +262,24 @@
                       {%- endif -%}
                     </div>
                 {%- endcase -%}
-              </div>
+              </details>
             {%- endfor -%}
           </div>
         {%- endif -%}
       </div>
       {% comment %} Terms policy {% endcomment %}
       {%- if section.settings.show_policy -%}
-        <ul class="footer__content-top policies list-unstyled">
-          {%- for policy in shop.policies -%}
-            {%- if policy != blank -%}
-              <li>
-                <small class="copyright__content">
-                  <a href="{{ policy.url }}">{{ policy.title }}</a>
-                </small>
-              </li>
-            {%- endif -%}
-          {%- endfor -%}
+        <ul class="policies list-unstyled">
+          <li>
+            <small class="copyright__content">
+              <a href="/policies/terms-of-service">TERMS & CONDITIONS</a>
+            </small>
+          </li>
+          <li>
+            <small class="copyright__content">
+              <a href="/policies/privacy-policy">PRIVACY POLICY</a>
+            </small>
+          </li>
         </ul>
       {%- endif -%}
     {%- endunless -%}
@@ -491,6 +506,11 @@
     }
   ],
   "settings": [
+    {
+      "type": "image_picker",
+      "id": "test_image",
+      "label": "Background image"
+    },
     {
       "type": "color_scheme",
       "id": "color_scheme",
