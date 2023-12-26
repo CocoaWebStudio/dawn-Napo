@@ -58,6 +58,23 @@
 	display: flex;
 	align-items: center;
 }
+.complementary_products_wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 4px;
+	flex-wrap: wrap;
+
+}
+
+.complementary_products_wrapper .card-wrapper {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	width: calc(50% - 4px / 2);
+	flex-grow: 1;
+	flex-shrink: 0;
+}
 
 /* Mobile */
 @media screen and (max-width: 749px) {

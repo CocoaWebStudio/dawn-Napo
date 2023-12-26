@@ -2183,6 +2183,15 @@
             }
           }
         },
+        "complementary-products": {
+          "name": "Complementary Products",
+          "settings": {
+            "heading": {
+              "info": "Include a heading that explains the content.",
+              "label": "Heading"
+            }
+          }
+        },
         "popup": {
           "name": "Pop-up",
           "settings": {
