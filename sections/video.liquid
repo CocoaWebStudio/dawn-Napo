@@ -88,62 +88,58 @@
         style="--ratio-percent: {{ 1 | divided_by: poster.aspect_ratio | times: 100 }}%;"
       {% endif %}
     >
-      <button
-        id="Deferred-Poster-Modal-{{ video_id }}"
-        class="video-section__poster media deferred-media__poster media--landscape"
-        type="button"
-        aria-label="{{ alt }}"
-      >
-        {%- if poster != null -%}
+      {%- if poster != null -%}
+        <button
+          id="Deferred-Poster-Modal-{{ video_id }}"
+          class="video-section__poster media deferred-media__poster media--landscape"
+          type="button"
+          aria-label="{{ alt }}"
+        >
           {{
             poster
             | image_url: width: 3840
             | image_tag: sizes: sizes, widths: '375, 750, 1100, 1500, 1780, 2000, 3000, 3840', alt: alt
           }}
-        {%- else -%}
-          {{ 'hero-apparel-3' | placeholder_svg_tag: 'placeholder-svg placeholder' }}
-        {%- endif -%}
-        <span class="deferred-media__poster-button motion-reduce">
-          {%- render 'icon-play' -%}
-        </span>
-      </button>
-      <template>
-        {%- if section.settings.video == null and section.settings.video_url != null -%}
+          <span class="deferred-media__poster-button motion-reduce">
+            {%- render 'icon-play' -%}
+          </span>
+        </button>
+        <template>
+      {%- endif -%}
+      {%- if section.settings.video == null and section.settings.video_url != null -%}
+        {%- if section.settings.video_url.type == 'youtube' -%}
           {%- liquid
-            assign loop = ''
-            if section.settings.enable_video_looping
-              assign loop = '&loop=1&playlist=' | append: video_id
+            assign extra = ''
+            assign autoplay = ''
+            if poster != null
+              assign autoplay = '&autoplay=1'
+            endif
+            if section.settings.extra_youtube != blank
+              assign extra = '&' | append: section.settings.extra_youtube
             endif
           -%}
-          {%- if section.settings.video_url.type == 'youtube' -%}
-            <iframe
-              src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1&autoplay=1{{ loop }}"
-              class="js-youtube"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-              title="{{ section.settings.description | escape }}"
-            ></iframe>
-          {%- else -%}
-            <iframe
-              src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1{{ loop }}"
-              class="js-vimeo"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-              title="{{ section.settings.description | escape }}"
-            ></iframe>
-          {%- endif -%}
+          <iframe
+            src="https://www.youtube.com/embed/{{ video_id }}?enablejsapi=1{{ autoplay }}{{ extra }}"
+            class="js-youtube"
+            allow="autoplay; encrypted-media; accelerometer; gyroscope; picture-in-picture"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
         {%- else -%}
-          {{
-            section.settings.video
-            | video_tag:
-              image_size: '1100x',
-              autoplay: true,
-              loop: section.settings.enable_video_looping,
-              controls: true,
-              muted: false
-          }}
+          <iframe
+            src="https://player.vimeo.com/video/{{ video_id }}?autoplay=1"
+            class="js-vimeo"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="{{ section.settings.description | escape }}"
+          ></iframe>
         {%- endif -%}
-      </template>
+      {%- else -%}
+        {{ section.settings.video | video_tag: image_size: '1100x', autoplay: true, controls: true, muted: false }}
+      {%- endif -%}
+      {%- if poster != null -%}
+        </template>
+      {%- endif -%}
     </deferred-media>
   </div>
 </div>
@@ -184,12 +180,6 @@
       "label": "t:sections.all.heading_size.label"
     },
     {
-      "type": "checkbox",
-      "id": "enable_video_looping",
-      "label": "t:sections.video.settings.enable_video_looping.label",
-      "default": false
-    },
-    {
       "type": "header",
       "content": "t:sections.video.settings.header__1.content"
     },
@@ -215,9 +205,40 @@
       "info": "t:sections.video.settings.video_url.info"
     },
     {
+      "type": "text",
+      "id": "extra_youtube",
+      "label": "Extra YouTube video parameters",
+      "default": "rel=0&autoplay=1&playsinline=0",
+      "info": "You can customize the playback experience in your application."
+    },
+    {
+      "type": "paragraph",
+      "content": "Learn more about: [Supported YouTube parameters](https://developers.google.com/youtube/player_parameters#Parameters)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Example with 1 option: rel=0"
+    },
+    {
+      "type": "paragraph",
+      "content": "The value 0 is equivalent to false and 1 is equivalent to true."
+    },
+    {
+      "type": "paragraph",
+      "content": "Example with 2 or more options: param1=value1&param1=value1"
+    },
+    {
+      "type": "paragraph",
+      "content": "The character `&` is used to separate parameters in a URL."
+    },
+    {
+      "type": "header",
+      "content": "t:sections.video.settings.cover_image.label"
+    },
+    {
       "type": "image_picker",
       "id": "cover_image",
-      "label": "t:sections.video.settings.cover_image.label"
+      "label": "Select image"
     },
     {
       "type": "text",
