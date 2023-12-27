@@ -47,7 +47,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -62,102 +62,82 @@
           "settings": {
           }
         },
-        "collapsible-row-0": {
-          "type": "collapsible_tab",
-          "disabled": true,
+        "Share-Buttons-Mobile": {
+          "type": "custom-share",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
-            "page": ""
+            "show_facebook": true,
+            "facebook_link": "https:\/\/www.facebook.com",
+            "show_pinterest": true,
+            "pinterest_link": "",
+            "show_instagram": true,
+            "instagram_link": "",
+            "show_twitter": true,
+            "twitter_link": "",
+            "mobile-exclusive": true,
+            "desktop-exclusive": false
           }
         },
-        "collapsible-row-1": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
-            "page": ""
-          }
-        },
-        "collapsible-row-2": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
-            "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
-          }
-        },
-        "collapsible-description":{
+        "collapsible-description": {
           "type": "left-col-tab",
           "settings": {
             "heading": "Description",
-            "icon": "none",
             "content": "{{ product.description }}",
+            "page": "",
             "mobile-exclusive": true,
-            "page": ""
+            "desktop-exclusive": false
           }
         },
-        "Key-Benefits":{
+        "Key-Benefits": {
           "type": "left-col-tab",
           "settings": {
             "heading": "Key Benefits",
-            "icon": "none",
             "content": "{{ product.metafields.tabs.key_benefits.value }}",
-            "page": ""
+            "page": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": false
           }
         },
-        "Ingredients":{
+        "Ingredients": {
           "type": "left-col-tab",
           "settings": {
             "heading": "Ingredients",
-            "icon": "none",
             "content": "{{ product.metafields.tabs.ingredients.value }}",
-            "page": ""
+            "page": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": false
           }
         },
-        "How-to":{
+        "How-to": {
           "type": "left-col-tab",
           "settings": {
             "heading": "How to",
-            "icon": "none",
             "content": "{{ product.metafields.tabs.how_to.value }}",
-            "page": ""
+            "page": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": false
           }
         },
-        "Share-Buttons":{
+        "Share-Buttons": {
           "type": "custom-share",
           "settings": {
             "show_facebook": true,
-            "facebook_link": "https://www.facebook.com",
-			"desktop-exclusive": true
-			
+            "facebook_link": "https:\/\/www.facebook.com",
+            "show_pinterest": true,
+            "pinterest_link": "",
+            "show_instagram": true,
+            "instagram_link": "",
+            "show_twitter": true,
+            "twitter_link": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": true
           }
         },
-        "Share-Buttons-Mobile":{
-          "type": "custom-share",
+        "complementary-products": {
+          "type": "complementary-products",
           "settings": {
-            "show_facebook": true,
-            "facebook_link": "https://www.facebook.com",
-			"mobile-exclusive": true
-			
+            "heading": "Complete your rituals"
           }
-        },
-		"complementary-products":{
-			"type": "complementary-products",
-			"settings": {
-				"heading": "Complete your rituals"}
-			}	
+        }
       },
       "block_order": [
         "vendor",
@@ -170,17 +150,13 @@
         "buy_buttons",
         "6438b9b2-3beb-4b06-9436-803f99625842",
         "description",
-        "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
-		"Share-Buttons-Mobile",
+        "Share-Buttons-Mobile",
         "collapsible-description",
         "Key-Benefits",
         "Ingredients",
         "How-to",
-		"Share-Buttons",
-		"complementary-products"
+        "Share-Buttons",
+        "complementary-products"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -234,9 +210,10 @@
         "padding_bottom": 28
       }
     },
-	"sswinstagram": {
+    "sswinstagram": {
       "type": "sswinstagram",
       "settings": {
+        "option_galleries_id": "data-gallery_id=\"1\" data-widget=\"0\""
       }
     },
     "170196076706ed660b": {
@@ -254,58 +231,13 @@
       "settings": {
         "include_margins": true
       }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "disabled": true,
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
     "related-products",
     "suggested-products",
-	"sswinstagram",
-    "170196076706ed660b",
-    "multicolumn"
+    "sswinstagram",
+    "170196076706ed660b"
   ]
 }
