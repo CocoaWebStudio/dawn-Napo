@@ -1,10 +1,220 @@
 {
-    "sections": {
-      "ingredients": {
-        "type": "ingredients"
+  "sections": {
+    "ingredients": {
+      "type": "ingredients",
+      "blocks": {
+        "f5550880-9027-485a-a803-1d3e31495561": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "aloe"
+          }
+        },
+        "0f66ad59-5eda-45e4-a59d-32230b0f5ef3": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "carnauba"
+          }
+        },
+        "650d9789-0193-480a-993b-5cd6f071e8af": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "cassava"
+          }
+        },
+        "8a47d38a-3514-4ecc-903f-5800b492c80a": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "chlorophyll"
+          }
+        },
+        "ee353dee-73e2-43cc-8d1b-fa1b3ab12ce0": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "coconut"
+          }
+        },
+        "abe34474-88f6-434e-b3b0-b79dd825a943": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "eucalyptus"
+          }
+        },
+        "fa2dd203-c57b-4f6d-a458-41d5db0ffd49": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "gardenia-flower"
+          }
+        },
+        "acea7865-6b4b-493a-bb65-e0c4eb7b3925": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "green-tea"
+          }
+        },
+        "f9566f9c-81a1-4a4c-889f-54388f43e943": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "guayaba-guava"
+          }
+        },
+        "7c0b207d-407d-4a0c-9861-a0e8e348037d": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "guayusa"
+          }
+        },
+        "acd1c642-7ce3-456f-a3a4-7f989b40e3b1": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "hibiscus"
+          }
+        },
+        "6698c4a4-0e95-4b2f-a4e2-bdf44bce23d7": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "lavender"
+          }
+        },
+        "892262dd-f53d-439e-b368-6864cd8069b8": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "lemon-grass"
+          }
+        },
+        "762b54b8-7feb-4802-ae55-93f25e41a056": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "mango"
+          }
+        },
+        "f19f6c3a-71bd-4e14-8998-272dcd32327d": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "morete-buriti"
+          }
+        },
+        "9e20a446-8ec8-4007-8936-35fe669a91e5": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "palo-santo"
+          }
+        },
+        "ae62c7fa-f18d-40a7-b02c-c486b1598317": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "passion-fruit"
+          }
+        },
+        "a0b3b0fb-a974-43ce-abbe-6bbe8689e623": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "pomegranate"
+          }
+        },
+        "6aabeeca-a2fb-4c25-8418-631a7fc12cf0": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "quinoa"
+          }
+        },
+        "6caf4b33-6499-4a9c-817e-cc16d2c8d044": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "rahua-ungurahua"
+          }
+        },
+        "c37fab15-d08f-4740-bc77-eedb312abd32": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "raspberry-leaf"
+          }
+        },
+        "12217e23-496d-4cb7-84ce-e9c6fe934188": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "rosemary"
+          }
+        },
+        "a1f99b5b-3aa5-44e6-9a57-95a65656af8e": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "sacha-inchi"
+          }
+        },
+        "4c03f90c-af5c-448d-b54c-c22d3986d770": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "sea-salt"
+          }
+        },
+        "3f797f3d-489d-40d7-93fb-0fc582e3a87b": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "shea-butter"
+          }
+        },
+        "d15606d9-cd26-431b-997f-f89f7b435a5d": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "star-anise"
+          }
+        },
+        "c8abd40c-6e2e-4c25-a8e8-b44d06fe7e35": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "sugarcane"
+          }
+        },
+        "2cb3b57c-5137-4ab3-acd0-0496f91cab92": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "sunflower-seed"
+          }
+        },
+        "caf7a39c-e09c-4da3-870f-65440d766913": {
+          "type": "ingredient",
+          "settings": {
+            "collection": "vanilla"
+          }
+        }
+      },
+      "block_order": [
+        "f5550880-9027-485a-a803-1d3e31495561",
+        "0f66ad59-5eda-45e4-a59d-32230b0f5ef3",
+        "650d9789-0193-480a-993b-5cd6f071e8af",
+        "8a47d38a-3514-4ecc-903f-5800b492c80a",
+        "ee353dee-73e2-43cc-8d1b-fa1b3ab12ce0",
+        "abe34474-88f6-434e-b3b0-b79dd825a943",
+        "fa2dd203-c57b-4f6d-a458-41d5db0ffd49",
+        "acea7865-6b4b-493a-bb65-e0c4eb7b3925",
+        "f9566f9c-81a1-4a4c-889f-54388f43e943",
+        "7c0b207d-407d-4a0c-9861-a0e8e348037d",
+        "acd1c642-7ce3-456f-a3a4-7f989b40e3b1",
+        "6698c4a4-0e95-4b2f-a4e2-bdf44bce23d7",
+        "892262dd-f53d-439e-b368-6864cd8069b8",
+        "762b54b8-7feb-4802-ae55-93f25e41a056",
+        "f19f6c3a-71bd-4e14-8998-272dcd32327d",
+        "9e20a446-8ec8-4007-8936-35fe669a91e5",
+        "ae62c7fa-f18d-40a7-b02c-c486b1598317",
+        "a0b3b0fb-a974-43ce-abbe-6bbe8689e623",
+        "6aabeeca-a2fb-4c25-8418-631a7fc12cf0",
+        "6caf4b33-6499-4a9c-817e-cc16d2c8d044",
+        "c37fab15-d08f-4740-bc77-eedb312abd32",
+        "12217e23-496d-4cb7-84ce-e9c6fe934188",
+        "a1f99b5b-3aa5-44e6-9a57-95a65656af8e",
+        "4c03f90c-af5c-448d-b54c-c22d3986d770",
+        "3f797f3d-489d-40d7-93fb-0fc582e3a87b",
+        "d15606d9-cd26-431b-997f-f89f7b435a5d",
+        "c8abd40c-6e2e-4c25-a8e8-b44d06fe7e35",
+        "2cb3b57c-5137-4ab3-acd0-0496f91cab92",
+        "caf7a39c-e09c-4da3-870f-65440d766913"
+      ],
+      "settings": {
+        "enable_section": true
       }
-    },
-    "order": [
-      "ingredients"
-    ]
-  }
+    }
+  },
+  "order": [
+    "ingredients"
+  ]
+}
