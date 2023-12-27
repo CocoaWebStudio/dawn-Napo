@@ -248,7 +248,7 @@
                       <li
                         class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
                       >
-                        {% render 'card-product', card_product: product, section_id: section.id %}
+                        {% render 'card-product', card_product: product, section_id: section.id, show_quick_add: true %}
                       </li>
                     {%- endfor -%}
                   {% endif %}

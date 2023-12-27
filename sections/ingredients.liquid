@@ -341,7 +341,7 @@
     overflow: hidden;
     display: block;
   }
-  .tab-container .tabs input {
+  .tab-container .tabs input[type='radio'] {
     display: none;
   }
   .tab-container .tabs input:checked + label {
@@ -394,6 +394,10 @@
   }
 {% endstylesheet %}
 
+<script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{{ 'quick-add.css' | asset_url | stylesheet_tag }}
+
 {% schema %}
 {
   "name": "t:sections.ingredients.title",
@@ -402,6 +406,12 @@
       "type": "checkbox",
       "id": "enable_section",
       "label": "t:sections.ingredients.enable_section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_select",
+      "label": "t:sections.ingredients.show_quantity_select",
       "default": true
     }
   ],
