@@ -47,7 +47,7 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
           }
         },
@@ -92,10 +92,19 @@
             "page": ""
           }
         },
-        "share": {
-          "type": "share",
+        "Share-Buttons-Mobile": {
+          "type": "custom-share",
           "settings": {
-            "share_label": "Share"
+            "show_facebook": true,
+            "facebook_link": "https:\/\/www.facebook.com",
+            "show_pinterest": true,
+            "pinterest_link": "",
+            "show_instagram": true,
+            "instagram_link": "",
+            "show_twitter": true,
+            "twitter_link": "",
+            "mobile-exclusive": true,
+            "desktop-exclusive": false
           }
         },
         "collapsible-description": {
@@ -104,7 +113,8 @@
             "heading": "Description",
             "content": "{{ product.description }}",
             "page": "",
-            "mobile-exclusive": true
+            "mobile-exclusive": true,
+            "desktop-exclusive": false
           }
         },
         "Key-Benefits": {
@@ -112,7 +122,9 @@
           "settings": {
             "heading": "Key Benefits",
             "content": "{{ product.metafields.tabs.key_benefits.value }}",
-            "page": ""
+            "page": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": false
           }
         },
         "Ingredients": {
@@ -120,7 +132,9 @@
           "settings": {
             "heading": "Ingredients",
             "content": "{{ product.metafields.tabs.ingredients.value }}",
-            "page": ""
+            "page": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": false
           }
         },
         "How-to": {
@@ -128,7 +142,9 @@
           "settings": {
             "heading": "How to",
             "content": "{{ product.metafields.tabs.how_to.value }}",
-            "page": ""
+            "page": "",
+            "mobile-exclusive": false,
+            "desktop-exclusive": false
           }
         },
         "Share-Buttons": {
@@ -136,15 +152,14 @@
           "settings": {
             "show_facebook": true,
             "facebook_link": "https:\/\/www.facebook.com",
+            "show_pinterest": true,
+            "pinterest_link": "",
+            "show_instagram": true,
+            "instagram_link": "",
+            "show_twitter": true,
+            "twitter_link": "",
+            "mobile-exclusive": false,
             "desktop-exclusive": true
-          }
-        },
-        "Share-Buttons-Mobile": {
-          "type": "custom-share",
-          "settings": {
-            "show_facebook": true,
-            "facebook_link": "https:\/\/www.facebook.com",
-            "mobile-exclusive": true
           }
         },
         "complementary-products": {
@@ -231,6 +246,7 @@
     "sswinstagram": {
       "type": "sswinstagram",
       "settings": {
+        "option_galleries_id": "data-gallery_id=\"1\" data-widget=\"0\""
       }
     },
     "170196076706ed660b": {
