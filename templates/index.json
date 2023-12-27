@@ -6,7 +6,10 @@
         "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-7.png",
+            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-21.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE-16.png",
+            "image_link": "shopify:\/\/collections\/all",
+            "show_header_box": false,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -20,37 +23,18 @@
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
-        },
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-2": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1",
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-2"
+        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
+        "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -94,7 +78,7 @@
         "products_to_show": 11,
         "columns_desktop": 4,
         "full_width": true,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
@@ -112,6 +96,7 @@
     },
     "cd18fe12-15a3-4805-b1a9-380030c6ab1b": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "title": "FALL STYLE MUST HAVES",
         "heading_size": "h2",
@@ -173,7 +158,8 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL-2.jpg",
+            "image_link": "",
+            "show_header_box": true,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -191,6 +177,8 @@
         "03c05369-ad5c-4315-944c-9eb5d472e01c": {
           "type": "slide",
           "settings": {
+            "image_link": "",
+            "show_header_box": true,
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -213,7 +201,6 @@
       "disabled": true,
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -229,7 +216,7 @@
           "type": "heading",
           "settings": {
             "heading": "RAHUA IS RAINFOREST GROWN BEAUTY",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text": {
@@ -273,7 +260,8 @@
         "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1560_x_500_px_1.jpg",
+            "image_link": "",
+            "show_header_box": true,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -291,6 +279,8 @@
         "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-2": {
           "type": "slide",
           "settings": {
+            "image_link": "",
+            "show_header_box": true,
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -312,7 +302,6 @@
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,

@@ -8,21 +8,19 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        },
-        "8f0c869c-5636-4d99-989f-7191e96c7bae": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "title": "THE HOLIDAY SHOP IS OPEN ✨ GIFT MAGICAL ELIXIRS & PARADISE POTIONS",
+            "title_link": "shopify:\/\/pages\/2023-holiday-gift-guide",
+            "sub_title": "FREE SHIPPING WITH ALL ORDERS $85+",
+            "sub_title_link": "shopify:\/\/collections\/all",
+            "cad_title": "THE HOLIDAY SHOP IS OPEN ✨ GIFT MAGICAL ELIXIRS & PARADISE POTIONS",
+            "cad_title_link": "shopify:\/\/pages\/2023-holiday-gift-guide",
+            "cad_sub_title": "",
+            "can_sub_title_link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0",
-        "8f0c869c-5636-4d99-989f-7191e96c7bae"
+        "announcement-bar-0"
       ],
       "settings": {
         "color_scheme": "",
