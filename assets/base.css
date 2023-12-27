@@ -2138,6 +2138,19 @@ product-info .loading__spinner:not(.hidden)~*,
 }
 }
 
+.badge-images-wrapper {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1 !important;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.badge-images-wrapper img {
+	margin: 5px auto;
+}
 
 .utility-bar__grid {
   display: grid;
