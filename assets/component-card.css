@@ -229,7 +229,7 @@
   top: calc(var(--border-width) * -1);
 }
 
-.card__heading a::after {
+/* .card__heading a::after {
   bottom: 0;
   content: '';
   left: 0;
@@ -241,7 +241,7 @@
 
 .card__heading a:after {
   outline-offset: 0.3rem;
-}
+} */
 
 .card__heading a:focus:after {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
@@ -309,8 +309,8 @@
 }
 
 .card--standard>.card__content .card__information {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .card--card.card--media .card__inner .card__information,
