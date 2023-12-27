@@ -62,7 +62,7 @@
                 spellcheck="false"
               {%- endif -%}
             >
-            <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label>
+            {% comment %} <label class="field__label" for="{{ input_id }}">{{ 'general.search.search' | t }}</label> {% endcomment %}
             <input type="hidden" name="options[prefix]" value="last">
             <button
               type="reset"
@@ -73,11 +73,13 @@
                 <use xlink:href="#icon-reset">
               </svg>
             </button>
-            <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
-              <svg class="icon icon-search" aria-hidden="true" focusable="false">
-                <use href="#icon-search">
-              </svg>
-            </button>
+            {% comment %}
+              <button class="search__button field__button" aria-label="{{ 'general.search.search' | t }}">
+                <svg class="icon icon-search" aria-hidden="true" focusable="false">
+                  <use href="#icon-search">
+                </svg>
+              </button>
+            {% endcomment %}
           </div>
 
           {%- if settings.predictive_search_enabled -%}
