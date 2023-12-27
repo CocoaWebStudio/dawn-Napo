@@ -1243,11 +1243,16 @@ button.shopify-payment-button__button--unbranded {
   font: inherit;
   font-size: 1.5rem;
   text-decoration: none;
-  color: rgb(var(--color-button-text));
-  transition: box-shadow var(--duration-short) ease;
-  -webkit-appearance: none;
-  appearance: none;
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
+	color: white;
+		background: linear-gradient(to left, rgb(50, 49, 49) 50%, rgb(255, 255, 255) 50%) right;
+		background-size: 200%;
+		transition: .45s ease-out;
+	
+	}
+	
+	.button:hover {
+		background-position: left;
+		color: black;
 }
 
 .button:before,
@@ -2129,7 +2134,12 @@ product-info .loading__spinner:not(.hidden) ~ *,
   .utility-bar--bottom-border-social-only {
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   }
+.button {
+	max-width: 80%;
+	margin: auto;
 }
+}
+
 
 .utility-bar__grid {
   display: grid;

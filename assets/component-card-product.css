@@ -26,8 +26,17 @@
 	text-transform: uppercase;
 }
 
-.quick-add__submit {
-	padding: 9px 15px !important;
+.rating-count.caption span {
 	font-size: 13px;
-	letter-spacing: 2.5px;
+}
+
+.price__container span {
+	font-size: 13px;
+}
+
+.mini_badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 1000;
 }

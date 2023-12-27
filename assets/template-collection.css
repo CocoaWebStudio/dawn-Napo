@@ -97,3 +97,27 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+.grid.product-grid.contains-card {
+	column-gap: 25px;
+}
+
+.title {
+	text-align: center;
+}
+
+.card-information .caption,
+.card-information .price {
+	margin-top: 0 !important;
+}
+
+.quick-add__submit {
+	padding: 0 18px !important;
+	min-width: 0 !important;
+	min-height: 35px !important;
+}
+
+.quick-add__submit span {
+	margin: 0;
+	padding: 0;
+}
