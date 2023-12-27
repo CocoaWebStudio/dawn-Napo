@@ -1,5 +1,5 @@
 {% if section.blocks.size > 0 %}
-  <h2 style="text-align: center; margin: 4rem auto 0">Star ingredients</h2>
+  <h2 style="text-align: center; margin: 4rem auto 0">{{ 'sections.ingredients.star_ingredients' | t }}</h2>
   <div class="color-{{ section.settings.color_scheme }} gradient">
     <div class="collection-list-wrapper page-width isolate page-width-desktop {% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
       <slider-component class="slider-mobile-gutter scroll-trigger animate--slide-in">
@@ -28,7 +28,8 @@
                 {% render 'custom-card-collection',
                   card_collection: collection,
                   columns: 1,
-                  media_aspect_ratio: 'adapt'
+                  media_aspect_ratio: 'adapt',
+                  product_index: forloop.index
                 %}
               {% endif %}
             </li>

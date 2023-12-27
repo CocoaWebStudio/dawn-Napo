@@ -8,6 +8,7 @@
   - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
   - wrapper_class: {String} Wrapper class for card (optional)
   - placeholder_image: {String} Placeholder image when collection is empty (optional)
+  - product_index: {Number} Number of the product in ingredients page
 
   Usage:
   {% render 'card-collection' %}
@@ -40,7 +41,9 @@
       {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
       {% if extend_height %} card--extend-height{% endif %}
       {% if card_collection.image == nil and card_style == 'card' %} ratio{% endif %}
+      custom-card-collection
     "
+    product-index="{{ product_index }}"
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
     <div
@@ -51,16 +54,6 @@
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
             <img
-              srcset="
-                {%- if card_collection.image.width >= 165 -%}{{ card_collection.image | image_url: width: 165 }} 165w,{%- endif -%}
-                {%- if card_collection.image.width >= 330 -%}{{ card_collection.image | image_url: width: 330 }} 330w,{%- endif -%}
-                {%- if card_collection.image.width >= 535 -%}{{ card_collection.image | image_url: width: 535 }} 535w,{%- endif -%}
-                {%- if card_collection.image.width >= 750 -%}{{ card_collection.image | image_url: width: 750 }} 750w,{%- endif -%}
-                {%- if card_collection.image.width >= 1000 -%}{{ card_collection.image | image_url: width: 1000 }} 1000w,{%- endif -%}
-                {%- if card_collection.image.width >= 1500 -%}{{ card_collection.image | image_url: width: 1500 }} 1500w,{%- endif -%}
-                {%- if card_collection.image.width >= 3000 -%}{{ card_collection.image | image_url: width: 3000 }} 3000w,{%- endif -%}
-                {{ card_collection.image | image_url }} {{ card_collection.image.width }}w
-              "
               src="{{ card_collection.image | image_url }}"
               sizes="
                 (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,

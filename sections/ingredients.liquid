@@ -193,6 +193,7 @@
     // Evento de clic para el botón "prev"
     sliderContainer.querySelector('button.before').addEventListener('click', prevSlide);
   }); */
+
   const tabLabels = document.querySelectorAll('.tab-container .tabs label');
 
   tabLabels.forEach((tabLabel) => {
@@ -219,6 +220,34 @@
     //   const tabSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
     //   console.log('mouse', { tabSelected });
     // };
+  });
+
+  const customCardsCollection = document.querySelectorAll('.custom-card-collection');
+  const principalSlideShow = document.querySelector('#principal-slideshow-ingredients-page');
+
+  console.log('customCardsCollection');
+
+  console.log({ customCardsCollection });
+
+  customCardsCollection.forEach((customCardCollection) => {
+    const aLinks = customCardCollection.querySelectorAll('a');
+    aLinks.forEach((aLink) => {
+      aLink.onclick = (event) => {
+        event.preventDefault();
+        const slideNumber = customCardCollection.getAttribute('product-index');
+        const scrollPositionPrincipalSlider = principalSlideShow.slider.clientWidth * (slideNumber - 1);
+        console.log({ scrollPositionPrincipalSlider });
+        // principalSlideShow.focus();
+        // principalSlideShow.scrollIntoView({ alignToTop: true, behaivor: 'smooth' });
+        // debugger;
+        window.focus();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+        principalSlideShow.setSlidePosition(scrollPositionPrincipalSlider);
+      };
+    });
   });
 {% endjavascript %}
 

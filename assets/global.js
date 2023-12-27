@@ -1,3 +1,106 @@
+function liProductCard(productData = {}) {
+
+  const {
+
+    image_src,
+    product_title,
+    product_url,
+    product_price,
+
+  } = productData
+
+  return `
+<li class="grid__item">
+<link href="/assets/component-rating.css?v=157771854592137137841701280995" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/component-volume-pricing.css?v=56284703641257077881701280998" rel="stylesheet" type="text/css" media="all">
+<div class="card-wrapper product-card-wrapper underline-links-hover">
+    <div class="
+        card card--standard
+         card--media
+      " style="--ratio-percent: 100%;">
+      <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;"><div class="card__media">
+            <div class="media media--transparent media--hover-effect">
+              
+              <img 
+              src="${image_src}" 
+              sizes="(min-width: 1200px) 267px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" 
+              alt="${product_title}" 
+              class="motion-reduce" 
+              loading="lazy" 
+              width="" 
+              height=""
+              >
+              
+</div>
+          </div><div class="card__content">
+          <div class="card__information">
+            <h3 class="card__heading">
+              <a href="${product_url}" id="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815 NoMediaStandardBadge-template--15104234979415__ingredients-4423298121815">
+                ${product_title}
+              </a>
+            </h3>
+          </div>
+          <div class="card__badge bottom left"></div>
+        </div>
+      </div>
+      <div class="card__content">
+        <div class="card__information">
+          <h3 class="card__heading h5" id="title-template--15104234979415__ingredients-4423298121815">
+            <a href="${product_url}" id="CardLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="CardLink-template--15104234979415__ingredients-4423298121815 Badge-template--15104234979415__ingredients-4423298121815">
+              ${product_title}
+            </a>
+          </h3>
+          <div class="card-information"><span class="caption-large light"></span>
+<div class="
+    price ">
+  <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+        <span class="price-item price-item--regular">
+          <span class="money"> $${product_price} USD</span>
+        </span></div>
+    <div class="price__sale">
+        <span class="visually-hidden visually-hidden--inline">Regular price</span>
+        <span>
+          <s class="price-item price-item--regular">
+            
+              
+            
+          </s>
+        </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+      <span class="price-item price-item--sale price-item--last">
+        <span class="money"> $${product_price} USD</span>
+      </span>
+    </div>
+    <small class="unit-price caption hidden">
+      <span class="visually-hidden">Unit price</span>
+      <span class="price-item price-item--last">
+        <span></span>
+        <span aria-hidden="true">/</span>
+        <span class="visually-hidden">&nbsp;per&nbsp;</span>
+        <span>
+        </span>
+      </span>
+    </small>
+  </div></div>
+
+</div>
+        </div><div class="card__badge bottom left"></div>
+      </div>
+    </div>
+  </div>
+                    </li>
+`
+}
+
+function addDotToPrice(price) {
+  let priceStr = price.toString();
+
+  if (priceStr.endsWith('00')) {
+    priceStr = priceStr.slice(0, -2) + '.' + priceStr.slice(-2);
+  }
+
+  return priceStr;
+}
+
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(
@@ -711,13 +814,18 @@ class SliderComponent extends HTMLElement {
 
 customElements.define('slider-component', SliderComponent);
 
+let requestCollectionImageTimerId;
+let requestCollectionProductsTimerId;
+let adjustProductGridSizeTimerId;
+let adjustBenefitsTabSizeTimerId;
+
 class SlideshowComponent extends SliderComponent {
   constructor() {
     super();
     this.sliderControlWrapper = this.querySelector('.slider-buttons');
     this.enableSliderLooping = true;
-    this.sliderProductGrid = document.querySelector("#products-slide-show-component")
-    this.sliderBenefits = document.querySelector("#benefits-slide-show-component")
+    this.sliderProductGrid = this.getAttribute("look-for-product-grid") == "true" ? document.querySelector("#products-slide-show-component") : null
+    this.sliderBenefits = this.getAttribute("look-for-product-grid") == "true" ? document.querySelector("#benefits-slide-show-component") : null
 
     if (!this.sliderControlWrapper) return;
 
@@ -730,13 +838,19 @@ class SlideshowComponent extends SliderComponent {
 
     this.sliderControlLinksArray = Array.from(this.sliderControlWrapper.querySelectorAll('.slider-counter__link'));
     this.sliderControlLinksArray.forEach((link) => link.addEventListener('click', this.linkToSlide.bind(this)));
-    if (this.sliderProductGrid && this.sliderBenefits) {
-      this.slider.addEventListener('scrollend', this.setSlideVisibility.bind(this));
-    }
-    else {
-      this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
+    // if (this.sliderProductGrid && this.sliderBenefits) {
+    //   this.slider.addEventListener('scrollend', this.setSlideVisibility.bind(this));
+    // }
+    // else {
+    this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
+    // this.slider.addEventListener('scrollend', () => {
+    //   debugger
+    //   if (this.sliderProductGrid && this.sliderProductGrid.slider) {
 
-    }
+    //   }
+    // })
+
+    // }
     this.setSlideVisibility();
 
     if (this.announcementBarSlider) {
@@ -762,34 +876,46 @@ class SlideshowComponent extends SliderComponent {
 
     if (this.sliderProductGrid) {
       window.addEventListener("load", () => {
-        const slide = document.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
-        const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
-        const slideShowContainer = sliderContainer.querySelector(".slideshow")
-        const slideHeight = slide.clientHeight
-        sliderContainer.style.height = `${slideHeight}px`
-        // slide.parentElement.style.height = `${slideHeight}px`
-        slideShowContainer.style.height = `${slideHeight}px`
-        sliderContainer.style.overflow = "hidden"
-        // slide.parentElement.style.overflow = "hidden"
-        slideShowContainer.style.overflow = "hidden"
+        this.adjustProductGridSlide()
       })
     }
 
     if (this.sliderBenefits) {
       window.addEventListener("load", () => {
-        const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
-        const sliderContainer = this.sliderBenefits.closest("slideshow-component")
-        const slideShowContainer = sliderContainer.querySelector(".slideshow")
-        const slideHeight = slide.clientHeight
-        sliderContainer.style.height = `${slideHeight}px`
-        slide.parentElement.style.height = `${slideHeight}px`
-        // slideShowContainer.style.height = `${slideHeight}px`
-        sliderContainer.style.overflow = "hidden"
-        slide.parentElement.style.overflow = "hidden"
-        // slideShowContainer.style.overflow = "hidden"
+        this.adjustBenefitsSlide()
       })
     }
 
+  }
+
+  adjustProductGridSlide() {
+    if (this.sliderProductGrid) {
+      const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+      const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
+      const slideShowContainer = sliderContainer.querySelector(".slideshow")
+      const slideHeight = slide.clientHeight
+      sliderContainer.style.height = `${slideHeight}px`
+      // slide.parentElement.style.height = `${slideHeight}px`
+      slideShowContainer.style.height = `${slideHeight}px`
+      sliderContainer.style.overflow = "hidden"
+      // slide.parentElement.style.overflow = "hidden"
+      slideShowContainer.style.overflow = "hidden"
+    }
+  }
+
+  adjustBenefitsSlide() {
+    if (this.sliderBenefits) {
+      const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
+      const sliderContainer = this.sliderBenefits.closest("slideshow-component")
+      const slideShowContainer = sliderContainer.querySelector(".slideshow")
+      const slideHeight = slide.clientHeight
+      sliderContainer.style.height = `${slideHeight}px`
+      slide.parentElement.style.height = `${slideHeight}px`
+      // slideShowContainer.style.height = `${slideHeight}px`
+      sliderContainer.style.overflow = "hidden"
+      slide.parentElement.style.overflow = "hidden"
+      // slideShowContainer.style.overflow = "hidden"
+    }
   }
 
   setAutoPlay() {
@@ -836,12 +962,12 @@ class SlideshowComponent extends SliderComponent {
   }
 
   setSlidePosition(position) {
-    if (this.sliderProductGrid) {
-      this.sliderProductGrid.slider.scrollTo({ left: position })
-    }
-    if (this.sliderBenefits) {
-      this.sliderBenefits.slider.scrollTo({ left: position })
-    }
+    // if (this.sliderProductGrid) {
+    //   this.sliderProductGrid.slider.scrollTo({ left: position })
+    // }
+    // if (this.sliderBenefits) {
+    //   this.sliderBenefits.slider.scrollTo({ left: position })
+    // }
     if (this.setPositionTimeout) clearTimeout(this.setPositionTimeout);
     this.setPositionTimeout = setTimeout(() => {
       this.slider.scrollTo({
@@ -855,6 +981,162 @@ class SlideshowComponent extends SliderComponent {
     this.sliderControlButtons = this.querySelectorAll('.slider-counter__link');
     this.prevButton.removeAttribute('disabled');
 
+    clearTimeout(adjustProductGridSizeTimerId);
+    clearTimeout(adjustBenefitsTabSizeTimerId);
+    clearTimeout(requestCollectionImageTimerId);
+    clearTimeout(requestCollectionProductsTimerId);
+
+    if (this.sliderProductGrid || this.sliderBenefits) {
+
+      requestCollectionImageTimerId = setTimeout(async () => {
+
+        console.log('collection image')
+
+        const slide_collection_image = this.querySelector(`#Slide-collection-images-${this.currentPage}`)
+
+        const requestImages = slide_collection_image && slide_collection_image.getAttribute("images-loaded") == "false"
+
+        const collectionHandle = requestImages ? slide_collection_image.getAttribute("handle") : null
+
+        const { collection } = requestImages ? await (await fetch(`/collections/${collectionHandle}.json`)).json() : {}
+
+        if (collection && collection.image) {
+
+          console.log('petición imagen colección')
+
+          const imageContainer = slide_collection_image.querySelector(".image-collection-container")
+
+          const collectionImage = document.createElement("img")
+
+          collectionImage.src = collection.image.src
+          collectionImage.setAttribute("style", "max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)")
+
+          imageContainer.append(collectionImage)
+
+          slide_collection_image.setAttribute("images-loaded", "true")
+
+        }
+
+      }, 250)
+
+    }
+
+    if (this.sliderProductGrid) {
+
+      // if (requestImages) {
+
+      //   const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+
+      //   const { products } = await (await fetch(`/collections/${collectionHandle}/products.json`)).json()
+
+      //   const liProductCards = []
+
+      //   for (let product of products) {
+
+      //     product = await (await fetch(`/products/${product.handle}.js`)).json()
+
+      //     const dataToCreateLiElement = {
+      //       image_src: "",
+      //       product_title: "",
+      //       product_url: "",
+      //       product_price: "",
+      //     }
+
+      //     dataToCreateLiElement.image_src = product.featured_image
+      //     dataToCreateLiElement.product_price = product.price
+      //     dataToCreateLiElement.product_title = product.title
+      //     dataToCreateLiElement.product_url = product.url
+
+      //     const liProductCardElement = liProductCard(dataToCreateLiElement)
+
+      //     liProductCards.push(liProductCardElement)
+
+      //   }
+
+      //   slide.innerHTML = liProductCards.join("")
+
+      //   slide_collection_image.removeAttribute("images-loaded")
+      //   slide_collection_image.setAttribute("images-loaded", "true")
+
+      // }
+
+      requestCollectionProductsTimerId = setTimeout(async () => {
+
+        console.log({ currentPage: this.currentPage })
+        const scrollPositionProductGrid = this.sliderProductGrid.slider.clientWidth * (this.currentPage - 1)
+        console.log({ scrollPositionProductGrid })
+        // this.sliderProductGrid.slider.scrollTo({ left: scrollPositionProductGrid })
+        this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+        console.log('here')
+
+        const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+
+        const collectionHandle = slide.getAttribute('handle')
+
+        const requestImages = slide && slide.getAttribute("images-loaded") == "false"
+
+        if (requestImages) {
+
+          console.log('petición imagen productos', this.currentPage)
+
+          const { products } = await (await fetch(`/collections/${collectionHandle}/products.json`)).json()
+
+          const liProductCards = []
+
+          for (let product of products) {
+
+            product = await (await fetch(`/products/${product.handle}.js`)).json()
+
+            const dataToCreateLiElement = {
+              image_src: "",
+              product_title: "",
+              product_url: "",
+              product_price: "",
+            }
+
+            dataToCreateLiElement.image_src = product.featured_image
+            dataToCreateLiElement.product_price = addDotToPrice(product.price)
+            dataToCreateLiElement.product_title = product.title
+            dataToCreateLiElement.product_url = product.url
+
+            const liProductCardElement = liProductCard(dataToCreateLiElement)
+            // const liProductCardElement = document.createElement("div")
+            // liProductCardElement.innerHTML = liProductCard(dataToCreateLiElement)
+
+            // liProductCards.push(liProductCardElement)
+
+            slide.insertAdjacentHTML("beforeend", liProductCardElement)
+            // slide.innerHTML += liProductCardElement
+            // slide.appendChild(liProductCardElement.firstChild)
+
+            this.adjustProductGridSlide()
+
+          }
+
+          // slide.innerHTML = liProductCards.join("")
+
+          slide.removeAttribute("images-loaded")
+          slide.setAttribute("images-loaded", "true")
+
+        }
+
+        this.adjustProductGridSlide()
+
+      }, 250)
+    }
+
+    if (this.sliderBenefits) {
+      adjustBenefitsTabSizeTimerId = setTimeout(() => {
+        console.log({ currentPage: this.currentPage })
+        const scrollPositionBenefits = this.sliderBenefits.slider.clientWidth * (this.currentPage - 1)
+        console.log({ scrollPositionBenefits })
+        // this.sliderBenefits.slider.scrollTo({ left: scrollPositionBenefits })
+        this.sliderBenefits.setSlidePosition(scrollPositionBenefits)
+        console.log('here')
+        this.adjustBenefitsSlide()
+      }, 250)
+    }
+
     if (!this.sliderControlButtons.length) return;
 
     this.sliderControlButtons.forEach((link) => {
@@ -863,34 +1145,6 @@ class SlideshowComponent extends SliderComponent {
     });
     this.sliderControlButtons[this.currentPage - 1].classList.add('slider-counter__link--active');
     this.sliderControlButtons[this.currentPage - 1].setAttribute('aria-current', true);
-    if (this.sliderProductGrid) {
-      setTimeout(() => {
-        const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
-        const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
-        const slideShowContainer = sliderContainer.querySelector(".slideshow")
-        const slideHeight = slide.clientHeight
-        sliderContainer.style.height = `${slideHeight}px`
-        // slide.parentElement.style.height = `${slideHeight}px`
-        slideShowContainer.style.height = `${slideHeight}px`
-        sliderContainer.style.overflow = "hidden"
-        // slide.parentElement.style.overflow = "hidden"
-        slideShowContainer.style.overflow = "hidden"
-      }, 750)
-    }
-    if (this.sliderBenefits) {
-      setTimeout(() => {
-        const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
-        const sliderContainer = this.sliderBenefits.closest("slideshow-component")
-        const slideShowContainer = sliderContainer.querySelector(".slideshow")
-        const slideHeight = slide.clientHeight
-        sliderContainer.style.height = `${slideHeight}px`
-        slide.parentElement.style.height = `${slideHeight}px`
-        // slideShowContainer.style.height = `${slideHeight}px`
-        sliderContainer.style.overflow = "hidden"
-        slide.parentElement.style.overflow = "hidden"
-        // slideShowContainer.style.overflow = "hidden"
-      }, 750)
-    }
   }
 
   autoPlayToggle() {
@@ -966,16 +1220,6 @@ class SlideshowComponent extends SliderComponent {
           linkElements.forEach((button) => {
             button.removeAttribute('tabindex');
           });
-        const slideScrollPosition =
-          this.slider.scrollLeft +
-          this.sliderFirstItemNode.clientWidth *
-          (index + 1 - this.currentPage);
-        if (this.sliderProductGrid && this.sliderProductGrid.slider) {
-          this.sliderProductGrid.slider.scrollTo({ left: slideScrollPosition })
-        }
-        if (this.sliderBenefits && this.sliderBenefits.slider) {
-          this.sliderBenefits.slider.scrollTo({ left: slideScrollPosition })
-        }
         item.setAttribute('aria-hidden', 'false');
         item.removeAttribute('tabindex');
       } else {
@@ -1030,12 +1274,12 @@ class SlideshowComponent extends SliderComponent {
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
-    if (this.sliderProductGrid) {
-      this.sliderProductGrid.slider.scrollTo({ left: slideScrollPosition })
-    }
-    if (this.sliderBenefits) {
-      this.sliderBenefits.slider.scrollTo({ left: slideScrollPosition })
-    }
+    // if (this.sliderProductGrid) {
+    //   this.sliderProductGrid.slider.scrollTo({ left: slideScrollPosition })
+    // }
+    // if (this.sliderBenefits) {
+    //   this.sliderBenefits.slider.scrollTo({ left: slideScrollPosition })
+    // }
   }
 }
 

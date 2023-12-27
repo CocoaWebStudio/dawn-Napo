@@ -363,7 +363,8 @@
     },
     "ingredients": {
       "products": "Products",
-      "benefits": "Benefits"
+      "benefits": "Benefits",
+      "star_ingredients": "Star Ingredients"
     }
   },
   "localization": {
