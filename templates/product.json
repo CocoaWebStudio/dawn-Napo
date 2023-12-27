@@ -51,6 +51,12 @@
             "show_gift_card_recipient": true
           }
         },
+        "6438b9b2-3beb-4b06-9436-803f99625842": {
+          "type": "shopify:\/\/apps\/recharge-subscriptions\/blocks\/subscription-widget\/371eed76-0b44-4869-9813-730372ea378e",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "description": {
           "type": "description",
           "settings": {
@@ -111,6 +117,7 @@
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "6438b9b2-3beb-4b06-9436-803f99625842",
         "description",
         "collapsible-row-0",
         "collapsible-row-1",
