@@ -258,6 +258,44 @@
         "padding_bottom": 36
       }
     },
+    "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2": {
+      "type": "slideshow",
+      "blocks": {
+        "template--15041622769751__e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2-slide-1": {
+          "type": "slide",
+          "settings": {
+            "image_desktop": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1560_x_500_px_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1000_x_800_px_2.jpg",
+            "image_link": "",
+            "show_header_box": true,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--15041622769751__e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2-slide-1"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8": {
       "type": "featured-blog",
       "settings": {
@@ -379,6 +417,7 @@
     "6fc42e5f-8e7e-4c56-8ee1-b17e988a1358",
     "rich_text",
     "video",
+    "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2",
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8",
     "collage",
     "multicolumn"
