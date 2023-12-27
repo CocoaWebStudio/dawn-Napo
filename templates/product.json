@@ -92,21 +92,72 @@
             "page": ""
           }
         },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Key Benefits",
-            "icon": "none",
-            "content": "<p>{{ product.metafields.tabs.key_benefits | metafield_tag }}<\/p>",
-            "page": ""
-          }
-        },
         "share": {
           "type": "share",
           "settings": {
             "share_label": "Share"
           }
-        }
+        },
+        "collapsible-description":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "Description",
+            "icon": "none",
+            "content": "{{ product.description }}",
+            "mobile-exclusive": true,
+            "page": ""
+          }
+        },
+        "Key-Benefits":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "Key Benefits",
+            "icon": "none",
+            "content": "{{ product.metafields.tabs.key_benefits.value }}",
+            "page": ""
+          }
+        },
+        "Ingredients":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "Ingredients",
+            "icon": "none",
+            "content": "{{ product.metafields.tabs.ingredients.value }}",
+            "page": ""
+          }
+        },
+        "How-to":{
+          "type": "left-col-tab",
+          "settings": {
+            "heading": "How to",
+            "icon": "none",
+            "content": "{{ product.metafields.tabs.how_to.value }}",
+            "page": ""
+          }
+        },
+        "Share-Buttons":{
+          "type": "custom-share",
+          "settings": {
+            "show_facebook": true,
+            "facebook_link": "https://www.facebook.com",
+			"desktop-exclusive": true
+			
+          }
+        },
+        "Share-Buttons-Mobile":{
+          "type": "custom-share",
+          "settings": {
+            "show_facebook": true,
+            "facebook_link": "https://www.facebook.com",
+			"mobile-exclusive": true
+			
+          }
+        },
+		"complementary-products":{
+			"type": "complementary-products",
+			"settings": {
+				"heading": "Complete your rituals"}
+			}	
       },
       "block_order": [
         "vendor",
@@ -123,7 +174,13 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share"
+		"Share-Buttons-Mobile",
+        "collapsible-description",
+        "Key-Benefits",
+        "Ingredients",
+        "How-to",
+		"Share-Buttons",
+		"complementary-products"
       ],
       "settings": {
         "enable_sticky_info": false,
@@ -157,6 +214,29 @@
         "columns_mobile": "2",
         "padding_top": 36,
         "padding_bottom": 28
+      }
+    },
+    "suggested-products": {
+      "type": "suggested-products",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
+	"sswinstagram": {
+      "type": "sswinstagram",
+      "settings": {
       }
     },
     "170196076706ed660b": {
@@ -223,6 +303,8 @@
   "order": [
     "main",
     "related-products",
+    "suggested-products",
+	"sswinstagram",
     "170196076706ed660b",
     "multicolumn"
   ]
