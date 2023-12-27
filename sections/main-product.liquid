@@ -3,6 +3,7 @@
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
 >
+  {{ 'custom-section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -33,8 +34,7 @@
     <script src="{{ 'show-more.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'price-per-item.js' | asset_url }}" defer="defer"></script>
   {%- endif -%}
-
-  {% if section.settings.image_zoom == 'hover' %}
+  {% if section.settings.image_zoom contains 'hover' %}
     <script id="EnableZoomOnHover-main" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
   {% endif %}
   {%- if request.design_mode -%}
@@ -65,6 +65,45 @@
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
     <div class="grid__item product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
       {% render 'product-media-gallery', variant_images: variant_images %}
+      {% for block in section.blocks %}
+        {%- case block.type -%}
+        {%- when 'left-col-tab' -%}
+          	<div class="{%- if block.settings.mobile-exclusive -%}product__accordion accordion desktop-collapsible-metafields quick-add-hidden mobile-exclusive{%- else -%}product__accordion accordion desktop-collapsible-metafields quick-add-hidden{%- endif -%}" {{ block.shopify_attributes }}>
+				<details id="Details-{{ block.id }}-{{ section.id }}">
+					<summary>
+						<div class="summary__title">
+							<h2 class="h4 accordion__title inline-richtext">
+								{{ block.settings.heading | default: block.settings.page.title }}
+							</h2>
+						</div>
+						<i>+</i>
+					</summary>
+				<div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+					<p>{{ block.settings.content }}</p>
+					{{ block.settings.page.content }}
+				</div>
+				</details>
+          	</div>
+			{%- when "custom-share" -%}
+			<div class="{%- if block.settings.mobile-exclusive -%}custom-share-wrapper desktop-collapsible-metafields mobile-exclusive{%- else -%}custom-share-wrapper desktop-collapsible-metafields{%- endif -%}">
+			  <h3>SHARE</h3>
+              <div class="share-buttons-wrapper">
+                {%- if block.settings.show_facebook -%}
+                  <a href="{{ block.settings.facebook_link }}">{%- render "icon-facebook" %}</a>
+                {%- endif -%}
+                {%- if block.settings.show_instagram -%}
+                  <a href="{{ block.settings.instagram_link }}">{%- render "icon-instagram" %}</a>
+                {%- endif -%}
+                {%- if block.settings.show_pinterest -%}
+                  <a href="{{ block.settings.pinterest_link }}">{%- render "icon-pinterest" %}</a>
+                {%- endif -%}
+                {%- if block.settings.show_twitter -%}
+                  <a href="{{ block.settings.twitter_link }}">{%- render "icon-twitter" %}</a>
+                {%- endif -%}
+              </div>
+			</div>
+        {%- endcase -%}
+      {%- endfor -%}
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
       <product-info
@@ -74,7 +113,6 @@
         class="product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when '@app' -%}
@@ -86,7 +124,76 @@
               >
                 {{- block.settings.text -}}
               </p>
-            {%- when 'title' -%}
+            {%- when 'left-col-tab' -%}
+				{% if block.settings.content != blank %}
+					<div class="{%- if block.settings.mobile-exclusive -%}product__accordion accordion mobile-collapsible-metafields quick-add-hidden mobile-exclusive{%- else -%}product__accordion accordion mobile-collapsible-metafields quick-add-hidden{%- endif -%}" {{ block.shopify_attributes }}>
+						<details id="Details-{{ block.id }}-{{ section.id }}">
+							<summary>
+								<div class="summary__title">
+									{% render 'icon-accordion', icon: block.settings.icon %}
+									<h2 class="h4 accordion__title inline-richtext">
+										{{ block.settings.heading | default: block.settings.page.title }}
+									</h2>
+								</div>
+								<i>+</i>
+							</summary>
+						<div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
+							<p>{{ block.settings.content }}</p>
+							{{ block.settings.page.content }}
+						</div>
+						</details>
+					</div>
+				{% endif %}
+            {%- when "complementary-products" -%}
+			{% assign complementary_product_1 = product.metafields.complementary.product_1.value %}
+			{% assign complementary_product_2 = product.metafields.complementary.product_2.value %}
+				{% unless complementary_product_1 == blank and complementary_product_2 == blank %}
+				<h2 class="related-products__heading inline-richtext h2">{{ block.settings.heading }}</h2>
+				<ul class="grid product-grid grid--2-col-desktop grid--2-col-tablet-down" role="list">
+					{% if complementary_product_1 %}
+						{% render 'suggested-card-product',
+						card_product: complementary_product_1,
+						media_aspect_ratio: section.settings.image_ratio,
+						image_shape: section.settings.image_shape,
+						show_secondary_image: section.settings.show_secondary_image,
+						show_vendor: section.settings.show_vendor,
+						show_quick_add: true,
+						show_rating: section.settings.show_rating,
+						dont_show_mock_products %}
+					{% endif %}
+					{% if complementary_product_2 %}
+						{% render 'suggested-card-product',
+						card_product: complementary_product_2,
+						media_aspect_ratio: section.settings.image_ratio,
+						image_shape: section.settings.image_shape,
+						show_secondary_image: section.settings.show_secondary_image,
+						show_vendor: section.settings.show_vendor,
+						show_quick_add: true,
+						show_rating: section.settings.show_rating,
+						dont_show_mock_products %}
+					{% endif %}
+				</ul>
+				{% endunless %}
+			{%- when "custom-share" -%}
+				{% assign hiddenClass = ' hidden' %}
+				<div class="{%- if block.settings.mobile-exclusive -%}custom-share-wrapper mobile-collapsible-metafields mobile-exclusive{%- else -%}custom-share-wrapper mobile-collapsible-metafields{%- endif -%} {% if block.settings.desktop-exclusive %}{{hiddenClass}}{% endif %}">
+			  		<h3>SHARE</h3>
+              		<div class="share-buttons-wrapper">
+						{%- if block.settings.show_facebook -%}
+							<a href="{{ block.settings.facebook_link }}">{%- render "icon-facebook" %}</a>
+						{%- endif -%}
+						{%- if block.settings.show_instagram -%}
+							<a href="{{ block.settings.instagram_link }}">{%- render "icon-instagram" %}</a>
+						{%- endif -%}
+						{%- if block.settings.show_pinterest -%}
+							<a href="{{ block.settings.pinterest_link }}">{%- render "icon-pinterest" %}</a>
+						{%- endif -%}
+						{%- if block.settings.show_twitter -%}
+							<a href="{{ block.settings.twitter_link }}">{%- render "icon-twitter" %}</a>
+						{%- endif -%}
+              		</div>
+				</div>
+			{%- when 'title' -%}
               <div class="product__title" {{ block.shopify_attributes }}>
                 <h1>{{ product.title | escape }}</h1>
                 <a href="{{ product.url }}" class="product__title">
@@ -109,14 +216,14 @@
                   <span>{{ 'products.product.volume_pricing.note' | t }}</span>
                 </div>
               {%- endif -%}
-                <div class="product__tax caption rte">
+                {% comment %} <div class="product__tax caption rte">
                   {%- if cart.taxes_included -%}
                     {{ 'products.product.include_taxes' | t }}
                   {%- endif -%}
                   {%- if shop.shipping_policy.body != blank -%}
                     {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
                   {%- endif -%}
-                </div>
+                </div> {% endcomment %}
               <div {{ block.shopify_attributes }}>
                 {%- assign product_form_installment_id = 'product-form-installment-' | append: section.id -%}
                 {%- form 'product', product, id: product_form_installment_id, class: 'installment caption-large' -%}
@@ -216,13 +323,13 @@
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
-                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                {% comment %} <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                   <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
                     {%- render 'loading-spinner' -%}
                     <span>({{- 'products.product.quantity.in_cart_html' | t: quantity: cart_qty -}})</span>
                   </span>
-                </label>
+                </label> {% endcomment %}
                 <div class="price-per-item__container">
                   <quantity-input class="quantity" data-url="{{ product.url }}" data-section="{{ section.id }}">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
@@ -406,6 +513,8 @@
                 block: block,
                 share_link: share_url
               %}
+
+            
 
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
@@ -667,6 +776,7 @@
       ]
     }
   </script>
+  
   </div>
 </section>
 
@@ -676,6 +786,53 @@
   "tag": "section",
   "class": "section",
   "blocks": [
+
+    {
+      "type": "complementary-products",
+      "name": "complementary-products",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Complete your Rituals",
+          "info": "t:sections.main-product.blocks.complementary-products.settings.heading.info",
+          "label": "t:sections.main-product.blocks.complementary-products.settings.heading.label"
+        }
+      ]
+    },
+    {
+      "type": "left-col-tab",
+      "name": "left-col-tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Collapsible row",
+          "info": "t:sections.main-product.blocks.collapsible_tab.settings.heading.info",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
+        },
+        {
+          "type": "liquid",
+          "id": "content",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        },
+        {
+            "type": "checkbox",
+            "id": "mobile-exclusive",
+            "label": "mobile exclusive"
+        },
+        {
+            "type": "checkbox",
+            "id": "desktop-exclusive",
+            "label": "desktop exclusive"
+        }
+      ]
+    },
     {
       "type": "@app"
     },
@@ -863,6 +1020,66 @@
         {
           "type": "paragraph",
           "content": "t:sections.main-product.blocks.share.settings.title_info.content"
+        }
+      ]
+    },
+    {
+      "type": "custom-share",
+      "name": "custom share",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_facebook",
+          "label": "Show Facebook share button",
+          "default": true
+        },
+        {
+          "id": "facebook_link",
+          "label": "Facebook link",
+          "type": "url"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pinterest",
+          "label": "Show pinterest share button",
+          "default": true
+        },
+        {
+          "id": "pinterest_link",
+          "label": "Pinterest link",
+          "type": "url"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_instagram",
+          "label": "Show Instagram share button",
+          "default": true
+        },
+        {
+          "id": "instagram_link",
+          "label": "Instagram link",
+          "type": "url"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_twitter",
+          "label": "Show Twitter share button",
+          "default": true
+        },
+        {
+          "id": "twitter_link",
+          "label": "Twitter link",
+          "type": "url"
+        },
+		{
+            "type": "checkbox",
+            "id": "mobile-exclusive",
+            "label": "mobile exclusive"
+        },
+		{
+            "type": "checkbox",
+            "id": "desktop-exclusive",
+            "label": "mobile exclusive"
         }
       ]
     },
@@ -2118,6 +2335,10 @@
         {
           "value": "none",
           "label": "t:sections.main-product.settings.image_zoom.options__3.label"
+        },
+        {
+          "value": "noClick-hover",
+          "label": "t:sections.main-product.settings.image_zoom.options__4.label"
         }
       ],
       "default": "lightbox",
