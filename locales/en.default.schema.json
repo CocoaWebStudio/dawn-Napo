@@ -795,6 +795,10 @@
           "label": "Enable quick add button",
           "info": "Optimal with popup or drawer cart type."
         },
+        "show_quantity_select": {
+          "label": "Enable quantity selector",
+          "info": "How many products you want to quick add to your cart."
+        },
         "header_mobile": {
           "content": "Mobile Layout"
         },
@@ -3024,8 +3028,16 @@
         "slide": {
           "name": "Slide",
           "settings": {
-            "image": {
-              "label": "Image"
+            "image_desktop": {
+              "label": "Image Desktop",
+              "info": "1560 x 600px jpg recommended"
+            },
+            "image_mobile": {
+              "label": "Image Mobile",
+              "info": "750 x 1100px jpg recommended. If none is set desktop image will be cropped"
+            },
+            "image_link": {
+              "label": "Slider Link"
             },
             "heading": {
               "label": "Heading"
