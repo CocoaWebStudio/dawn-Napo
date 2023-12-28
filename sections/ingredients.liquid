@@ -194,7 +194,7 @@
     sliderContainer.querySelector('button.before').addEventListener('click', prevSlide);
   }); */
 
-  const tabLabels = document.querySelectorAll('.tab-container .tabs label');
+  const tabLabels = document.querySelectorAll('.tab-container#tab-container-ingredients .tabs label');
 
   tabLabels.forEach((tabLabel) => {
     tabLabel.onclick = (event) => {
@@ -203,7 +203,7 @@
 
       const tabInputSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
 
-      const tabInputs = document.querySelectorAll('.tab-container .tabs input[type="radio"]');
+      const tabInputs = document.querySelectorAll('.tab-container#tab-container-ingredients .tabs input[type="radio"]');
 
       tabInputs.forEach((tabInput) => {
         if (tabInput != tabInputSelected) {
@@ -324,12 +324,12 @@
 {% endstyle %}
 
 {% stylesheet %}
-  .tab-container .tabs {
+  .tab-container#tab-container-ingredients .tabs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center !important;
   }
-  .tab-container .tabs label {
+  .tab-container#tab-container-ingredients .tabs label {
     order: 1;
     display: block;
     padding: 1rem 2rem;
@@ -339,10 +339,10 @@
     transition: background 0.2s ease;
     text-transform: uppercase;
   }
-  .tab-container .tabs label:hover {
+  .tab-container#tab-container-ingredients .tabs label:hover {
     cursor: pointer;
   }
-  .tab-container .tabs .tab {
+  .tab-container#tab-container-ingredients .tabs .tab {
     order: 99;
     flex-grow: 1;
     width: 100%;
@@ -353,26 +353,26 @@
     overflow: hidden;
     display: block;
   }
-  .tab-container .tabs input[type='radio'] {
+  .tab-container#tab-container-ingredients .tabs input[type='radio'] {
     display: none;
   }
-  .tab-container .tabs input:checked + label {
+  .tab-container#tab-container-ingredients .tabs input:checked + label {
     background: #fff;
     border-bottom: medium solid black;
   }
-  .tab-container .tabs input:checked + label + .tab {
+  .tab-container#tab-container-ingredients .tabs input:checked + label + .tab {
     display: block;
     width: auto;
     height: auto;
     overflow: auto;
   }
-  .tab-container .tabs input:not(:checked) + label {
+  .tab-container#tab-container-ingredients .tabs input:not(:checked) + label {
     border-bottom: thin solid rgba(0, 0, 0, 0.1);
   }
   /**
  * Generic Styling
 */
-  .tab-container {
+  .tab-container#tab-container-ingredients {
     /* background: #eee; */
     /* min-height: 100vh; */
     box-sizing: border-box;
@@ -387,21 +387,21 @@
   }
 
   @media (max-width: 750px) {
-    /* .tab-container .tabs .tab,
-    .tab-container .tabs label {
+    /* .tab-container#tab-container-ingredients .tabs .tab,
+    .tab-container#tab-container-ingredients .tabs label {
       order: initial;
     } */
-    .tab-container .tabs label {
+    .tab-container#tab-container-ingredients .tabs label {
       /* width: 100%; */
       width: 50%;
       margin-right: 0;
       margin-top: 0.2rem;
     }
-    .tab-container {
+    .tab-container#tab-container-ingredients {
       box-sizing: border-box;
       padding: 0 1.5rem;
     }
-    .tab-container .tabs input:not(:checked) + label {
+    .tab-container#tab-container-ingredients .tabs input:not(:checked) + label {
       border-bottom: thin solid black;
     }
   }
