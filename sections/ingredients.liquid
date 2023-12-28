@@ -231,6 +231,18 @@
 
   customCardsCollection.forEach((customCardCollection) => {
     const aLinks = customCardCollection.querySelectorAll('a');
+    customCardCollection.onclick = (event) => {
+      event.preventDefault();
+      const slideNumber = customCardCollection.getAttribute('product-index');
+      const scrollPositionPrincipalSlider = principalSlideShow.slider.clientWidth * (slideNumber - 1);
+      console.log({ scrollPositionPrincipalSlider });
+      window.focus();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+      principalSlideShow.setSlidePosition(scrollPositionPrincipalSlider);
+    };
     aLinks.forEach((aLink) => {
       aLink.onclick = (event) => {
         event.preventDefault();
@@ -371,16 +383,17 @@
     line-height: 1.5em;
     /* max-width: 60rem; */
     /* margin: 0 auto; */
-    font-size: 112%;
+    /* font-size: 112%; */
   }
 
   @media (max-width: 750px) {
-    .tab-container .tabs .tab,
+    /* .tab-container .tabs .tab,
     .tab-container .tabs label {
       order: initial;
-    }
+    } */
     .tab-container .tabs label {
-      width: 100%;
+      /* width: 100%; */
+      width: 50%;
       margin-right: 0;
       margin-top: 0.2rem;
     }

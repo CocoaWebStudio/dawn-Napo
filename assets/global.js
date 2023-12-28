@@ -11,134 +11,152 @@ function liProductCard(productData = {}) {
   } = productData
 
   return `
-<li class="grid__item">
-<link href="/assets/component-rating.css?v=157771854592137137841701280995" rel="stylesheet" type="text/css" media="all">
-<link href="/assets/component-volume-pricing.css?v=56284703641257077881701280998" rel="stylesheet" type="text/css" media="all">
-<div class="card-wrapper product-card-wrapper underline-links-hover">
-    <div class="
-        card card--standard
+  <li class="grid__item">
+   <div class="card-wrapper product-card-wrapper underline-links-hover">
+      <div class="
+         card card--standard
          card--media
-      " style="--ratio-percent: 100%;">
-      <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;"><div class="card__media">
-            <div class="media media--transparent media--hover-effect">
-              
-              <img 
-              src="${image_src}" 
-              sizes="(min-width: 1200px) 267px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" 
-              alt="${product_title}" 
-              class="motion-reduce" 
-              loading="lazy" 
-              width="" 
-              height=""
-              >
-              
-</div>
-          </div><div class="card__content">
-          <div class="card__information">
-            <h3 class="card__heading">
-              <a href="${product_url}" id="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815 NoMediaStandardBadge-template--15104234979415__ingredients-4423298121815">
-                ${product_title}
-              </a>
-            </h3>
-          </div>
-          <div class="card__badge bottom left"></div>
-        </div>
+         " style="--ratio-percent: 100%;">
+         <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
+            <div class="card__media">
+               <div class="media media--transparent media--hover-effect">
+                  <img 
+                     src="${image_src}" 
+                     sizes="(min-width: 1200px) 267px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" 
+                     alt="${product_title}" 
+                     class="motion-reduce" 
+                     loading="lazy" 
+                     width="" 
+                     height=""
+                     >
+               </div>
+            </div>
+            <div class="card__content">
+               <div class="card__information">
+                  <h3 class="card__heading">
+                     <a href="${product_url}" id="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815 NoMediaStandardBadge-template--15104234979415__ingredients-4423298121815">
+                     ${product_title}
+                     </a>
+                  </h3>
+               </div>
+               <div class="card__badge bottom left"></div>
+            </div>
+         </div>
+         <div class="card__content">
+            <div class="card__information">
+               <h3 class="card__heading h5" id="title-template--15104234979415__ingredients-4423298121815">
+                  <a href="${product_url}" id="CardLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="CardLink-template--15104234979415__ingredients-4423298121815 Badge-template--15104234979415__ingredients-4423298121815">
+                  ${product_title}
+                  </a>
+               </h3>
+               <div class="card-information">
+                  <span class="caption-large light"></span>
+                  <div class="
+                     price ">
+                     <div class="price__container">
+                        <div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+                           <span class="price-item price-item--regular">
+                           <span class="money"> $${product_price} USD</span>
+                           </span>
+                        </div>
+                        <div class="price__sale">
+                           <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                           <span>
+                           <s class="price-item price-item--regular">
+                           </s>
+                           </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+                           <span class="price-item price-item--sale price-item--last">
+                           <span class="money"> $${product_price} USD</span>
+                           </span>
+                        </div>
+                        <small class="unit-price caption hidden">
+                        <span class="visually-hidden">Unit price</span>
+                        <span class="price-item price-item--last">
+                        <span></span>
+                        <span aria-hidden="true">/</span>
+                        <span class="visually-hidden">&nbsp;per&nbsp;</span>
+                        <span>
+                        </span>
+                        </span>
+                        </small>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="quick-add no-js-hidden">
+               <product-form>
+                  <form method="post" id="product-quick-add-form-${product_id}" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form">
+                     <input type="hidden" name="form_type" value="product">
+                     <input type="hidden" name="utf8" value="✓">
+                     <input type="hidden" name="id" value="${product_id}" class="product-variant-id">
+                     <quantity-input class="quantity cart-quantity">
+                        <button class="quantity__button no-js-hidden disabled" name="minus" type="button">
+                           <span class="visually-hidden">Decrease quantity for Default Title</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-minus" fill="none" viewBox="0 0 10 2">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor"></path>
+                           </svg>
+                        </button>
+                        <input class="quantity__input" data-quantity-variant-id="${product_id}" type="number" name="quantity" value="0" data-cart-quantity="0" min="1" step="1" aria-label="Quantity for Default Title" id="Quantity-${product_id}" data-index="${product_id}">
+                        <button class="quantity__button no-js-hidden" name="plus" type="button">
+                           <span class="visually-hidden">Increase quantity for Default Title</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-plus" fill="none" viewBox="0 0 10 10">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor">
+                              </path>
+                           </svg>
+                        </button>
+                     </quantity-input>
+                     <button id="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit" type="submit" name="add" class="quick-add__submit button button--full-width " aria-haspopup="dialog" aria-labelledby="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit title-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd18-6919162462295" aria-live="polite" data-sold-out-message="true">
+                        <span>Add to cart</span>
+                        <span class="sold-out-message hidden">Sold out</span>
+                        <div class="loading__spinner hidden">
+                           <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                           </svg>
+                        </div>
+                     </button>
+                     <input type="hidden" name="product-id" value="6919162462295">
+                  </form>
+               </product-form>
+            </div>
+            <div class="card__badge bottom left"></div>
+         </div>
       </div>
-      <div class="card__content">
-        <div class="card__information">
-          <h3 class="card__heading h5" id="title-template--15104234979415__ingredients-4423298121815">
-            <a href="${product_url}" id="CardLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="CardLink-template--15104234979415__ingredients-4423298121815 Badge-template--15104234979415__ingredients-4423298121815">
-              ${product_title}
-            </a>
-          </h3>
-          <div class="card-information"><span class="caption-large light"></span>
-<div class="
-    price ">
-  <div class="price__container"><div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
-        <span class="price-item price-item--regular">
-          <span class="money"> $${product_price} USD</span>
-        </span></div>
-    <div class="price__sale">
-        <span class="visually-hidden visually-hidden--inline">Regular price</span>
-        <span>
-          <s class="price-item price-item--regular">
-            
-              
-            
-          </s>
-        </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
-      <span class="price-item price-item--sale price-item--last">
-        <span class="money"> $${product_price} USD</span>
-      </span>
-    </div>
-    <small class="unit-price caption hidden">
-      <span class="visually-hidden">Unit price</span>
-      <span class="price-item price-item--last">
-        <span></span>
-        <span aria-hidden="true">/</span>
-        <span class="visually-hidden">&nbsp;per&nbsp;</span>
-        <span>
-        </span>
-      </span>
-    </small>
-  </div></div>
-
-</div>
-<div class="quick-add no-js-hidden">
-<product-form>
-  <form method="post" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form">
-    <input type="hidden" name="form_type" value="product">
-    <input type="hidden" name="utf8" value="✓">
-    <input type="hidden" name="id" value="${product_id}" class="product-variant-id">
-                  
-                    
-
-    <quantity-input class="quantity cart-quantity">
-      <button class="quantity__button no-js-hidden disabled" name="minus" type="button">
-        <span class="visually-hidden">Decrease quantity for Default Title</span>
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-minus" fill="none" viewBox="0 0 10 2">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor"></path>
-        </svg>
-      </button>
-      <input class="quantity__input" data-quantity-variant-id="${product_id}" type="number" name="quantity" value="0" data-cart-quantity="0" min="1" step="1" aria-label="Quantity for Default Title" id="Quantity-${product_id}" data-index="${product_id}">
-      <button class="quantity__button no-js-hidden" name="plus" type="button">
-        <span class="visually-hidden">Increase quantity for Default Title</span>
-        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-plus" fill="none" viewBox="0 0 10 10">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor">
-          </path>
-        </svg>
-      </button>
-    </quantity-input>
-
-                  
-    <button id="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit" type="submit" name="add" class="quick-add__submit button button--full-width " aria-haspopup="dialog" aria-labelledby="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit title-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd18-6919162462295" aria-live="polite" data-sold-out-message="true">
-      <span>Add to cart</span>
-      <span class="sold-out-message hidden">Sold out</span>
-
-      <link href="/assets/component-loading-spinner.css?v=116724955567955766481701280989" rel="stylesheet" type="text/css" media="all">
-
-      <div class="loading__spinner hidden">
-        <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-        </svg>
-      </div>
-    </button>
-    <input type="hidden" name="product-id" value="6919162462295">
-  </form>
-</product-form>
-</div>
-        </div><div class="card__badge bottom left"></div>
-      </div>
-    </div>
-  </div>
-                    </li>
+   </div>
+</li>
 `
+}
+
+function quickAddFormStyles(product_id) {
+  console.log('nuevos estilos')
+  return `
+  form[id='product-quick-add-form-${product_id}'] {
+    display: flex;
+    justify-content: space-around;
+  }
+  form[id='product-quick-add-form-${product_id}'] .quick-add__submit {
+    min-width: unset;
+    width: 50%;
+  }
+  @media screen and (max-width: 749px) {
+    form[id='product-quick-add-form-${product_id}'] {
+      flex-direction: column;
+      align-items: center;
+    }
+    form[id='product-quick-add-form-${product_id}'] .quantity {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    form[id='product-quick-add-form-${product_id}'] .quick-add__submit {
+      width: 100%;
+    }
+  }
+  `
 }
 
 function addDotToPrice(price) {
   let priceStr = price.toString();
 
-  if (priceStr.endsWith('00')) {
+  if (priceStr.endsWith('00') || priceStr.endsWith('50')) {
     priceStr = priceStr.slice(0, -2) + '.' + priceStr.slice(-2);
   }
 
@@ -882,19 +900,7 @@ class SlideshowComponent extends SliderComponent {
 
     this.sliderControlLinksArray = Array.from(this.sliderControlWrapper.querySelectorAll('.slider-counter__link'));
     this.sliderControlLinksArray.forEach((link) => link.addEventListener('click', this.linkToSlide.bind(this)));
-    // if (this.sliderProductGrid && this.sliderBenefits) {
-    //   this.slider.addEventListener('scrollend', this.setSlideVisibility.bind(this));
-    // }
-    // else {
     this.slider.addEventListener('scroll', this.setSlideVisibility.bind(this));
-    // this.slider.addEventListener('scrollend', () => {
-    //   debugger
-    //   if (this.sliderProductGrid && this.sliderProductGrid.slider) {
-
-    //   }
-    // })
-
-    // }
     this.setSlideVisibility();
 
     if (this.announcementBarSlider) {
@@ -938,9 +944,9 @@ class SlideshowComponent extends SliderComponent {
       const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
       const slideShowContainer = sliderContainer.querySelector(".slideshow")
       const slideHeight = slide.clientHeight
-      sliderContainer.style.height = `${slideHeight}px`
+      sliderContainer.style.height = `${slideHeight + 10}px`
       // slide.parentElement.style.height = `${slideHeight}px`
-      slideShowContainer.style.height = `${slideHeight}px`
+      slideShowContainer.style.height = `${slideHeight + 10}px`
       sliderContainer.style.overflow = "hidden"
       // slide.parentElement.style.overflow = "hidden"
       slideShowContainer.style.overflow = "hidden"
@@ -1006,12 +1012,6 @@ class SlideshowComponent extends SliderComponent {
   }
 
   setSlidePosition(position) {
-    // if (this.sliderProductGrid) {
-    //   this.sliderProductGrid.slider.scrollTo({ left: position })
-    // }
-    // if (this.sliderBenefits) {
-    //   this.sliderBenefits.slider.scrollTo({ left: position })
-    // }
     if (this.setPositionTimeout) clearTimeout(this.setPositionTimeout);
     this.setPositionTimeout = setTimeout(() => {
       this.slider.scrollTo({
@@ -1067,50 +1067,15 @@ class SlideshowComponent extends SliderComponent {
 
     if (this.sliderProductGrid) {
 
-      // if (requestImages) {
-
-      //   const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
-
-      //   const { products } = await (await fetch(`/collections/${collectionHandle}/products.json`)).json()
-
-      //   const liProductCards = []
-
-      //   for (let product of products) {
-
-      //     product = await (await fetch(`/products/${product.handle}.js`)).json()
-
-      //     const dataToCreateLiElement = {
-      //       image_src: "",
-      //       product_title: "",
-      //       product_url: "",
-      //       product_price: "",
-      //     }
-
-      //     dataToCreateLiElement.image_src = product.featured_image
-      //     dataToCreateLiElement.product_price = product.price
-      //     dataToCreateLiElement.product_title = product.title
-      //     dataToCreateLiElement.product_url = product.url
-
-      //     const liProductCardElement = liProductCard(dataToCreateLiElement)
-
-      //     liProductCards.push(liProductCardElement)
-
-      //   }
-
-      //   slide.innerHTML = liProductCards.join("")
-
-      //   slide_collection_image.removeAttribute("images-loaded")
-      //   slide_collection_image.setAttribute("images-loaded", "true")
-
-      // }
-
       requestCollectionProductsTimerId = setTimeout(async () => {
 
         console.log({ currentPage: this.currentPage })
         const scrollPositionProductGrid = this.sliderProductGrid.slider.clientWidth * (this.currentPage - 1)
         console.log({ scrollPositionProductGrid })
         // this.sliderProductGrid.slider.scrollTo({ left: scrollPositionProductGrid })
-        this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+        // this.sliderProductGrid.focus()
+        // this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+        this.sliderProductGrid.slider.scrollTo({ left: scrollPositionProductGrid, behavior: "smooth" })
         console.log('here')
 
         const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
@@ -1123,6 +1088,8 @@ class SlideshowComponent extends SliderComponent {
 
           console.log('petición imagen productos', this.currentPage)
 
+          const styleTag = document.querySelector("style")
+
           const { products } = await (await fetch(`/collections/${collectionHandle}/products.json`)).json()
 
           const liProductCards = []
@@ -1130,8 +1097,6 @@ class SlideshowComponent extends SliderComponent {
           for (let product of products) {
 
             product = await (await fetch(`/products/${product.handle}.js`)).json()
-
-            debugger
 
             const dataToCreateLiElement = {
               image_src: "",
@@ -1148,12 +1113,14 @@ class SlideshowComponent extends SliderComponent {
             dataToCreateLiElement.product_id = product.variants[0].id
 
             const liProductCardElement = liProductCard(dataToCreateLiElement)
+            const stylesForQuickAddForm = quickAddFormStyles(dataToCreateLiElement.product_id)
             // const liProductCardElement = document.createElement("div")
             // liProductCardElement.innerHTML = liProductCard(dataToCreateLiElement)
 
             // liProductCards.push(liProductCardElement)
 
             slide.insertAdjacentHTML("beforeend", liProductCardElement)
+            styleTag.insertAdjacentHTML("beforeend", stylesForQuickAddForm)
             // slide.innerHTML += liProductCardElement
             // slide.appendChild(liProductCardElement.firstChild)
 
