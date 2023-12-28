@@ -8,6 +8,126 @@
         "padding_bottom": 28
       }
     },
+    "6a6e0ac4-066b-4680-824b-964411dbd1aa": {
+      "type": "image-banner",
+      "blocks": {
+        "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "THE RAHUA HOLIDAY GIFT SHOP",
+            "text_style": "subtitle"
+          }
+        },
+        "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "ENCHANTED ADVENTURES",
+            "heading_size": "h1"
+          }
+        },
+        "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-buttons-1": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-text-1",
+        "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-heading-1",
+        "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-buttons-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_1560_x_300_px_2.gif",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "bb64fc17-b08f-4559-8f61-6f20990a2ab1": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15041623031895__bb64fc17-b08f-4559-8f61-6f20990a2ab1-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Step inside and discover a world of magical elixirs and paradise potions.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15041623031895__bb64fc17-b08f-4559-8f61-6f20990a2ab1-text-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa": {
+      "type": "image-banner",
+      "blocks": {
+        "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "GIFT PARADISE BOXED",
+            "heading_size": "h1"
+          }
+        },
+        "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "Each gift is a journey waiting to be unwrapped, an exploration designed to transport you on an enchanted beauty adventure.",
+            "text_style": "body"
+          }
+        },
+        "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-buttons-1": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-heading-1",
+        "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-text-1",
+        "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-buttons-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_11.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "1a9416ef-d532-4561-b24c-eeb162367ba5": {
       "type": "featured-collection",
       "settings": {
@@ -35,6 +155,55 @@
         "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "0edc56e6-de75-4796-9ac1-f749e2a9c424": {
+      "type": "image-banner",
+      "blocks": {
+        "085afc69-8110-495c-a690-49d09459826d": {
+          "type": "heading",
+          "settings": {
+            "heading": "GIFT ENCHANTED POTIONS",
+            "heading_size": "h1"
+          }
+        },
+        "b58c2126-345d-4440-8a6e-34d3b7473e18": {
+          "type": "text",
+          "settings": {
+            "text": "An instant journey to a lush tropical paradise, where the scents of coconut, guava,and passionfruit whisk you away to white sandy beaches and turquoise waters.",
+            "text_style": "body"
+          }
+        },
+        "6f6b05fd-6a9e-42be-8bb4-a051a7eb30f6": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "085afc69-8110-495c-a690-49d09459826d",
+        "b58c2126-345d-4440-8a6e-34d3b7473e18",
+        "6f6b05fd-6a9e-42be-8bb4-a051a7eb30f6"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
       }
     },
     "21763d25-2113-4e1d-bb9b-87114fa9608c": {
@@ -537,7 +706,11 @@
   },
   "order": [
     "main",
+    "6a6e0ac4-066b-4680-824b-964411dbd1aa",
+    "bb64fc17-b08f-4559-8f61-6f20990a2ab1",
+    "a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa",
     "1a9416ef-d532-4561-b24c-eeb162367ba5",
+    "0edc56e6-de75-4796-9ac1-f749e2a9c424",
     "21763d25-2113-4e1d-bb9b-87114fa9608c",
     "3c239c4c-07d2-4670-89d1-bd6df3a4dfed",
     "af1feafd-9a71-43e1-b929-b621f1924360",

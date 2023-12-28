@@ -6,7 +6,10 @@
         "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-7.png",
+            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-21.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE-16.png",
+            "image_link": "shopify:\/\/collections\/all",
+            "show_header_box": false,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -20,37 +23,18 @@
             "color_scheme": "",
             "text_alignment_mobile": "center"
           }
-        },
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-2": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1",
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-2"
+        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
+        "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -76,6 +60,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -104,6 +89,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -133,6 +119,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -161,6 +148,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -174,7 +162,8 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL-2.jpg",
+            "image_link": "",
+            "show_header_box": true,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -192,6 +181,8 @@
         "03c05369-ad5c-4315-944c-9eb5d472e01c": {
           "type": "slide",
           "settings": {
+            "image_link": "",
+            "show_header_box": true,
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -214,7 +205,6 @@
       "disabled": true,
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -258,23 +248,26 @@
       "settings": {
         "heading": "Our Story",
         "heading_size": "h2",
-        "enable_video_looping": false,
         "video_url": "https:\/\/www.youtube.com\/watch?v=lIqsrxl4VkE&t=14s",
+        "extra_youtube": "rel=0&autoplay=1&playsinline=0",
         "cover_image": "shopify:\/\/shop_images\/THE_STORY_OF_RAHUA.png",
         "description": "",
-        "full_width": false,
+        "full_width": true,
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "142e04e9-2532-4356-8480-7f92b382a886": {
+    "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2": {
       "type": "slideshow",
       "blocks": {
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-1": {
+        "template--15041622769751__e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1560_x_500_px_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1560_x_500_px_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1000_x_800_px_2.jpg",
+            "image_link": "",
+            "show_header_box": true,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -282,24 +275,7 @@
             "link": "",
             "button_style_secondary": false,
             "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-2": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
+            "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
@@ -308,12 +284,10 @@
         }
       },
       "block_order": [
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-1",
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-2"
+        "template--15041622769751__e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2-slide-1"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -443,7 +417,7 @@
     "6fc42e5f-8e7e-4c56-8ee1-b17e988a1358",
     "rich_text",
     "video",
-    "142e04e9-2532-4356-8480-7f92b382a886",
+    "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2",
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8",
     "collage",
     "multicolumn"

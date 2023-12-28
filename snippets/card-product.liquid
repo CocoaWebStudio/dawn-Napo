@@ -271,6 +271,13 @@
                       disabled
                     {% endif %}
                   >
+                  {% if section.settings.show_quantity_select %}
+                    {% render 'quantity-input',
+                      variant: card_product.selected_or_first_available_variant,
+                      form_id: product_form_id,
+                      input_name: 'quantity'
+                    %}
+                  {% endif %}
                   <button
                     id="{{ product_form_id }}-submit"
                     type="submit"
@@ -367,3 +374,30 @@
     </div>
   </div>
 {%- endif -%}
+{% style %}
+  {% if section.settings.show_quantity_select %}
+
+    form[id='{{ product_form_id }}'] {
+      display: flex;
+      justify-content: space-around;
+    }
+    form[id='{{ product_form_id }}'] .quick-add__submit {
+      min-width: unset;
+      width: 50%;
+    }
+    @media screen and (max-width: 749px) {
+      form[id='{{ product_form_id }}'] {
+        flex-direction: column;
+        align-items: center;
+      }
+      form[id='{{ product_form_id }}'] .quantity {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      form[id='{{ product_form_id }}'] .quick-add__submit {
+        width: 100%;
+      }
+    }
+
+  {% endif %}
+{% endstyle %}
