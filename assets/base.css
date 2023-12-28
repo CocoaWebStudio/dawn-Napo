@@ -2133,9 +2133,17 @@ product-info .loading__spinner:not(.hidden)~*,
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   }
 .button {
-	max-width: 80%;
+	max-width: 100%;
 	margin: auto;
 }
+.form .button{
+  margin: auto 0;
+}
+}
+
+product-form .form{
+column-gap: 25px;
+row-gap: 20px;
 }
 
 .badge-images-wrapper {
