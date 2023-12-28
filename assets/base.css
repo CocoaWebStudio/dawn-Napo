@@ -1225,7 +1225,7 @@ button.shopify-payment-button__button--unbranded,
 .customer button,
 button.shopify-payment-button__button--unbranded {
   min-width: calc(12rem + var(--buttons-border-width) * 2);
-  min-height: calc(4.5rem + var(--buttons-border-width) * 2);
+  min-height: calc(3rem + var(--buttons-border-width) * 2);
 }
 
 .shopify-payment-button__button--branded {
@@ -1894,7 +1894,7 @@ input[type='checkbox'] {
   width: calc(14rem / var(--font-body-scale) + var(--inputs-border-width) * 2);
   display: flex;
   border-radius: var(--inputs-radius);
-  min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);
+  height: calc((var(--inputs-border-width) * 2) + 3.5rem);
 }
 
 .quantity:after {

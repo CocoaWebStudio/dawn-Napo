@@ -150,7 +150,7 @@
 
 @media screen and (min-width: 750px) {
   .card__information {
-    padding-bottom: 1.7rem;
+    padding-bottom: 0;
     padding-top: 1.7rem;
   }
 }
@@ -374,9 +374,24 @@
   margin-top: 0.4rem;
 }
 
-.card-information>*:not(.visually-hidden:first-child)+*:not(.rating):not(.card__information-volume-pricing-note) {
+.price-item.price-item--regular {
   margin-top: 0.7rem;
+  opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
 }
+.price-item.price-item--regular:hover {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+  .ProductItem:hover .ProductItem__PriceList--showOnHover {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
 
 .card-information .caption {
   letter-spacing: 0.07rem;

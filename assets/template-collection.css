@@ -114,7 +114,7 @@
 .quick-add__submit {
 	padding: 0 18px !important;
 	min-width: 0 !important;
-	min-height: calc((var(--inputs-border-width) * 2) + 4.5rem);;
+	height: calc((var(--inputs-border-width) * 2) + 3.5rem);
 }
 
 .quick-add__submit span {
