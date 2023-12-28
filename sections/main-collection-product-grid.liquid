@@ -154,7 +154,8 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
+                  {%
+                    render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
@@ -163,7 +164,8 @@
                     show_rating: section.settings.show_rating,
                     lazy_load: lazy_load,
                     show_quick_add: section.settings.enable_quick_add,
-                    section_id: section.id
+                    section_id: section.id,
+                    show_product_price: section.settings.show_product_price,
                   %}
                 </li>
               {%- endfor -%}
@@ -187,6 +189,12 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_price",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.show_product_price.label"
+    },
     {
       "type": "range",
       "id": "products_per_page",

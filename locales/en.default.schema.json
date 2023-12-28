@@ -1764,6 +1764,9 @@
     "main-collection-product-grid": {
       "name": "Product grid",
       "settings": {
+        "show_product_price": {
+          "label": "Show product price"
+        },
         "products_per_page": {
           "label": "Products per page"
         },
