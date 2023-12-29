@@ -272,11 +272,37 @@
                     {% endif %}
                   >
                   {% if section.settings.show_quantity_select %}
-                    {% render 'quantity-input',
-                      variant: card_product.selected_or_first_available_variant,
-                      form_id: product_form_id,
-                      input_name: 'quantity'
+                    {% liquid
+                      assign variant = card_product.selected_or_first_available_variant
+                      assign form_id = product_form_id
+                      assign input_name = 'quantity'
                     %}
+                    <select
+                      class="quantity__select"
+                      data-quantity-variant-id="{{ variant.id }}"
+                      {% if input_name %}
+                        name="{{ input_name }}"
+                      {% else %}
+                        name="updates[{{ variant_id }}]"
+                      {% endif %}
+                      {% # theme-check-disable %}
+                      value="{{ cart | item_count_for_variant: variant.id }}"
+                      data-cart-quantity="{{ cart | item_count_for_variant: variant.id }}"
+                      {% # theme-check-enable %}
+                      aria-label="{{ 'products.product.quantity.input_label' | t: product: variant.title | escape }}"
+                      id="Quantity-{{ variant.id }}"
+                      data-index="{{ variant.id }}"
+                      {% if form_id %}
+                        form="{{ form_id }}"
+                      {% endif %}
+                      {% if card_product.selected_or_first_available_variant.available == false %}
+                        disabled
+                      {% endif %}
+                    >
+                      {%- for option in (1..6) -%}
+                        <option value="{{ option }}">{{ option }}</option>
+                      {%- endfor -%}
+                    </select>
                   {% endif %}
                   <button
                     id="{{ product_form_id }}-submit"
@@ -379,25 +405,25 @@
 
     form[id='{{ product_form_id }}'] {
       display: flex;
-      justify-content: space-around;
+      gap: 2rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
+
     form[id='{{ product_form_id }}'] .quick-add__submit {
       min-width: unset;
-      width: 50%;
+      flex-grow: 1;
     }
+
+    form[id='{{ product_form_id }}'] > .quantity__select {
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
     @media screen and (max-width: 749px) {
       form[id='{{ product_form_id }}'] {
         flex-direction: column;
-        align-items: center;
-      }
-      form[id='{{ product_form_id }}'] .quantity {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
-      form[id='{{ product_form_id }}'] .quick-add__submit {
-        width: 100%;
       }
     }
-
   {% endif %}
 {% endstyle %}
