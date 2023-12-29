@@ -102,7 +102,7 @@
           </div>
         {%- endif -%}
         <div class="card__content">
-          <div class="card__information">
+          <div class="card__information card__grid">
             <h3
               class="card__heading"
               {% if card_product.featured_media == null and settings.card_style == 'standard' %}
@@ -139,7 +139,7 @@
         </div>
       </div>
       <div class="card__content">
-        <div class="card__information">
+        <div class="card__information card__grid">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -155,24 +155,17 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
-          <div class="card-information">
-            {%- if show_vendor -%}
-              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-            {%- endif -%}
-
-            <span class="caption-large light">{{ block.settings.description | escape }}</span>
-
-            {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-              {% liquid
-                assign rating_decimal = 0
-                assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-                if decimal >= 0.3 and decimal <= 0.7
-                  assign rating_decimal = 0.5
-                elsif decimal > 0.7
-                  assign rating_decimal = 1
-                endif
-              %}
+          {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+            {% liquid
+              assign rating_decimal = 0
+              assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
+              if decimal >= 0.3 and decimal <= 0.7
+                assign rating_decimal = 0.5
+              elsif decimal > 0.7
+                assign rating_decimal = 1
+              endif
+            %}
+            <div>
               <div
                 class="rating"
                 role="img"
@@ -197,15 +190,24 @@
                   {{ 'accessibility.total_reviews' | t -}}
                 </span>
               </p>
-            {%- endif -%}
-
-            {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
-            {%- if card_product.quantity_price_breaks_configured? -%}
+            </div>
+          {%- elsif show_rating -%}
+            <small>No rating available</small>
+          {%- endif -%}
+          {%- if show_vendor -%}
+            <div>
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            </div>
+          {%- endif -%}
+          {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+          {%- if card_product.quantity_price_breaks_configured? -%}
+            <div>
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
         </div>
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
@@ -425,5 +427,6 @@
         flex-direction: column;
       }
     }
+
   {% endif %}
 {% endstyle %}

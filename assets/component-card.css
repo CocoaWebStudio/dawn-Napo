@@ -133,11 +133,6 @@
   grid-template-rows: minmax(0, auto) max-content minmax(0, auto);
 }
 
-.card__information {
-  grid-row-start: 2;
-  padding: 1.3rem 1rem;
-}
-
 .card:not(.ratio)>.card__content {
   grid-template-rows: max-content minmax(0, 1fr) max-content auto;
 }
@@ -153,6 +148,11 @@
     padding-bottom: 1.7rem;
     padding-top: 1.7rem;
   }
+}
+
+.card__grid {
+  display: grid;
+  grid-template-rows: 40px 40px;
 }
 
 .card__badge {
