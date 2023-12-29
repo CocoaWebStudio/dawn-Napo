@@ -153,6 +153,23 @@
     padding-bottom: 0;
     padding-top: 1.7rem;
   }
+.price-item.price-item--regular {
+  margin-top: 0.7rem;
+margin-bottom: 1rem;
+  opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+.card-wrapper:hover .price-item.price-item--regular {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.card__heading.h5{
+  min-height: 35px;
+}
 }
 
 .card__badge {
@@ -374,24 +391,8 @@
   margin-top: 0.4rem;
 }
 
-.price-item.price-item--regular {
-  margin-top: 0.7rem;
-  opacity: 0;
-    -webkit-transform: translateY(10px);
-    transform: translateY(10px);
-    -webkit-transition: all 0.35s ease-in-out;
-    transition: all 0.35s ease-in-out;
-}
-.price-item.price-item--regular:hover {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-}
 
-  .ProductItem:hover .ProductItem__PriceList--showOnHover {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0); }
+
 
 .card-information .caption {
   letter-spacing: 0.07rem;
