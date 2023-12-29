@@ -2926,6 +2926,9 @@
     "video": {
       "name": "Video",
       "settings": {
+        "center_video_title": {
+          "label": "Center video title"
+        },
         "heading": {
           "label": "Heading"
         },
