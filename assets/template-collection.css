@@ -93,13 +93,13 @@
     max-width: none;
   }
 }
+.collection .product-grid li{
+padding-left: 12px;
+padding-right: 12px;
+}
 
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
-}
-
-.grid.product-grid.contains-card {
-	column-gap: 25px;
 }
 
 .title {
