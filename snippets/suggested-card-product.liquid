@@ -19,11 +19,12 @@
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
-
-{{ 'component-rating.css' | asset_url | stylesheet_tag }}
-{{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
-
 {%- if card_product and card_product != empty -%}
+  {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+  {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
+  {{ 'component-card-product.css' | asset_url | stylesheet_tag }}
+
+
   <li class="grid__item">
     {%- liquid
       assign ratio = 1
@@ -172,7 +173,7 @@
                   </span>
                 </p>
                 <p class="rating-count caption">
-                  <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
+                  <span aria-hidden="true">{{ card_product.metafields.reviews.rating_count }} reviews</span>
                   <span class="visually-hidden">
                     {{- card_product.metafields.reviews.rating_count }}
                     {{ 'accessibility.total_reviews' | t -}}

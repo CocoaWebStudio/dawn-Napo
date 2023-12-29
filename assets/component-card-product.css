@@ -1,6 +1,7 @@
 .card__content h3 {
 	font-size: 13.5px;
 	font-weight: 700;
+  min-height: 35px;
 	text-transform: uppercase;
 	letter-spacing: 2.7px;
 	color: rgb(85, 85, 85);
