@@ -152,7 +152,23 @@
 
 .card__grid {
   display: grid;
-  grid-template-rows: 40px 40px;
+  grid-template-rows: 80px 60px 60px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 400px) {
+  .card__grid{
+    grid-template-rows: 40px 40px;
+  }  
+}
+
+@media screen and (min-width: 750px) {
+  .card__grid{
+    grid-template-rows: 40px 40px;
+    gap: 0;
+  }  
 }
 
 .card__badge {
