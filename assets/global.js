@@ -1142,22 +1142,22 @@ class SlideshowComponent extends SliderComponent {
             liProductCards.push(liProductCardElement)
             styles.push(stylesForQuickAddForm)
 
-            // slide.insertAdjacentHTML("beforeend", liProductCardElement)
-            // styleTag.insertAdjacentHTML("beforeend", stylesForQuickAddForm)
+            slide.insertAdjacentHTML("beforeend", liProductCardElement)
+            styleTag.insertAdjacentHTML("beforeend", stylesForQuickAddForm)
 
             // this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
 
           }
 
-          slide.insertAdjacentHTML("beforeend", liProductCards.join(""))
-          styleTag.insertAdjacentHTML("beforeend", styles.join(""))
-
-          slide.removeAttribute("images-loaded")
-          slide.setAttribute("images-loaded", "true")
-
-          this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+          // slide.insertAdjacentHTML("beforeend", liProductCards.join(""))
+          // styleTag.insertAdjacentHTML("beforeend", styles.join(""))
 
         }
+
+        this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+
+        slide.removeAttribute("images-loaded")
+        slide.setAttribute("images-loaded", "true")
 
         // this.adjustProductGridSlide({ adjustSize: true, enableScroll: true })
 
