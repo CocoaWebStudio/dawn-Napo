@@ -14,6 +14,7 @@
     aria-atomic="true"
     data-autoplay="false"
     data-speed="null"
+    style="overflow-y: hidden;"
   >
     {%- for block in section.blocks -%}
       {%- assign collection = collections[block.settings.collection] -%}
@@ -255,6 +256,14 @@
                         {% render 'card-product', card_product: product, section_id: section.id, show_quick_add: true %}
                       </li>
                     {%- endfor -%}
+                    {% comment %}
+                      {% else %}
+                      <li
+                        class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+                      >
+                        hello world {{ forloop.index }}
+                      </li>
+                    {% endcomment %}
                   {% endif %}
                 </ul>
               </div>

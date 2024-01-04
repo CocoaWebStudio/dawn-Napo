@@ -925,46 +925,82 @@ class SlideshowComponent extends SliderComponent {
     if (this.slider.getAttribute('data-autoplay') === 'true') this.setAutoPlay();
 
     if (this.sliderProductGrid) {
+      this.sliderProductGrid.querySelector(".slideshow").addEventListener("scrollend", () => {
+        console.log('evento disparado')
+        this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
+      })
+      // this.adjustProductGridSlide.slider.style.pointerEvents = "none"
       window.addEventListener("load", () => {
-        this.adjustProductGridSlide()
+        this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
       })
     }
 
     if (this.sliderBenefits) {
+      this.sliderBenefits.querySelector(".slideshow").addEventListener("scrollend", () => {
+        console.log('evento disparado')
+        this.adjustBenefitsSlide({ adjustSize: true, enableScroll: false })
+      })
+      // this.adjustBenefitsSlide.slider.style.pointerEvents = "none"
       window.addEventListener("load", () => {
-        this.adjustBenefitsSlide()
+        this.adjustBenefitsSlide({ adjustSize: true, enableScroll: false })
       })
     }
 
   }
 
-  adjustProductGridSlide() {
+  adjustProductGridSlide({ enableScroll = true, adjustSize = true } = {}) {
     if (this.sliderProductGrid) {
       const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
       const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
       const slideShowContainer = sliderContainer.querySelector(".slideshow")
       const slideHeight = slide.clientHeight
-      sliderContainer.style.height = `${slideHeight + 10}px`
-      // slide.parentElement.style.height = `${slideHeight}px`
-      slideShowContainer.style.height = `${slideHeight + 10}px`
-      sliderContainer.style.overflow = "hidden"
-      // slide.parentElement.style.overflow = "hidden"
-      slideShowContainer.style.overflow = "hidden"
+
+      if (adjustSize) {
+        sliderContainer.style.height = `${slideHeight + 10}px`
+        slideShowContainer.style.height = `${slideHeight + 10}px`
+      }
+
+      if (enableScroll) {
+        sliderContainer.style.overflowX = "auto"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "auto"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+      else {
+        sliderContainer.style.overflowX = "hidden"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "hidden"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+
     }
   }
 
-  adjustBenefitsSlide() {
+  adjustBenefitsSlide({ enableScroll = true, adjustSize = true } = {}) {
     if (this.sliderBenefits) {
       const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
       const sliderContainer = this.sliderBenefits.closest("slideshow-component")
       const slideShowContainer = sliderContainer.querySelector(".slideshow")
       const slideHeight = slide.clientHeight
-      sliderContainer.style.height = `${slideHeight}px`
-      slide.parentElement.style.height = `${slideHeight}px`
-      // slideShowContainer.style.height = `${slideHeight}px`
-      sliderContainer.style.overflow = "hidden"
-      slide.parentElement.style.overflow = "hidden"
-      // slideShowContainer.style.overflow = "hidden"
+
+      if (adjustSize) {
+        sliderContainer.style.height = `${slideHeight}px`
+        slideShowContainer.style.height = `${slideHeight}px`
+      }
+
+      if (enableScroll) {
+        sliderContainer.style.overflowX = "auto"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "auto"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+      else {
+        sliderContainer.style.overflowX = "hidden"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "hidden"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+
     }
   }
 
@@ -1034,8 +1070,6 @@ class SlideshowComponent extends SliderComponent {
 
       requestCollectionImageTimerId = setTimeout(async () => {
 
-        console.log('collection image')
-
         const slide_collection_image = this.querySelector(`#Slide-collection-images-${this.currentPage}`)
 
         const requestImages = slide_collection_image && slide_collection_image.getAttribute("images-loaded") == "false"
@@ -1045,8 +1079,6 @@ class SlideshowComponent extends SliderComponent {
         const { collection } = requestImages ? await (await fetch(`/collections/${collectionHandle}.json`)).json() : {}
 
         if (collection && collection.image) {
-
-          console.log('petición imagen colección')
 
           const imageContainer = slide_collection_image.querySelector(".image-collection-container")
 
@@ -1069,14 +1101,9 @@ class SlideshowComponent extends SliderComponent {
 
       requestCollectionProductsTimerId = setTimeout(async () => {
 
-        console.log({ currentPage: this.currentPage })
+        this.adjustProductGridSlide({ enableScroll: true, adjustSize: false })
+
         const scrollPositionProductGrid = this.sliderProductGrid.slider.clientWidth * (this.currentPage - 1)
-        console.log({ scrollPositionProductGrid })
-        // this.sliderProductGrid.slider.scrollTo({ left: scrollPositionProductGrid })
-        // this.sliderProductGrid.focus()
-        // this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
-        this.sliderProductGrid.slider.scrollTo({ left: scrollPositionProductGrid, behavior: "smooth" })
-        console.log('here')
 
         const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
 
@@ -1086,17 +1113,14 @@ class SlideshowComponent extends SliderComponent {
 
         if (requestImages) {
 
-          console.log('petición imagen productos', this.currentPage)
-
           const styleTag = document.querySelector("style")
 
           const { products } = await (await fetch(`/collections/${collectionHandle}/products.json`)).json()
 
           const liProductCards = []
+          const styles = []
 
-          for (let product of products) {
-
-            product = await (await fetch(`/products/${product.handle}.js`)).json()
+          for (let [i, product] of products.entries()) {
 
             const dataToCreateLiElement = {
               image_src: "",
@@ -1106,49 +1130,51 @@ class SlideshowComponent extends SliderComponent {
               product_id: "",
             }
 
-            dataToCreateLiElement.image_src = product.featured_image
-            dataToCreateLiElement.product_price = addDotToPrice(product.price)
+            dataToCreateLiElement.image_src = product.images[0].src
+            dataToCreateLiElement.product_price = product.variants[0].price
             dataToCreateLiElement.product_title = product.title
-            dataToCreateLiElement.product_url = product.url
+            dataToCreateLiElement.product_url = `/products/${product.handle}`
             dataToCreateLiElement.product_id = product.variants[0].id
 
             const liProductCardElement = liProductCard(dataToCreateLiElement)
             const stylesForQuickAddForm = quickAddFormStyles(dataToCreateLiElement.product_id)
-            // const liProductCardElement = document.createElement("div")
-            // liProductCardElement.innerHTML = liProductCard(dataToCreateLiElement)
 
-            // liProductCards.push(liProductCardElement)
+            liProductCards.push(liProductCardElement)
+            styles.push(stylesForQuickAddForm)
 
-            slide.insertAdjacentHTML("beforeend", liProductCardElement)
-            styleTag.insertAdjacentHTML("beforeend", stylesForQuickAddForm)
-            // slide.innerHTML += liProductCardElement
-            // slide.appendChild(liProductCardElement.firstChild)
+            // slide.insertAdjacentHTML("beforeend", liProductCardElement)
+            // styleTag.insertAdjacentHTML("beforeend", stylesForQuickAddForm)
 
-            this.adjustProductGridSlide()
+            // this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
 
           }
 
-          // slide.innerHTML = liProductCards.join("")
+          slide.insertAdjacentHTML("beforeend", liProductCards.join(""))
+          styleTag.insertAdjacentHTML("beforeend", styles.join(""))
 
           slide.removeAttribute("images-loaded")
           slide.setAttribute("images-loaded", "true")
 
+          this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+
         }
 
-        this.adjustProductGridSlide()
+        // this.adjustProductGridSlide({ adjustSize: true, enableScroll: true })
 
       }, 250)
     }
 
     if (this.sliderBenefits) {
       adjustBenefitsTabSizeTimerId = setTimeout(() => {
-        console.log({ currentPage: this.currentPage })
+
+        this.adjustBenefitsSlide({ enableScroll: true, adjustSize: false })
+
         const scrollPositionBenefits = this.sliderBenefits.slider.clientWidth * (this.currentPage - 1)
-        console.log({ scrollPositionBenefits })
-        // this.sliderBenefits.slider.scrollTo({ left: scrollPositionBenefits })
+
         this.sliderBenefits.setSlidePosition(scrollPositionBenefits)
-        console.log('here')
-        this.adjustBenefitsSlide()
+
+        // this.adjustBenefitsSlide({ adjustSize: true, enableScroll: true })
+
       }, 250)
     }
 
