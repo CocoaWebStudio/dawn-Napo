@@ -1894,6 +1894,11 @@ input[type='checkbox'] {
 }
 
 /* component-quantity */
+.predictive-search__result-group .quantity{
+min-height: 100% !important;
+height: auto;
+}
+
 .quantity {
   color: rgba(var(--color-foreground));
   position: relative;
@@ -3627,6 +3632,7 @@ details-disclosure>details {
   width: 100%;
   justify-content: space-around;
   margin-top: 1rem;
+column-gap: 17px;
 }
 
 .custom__quick-add-form-content select {
