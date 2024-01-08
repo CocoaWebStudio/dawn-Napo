@@ -6,7 +6,8 @@
 .cart__empty-text,
 .is-empty .cart__contents,
 cart-items.is-empty .title-wrapper-with-link,
-.is-empty .cart__footer {
+.is-empty .cart__footer,
+.is-empty .cart-gift {
   display: none;
 }
 

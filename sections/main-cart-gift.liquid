@@ -23,11 +23,11 @@
 %}
 
 <div
-  class="gradient color-{{ section.settings.color_scheme }}"
+  class="gradient color-{{ section.settings.color_scheme }} {% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}"
   id="main-cart-gift"
   data-id="{{ section.id }}"
 >
-  <div class="page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="cart-gift page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
     {%- if card_product and card_product != empty -%}
       <div class="card_gift_container">
         <div class="card_gift_image">
