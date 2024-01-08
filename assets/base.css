@@ -3674,3 +3674,15 @@ predictive-search {
 .predictive-search {
   overflow-x: hidden;
 }
+
+.mega-menu-container {
+  display: flex;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.mega-menu-container-image {
+  max-width: 100%;
+  /* width: 100%; */
+  height: auto;
+}
