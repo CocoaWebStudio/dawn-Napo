@@ -113,9 +113,9 @@
               {%- endif -%}
             {%- when 'free_shipping' -%}
               {%- liquid
-                assign free_shipping = block.settings.free_shipping | round: 2 | times: 100
+                assign free_shipping_price = block.settings.free_shipping_price | round: 2 | times: 100
                 assign alert_threshold = block.settings.alert_threshold | round: 2 | times: 100
-                assign warning_shipping = free_shipping | minus: alert_threshold
+                assign warning_shipping = free_shipping_price | minus: alert_threshold
               -%}
               {% style %}
                 .alert-info {
@@ -140,17 +140,17 @@
                 class="alert_container"
                 id="alert_container"
               >
-                {%- if cart.total_price > free_shipping -%}
+                {%- if cart.total_price > free_shipping_price -%}
                   <div class="alert alert-info" role="alert">Congratulations! You Qualify For Free Shipping!</div>
                 {%- elsif cart.total_price > warning_shipping -%}
                   <div class="alert alert-warning" role="alert">
                     You are only
-                    {{ free_shipping | minus: cart.total_price | money_without_trailing_zeros }} away from Free
+                    {{ free_shipping_price | minus: cart.total_price | money_without_trailing_zeros }} away from Free
                     Shipping!
                   </div>
                 {%- else -%}
                   <div class="alert alert-danger" role="alert">
-                    Free shipping on orders over {{ free_shipping | money_with_currency }}
+                    Free shipping on orders over {{ free_shipping_price | money_with_currency }}
                   </div>
                 {%- endif -%}
               </div>
@@ -242,82 +242,82 @@
     },
     {
       "type": "order_note",
-      "name": "Order note",
+      "name": "t:sections.main-cart-footer.blocks.order_note.name",
       "limit": 1
     },
     {
       "type": "free_shipping",
-      "name": "Free shipping",
+      "name": "t:sections.main-cart-footer.blocks.free_shipping.name",
       "limit": 1,
       "settings": [
         {
           "type": "number",
-          "id": "free_shipping",
-          "label": "Free shipping price",
+          "id": "free_shipping_price",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.price.label",
           "default": 85
         },
         {
           "type": "header",
-          "content": "Alert info",
-          "info": "The alert shows a message indicating free shipping."
+          "content": "t:sections.main-cart-footer.blocks.free_shipping.alert_info.header.content",
+          "info": "t:sections.main-cart-footer.blocks.free_shipping.alert_info.header.info"
         },
         {
           "type": "color",
           "id": "alert_info_color",
-          "label": "Alert info text color",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_info.color_label",
           "default": "#0c5460"
         },
         {
           "type": "color",
           "id": "alert_info_background",
-          "label": "Alert info background color",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_info.color_bg_label",
           "default": "#d1ecf1"
         },
         {
           "type": "header",
-          "content": "Alert warning",
-          "info": "The amount of money left before the alert changes to free shipping."
+          "content": "t:sections.main-cart-footer.blocks.free_shipping.alert_warning.header.content",
+          "info": "t:sections.main-cart-footer.blocks.free_shipping.alert_warning.header.info"
         },
         {
           "type": "number",
           "id": "alert_threshold",
-          "label": "Alert warning threshold",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_warning.threshold_label",
           "default": 20
         },
         {
           "type": "color",
           "id": "alert_warning_color",
-          "label": "Alert warning text color",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_warning.color_label",
           "default": "#726c1c"
         },
         {
           "type": "color",
           "id": "alert_warning_background",
-          "label": "Alert warning background color",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_warning.color_bg_label",
           "default": "#f3f8d7"
         },
         {
           "type": "header",
-          "content": "Alert danger",
-          "info": "The alert displays the amount of money required for free shipping."
+          "content": "t:sections.main-cart-footer.blocks.free_shipping.alert_danger.header.content",
+          "info": "t:sections.main-cart-footer.blocks.free_shipping.alert_danger.header.info"
         },
         {
           "type": "color",
           "id": "alert_danger_color",
-          "label": "Alert danger text color",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_danger.color_label",
           "default": "#721c24"
         },
         {
           "type": "color",
           "id": "alert_danger_background",
-          "label": "Alert danger background color",
+          "label": "t:sections.main-cart-footer.blocks.free_shipping.alert_danger.color_bg_label",
           "default": "#f8d7da"
         }
       ]
     },
     {
       "type": "discount_code",
-      "name": "Discount code",
+      "name": "t:sections.main-cart-footer.blocks.discount_code.name",
       "limit": 1
     },
     {
