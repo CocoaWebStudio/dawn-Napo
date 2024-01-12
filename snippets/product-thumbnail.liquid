@@ -78,7 +78,7 @@
   </noscript>
 
   {% if media.media_type == 'image' %}
-    <modal-opener class="product__modal-opener asd product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+    <modal-opener class="product__modal-opener product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
 
     <span class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}" aria-hidden="true">
 
@@ -127,8 +127,9 @@
     {%- endif -%}
   </modal-opener>
 {% else %}
-  <h1>video</h1>
-  {% endif %}
+<div class="product-media-container media-type-image media-fit-contain global-media-settings gradient">
+</div>
+{% endif %}
 
   {%- if media.media_type != 'image' -%}
     {%- if media.media_type == 'model' -%}
