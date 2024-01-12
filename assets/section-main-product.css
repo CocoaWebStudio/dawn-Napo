@@ -746,10 +746,10 @@ a.product__text {
   overflow: auto;
 }
 
-.product-media-modal__content > *:not(.active),
+/* .product-media-modal__content > *:not(.active),
 .product__media-list .deferred-media {
   display: none;
-}
+} */
 
 @media screen and (min-width: 750px) {
   .product-media-modal__content {
