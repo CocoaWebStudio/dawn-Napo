@@ -428,6 +428,9 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "test": {
+      "type": "home-page-banner"
     }
   },
   "order": [
@@ -442,6 +445,7 @@
     "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2",
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8",
     "collage",
-    "multicolumn"
+    "multicolumn",
+    "test"
   ]
 }
