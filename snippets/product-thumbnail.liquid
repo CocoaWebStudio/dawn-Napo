@@ -77,10 +77,11 @@
     {%- endif -%}
   </noscript>
 
-  <modal-opener class="product__modal-opener asd product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
+  {% if media.media_type == 'image' %}
+    <modal-opener class="product__modal-opener asd product__modal-opener--{{ media.media_type }} no-js-hidden" data-modal="#ProductModal-{{ modal_id }}">
 
     <span class="product__media-icon motion-reduce quick-add-hidden{% if media.media_type == 'image' %} product__media-icon--{{ section.settings.image_zoom }}{% endif %}" aria-hidden="true">
-     
+
 {%- liquid
         case media.media_type
         when 'video' or 'external_video'
@@ -93,7 +94,7 @@
       -%}
     </span>
     {%- render 'loading-spinner' -%}
-{% if position == 1 %} 
+{% if position == 1 %}
 	<div class="badge-images-wrapper">
 	{%- if product.metafields.img.badge -%}
 		<img src="{{ product.metafields.img.badge | img_url: width: 5000 }}" alt="">
@@ -105,9 +106,9 @@
         sizes: sizes,
         widths: '1100, 1206, 1346, 1426, 1646, 1946'}}" alt="">
 	{%- endif -%}
-		
-	</div> 
-{% endif %} 
+
+	</div>
+{% endif %}
     <div class="product__media media media--transparent">
 
       {{ media.preview_image | image_url: width: 1946 | image_tag:
@@ -125,6 +126,9 @@
     </button>
     {%- endif -%}
   </modal-opener>
+{% else %}
+  <h1>video</h1>
+  {% endif %}
 
   {%- if media.media_type != 'image' -%}
     {%- if media.media_type == 'model' -%}
