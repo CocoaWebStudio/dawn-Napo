@@ -992,6 +992,9 @@
         }
       },
       "settings": {
+        "image_background": {
+          "label": "Background image"
+        },
         "newsletter_enable": {
           "label": "Show email signup"
         },

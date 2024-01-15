@@ -14,8 +14,12 @@
     }
   }
 
-  .footer-background{
-    background-image: url({{ section.settings.test_image | img_url: 'master' }});
+  .footer-background {
+    {% if section.settings.image_background %}
+      background-image: url({{ section.settings.image_background | img_url: 'master' }});
+    {% else %}
+      background-image: url('https://rahua-beauty.myshopify.com/cdn/shop/files/test_footer_background.jpg?v=1703116936');
+    {% endif %}
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -34,7 +38,6 @@
     or section.settings.show_social
     and has_social_icons == true
   -%}
-    {% comment %} Form Newsletter and Follow on Shop {% endcomment %}
     <div
       class="footer--newsletter footer-block--newsletter{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
       {% if settings.animations_reveal_on_scroll %}
@@ -248,8 +251,8 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "test_image",
-      "label": "Background image"
+      "id": "image_background",
+      "label": "t:sections.footer.settings.image_background.label"
     },
     {
       "type": "color_scheme",
