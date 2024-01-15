@@ -1,5 +1,5 @@
 {% if section.settings.enable_section %}
-  <div class="press-notes">
+  <div class="press-notes" id="press-notes-section" style="position: relative">
     {% for press_note in section.blocks %}
       {% render 'press-note',
         press_note_source: press_note.settings.press_note_source,
@@ -29,6 +29,7 @@
     flex-grow: 1;
     flex-shrink: 1;
     max-width: calc(25%);
+    margin-bottom: 1rem;
   }
   .press-note-container {
     background-color: white;
@@ -54,7 +55,6 @@
     .press-note {
       flex-basis: calc(100%);
       max-width: calc(100%);
-      margin-bottom: 1rem;
     }
   }
   .press-note-source-logo {
@@ -86,6 +86,38 @@
     }
   }
 {% endstyle %}
+
+{% javascript %}
+  window.addEventListener('load', function () {
+    const pressNotesSection = document.getElementById('press-notes-section');
+
+    const windowWidth = window.innerWidth;
+
+    const pressNotesSectionHeight = pressNotesSection.offsetHeight;
+
+    debugger;
+
+    const getNumberOfColumns = (size) => {
+      if (size > 1050) return 4;
+      if (size > 768) return 3;
+      if (size > 480) return 2;
+      return 1;
+    };
+
+    const numberOfColumns = getNumberOfColumns(windowWidth);
+
+    for (let i = numberOfColumns; i <= pressNotesSection.children.length - 1; i++) {
+      let press_note_element = pressNotesSection.children[i];
+      press_note_element.style.position = 'absolute';
+      let press_note_reference = pressNotesSection.children[i - numberOfColumns];
+      debugger;
+    }
+
+    debugger;
+
+    pressNotesSection.style.height = `${pressNotesSectionHeight}px`;
+  });
+{% endjavascript %}
 
 {% schema %}
 {
