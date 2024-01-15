@@ -65,13 +65,19 @@ if (!customElements.get('product-form')) {
               return;
             }
 
-            if (!this.error)
-              publish(PUB_SUB_EVENTS.cartUpdate, {
-                source: 'product-form',
-                productVariantId: formData.get('id'),
-                cartData: response,
-              });
+            if (!this.error) {
+              try {
+                publish(PUB_SUB_EVENTS.cartUpdate, {
+                  source: 'product-form',
+                  productVariantId: formData.get('id'),
+                  cartData: response,
+                });
+              } catch (error) {
+                console.log(error);
+              }
+            }
             this.error = false;
+
             const quickAddModal = this.closest('quick-add-modal');
             if (quickAddModal) {
               document.body.addEventListener(
