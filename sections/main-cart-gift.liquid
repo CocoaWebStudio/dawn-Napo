@@ -1,0 +1,166 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{% liquid
+  assign card_product = section.settings.gift_product
+  assign description = section.settings.description
+  if section.settings.description == blank
+    assign description = 'onboarding.product_title' | t
+  endif
+%}
+
+<div
+  class="gradient color-{{ section.settings.color_scheme }} {% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}"
+  id="main-cart-gift"
+  data-id="{{ section.id }}"
+>
+  <div class="cart-gift page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+    {%- if card_product and card_product != empty -%}
+      <div class="card_gift_container">
+        <div class="card_gift_image">
+          <a href="{{ card_product.url }}">
+            <img
+              alt="{{ card_product.featured_media.alt | escape }}"
+              src="{{ card_product.featured_media | image_url: width: 200 }}"
+              loading="lazy"
+              class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              width="200px"
+              height="200px"
+            >
+          </a>
+        </div>
+        <div class="cart_gift_content">
+          <div>
+            <strong>{{ description | escape }}</strong>
+            <p>{{ card_product.price | money_with_currency }}</p>
+          </div>
+          <div class="quick-add no-js-hidden">
+            {%- liquid
+              assign product_form_id = 'quick-add-' | append: section_id | append: card_product.id
+              assign qty_rules = false
+              if card_product.selected_or_first_available_variant.quantity_rule.min > 1 or card_product.selected_or_first_available_variant.quantity_rule.max != null or card_product.selected_or_first_available_variant.quantity_rule.increment > 1
+                assign qty_rules = true
+              endif
+            -%}
+            <product-form data-section-id="{{ section.id }}">
+              {%- form 'product',
+                card_product,
+                id: product_form_id,
+                class: 'form',
+                novalidate: 'novalidate',
+                data-type: 'add-to-cart-form'
+              -%}
+                <input
+                  type="hidden"
+                  name="id"
+                  value="{{ card_product.selected_or_first_available_variant.id }}"
+                  class="product-variant-id"
+                  {% if card_product.selected_or_first_available_variant.available == false %}
+                    disabled
+                  {% endif %}
+                >
+                <button
+                  id="{{ product_form_id }}-submit"
+                  type="submit"
+                  name="add"
+                  class="quick-add__submit button"
+                  aria-haspopup="dialog"
+                  aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
+                  aria-live="polite"
+                  data-sold-out-message="true"
+                  {% if card_product.selected_or_first_available_variant.available == false %}
+                    disabled
+                  {% endif %}
+                >
+                  <span>
+                    {%- if card_product.selected_or_first_available_variant.available -%}
+                      {{ 'products.product.add_to_cart' | t }}
+                    {%- else -%}
+                      {{ 'products.product.sold_out' | t }}
+                    {%- endif -%}
+                  </span>
+                  <span class="sold-out-message hidden">
+                    {{ 'products.product.sold_out' | t }}
+                  </span>
+                  {%- if horizontal_quick_add -%}
+                    <span class="icon-wrap">{% render 'icon-plus' %}</span>
+                  {%- endif -%}
+                  {%- render 'loading-spinner' -%}
+                </button>
+              {%- endform -%}
+            </product-form>
+          </div>
+        </div>
+      </div>
+    {%- else -%}
+      <div class="card_gift_container">
+        <div class="card_gift_image">
+          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+        <div class="cart_gift_content">
+          <div>
+            <strong>{{ description }}</strong>
+            <p>{% render 'price', show_compare_at_price: true %}</p>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-gift.name",
+  "settings": [
+    {
+      "type": "text",
+      "id": "description",
+      "label": "t:sections.main-cart-gift.settings.description.label"
+    },
+    {
+      "type": "product",
+      "id": "gift_product",
+      "label": "t:sections.main-cart-gift.settings.gift_product.label"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 40
+    }
+  ]
+}
+{% endschema %}
