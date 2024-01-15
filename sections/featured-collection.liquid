@@ -86,7 +86,8 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            {% render 'card-product',
+            {%
+              render 'card-product',
               card_product: product,
               media_aspect_ratio: section.settings.image_ratio,
               image_shape: section.settings.image_shape,
@@ -94,7 +95,8 @@
               show_vendor: section.settings.show_vendor,
               show_rating: section.settings.show_rating,
               show_quick_add: section.settings.enable_quick_add,
-              section_id: section.id
+              section_id: section.id,
+              show_product_price: section.settings.show_product_price,
             %}
           </li>
         {%- else -%}
@@ -171,6 +173,12 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_price",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.show_product_price.label"
+    },
     {
       "type": "inline_richtext",
       "id": "title",
