@@ -112,44 +112,44 @@
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
       </div>
       {%- for block in section.blocks -%}
-        {%- liquid
-          assign field_title = block.settings.title
-        -%}
+        {%- assign title_field = block.settings.title | escape -%}
 
-        {%- if field_title == blank -%}
-          {%- capture field_title -%}Custom field {% increment custom_field %}{%- endcapture -%}
+        {%- if title_field == blank -%}
+          {%- capture title_field -%}Custom field {% increment custom_field %}{%- endcapture -%}
         {%- endif -%}
+
+        {% assign id_field = title_field | downcase | replace: ' ', '-' %}
 
         {% case block.type %}
           {% when 'text' %}
             <div class="field">
               {%- if block.settings.use_long_text -%}
                 <textarea
-                  name="contact[{{ field_title | escape }}]"
+                  name="contact[{{ id_field }}]"
                   cols="30"
                   rows="10"
                   class="text-area field__input"
-                  aria-label="{{ field_title | escape }}"
-                  placeholder="{{ field_title | escape }}"
+                  aria-label="{{ id_field }}"
+                  placeholder="{{ title_field }}"
                   {% if block.settings.is_required %}
                     required
                   {% endif -%}
                 ></textarea>
-                <label class="field__label">{{ field_title | escape }}</label>
+                <label class="field__label">{{ title_field }}</label>
               {%- else -%}
                 <input
                   autocomplete="off"
                   type="text"
                   class="field__input"
-                  name="contact[{{ field_title | escape }}]"
-                  aria-label="{{ field_title | escape }}"
-                  placeholder="{{ field_title | escape }}"
+                  name="contact[{{ id_field }}]"
+                  aria-label="{{ id_field }}"
+                  placeholder="{{ title_field }}"
                   {% if block.settings.is_required %}
                     required
                   {% endif %}
                 >
                 <label class="field__label">
-                  {{ field_title | escape }}
+                  {{ title_field }}
                   {% if block.settings.is_required %}
                     <span aria-hidden="true">*</span></label>
                     </label>
@@ -163,31 +163,31 @@
               {%- continue -%}
             {%- endif -%}
 
-            <label for="select">
-              {{- field_title | escape | append: ' *' -}}
-            </label>
-            <div class="field select">
-              <select
-                name="contact[{{ field_title | escape }}]"
-                class="field__input"
-                style="padding-top: 0; padding-bottom: 0;"
-                id="select"
-                title="{{ field_title | escape }}"
-                required
-              >
-                <option value="" class="field__default_option" disabled selected>
-                  Select {{ field_title | escape }}...
-                </option>
+            <div class="field field__select">
+              <label for="{{ id_field }}">
+                {{- title_field | append: ' *' -}}
+              </label>
 
-                {%- for value in values -%}
-                  {%- assign trim_value = value | strip -%}
+              <div class="select">
+                <select
+                  name="contact[{{ id_field }}]"
+                  class="select__select"
+                  id="{{ id_field }}"
+                  title="{{ title_field }}"
+                  placeholder="{{ title_field }}"
+                  required
+                >
+                  <option value="" disabled selected>Select {{ title_field }}...</option>
+                  {%- for value in values -%}
+                    {%- assign trim_value = value | strip | escape -%}
 
-                  <option class="field__default_option" style="padding-top: 2rem;" value="{{ trim_value | escape }}">
-                    {{ trim_value | escape }}
-                  </option>
-                {%- endfor -%}
-              </select>
-              {% render 'icon-caret' %}
+                    <option value="{{ trim_value }}">
+                      {{ trim_value }}
+                    </option>
+                  {%- endfor -%}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
             </div>
         {%- endcase -%}
       {%- endfor -%}
