@@ -1812,6 +1812,9 @@
     "main-collection-product-grid": {
       "name": "Product grid",
       "settings": {
+        "full_width_product_grid": {
+          "label": "Full width product grid"
+        },
         "products_per_page": {
           "label": "Products per page"
         },
