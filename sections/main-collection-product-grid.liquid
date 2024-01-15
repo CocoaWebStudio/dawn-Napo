@@ -24,6 +24,13 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  .collection-full-width {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: 100% !important;
+    width: 99%;
+  }
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
@@ -132,7 +139,7 @@
             </div>
           </div>
         {%- else -%}
-          <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
+          <div class="collection{% if section.settings.full_width_product_grid %} collection-full-width{% endif %}{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
             <ul
               id="product-grid"
@@ -187,6 +194,12 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width_product_grid",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.full_width_product_grid.label"
+    },
     {
       "type": "range",
       "id": "products_per_page",

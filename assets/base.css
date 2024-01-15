@@ -257,7 +257,6 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
 
 .text-body {
   font-size: 1.5rem;
-  letter-spacing: 0.06rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
@@ -278,7 +277,6 @@ h5,
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
-  letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
   color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
@@ -385,7 +383,6 @@ blockquote {
 
 .caption {
   font-size: 1rem;
-  letter-spacing: 0.07rem;
   line-height: calc(1 + 0.7 / var(--font-body-scale));
 }
 
@@ -397,19 +394,16 @@ blockquote {
 
 .caption-with-letter-spacing {
   font-size: 1rem;
-  letter-spacing: 0.13rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
   text-transform: uppercase;
 }
 
 .caption-with-letter-spacing--medium {
   font-size: 1.2rem;
-  letter-spacing: 0.16rem;
 }
 
 .caption-with-letter-spacing--large {
   font-size: 1.4rem;
-  letter-spacing: 0.18rem;
 }
 
 .caption-large,
@@ -420,7 +414,6 @@ blockquote {
 .select__select {
   font-size: 1.3rem;
   line-height: calc(1 + 0.5 / var(--font-body-scale));
-  letter-spacing: 0.04rem;
 }
 
 .color-foreground {
@@ -522,7 +515,6 @@ h6:empty {
   display: inline-flex;
   font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
   text-decoration: none;
   margin-bottom: 4.5rem;
   white-space: nowrap;
@@ -713,8 +705,8 @@ summary::-webkit-details-marker {
 
 *:focus-visible {
   outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
+  /* outline-offset: 0.3rem; */
+  box-shadow: 0 0 0 0rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
@@ -877,18 +869,15 @@ summary::-webkit-details-marker {
 .subtitle {
   font-size: 1.8rem;
   line-height: calc(1 + 0.8 / var(--font-body-scale));
-  letter-spacing: 0.06rem;
   color: rgba(var(--color-foreground), 0.7);
 }
 
 .subtitle--small {
   font-size: 1.4rem;
-  letter-spacing: 0.1rem;
 }
 
 .subtitle--medium {
   font-size: 1.6rem;
-  letter-spacing: 0.08rem;
 }
 
 /* component-grid */
@@ -1331,7 +1320,6 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button,
 .customer button {
   font-size: 1.5rem;
-  letter-spacing: 0.1rem;
   line-height: calc(1 + 0.2 / var(--font-body-scale));
 }
 
@@ -1741,7 +1729,6 @@ details[open]>.share-button__fallback {
   position: absolute;
   transition: top var(--duration-short) ease, font-size var(--duration-short) ease;
   color: rgba(var(--color-foreground), 0.75);
-  letter-spacing: 0.1rem;
   line-height: 1.5;
 }
 
@@ -1754,7 +1741,6 @@ details[open]>.share-button__fallback {
   font-size: 1rem;
   top: calc(var(--inputs-border-width) + 0.5rem);
   left: calc(var(--inputs-border-width) + 2rem);
-  letter-spacing: 0.04rem;
 }
 
 .field__input:focus,
@@ -2274,7 +2260,6 @@ product-info .loading__spinner:not(.hidden)~*,
   text-align: center;
   padding-top: 0.5rem;
   margin: 0;
-  letter-spacing: 0.1rem;
   min-height: 3rem;
 }
 
@@ -2696,7 +2681,6 @@ details[open] .modal-overlay::after {
   font-size: 2rem;
   line-height: 1.5;
   text-transform: uppercase;
-  letter-spacing: .13em;
   color: #495057AA;
   border-width: 0.5px;
   border-radius: 0.5rem;
@@ -2970,7 +2954,6 @@ details-disclosure>details {
   border-radius: var(--badge-corner-radius);
   display: inline-block;
   font-size: 1.2rem;
-  letter-spacing: 0.1rem;
   line-height: 1;
   padding: 0.5rem 1.3rem 0.6rem 1.3rem;
   text-align: center;
@@ -3592,7 +3575,6 @@ details-disclosure>details {
   color: #495057;
   font-size: 1.5rem;
   grid-area: auto;
-  letter-spacing: .25rem;
   margin: 0 .5rem 0 0;
   padding: .30rem .60rem;
 }
@@ -3610,7 +3592,6 @@ details-disclosure>details {
   font-size: 1.5rem;
   grid-area: auto;
   justify-content: center;
-  letter-spacing: 0.1rem;
   padding: .5rem 1.25rem;
   text-align: center;
   text-transform: uppercase;

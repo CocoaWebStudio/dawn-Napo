@@ -415,6 +415,18 @@
           "label": "Extra large"
         }
       },
+      "heading_alignment": {
+        "label": "Heading alignment",
+        "options__1": {
+          "label": "Left"
+        },
+        "options__2": {
+          "label": "Center"
+        },
+        "options__3": {
+          "label": "Right"
+        }
+      },
       "image_shape": {
         "options__1": {
           "label": "Default"
@@ -746,6 +758,7 @@
           "label": "Number of columns on desktop"
         },
         "show_view_all": {
+          "header": "\"View all\" styles", 
           "label": "Enable \"View all\" if collection has more products than shown"
         },
         "view_all_style": {
@@ -790,6 +803,9 @@
         "show_rating": {
           "label": "Show product rating",
           "info": "To display a rating, add a product rating app. [Learn more](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#featured-collection-show-product-rating)"
+        },
+        "quick_add_buttons": {
+          "label": "Quick add buttons"
         },
         "enable_quick_buy": {
           "label": "Enable quick add button",
@@ -992,6 +1008,9 @@
         }
       },
       "settings": {
+        "image_background": {
+          "label": "Background image"
+        },
         "newsletter_enable": {
           "label": "Show email signup"
         },
@@ -1732,6 +1751,17 @@
         }
       }
     },
+    "main-cart-gift": {
+      "name": "Cart gift wrapper",
+      "settings": {
+        "description": {
+          "label": "Description"
+        },
+        "gift_product": {
+          "label": "Gift Box Product"
+        }
+      }
+    },
     "main-cart-footer": {
       "name": "Subtotal",
       "blocks": {
@@ -1740,6 +1770,43 @@
         },
         "buttons": {
           "name": "Checkout button"
+        },
+        "order_note": {
+          "name": "Order note"
+        },
+        "free_shipping": {
+          "name": "Free shipping",
+          "price": {
+            "label": "Free shipping price"
+          },
+          "alert_info": {
+            "header": {
+              "content": "Alert info",
+              "info": "The alert shows a message indicating free shipping."
+            },
+            "color_label": "Alert info text color",
+            "color_bg_label": "Alert info background color"
+          },
+          "alert_warning": {
+            "header": {
+              "content": "Alert warning",
+              "info": "The amount of money left before the alert changes to free shipping."
+            },
+            "threshold_label": "Alert warning threshold",
+            "color_label": "Alert warning text color",
+            "color_bg_label": "Alert warning background color"
+          },
+          "alert_danger": {
+            "header": {
+              "content": "Alert danger",
+              "info": "The alert displays the amount of money required for free shipping."
+            },
+            "color_label": "Alert danger text color",
+            "color_bg_label": "Alert danger background color"
+          }
+        },
+        "discount_code": {
+          "name": "Discount code"
         }
       }
     },
@@ -1764,6 +1831,9 @@
     "main-collection-product-grid": {
       "name": "Product grid",
       "settings": {
+        "full_width_product_grid": {
+          "label": "Full width product grid"
+        },
         "products_per_page": {
           "label": "Products per page"
         },
