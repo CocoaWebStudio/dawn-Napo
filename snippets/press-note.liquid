@@ -1,0 +1,45 @@
+{% comment %}
+  Press note (for press page)
+
+  Accepts:
+    - press_note_source: {String}
+    - press_note_logo: {Image (from image picker)}
+    - press_note_text: {String}
+    - press_note_date: {String}
+    - press_note_product: {Product (from product picker)}
+
+  Usage:
+  {% render 'quantity-input' variant: variant %}
+{% endcomment %}
+
+{% if press_note_source != empty
+  and press_note_logo != empty
+  and press_note_text != empty
+  and press_note_date != empty
+  and press_note_product != empty
+%}
+  <div class="press-note">
+    <div class="press-note-container">
+      <div class="press-note-source-logo">
+        {{ press_note_logo | image_url: width: 300 | image_tag }}
+      </div>
+      <div class="press-note-text">
+        {{ press_note_text }}
+      </div>
+      <div class="press-note-source-name">
+        <strong>{{ press_note_source }}</strong>
+      </div>
+      <div class="press-note-product-name">
+        <strong>
+          <a href="{{ press_note_product.url }}">{{ press_note_product.title }}</a>
+        </strong>
+      </div>
+      <div class="press-note-date">
+        {{ press_note_date }}
+      </div>
+      <div class="press-note-product-image">
+        {{ press_note_product.featured_image | image_url: width: 300 | image_tag }}
+      </div>
+    </div>
+  </div>
+{% endif %}

@@ -1,0 +1,135 @@
+{% if section.settings.enable_section %}
+  <div class="press-notes">
+    {% for press_note in section.blocks %}
+      {% render 'press-note',
+        press_note_source: press_note.settings.press_note_source,
+        press_note_logo: press_note.settings.press_note_logo,
+        press_note_text: press_note.settings.press_note_text,
+        press_note_date: press_note.settings.press_note_date,
+        press_note_product: press_note.settings.press_note_product
+      %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% style %}
+  .press-notes {
+    padding: 2rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    background-color: #ececec;
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    /* column-gap: 4rem; */
+  }
+  .press-note {
+    padding: 0 2rem;
+    flex-basis: calc(25%);
+    flex-grow: 1;
+    flex-shrink: 1;
+    max-width: calc(25%);
+  }
+  .press-note-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  @media screen and (max-width: 1050px) {
+    .press-note {
+      flex-basis: calc(33.33%);
+      max-width: calc(33.33%);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .press-note {
+      flex-basis: calc(50%);
+      max-width: calc(50%);
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .press-note {
+      flex-basis: calc(100%);
+      max-width: calc(100%);
+      margin-bottom: 1rem;
+    }
+  }
+  .press-note-source-logo {
+    margin-bottom: 2rem;
+  }
+  .press-note-source-logo img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .press-note-source-name {
+    text-transform: uppercase;
+  }
+  .press-note-product-name a {
+    font-size: 2.5rem;
+    color: rgb(var(--color-link));
+    text-decoration: none;
+  }
+  .press-note-product-name a:hover {
+    text-decoration: underline;
+  }
+  .press-note-product-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  @media (min-width: 768px) {
+    .press-notes {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "t:sections.press_page.title",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "t:sections.press_page.enable_section",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "press_note",
+      "name": "t:sections.press_page.blocks.add_press_note.label",
+      "settings": [
+        {
+          "type": "text",
+          "id": "press_note_source",
+          "label": "t:sections.press_page.blocks.press_note_source.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "press_note_logo",
+          "label": "t:sections.press_page.blocks.press_note_logo.label"
+        },
+        {
+          "type": "textarea",
+          "id": "press_note_text",
+          "label": "t:sections.press_page.blocks.press_note_text.label"
+        },
+        {
+          "type": "text",
+          "id": "press_note_date",
+          "label": "t:sections.press_page.blocks.press_note_date.label"
+        },
+        {
+          "type": "product",
+          "id": "press_note_product",
+          "label": "t:sections.press_page.blocks.press_note_product.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

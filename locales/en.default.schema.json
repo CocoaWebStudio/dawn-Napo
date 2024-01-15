@@ -3360,6 +3360,30 @@
           "label": "Select a collection ingredient"
         }
       }
+    },
+    "press_page": {
+      "title": "Press page",
+      "enable_section": "Enable section",
+      "blocks": {
+        "add_press_note": {
+          "label": "Press note"
+        },
+        "press_note_source": {
+          "label": "Add press note source name"
+        },
+        "press_note_logo": {
+          "label": "Add press note source logo"
+        },
+        "press_note_text": {
+          "label": "Add press note text"
+        },
+        "press_note_date": {
+          "label": "Add press note date"
+        },
+        "press_note_product": {
+          "label": "Add press note product"
+        }
+      }
     }
   }
 }
