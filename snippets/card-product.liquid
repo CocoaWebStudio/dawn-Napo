@@ -133,7 +133,7 @@
         </div>
 
       <div class="card__content">
-        <div class="card__information">
+        <div class="card__information card__grid">
           <h3
             class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
             {% if card_product.featured_media or settings.card_style == 'card' %}
@@ -147,24 +147,17 @@
               {{ card_product.title | escape }}
             </a>
           </h3>
-          <div class="card-information">
-            {%- if show_vendor -%}
-              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-            {%- endif -%}
-
-            <span class="caption-large light">{{ block.settings.description | escape }}</span>
-
-            {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-              {% liquid
-                assign rating_decimal = 0
-                assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-                if decimal >= 0.3 and decimal <= 0.7
-                  assign rating_decimal = 0.5
-                elsif decimal > 0.7
-                  assign rating_decimal = 1
-                endif
-              %}
+          {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+            {% liquid
+              assign rating_decimal = 0
+              assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
+              if decimal >= 0.3 and decimal <= 0.7
+                assign rating_decimal = 0.5
+              elsif decimal > 0.7
+                assign rating_decimal = 1
+              endif
+            %}
+            <div>
               <div
                 class="rating"
                 role="img"
@@ -187,18 +180,27 @@
                   {{ 'accessibility.total_reviews' | t -}}
                 </span>
               </p>
-            {%- endif -%}
-
-            {% render 'price'
+            </div>
+          {%- elsif show_rating -%}
+            <small>No rating available</small>
+          {%- endif -%}
+          {%- if show_vendor -%}
+            <div>
+              <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
+              <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
+            </div>
+          {%- endif -%}
+          {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
               , product: card_product
               , price_class: ''
               , show_compare_at_price: true %}
-            {%- if card_product.quantity_price_breaks_configured? -%}
+          {%- if card_product.quantity_price_breaks_configured? -%}
+            <div>
               <div class="card__information-volume-pricing-note">
                 <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
               </div>
-            {%- endif -%}
-          </div>
+            </div>
+          {%- endif -%}
         </div>
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
@@ -266,6 +268,32 @@
                       , form_id: product_form_id
                       , input_name: 'quantity'
                     %}
+                    <select
+                      class="quantity__select"
+                      data-quantity-variant-id="{{ variant.id }}"
+                      {% if input_name %}
+                        name="{{ input_name }}"
+                      {% else %}
+                        name="updates[{{ variant_id }}]"
+                      {% endif %}
+                      {% # theme-check-disable %}
+                      value="{{ cart | item_count_for_variant: variant.id }}"
+                      data-cart-quantity="{{ cart | item_count_for_variant: variant.id }}"
+                      {% # theme-check-enable %}
+                      aria-label="{{ 'products.product.quantity.input_label' | t: product: variant.title | escape }}"
+                      id="Quantity-{{ variant.id }}"
+                      data-index="{{ variant.id }}"
+                      {% if form_id %}
+                        form="{{ form_id }}"
+                      {% endif %}
+                      {% if card_product.selected_or_first_available_variant.available == false %}
+                        disabled
+                      {% endif %}
+                    >
+                      {%- for option in (1..6) -%}
+                        <option value="{{ option }}">{{ option }}</option>
+                      {%- endfor -%}
+                    </select>
                   {% endif %}
                   <button
                     id="{{ product_form_id }}-submit"
@@ -363,23 +391,24 @@
 
     form[id='{{ product_form_id }}'] {
       display: flex;
-      justify-content: space-around;
+      gap: 2rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
     }
+
     form[id='{{ product_form_id }}'] .quick-add__submit {
       min-width: unset;
-      width: 50%;
+      flex-grow: 1;
     }
+
+    form[id='{{ product_form_id }}'] > .quantity__select {
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
     @media screen and (max-width: 749px) {
       form[id='{{ product_form_id }}'] {
         flex-direction: column;
-        align-items: center;
-      }
-      form[id='{{ product_form_id }}'] .quantity {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
-      form[id='{{ product_form_id }}'] .quick-add__submit {
-        width: 100%;
       }
     }
 
