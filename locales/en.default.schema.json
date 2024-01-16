@@ -3371,6 +3371,9 @@
         "press_note_source": {
           "label": "Add press note source name"
         },
+        "press_note_source_link": {
+          "label": "Add press note source link"
+        },
         "press_note_logo": {
           "label": "Add press note source logo"
         },

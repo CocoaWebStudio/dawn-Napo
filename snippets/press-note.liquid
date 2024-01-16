@@ -7,6 +7,7 @@
     - press_note_text: {String}
     - press_note_date: {String}
     - press_note_product: {Product (from product picker)}
+    - press_note_source_link: {String (optional)}
 
   Usage:
   {% render 'quantity-input' variant: variant %}
@@ -18,10 +19,16 @@
   and press_note_date != empty
   and press_note_product != empty
 %}
-  <div class="press-note">
+  <div class="press-note grid-item">
     <div class="press-note-container">
       <div class="press-note-source-logo">
-        {{ press_note_logo | image_url: width: 300 | image_tag }}
+        {% if press_note_source_link != empty %}
+          <a href="{{ press_note_source_link }}" target="_blank">
+            {{ press_note_logo | image_url: width: 300 | image_tag }}
+          </a>
+        {% else %}
+          {{ press_note_logo | image_url: width: 300 | image_tag }}
+        {% endif %}
       </div>
       <div class="press-note-text">
         {{ press_note_text }}
@@ -38,7 +45,9 @@
         {{ press_note_date }}
       </div>
       <div class="press-note-product-image">
-        {{ press_note_product.featured_image | image_url: width: 300 | image_tag }}
+        <a href="{{ press_note_product.url }}">
+          {{ press_note_product.featured_image | image_url: width: 300 | image_tag }}
+        </a>
       </div>
     </div>
   </div>

@@ -1,8 +1,13 @@
 {% if section.settings.enable_section %}
-  <div class="press-notes" id="press-notes-section" style="position: relative">
+  <div
+    class="press-notes grid"
+    id="press-notes-section"
+  >
+    <div class="grid-sizer"></div>
     {% for press_note in section.blocks %}
       {% render 'press-note',
         press_note_source: press_note.settings.press_note_source,
+        press_note_source_link: press_note.settings.press_note_source_link,
         press_note_logo: press_note.settings.press_note_logo,
         press_note_text: press_note.settings.press_note_text,
         press_note_date: press_note.settings.press_note_date,
@@ -10,53 +15,65 @@
       %}
     {% endfor %}
   </div>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 {% endif %}
 
 {% style %}
   .press-notes {
-    padding: 2rem 5%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: start;
     background-color: #ececec;
-    /* display: grid; */
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-    /* column-gap: 4rem; */
   }
   .press-note {
-    padding: 0 2rem;
-    flex-basis: calc(25%);
-    flex-grow: 1;
-    flex-shrink: 1;
-    max-width: calc(25%);
+    padding: 1rem;
     margin-bottom: 1rem;
+    width: calc(25%);
+    flex-grow: 1;
   }
   .press-note-container {
-    background-color: white;
     padding: 1rem;
+    background-color: white;
     border-radius: 1rem;
   }
 
-  @media screen and (max-width: 1050px) {
+  .grid-sizer {
+    width: calc(25%);
+  }
+
+  @media screen and (min-width: 1625px) {
+    .grid-sizer {
+      width: calc(20%);
+    }
     .press-note {
-      flex-basis: calc(33.33%);
-      max-width: calc(33.33%);
+      width: calc(20%);
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1050px) {
+    .grid-sizer {
+      width: calc(33.33%);
+    }
     .press-note {
-      flex-basis: calc(50%);
-      max-width: calc(50%);
+      width: calc(33.33%);
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .grid-sizer {
+      width: calc(50%);
+    }
+    .press-note {
+      width: calc(50%);
     }
   }
 
   @media screen and (max-width: 480px) {
+    .grid-sizer {
+      width: calc(100%);
+    }
     .press-note {
-      flex-basis: calc(100%);
-      max-width: calc(100%);
+      width: calc(100%);
     }
   }
+
   .press-note-source-logo {
     margin-bottom: 2rem;
   }
@@ -69,7 +86,7 @@
     text-transform: uppercase;
   }
   .press-note-product-name a {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: rgb(var(--color-link));
     text-decoration: none;
   }
@@ -80,42 +97,17 @@
     max-width: 100%;
     height: auto;
   }
-  @media (min-width: 768px) {
-    .press-notes {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
 {% endstyle %}
 
 {% javascript %}
-  window.addEventListener('load', function () {
-    const pressNotesSection = document.getElementById('press-notes-section');
-
-    const windowWidth = window.innerWidth;
-
-    const pressNotesSectionHeight = pressNotesSection.offsetHeight;
-
-    debugger;
-
-    const getNumberOfColumns = (size) => {
-      if (size > 1050) return 4;
-      if (size > 768) return 3;
-      if (size > 480) return 2;
-      return 1;
-    };
-
-    const numberOfColumns = getNumberOfColumns(windowWidth);
-
-    for (let i = numberOfColumns; i <= pressNotesSection.children.length - 1; i++) {
-      let press_note_element = pressNotesSection.children[i];
-      press_note_element.style.position = 'absolute';
-      let press_note_reference = pressNotesSection.children[i - numberOfColumns];
-      debugger;
-    }
-
-    debugger;
-
-    pressNotesSection.style.height = `${pressNotesSectionHeight}px`;
+  const elem = document.querySelector('.grid.press-notes');
+  const msnry = new Masonry(elem, {
+    // options
+    columnWidth: '.grid-sizer',
+    // do not use .grid-sizer in layout
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    horizontalOrder: true,
   });
 {% endjavascript %}
 
@@ -139,6 +131,11 @@
           "type": "text",
           "id": "press_note_source",
           "label": "t:sections.press_page.blocks.press_note_source.label"
+        },
+        {
+          "type": "text",
+          "id": "press_note_source_link",
+          "label": "t:sections.press_page.blocks.press_note_source_link.label"
         },
         {
           "type": "image_picker",
