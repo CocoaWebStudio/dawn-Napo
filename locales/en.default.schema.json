@@ -3414,6 +3414,9 @@
     "ingredients": {
       "title": "Ingredients List",
       "enable_section": "Enable section",
+      "show_quantity_select": "Show quantity select",
+      "products": "Products",
+      "benefits": "Benefits",
       "blocks": {
         "add_ingredient": {
           "name": "Ingredient",
