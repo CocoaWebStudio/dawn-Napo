@@ -37,3 +37,36 @@
     grid-column-gap: 2rem;
   }
 }
+
+.field__select {
+  display: flex;
+  flex-direction: column;
+}
+
+.field__select label {
+  padding: 0.5rem 2rem 0;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.field__select .select__select {
+  height: 3.5rem;
+  font-size: 1.6rem;
+}
+
+.field__select .select:after,
+.field__select .select:before,
+.field__select .select__select:after,
+.field__select .select__select:before {
+  display: none;
+}
+
+.field__select .select__select:focus-visible,
+.field__select .select__select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.field__select select option {
+  color: black;
+}

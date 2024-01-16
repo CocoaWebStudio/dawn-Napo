@@ -5,7 +5,7 @@
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 1 !important;
 	display: flex;
 		flex-direction: column;
 }
@@ -13,16 +13,15 @@
 .badge-images-wrapper img {
 	margin: 5px auto;
 	}
-	
+
 	.accordion {
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
 		border-top: 1px solid #939393 !important;
 		border-bottom: 1px solid #939393 !important;
 	}
-	
+
 	.accordion__title {
-		letter-spacing: 3px;
 		text-transform: uppercase;
 }
 .share-buttons-wrapper {
@@ -41,10 +40,6 @@
 	padding-bottom: 1rem;
 	border-top: 1px solid #dddddd !important;
 	border-bottom: 1px solid #dddddd !important;
-}
-
-.custom-share-wrapper h3 {
-	letter-spacing: 3.5px;
 }
 
 .product__accordion i {
@@ -104,7 +99,6 @@
         text-align: left;
         font-size: 15px;
         margin-bottom: 7.5px;
-        letter-spacing: 3px;
     }
 
     .shopify-app-block {
@@ -171,5 +165,5 @@
         display: none;
     }
 
-	
+
 }

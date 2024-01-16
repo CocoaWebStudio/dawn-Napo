@@ -78,7 +78,6 @@
   margin: 0 auto;
   background-color: rgb(var(--color-background));
   padding: 24px 24px 0;
-  letter-spacing: 2.3px;
 }
 
 @media screen and (min-width: 750px) {
