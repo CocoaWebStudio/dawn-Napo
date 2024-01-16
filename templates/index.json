@@ -63,6 +63,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "show_product_price": true,
         "title": "GIFT ENCHANTED ADVENTURES",
         "heading_size": "h2",
         "description": "",
@@ -73,7 +74,7 @@
         "columns_desktop": 4,
         "full_width": true,
         "show_view_all": true,
-        "view_all_style": "link",
+        "view_all_style": "solid",
         "enable_desktop_slider": true,
         "color_scheme": "scheme-1",
         "image_ratio": "square",
@@ -92,6 +93,7 @@
     "55c28b18-ad23-4f11-8a01-a7e5af5bbd18": {
       "type": "featured-collection",
       "settings": {
+        "show_product_price": true,
         "title": "NEW IN",
         "heading_size": "h2",
         "description": "",
@@ -122,6 +124,7 @@
       "type": "featured-collection",
       "disabled": true,
       "settings": {
+        "show_product_price": true,
         "title": "FALL STYLE MUST HAVES",
         "heading_size": "h2",
         "description": "",
@@ -151,6 +154,7 @@
     "4091bccf-4305-4446-aed5-d8c73fa3d6ae": {
       "type": "featured-collection",
       "settings": {
+        "show_product_price": true,
         "title": "AWARD WINNING RAHUA",
         "heading_size": "h2",
         "description": "",
