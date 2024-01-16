@@ -15,6 +15,7 @@
   - horizontal_class: {Boolean} Add a card--horizontal class if set to true. Default: false (optional)
   - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
   - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' (optional)
+  - show_product_price: {Boolean} The product price is shown.
 
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
@@ -188,9 +189,9 @@
                 </span>
               </p>
             {%- endif -%}
-
-            {% render 'price'
-              , product: card_product
+            {% if show_product_price %}
+              {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+            {% endif %}
               , price_class: ''
               , show_compare_at_price: true %}
             {%- if card_product.quantity_price_breaks_configured? -%}
@@ -349,8 +350,9 @@
               <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
               <div class="caption-with-letter-spacing light">{{ 'products.product.vendor' | t }}</div>
             {%- endif -%}
-            {% render 'price'
-              , show_compare_at_price: true %}
+            {% if show_product_price %}
+              {% render 'price', show_compare_at_price: true %}
+            {% endif %}
           </div>
         </div>
       </div>

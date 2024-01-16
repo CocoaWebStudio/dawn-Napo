@@ -91,6 +91,7 @@
               , show_rating: section.settings.show_rating
               , show_quick_add: section.settings.enable_quick_add
               , section_id: section.id
+              , show_product_price: section.settings.show_product_price
             %}
           </li>
         {%- else -%}
@@ -165,6 +166,12 @@
       "groups": ["header", "footer"]
     },
     "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_price",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.show_product_price.label"
+    },
       {
         "type": "inline_richtext",
         "id": "title",

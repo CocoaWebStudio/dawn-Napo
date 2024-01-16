@@ -813,6 +813,9 @@
         },
         "swipe_on_mobile": {
           "label": "Enable swipe on mobile"
+        },
+        "show_product_price": {
+          "label": "Show product price"
         }
       },
       "presets": {
@@ -1817,6 +1820,9 @@
       "settings": {
         "full_width_product_grid": {
           "label": "Full width product grid"
+          },
+        "show_product_price": {
+          "label": "Show product price"
         },
         "products_per_page": {
           "label": "Products per page"
