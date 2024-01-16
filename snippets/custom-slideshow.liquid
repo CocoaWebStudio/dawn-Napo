@@ -1,0 +1,321 @@
+<slideshow-component
+  class="slider-mobile-gutter page-width"
+  role="region"
+  aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
+  aria-label="{{ section.settings.accessibility_info | escape }}"
+  style="margin: 2rem auto"
+  look-for-product-grid="true"
+  id="principal-slideshow-ingredients-page"
+>
+  <div
+    class="slideshow banner banner--small grid grid--1-col slider slider--everywhere {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
+    id="Slider-{{ section.id }}"
+    aria-live="polite"
+    aria-atomic="true"
+    data-autoplay="false"
+    data-speed="null"
+    style="overflow-y: hidden;"
+  >
+    {%- for block in section.blocks -%}
+      {%- assign collection = collections[block.settings.collection] -%}
+      <style>
+        #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
+          opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
+        }
+      </style>
+      <div
+        class="slideshow__slide grid__item grid--1-col slider__slide"
+        id="Slide-collection-images-{{ forloop.index }}"
+        {{ block.shopify_attributes }}
+        role="group"
+        aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+        aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+        tabindex="-1"
+        images-loaded="{%- if forloop.first %}true{% else %}false{% endif %}"
+        handle="{{ collection.handle }}"
+      >
+        <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}">
+          {%- if collection.image -%}
+            {%- liquid
+              assign height = collection.image.width | divided_by: collection.image.aspect_ratio | round
+              if section.settings.image_behavior == 'ambient'
+                assign sizes = '120vw'
+                assign widths = '450, 660, 900, 1320, 1800, 2136, 2400, 3600, 7680'
+              else
+                assign sizes = '100vw'
+                assign widths = '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+              endif
+              assign fetch_priority = 'auto'
+              if section.index == 1
+                assign fetch_priority = 'high'
+              endif
+            -%}
+            {%- if forloop.first %}
+              <h1 style="margin: 0 auto; height: auto; z-index: 1; text-align: center;">
+                {%- if collection.title != blank -%}
+                  {{- collection.title | escape -}}
+                {%- else -%}
+                  {{ 'onboarding.collection_title' | t }}
+                {%- endif -%}
+              </h1>
+              <div
+                class="image-collection-container media"
+                style="text-align: center; background-color: white; place-items: center center"
+              >
+                <img
+                  src="{{ collection.image | image_url }}"
+                  style="max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)"
+                >
+              </div>
+            {%- else -%}
+              <h1 style="margin: 0 auto; height: auto; z-index: 1; text-align: center;">
+                {%- if collection.title != blank -%}
+                  {{- collection.title | escape -}}
+                {%- else -%}
+                  {{ 'onboarding.collection_title' | t }}
+                {%- endif -%}
+              </h1>
+              <div
+                class="image-collection-container media"
+                style="text-align: center; background-color: white; place-items: center center"
+              >
+                {% comment %}
+                  <img
+                    src="{{ collection.image | image_url }}"
+                    loading="lazy"
+                    style="max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)"
+                  >
+                {% endcomment %}
+              </div>
+            {%- endif -%}
+          {%- else -%}
+            {%- assign placeholder_slide = forloop.index | modulo: 2 -%}
+            {%- if placeholder_slide == 1 -%}
+              {{ 'hero-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- else -%}
+              {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          {%- endif -%}
+        </div>
+        <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width banner--desktop-transparent {% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
+          <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
+            {%- if block.settings.heading != blank -%}
+              <h2 class="banner__heading inline-richtext {{ block.settings.heading_size }}">
+                {{ block.settings.heading }}
+              </h2>
+            {%- endif -%}
+            {%- if block.settings.subheading != blank -%}
+              <div class="banner__text rte" {{ block.shopify_attributes }}>
+                <p>{{ block.settings.subheading }}</p>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.button_label != blank -%}
+              <div class="banner__buttons">
+                <a
+                  {% if block.settings.link %}
+                    href="{{ block.settings.link }}"
+                  {% else %}
+                    role="link" aria-disabled="true"
+                  {% endif %}
+                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
+                >
+                  {{- block.settings.button_label | escape -}}
+                </a>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- if section.blocks.size > 1 -%}
+    <div class="slideshow__controls slider-buttons no-js-hidden">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
+        aria-controls="Slider-{{ section.id }}"
+      >
+        {% render 'icon-caret' %}
+      </button>
+      <div class="slider-counter slider-counter--counter{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+        <span class="slider-counter--current">1</span>
+        <span aria-hidden="true"> / </span>
+        <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+        <span class="slider-counter--total">{{ section.blocks.size }}</span>
+        {% comment %}
+          {%- if section.settings.slider_visual == 'counter' -%}
+          {% endif %}
+        {% endcomment %}
+        {% comment %}
+          {%- else -%}
+            <div class="slideshow__control-wrapper">
+              {%- for block in section.blocks -%}
+                <button
+                  class="slider-counter__link slider-counter__link--counter link"
+                  aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                  aria-controls="Slider-{{ section.id }}"
+                >
+                  {%- if section.settings.slider_visual == 'numbers' -%}
+                    {{ forloop.index -}}
+                  {%- else -%}
+                    <span class="dot"></span>
+                  {%- endif -%}
+                </button>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        {% endcomment %}
+      </div>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
+        aria-controls="Slider-{{ section.id }}"
+      >
+        {% render 'icon-caret' %}
+      </button>
+    </div>
+    <noscript>
+      <div class="slider-buttons">
+        <div class="slider-counter">
+          {%- for block in section.blocks -%}
+            <a
+              href="#Slide-{{ section.id }}-{{ forloop.index }}"
+              class="slider-counter__link link"
+              aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+            >
+              {{ forloop.index }}
+            </a>
+          {%- endfor -%}
+        </div>
+      </div>
+    </noscript>
+  {%- endif -%}
+</slideshow-component>
+{%- if section.blocks.size > 0 -%}
+  <div id="tab-container-ingredients" class="tab-container">
+    <div class="tabs">
+      <input
+        type="radio"
+        name="tabs"
+        id="tab-products"
+        checked
+      >
+      <label for="tab-products" style="text-align: center">
+        <h4>
+          {{- 'sections.ingredients.products' | t -}}
+        </h4>
+      </label>
+      <div class="tab">
+        <slideshow-component
+          class="slider-mobile-gutter page-width"
+          role="region"
+          aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
+          aria-label="{{ section.settings.accessibility_info | escape }}"
+          style="margin: 2rem auto"
+          id="products-slide-show-component"
+        >
+          <div
+            class="slideshow banner--small grid grid--1-col slider slider--everywhere {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
+            id="Slider-{{ section.id }}"
+            aria-live="polite"
+            aria-atomic="true"
+            data-autoplay="false"
+            data-speed="null"
+          >
+            {%- for block in section.blocks -%}
+              {%- assign collection = collections[block.settings.collection] -%}
+              <style>
+                #Slide-{{ forloop.index }}-tabs .banner__media::after {
+                  opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
+                }
+              </style>
+              <div
+                class="slideshow__slide grid__item grid--1-col slider__slide"
+                id="Slide-products-{{ forloop.index }}-tabs"
+                role="group"
+                aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+                aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                tabindex="-1"
+              >
+                <ul
+                  images-loaded="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}"
+                  id="Slider-products-{{ section.id }}-tabs"
+                  class="grid product-grid contains-card contains-card--product grid--4-col-desktop grid--2-col-tablet-down grid--2-col-tablet-down{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
+                  role="list"
+                  handle="{{ collection.handle }}"
+                >
+                  {% if forloop.index0 == 0 %}
+                    {%- for product in collection.products -%}
+                      <li
+                        class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+                      >
+                        {% render 'card-product', card_product: product, section_id: section.id, show_quick_add: true %}
+                      </li>
+                    {%- endfor -%}
+                    {% comment %}
+                      {% else %}
+                      <li
+                        class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+                      >
+                        hello world {{ forloop.index }}
+                      </li>
+                    {% endcomment %}
+                  {% endif %}
+                </ul>
+              </div>
+            {%- endfor -%}
+          </div>
+        </slideshow-component>
+      </div>
+      {% comment %} beneficios {% endcomment %}
+      <input
+        type="radio"
+        name="tabs"
+        id="tab-benefits"
+      >
+      <label for="tab-benefits" style="text-align: center">
+        <h4>
+          {{- 'sections.ingredients.benefits' | t -}}
+        </h4>
+      </label>
+      <div class="tab">
+        <slideshow-component
+          class="slider-mobile-gutter page-width"
+          role="region"
+          aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
+          aria-label="{{ section.settings.accessibility_info | escape }}"
+          style="margin: 2rem auto"
+          id="benefits-slide-show-component"
+        >
+          <div
+            class="slideshow banner banner--small grid grid--1-col slider slider--everywhere {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
+            id="Slider-{{ section.id }}"
+            aria-live="polite"
+            aria-atomic="true"
+            data-autoplay="false"
+            data-speed="null"
+          >
+            {%- for block in section.blocks -%}
+              {%- assign collection = collections[block.settings.collection] -%}
+              <div
+                class="slideshow__slide grid__item grid--1-col slider__slide"
+                id="Slide-benefits-{{ forloop.index }}-tabs"
+                {{ block.shopify_attributes }}
+                role="group"
+                aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+                aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                tabindex="-1"
+              >
+                <span style="position: absolute">{{ collection.description }}</span>
+              </div>
+            {%- endfor -%}
+          </div>
+        </slideshow-component>
+      </div>
+    </div>
+  </div>
+{%- endif -%}

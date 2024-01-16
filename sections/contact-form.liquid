@@ -75,6 +75,7 @@
             autocapitalize="off"
             value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
             aria-required="true"
+            required
             {% if form.errors contains 'email' %}
               aria-invalid="true"
               aria-describedby="ContactForm-email-error"
@@ -110,6 +111,87 @@
         >
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
       </div>
+      {%- for block in section.blocks -%}
+        {%- assign title_field = block.settings.title | escape -%}
+
+        {%- if title_field == blank -%}
+          {%- capture title_field -%}Custom field {% increment custom_field %}{%- endcapture -%}
+        {%- endif -%}
+
+        {% assign id_field = title_field | downcase | replace: ' ', '-' %}
+
+        {% case block.type %}
+          {% when 'text' %}
+            <div class="field">
+              {%- if block.settings.use_long_text -%}
+                <textarea
+                  name="contact[{{ id_field }}]"
+                  cols="30"
+                  rows="10"
+                  class="text-area field__input"
+                  aria-label="{{ id_field }}"
+                  placeholder="{{ title_field }}"
+                  {% if block.settings.is_required %}
+                    required
+                  {% endif -%}
+                ></textarea>
+                <label class="field__label">{{ title_field }}</label>
+              {%- else -%}
+                <input
+                  autocomplete="off"
+                  type="text"
+                  class="field__input"
+                  name="contact[{{ id_field }}]"
+                  aria-label="{{ id_field }}"
+                  placeholder="{{ title_field }}"
+                  {% if block.settings.is_required %}
+                    required
+                  {% endif %}
+                >
+                <label class="field__label">
+                  {{ title_field }}
+                  {% if block.settings.is_required %}
+                    <span aria-hidden="true">*</span></label>
+                    </label>
+                  {% endif %}
+              {%- endif -%}
+            </div>
+          {%- when 'dropdown' -%}
+            {%- assign values = block.settings.values | split: ',' -%}
+
+            {%- if values == empty -%}
+              {%- continue -%}
+            {%- endif -%}
+
+            <div class="field field__select">
+              <label for="{{ id_field }}">
+                {{- title_field | append: ' *' -}}
+              </label>
+
+              <div class="select">
+                <select
+                  name="contact[{{ id_field }}]"
+                  class="select__select"
+                  id="{{ id_field }}"
+                  title="{{ title_field }}"
+                  placeholder="{{ title_field }}"
+                  required
+                >
+                  <option value="" disabled selected>Select {{ title_field }}...</option>
+                  {%- for value in values -%}
+                    {%- assign trim_value = value | strip | escape -%}
+
+                    <option value="{{ trim_value }}">
+                      {{ trim_value }}
+                    </option>
+                  {%- endfor -%}
+                </select>
+                {% render 'icon-caret' %}
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+
       <div class="field">
         <textarea
           rows="10"
@@ -125,7 +207,7 @@
         </label>
       </div>
       <div class="contact__button">
-        <button type="submit" class="button">
+        <button type="submit" class="button button--full-width">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
@@ -197,6 +279,51 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text field",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Field name",
+          "default": "Custom field"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_long_text",
+          "label": "Use long text",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "is_required",
+          "label": "Field is required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "Dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Field name",
+          "default": "Custom field"
+        },
+        {
+          "type": "text",
+          "id": "values",
+          "label": "Values",
+          "info": "Separate each value by a comma. Ej: value 1, value 2, value 3",
+          "default": "value 1, value 2, value 3"
+        }
+      ]
     }
   ],
   "presets": [

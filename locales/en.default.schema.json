@@ -1803,6 +1803,18 @@
     "main-collection-banner": {
       "name": "Collection banner",
       "settings": {
+        "content_alignment": {
+          "label": "Content alignment",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
+          }
+        },
         "paragraph": {
           "content": "Add a description or image by editing your collection. [Learn more](https:\/\/help.shopify.com\/manual\/products\/collections\/collection-layout)"
         },
@@ -1820,7 +1832,7 @@
       "settings": {
         "full_width_product_grid": {
           "label": "Full width product grid"
-          },
+        },
         "show_product_price": {
           "label": "Show product price"
         },
@@ -3414,10 +3426,36 @@
     "ingredients": {
       "title": "Ingredients List",
       "enable_section": "Enable section",
+      "show_quantity_select": "Show quantity select",
+      "products": "Products",
+      "benefits": "Benefits",
       "blocks": {
         "add_ingredient": {
           "name": "Ingredient",
           "label": "Select a collection ingredient"
+        }
+      }
+    },
+    "home_page_banner": {
+      "title": "Banner",
+      "title_size": "Heading size",
+      "title_size_options": {
+        "option_1": {
+          "label": "small"
+        },
+        "option_2": {
+          "label": "medium"
+        },
+        "option_3": {
+          "label": "large"
+        }
+      },
+      "enable_section": "Enable section",
+      "banner_title": "Banner Title",
+      "blocks": {
+        "add_company_logo": {
+          "name": "Company logo",
+          "label": "Select a company logo from your images"
         }
       }
     }

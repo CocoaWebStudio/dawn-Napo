@@ -432,6 +432,60 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "test": {
+      "type": "home-page-banner",
+      "blocks": {
+        "company_logo_wpxawG": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/Harper_s_Bazaar_Logo_svg.png"
+          }
+        },
+        "company_logo_TiYJdY": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/VOGUE_LOGO_svg.png"
+          }
+        },
+        "company_logo_6X4a8c": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/allure-logo-163A9213E6-seeklogo.com.png"
+          }
+        },
+        "company_logo_CiEkM7": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/Forbes-logo.png"
+          }
+        },
+        "company_logo_yrt9YP": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/ELLE_Magazine_Logo_svg.png"
+          }
+        },
+        "company_logo_Yay3CK": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/PS23_POPSUGAR_LOGO_BLACK.png"
+          }
+        }
+      },
+      "block_order": [
+        "company_logo_wpxawG",
+        "company_logo_TiYJdY",
+        "company_logo_6X4a8c",
+        "company_logo_CiEkM7",
+        "company_logo_yrt9YP",
+        "company_logo_Yay3CK"
+      ],
+      "settings": {
+        "enable_section": true,
+        "home_page_banner_title": "Loved by",
+        "heading_size": "h2"
+      }
     }
   },
   "order": [
@@ -446,6 +500,7 @@
     "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2",
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8",
     "collage",
-    "multicolumn"
+    "multicolumn",
+    "test"
   ]
 }

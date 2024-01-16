@@ -1,0 +1,99 @@
+{% if section.settings.enable_section %}
+  <section class="home-page-banner">
+    <h2 class="home-page-banner-title {{ section.settings.heading_size }}">
+      {{ section.settings.home_page_banner_title }}
+    </h2>
+    <section class="home-page-banner-logos">
+      {% for logo in section.blocks %}
+        {% if logo.settings.company_logo != null %}
+          {% assign company_logo = logo.settings.company_logo %}
+          <div class="home-page-banner-logos-logo">
+            {{ company_logo | image_url: width: 300 | image_tag }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </section>
+  </section>
+{% endif %}
+{% style %}
+  @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  .home-page-banner {
+    background-color: #dfc3a0;
+    padding: 1rem 0;
+  }
+  .home-page-banner-title {
+    text-align: center;
+    margin: 0;
+    color: black;
+    font-family: 'Tinos', serif;
+  }
+  .home-page-banner-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .home-page-banner-logos-logo {
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 2vw;
+  }
+  .home-page-banner-logos-logo img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+  }
+{% endstyle %}
+{% schema %}
+{
+  "name": "t:sections.home_page_banner.title",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "t:sections.home_page_banner.enable_section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "home_page_banner_title",
+      "label": "t:sections.home_page_banner.banner_title",
+      "default": "Loved by"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:sections.home_page_banner.title_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "t:sections.home_page_banner.title_size_options.option_1.label"
+        },
+        {
+          "value": "h1",
+          "label": "t:sections.home_page_banner.title_size_options.option_2.label"
+        },
+        {
+          "value": "h0",
+          "label": "t:sections.home_page_banner.title_size_options.option_3.label"
+        }
+      ],
+      "default": "h2"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "company_logo",
+      "name": "t:sections.home_page_banner.blocks.add_company_logo.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "company_logo",
+          "label": "t:sections.home_page_banner.blocks.add_company_logo.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

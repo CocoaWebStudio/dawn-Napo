@@ -3113,6 +3113,10 @@ details-disclosure>details {
   border-radius: calc(var(--media-radius) - var(--media-border-width));
 }
 
+.product-media-container .global-media-settings video{
+max-width: 100%;
+}
+
 .content-container--full-width,
 .global-media-settings--full-width,
 .global-media-settings--full-width img,

@@ -177,6 +177,7 @@
     "related-products": {
       "type": "related-products",
       "settings": {
+        "show_quantity_select": true,
         "heading": "You may also like",
         "heading_size": "h2",
         "products_to_show": 4,
@@ -194,7 +195,9 @@
     },
     "suggested-products": {
       "type": "suggested-products",
+      "disabled": true,
       "settings": {
+        "show_quantity_select": true,
         "heading": "You may also like",
         "heading_size": "h2",
         "products_to_show": 4,
