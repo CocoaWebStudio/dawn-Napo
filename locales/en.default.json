@@ -364,6 +364,18 @@
       "products": "Products",
       "benefits": "Benefits",
       "star_ingredients": "Star Ingredients"
+      },
+    "home_page_banner": {
+      "title": "banner",
+      "enable_section": "Enable section",
+      "banner_title": "Banner Title",
+      "banner_title_default": "Loved by",
+      "blocks": {
+        "add_company_logo": {
+          "name": "Add company logo",
+          "label": "Select a company logo from your images"
+        }
+      }
     }
   },
   "localization": {

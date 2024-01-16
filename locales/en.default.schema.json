@@ -3435,6 +3435,23 @@
           "label": "Select a collection ingredient"
         }
       }
+    },
+    "home_page_banner": {
+      "title": "Banner",
+      "title_size": "Heading size",
+      "title_size_options": {
+        "option_1": { "label": "small" },
+        "option_2": { "label": "medium" },
+        "option_3": { "label": "large" }
+      },
+      "enable_section": "Enable section",
+      "banner_title": "Banner Title",
+      "blocks": {
+        "add_company_logo": {
+          "name": "Company logo",
+          "label": "Select a company logo from your images"
+        }
+      }
     }
   }
 }
