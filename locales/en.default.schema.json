@@ -3440,9 +3440,15 @@
       "title": "Banner",
       "title_size": "Heading size",
       "title_size_options": {
-        "option_1": { "label": "small" },
-        "option_2": { "label": "medium" },
-        "option_3": { "label": "large" }
+        "option_1": {
+          "label": "small"
+        },
+        "option_2": {
+          "label": "medium"
+        },
+        "option_3": {
+          "label": "large"
+        }
       },
       "enable_section": "Enable section",
       "banner_title": "Banner Title",
