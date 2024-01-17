@@ -1,14 +1,24 @@
 {% if section.settings.enable_section %}
   <section class="home-page-banner">
     <h2 class="home-page-banner-title {{ section.settings.heading_size }}">
-      {{ section.settings.home_page_banner_title }}
+      <a href="/pages/press">
+        {{ section.settings.home_page_banner_title }}
+      </a>
     </h2>
     <section class="home-page-banner-logos">
       {% for logo in section.blocks %}
         {% if logo.settings.company_logo != null %}
           {% assign company_logo = logo.settings.company_logo %}
           <div class="home-page-banner-logos-logo">
-            {{ company_logo | image_url: width: 300 | image_tag }}
+            {% if logo.settings.press_url != empty %}
+              <a href="{{ logo.settings.press_url }}" target="_blank">
+                {{ company_logo | image_url: width: 300 | image_tag }}
+              </a>
+            {% else %}
+              <a href="/pages/press">
+                {{ company_logo | image_url: width: 300 | image_tag }}
+              </a>
+            {% endif %}
           </div>
         {% endif %}
       {% endfor %}
@@ -26,6 +36,10 @@
     margin: 0;
     color: black;
     font-family: 'Tinos', serif;
+  }
+  .home-page-banner-title a {
+    text-decoration: none;
+    color: inherit;
   }
   .home-page-banner-logos {
     display: flex;
@@ -85,12 +99,17 @@
   "blocks": [
     {
       "type": "company_logo",
-      "name": "t:sections.home_page_banner.blocks.add_company_logo.name",
+      "name": "t:sections.home_page_banner.blocks.add_company_logo",
       "settings": [
         {
           "type": "image_picker",
           "id": "company_logo",
-          "label": "t:sections.home_page_banner.blocks.add_company_logo.label"
+          "label": "t:sections.home_page_banner.blocks.add_company_logo_label.label"
+        },
+        {
+          "type": "text",
+          "id": "press_url",
+          "label": "t:sections.home_page_banner.blocks.add_press_url_label.label"
         }
       ]
     }
