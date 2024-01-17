@@ -746,6 +746,7 @@
           "label": "Number of columns on desktop"
         },
         "show_view_all": {
+          "header": "\"View all\" button styles",
           "label": "Enable \"View all\" if collection has more products than shown"
         },
         "view_all_style": {
@@ -791,8 +792,11 @@
           "label": "Show product rating",
           "info": "To display a rating, add a product rating app. [Learn more](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#featured-collection-show-product-rating)"
         },
+        "quick_add_buttons": {
+          "label": "Quick add to cart buttons"
+        },
         "enable_quick_buy": {
-          "label": "Enable quick add button",
+          "label": "Enable quick add to cart button",
           "info": "Optimal with popup or drawer cart type."
         },
         "show_quantity_select": {
