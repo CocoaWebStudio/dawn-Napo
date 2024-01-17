@@ -3487,7 +3487,9 @@
         "add_press_url_label": {
           "label": "Press note url"
         }
-      }
+      },
+      "background_color": "Background color",
+      "title_color": "Title color"
     }
   }
 }
