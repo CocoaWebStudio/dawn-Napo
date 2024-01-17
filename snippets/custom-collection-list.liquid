@@ -1,0 +1,68 @@
+{% if section.blocks.size > 0 %}
+  <h2 style="text-align: center; margin: 4rem auto 0">{{ 'sections.ingredients.star_ingredients' | t }}</h2>
+  <div class="color-{{ section.settings.color_scheme }} gradient">
+    <div class="collection-list-wrapper page-width isolate page-width-desktop {% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+      <slider-component class="slider-mobile-gutter scroll-trigger animate--slide-in">
+        <ul
+          class="collection-list contains-card contains-card--collection{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--4-col-desktop grid--2-col-tablet-down grid--peek collection-list--{{ section.blocks.size }}-items"
+          id="Slider-{{ section.id }}"
+        >
+          {%- liquid
+            assign columns = section.blocks.size
+            if columns > 3
+              assign columns = 3
+            endif
+          -%}
+          {%- for block in section.blocks -%}
+            {%- assign collection = collections[block.settings.collection] -%}
+            <li
+              id="Slide-{{ section.id }}-{{ forloop.index }}"
+              class="collection-list__item grid__item slider__slide"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+                style="--animation-order: {{ forloop.index }};"
+              {% endif %}
+            >
+              {% if collection != blank %}
+                {% render 'custom-card-collection',
+                  card_collection: collection,
+                  columns: 1,
+                  media_aspect_ratio: 'adapt',
+                  product_index: forloop.index
+                %}
+              {% endif %}
+            </li>
+          {%- endfor -%}
+        </ul>
+        {% comment %}  {% endcomment %}
+        {% comment %}
+          <div class="slider-buttons no-js-hidden">
+            <button
+              type="button"
+              class="slider-button slider-button--prev"
+              name="previous"
+              aria-label="{{ 'general.slider.previous_slide' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </button>
+            <div class="slider-counter caption">
+              <span class="slider-counter--current">1</span>
+              <span aria-hidden="true"> / </span>
+              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+              <span class="slider-counter--total">{{ section.blocks.size }}</span>
+            </div>
+            <button
+              type="button"
+              class="slider-button slider-button--next"
+              name="next"
+              aria-label="{{ 'general.slider.next_slide' | t }}"
+            >
+              {% render 'icon-caret' %}
+            </button>
+          </div>
+        {% endcomment %}
+        {% comment %}  {% endcomment %}
+      </slider-component>
+    </div>
+  </div>
+{% endif %}

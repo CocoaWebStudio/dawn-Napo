@@ -93,7 +93,31 @@
     max-width: none;
   }
 }
+.collection .product-grid li{
+padding-left: 12px;
+padding-right: 12px;
+}
 
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
+}
+
+.title {
+	text-align: center;
+}
+
+.card-information .caption,
+.card-information .price {
+	margin-top: 0 !important;
+}
+
+.quick-add__submit {
+	padding: 0 5px !important;
+	min-width: 0 !important;
+	height: calc((var(--inputs-border-width) * 2) + 3.5rem);
+}
+
+.quick-add__submit span {
+	margin: 0;
+	padding: 0;
 }

@@ -1,3 +1,168 @@
+function liProductCard(productData = {}) {
+
+  const {
+
+    image_src,
+    product_title,
+    product_url,
+    product_price,
+    product_id,
+
+  } = productData
+
+  return `
+  <li class="grid__item">
+   <div class="card-wrapper product-card-wrapper underline-links-hover">
+      <div class="
+         card card--standard
+         card--media
+         " style="--ratio-percent: 100%;">
+         <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
+            <div class="card__media">
+               <div class="media media--transparent media--hover-effect">
+                  <img 
+                     src="${image_src}" 
+                     sizes="(min-width: 1200px) 267px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" 
+                     alt="${product_title}" 
+                     class="motion-reduce" 
+                     loading="lazy" 
+                     width="" 
+                     height=""
+                     >
+               </div>
+            </div>
+            <div class="card__content">
+               <div class="card__information">
+                  <h3 class="card__heading">
+                     <a href="${product_url}" id="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink-template--15104234979415__ingredients-4423298121815 NoMediaStandardBadge-template--15104234979415__ingredients-4423298121815">
+                     ${product_title}
+                     </a>
+                  </h3>
+               </div>
+               <div class="card__badge bottom left"></div>
+            </div>
+         </div>
+         <div class="card__content">
+            <div class="card__information">
+               <h3 class="card__heading h5" id="title-template--15104234979415__ingredients-4423298121815">
+                  <a href="${product_url}" id="CardLink-template--15104234979415__ingredients-4423298121815" class="full-unstyled-link" aria-labelledby="CardLink-template--15104234979415__ingredients-4423298121815 Badge-template--15104234979415__ingredients-4423298121815">
+                  ${product_title}
+                  </a>
+               </h3>
+               <div class="card-information">
+                  <span class="caption-large light"></span>
+                  <div class="
+                     price ">
+                     <div class="price__container">
+                        <div class="price__regular"><span class="visually-hidden visually-hidden--inline">Regular price</span>
+                           <span class="price-item price-item--regular">
+                           <span class="money"> $${product_price} USD</span>
+                           </span>
+                        </div>
+                        <div class="price__sale">
+                           <span class="visually-hidden visually-hidden--inline">Regular price</span>
+                           <span>
+                           <s class="price-item price-item--regular">
+                           </s>
+                           </span><span class="visually-hidden visually-hidden--inline">Sale price</span>
+                           <span class="price-item price-item--sale price-item--last">
+                           <span class="money"> $${product_price} USD</span>
+                           </span>
+                        </div>
+                        <small class="unit-price caption hidden">
+                        <span class="visually-hidden">Unit price</span>
+                        <span class="price-item price-item--last">
+                        <span></span>
+                        <span aria-hidden="true">/</span>
+                        <span class="visually-hidden">&nbsp;per&nbsp;</span>
+                        <span>
+                        </span>
+                        </span>
+                        </small>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="quick-add no-js-hidden">
+               <product-form>
+                  <form method="post" id="product-quick-add-form-${product_id}" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form">
+                     <input type="hidden" name="form_type" value="product">
+                     <input type="hidden" name="utf8" value="✓">
+                     <input type="hidden" name="id" value="${product_id}" class="product-variant-id">
+                     <quantity-input class="quantity cart-quantity">
+                        <button class="quantity__button no-js-hidden disabled" name="minus" type="button">
+                           <span class="visually-hidden">Decrease quantity for Default Title</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-minus" fill="none" viewBox="0 0 10 2">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor"></path>
+                           </svg>
+                        </button>
+                        <input class="quantity__input" data-quantity-variant-id="${product_id}" type="number" name="quantity" value="0" data-cart-quantity="0" min="1" step="1" aria-label="Quantity for Default Title" id="Quantity-${product_id}" data-index="${product_id}">
+                        <button class="quantity__button no-js-hidden" name="plus" type="button">
+                           <span class="visually-hidden">Increase quantity for Default Title</span>
+                           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-plus" fill="none" viewBox="0 0 10 10">
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor">
+                              </path>
+                           </svg>
+                        </button>
+                     </quantity-input>
+                     <button id="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit" type="submit" name="add" class="quick-add__submit button button--full-width " aria-haspopup="dialog" aria-labelledby="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit title-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd18-6919162462295" aria-live="polite" data-sold-out-message="true">
+                        <span>Add to cart</span>
+                        <span class="sold-out-message hidden">Sold out</span>
+                        <div class="loading__spinner hidden">
+                           <svg aria-hidden="true" focusable="false" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                              <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                           </svg>
+                        </div>
+                     </button>
+                     <input type="hidden" name="product-id" value="6919162462295">
+                  </form>
+               </product-form>
+            </div>
+            <div class="card__badge bottom left"></div>
+         </div>
+      </div>
+   </div>
+</li>
+`
+}
+
+function quickAddFormStyles(product_id) {
+  console.log('nuevos estilos')
+  return `
+  form[id='product-quick-add-form-${product_id}'] {
+    display: flex;
+    justify-content: space-around;
+  }
+  form[id='product-quick-add-form-${product_id}'] .quick-add__submit {
+    min-width: unset;
+    width: 50%;
+  }
+  @media screen and (max-width: 749px) {
+    form[id='product-quick-add-form-${product_id}'] {
+      flex-direction: column;
+      align-items: center;
+    }
+    form[id='product-quick-add-form-${product_id}'] .quantity {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    form[id='product-quick-add-form-${product_id}'] .quick-add__submit {
+      width: 100%;
+    }
+  }
+  `
+}
+
+function addDotToPrice(price) {
+  let priceStr = price.toString();
+
+  if (priceStr.endsWith('00') || priceStr.endsWith('50')) {
+    priceStr = priceStr.slice(0, -2) + '.' + priceStr.slice(-2);
+  }
+
+  return priceStr;
+}
+
 function getFocusableElements(container) {
   return Array.from(
     container.querySelectorAll(
@@ -711,11 +876,18 @@ class SliderComponent extends HTMLElement {
 
 customElements.define('slider-component', SliderComponent);
 
+let requestCollectionImageTimerId;
+let requestCollectionProductsTimerId;
+let adjustProductGridSizeTimerId;
+let adjustBenefitsTabSizeTimerId;
+
 class SlideshowComponent extends SliderComponent {
   constructor() {
     super();
     this.sliderControlWrapper = this.querySelector('.slider-buttons');
     this.enableSliderLooping = true;
+    this.sliderProductGrid = this.getAttribute("look-for-product-grid") == "true" ? document.querySelector("#products-slide-show-component") : null
+    this.sliderBenefits = this.getAttribute("look-for-product-grid") == "true" ? document.querySelector("#benefits-slide-show-component") : null
 
     if (!this.sliderControlWrapper) return;
 
@@ -751,6 +923,85 @@ class SlideshowComponent extends SliderComponent {
     }
 
     if (this.slider.getAttribute('data-autoplay') === 'true') this.setAutoPlay();
+
+    if (this.sliderProductGrid) {
+      this.sliderProductGrid.querySelector(".slideshow").addEventListener("scrollend", () => {
+        console.log('evento disparado')
+        this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
+      })
+      // this.adjustProductGridSlide.slider.style.pointerEvents = "none"
+      window.addEventListener("load", () => {
+        this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
+      })
+    }
+
+    if (this.sliderBenefits) {
+      this.sliderBenefits.querySelector(".slideshow").addEventListener("scrollend", () => {
+        console.log('evento disparado')
+        this.adjustBenefitsSlide({ adjustSize: true, enableScroll: false })
+      })
+      // this.adjustBenefitsSlide.slider.style.pointerEvents = "none"
+      window.addEventListener("load", () => {
+        this.adjustBenefitsSlide({ adjustSize: true, enableScroll: false })
+      })
+    }
+
+  }
+
+  adjustProductGridSlide({ enableScroll = true, adjustSize = true } = {}) {
+    if (this.sliderProductGrid) {
+      const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+      const sliderContainer = this.sliderProductGrid.closest("slideshow-component")
+      const slideShowContainer = sliderContainer.querySelector(".slideshow")
+      const slideHeight = slide.clientHeight
+
+      if (adjustSize) {
+        sliderContainer.style.height = `${slideHeight + 10}px`
+        slideShowContainer.style.height = `${slideHeight + 10}px`
+      }
+
+      if (enableScroll) {
+        sliderContainer.style.overflowX = "auto"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "auto"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+      else {
+        sliderContainer.style.overflowX = "hidden"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "hidden"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+
+    }
+  }
+
+  adjustBenefitsSlide({ enableScroll = true, adjustSize = true } = {}) {
+    if (this.sliderBenefits) {
+      const slide = this.sliderBenefits.querySelector(`#Slide-benefits-${this.currentPage}-tabs`).querySelector("span")
+      const sliderContainer = this.sliderBenefits.closest("slideshow-component")
+      const slideShowContainer = sliderContainer.querySelector(".slideshow")
+      const slideHeight = slide.clientHeight
+
+      if (adjustSize) {
+        sliderContainer.style.height = `${slideHeight}px`
+        slideShowContainer.style.height = `${slideHeight}px`
+      }
+
+      if (enableScroll) {
+        sliderContainer.style.overflowX = "auto"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "auto"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+      else {
+        sliderContainer.style.overflowX = "hidden"
+        sliderContainer.style.overflowY = "hidden"
+        slideShowContainer.style.overflowX = "hidden"
+        slideShowContainer.style.overflowY = "hidden"
+      }
+
+    }
   }
 
   setAutoPlay() {
@@ -809,6 +1060,123 @@ class SlideshowComponent extends SliderComponent {
     super.update();
     this.sliderControlButtons = this.querySelectorAll('.slider-counter__link');
     this.prevButton.removeAttribute('disabled');
+
+    clearTimeout(adjustProductGridSizeTimerId);
+    clearTimeout(adjustBenefitsTabSizeTimerId);
+    clearTimeout(requestCollectionImageTimerId);
+    clearTimeout(requestCollectionProductsTimerId);
+
+    if (this.sliderProductGrid || this.sliderBenefits) {
+
+      requestCollectionImageTimerId = setTimeout(async () => {
+
+        const slide_collection_image = this.querySelector(`#Slide-collection-images-${this.currentPage}`)
+
+        const requestImages = slide_collection_image && slide_collection_image.getAttribute("images-loaded") == "false"
+
+        const collectionHandle = requestImages ? slide_collection_image.getAttribute("handle") : null
+
+        const { collection } = requestImages ? await (await fetch(`/collections/${collectionHandle}.json`)).json() : {}
+
+        if (collection && collection.image) {
+
+          const imageContainer = slide_collection_image.querySelector(".image-collection-container")
+
+          const collectionImage = document.createElement("img")
+
+          collectionImage.src = collection.image.src
+          collectionImage.setAttribute("style", "max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)")
+
+          imageContainer.append(collectionImage)
+
+          slide_collection_image.setAttribute("images-loaded", "true")
+
+        }
+
+      }, 250)
+
+    }
+
+    if (this.sliderProductGrid) {
+
+      requestCollectionProductsTimerId = setTimeout(async () => {
+
+        this.adjustProductGridSlide({ enableScroll: true, adjustSize: false })
+
+        const scrollPositionProductGrid = this.sliderProductGrid.slider.clientWidth * (this.currentPage - 1)
+
+        const slide = this.sliderProductGrid.querySelector(`#Slide-products-${this.currentPage}-tabs`).querySelector("ul")
+
+        const collectionHandle = slide.getAttribute('handle')
+
+        const requestImages = slide && slide.getAttribute("images-loaded") == "false"
+
+        if (requestImages) {
+
+          const styleTag = document.querySelector("style")
+
+          const { products } = await (await fetch(`/collections/${collectionHandle}/products.json`)).json()
+
+          const liProductCards = []
+          const styles = []
+
+          for (let [i, product] of products.entries()) {
+
+            const dataToCreateLiElement = {
+              image_src: "",
+              product_title: "",
+              product_url: "",
+              product_price: "",
+              product_id: "",
+            }
+
+            dataToCreateLiElement.image_src = product.images[0].src
+            dataToCreateLiElement.product_price = product.variants[0].price
+            dataToCreateLiElement.product_title = product.title
+            dataToCreateLiElement.product_url = `/products/${product.handle}`
+            dataToCreateLiElement.product_id = product.variants[0].id
+
+            const liProductCardElement = liProductCard(dataToCreateLiElement)
+            const stylesForQuickAddForm = quickAddFormStyles(dataToCreateLiElement.product_id)
+
+            liProductCards.push(liProductCardElement)
+            styles.push(stylesForQuickAddForm)
+
+            slide.insertAdjacentHTML("beforeend", liProductCardElement)
+            styleTag.insertAdjacentHTML("beforeend", stylesForQuickAddForm)
+
+            // this.adjustProductGridSlide({ adjustSize: true, enableScroll: false })
+
+          }
+
+          // slide.insertAdjacentHTML("beforeend", liProductCards.join(""))
+          // styleTag.insertAdjacentHTML("beforeend", styles.join(""))
+
+        }
+
+        this.sliderProductGrid.setSlidePosition(scrollPositionProductGrid)
+
+        slide.removeAttribute("images-loaded")
+        slide.setAttribute("images-loaded", "true")
+
+        // this.adjustProductGridSlide({ adjustSize: true, enableScroll: true })
+
+      }, 250)
+    }
+
+    if (this.sliderBenefits) {
+      adjustBenefitsTabSizeTimerId = setTimeout(() => {
+
+        this.adjustBenefitsSlide({ enableScroll: true, adjustSize: false })
+
+        const scrollPositionBenefits = this.sliderBenefits.slider.clientWidth * (this.currentPage - 1)
+
+        this.sliderBenefits.setSlidePosition(scrollPositionBenefits)
+
+        // this.adjustBenefitsSlide({ adjustSize: true, enableScroll: true })
+
+      }, 250)
+    }
 
     if (!this.sliderControlButtons.length) return;
 
@@ -947,6 +1315,12 @@ class SlideshowComponent extends SliderComponent {
     this.slider.scrollTo({
       left: slideScrollPosition,
     });
+    // if (this.sliderProductGrid) {
+    //   this.sliderProductGrid.slider.scrollTo({ left: slideScrollPosition })
+    // }
+    // if (this.sliderBenefits) {
+    //   this.sliderBenefits.slider.scrollTo({ left: slideScrollPosition })
+    // }
   }
 }
 
