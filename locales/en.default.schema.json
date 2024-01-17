@@ -427,6 +427,18 @@
           "label": "Right"
         }
       },
+      "vertical_alignment": {
+        "label": "Vertical alignment",
+        "options__1": {
+          "label": "Top"
+        },
+        "options__2": {
+          "label": "Center"
+        },
+        "options__3": {
+          "label": "Bottom"
+        }
+      },
       "image_shape": {
         "options__1": {
           "label": "Default"
@@ -3018,6 +3030,9 @@
         },
         "video": {
           "label": "Video"
+        },
+        "show_text_over_image": {
+          "label": "Show text over image"
         },
         "enable_video_looping": {
           "label": "Play video on loop"
