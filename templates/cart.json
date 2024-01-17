@@ -11,18 +11,13 @@
     "cart-footer": {
       "type": "main-cart-footer",
       "blocks": {
-        "subtotal": {
-          "type": "subtotal",
-          "settings": {
-          }
-        },
-        "buttons": {
-          "type": "buttons",
-          "settings": {
-          }
-        },
         "order_note_f3fCHG": {
           "type": "order_note",
+          "settings": {
+          }
+        },
+        "subtotal": {
+          "type": "subtotal",
           "settings": {
           }
         },
@@ -43,14 +38,19 @@
           "type": "discount_code",
           "settings": {
           }
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {
+          }
         }
       },
       "block_order": [
-        "subtotal",
-        "buttons",
         "order_note_f3fCHG",
+        "subtotal",
         "free_shipping_n6zK3A",
-        "discount_code_jxTL4E"
+        "discount_code_jxTL4E",
+        "buttons"
       ],
       "settings": {
         "color_scheme": "",
@@ -71,6 +71,7 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
+        "show_product_price": true,
         "title": "Featured collection",
         "heading_size": "h2",
         "description": "",
