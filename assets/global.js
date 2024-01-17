@@ -1643,3 +1643,68 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+
+// This piece of code for making the hover effect over the element "SHOP ALL" in the menu 
+
+const megaMenuButton = document.querySelector("#HeaderMenu-shop-all")
+
+const megaMenuContent = document.querySelector("#MegaMenu-Content-1")
+
+let closeMegaMenu = true
+
+megaMenuContent.onmouseover = () => {
+
+  closeMegaMenu = false
+
+  const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
+
+  detailsMegaMenu.setAttribute("open", true)
+
+  console.log("hover 5")
+
+}
+
+megaMenuContent.onmouseout = () => {
+
+  // setTimeout(() => {
+  closeMegaMenu = true
+
+  const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
+
+  detailsMegaMenu.removeAttribute("open")
+
+  console.log("hover 5")
+
+  // }, 100)
+
+
+}
+
+megaMenuButton.onmouseover = () => {
+
+  const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
+
+  detailsMegaMenu.setAttribute("open", true)
+
+  console.log("hover 5")
+
+}
+
+megaMenuButton.onmouseleave = () => {
+
+  setTimeout(function () {
+    const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
+
+    if (closeMegaMenu) {
+
+      detailsMegaMenu.removeAttribute("open")
+
+    }
+
+  }, 500);
+
+
+}
+
+// hover effect code finished
