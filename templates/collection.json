@@ -3,14 +3,18 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
+        "content_alignment": "center",
         "show_collection_description": true,
-        "show_collection_image": false,
+        "show_collection_image": true,
         "color_scheme": "scheme-1"
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
       "settings": {
+        "full_width_product_grid": true,
+        "show_quantity_select": true,
+        "show_product_price": true,
         "products_per_page": 16,
         "columns_desktop": 4,
         "color_scheme": "",
