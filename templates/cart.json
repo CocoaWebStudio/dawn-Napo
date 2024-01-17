@@ -3,6 +3,7 @@
     "cart-items": {
       "type": "main-cart-items",
       "settings": {
+        "color_scheme": "",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -19,29 +20,79 @@
           "type": "buttons",
           "settings": {
           }
+        },
+        "order_note_f3fCHG": {
+          "type": "order_note",
+          "settings": {
+          }
+        },
+        "free_shipping_n6zK3A": {
+          "type": "free_shipping",
+          "settings": {
+            "free_shipping_price": 85,
+            "alert_info_color": "#0c5460",
+            "alert_info_background": "#d1ecf1",
+            "alert_threshold": 20,
+            "alert_warning_color": "#726c1c",
+            "alert_warning_background": "#f3f8d7",
+            "alert_danger_color": "#721c24",
+            "alert_danger_background": "#f8d7da"
+          }
+        },
+        "discount_code_jxTL4E": {
+          "type": "discount_code",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "subtotal",
-        "buttons"
-      ]
+        "buttons",
+        "order_note_f3fCHG",
+        "free_shipping_n6zK3A",
+        "discount_code_jxTL4E"
+      ],
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "cart-gift": {
+      "type": "main-cart-gift",
+      "settings": {
+        "description": "Let us do the wrapping for you. Add a rahua Gift Box to your order today.",
+        "gift_product": "gift-box",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "title": "Featured collection",
         "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
         "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
-        "color_scheme": "scheme-1",
+        "full_width": false,
         "show_view_all": true,
-        "swipe_on_mobile": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
         "image_ratio": "square",
-        "show_secondary_image": false,
+        "image_shape": "default",
+        "show_secondary_image": true,
         "show_vendor": false,
-        "show_rating": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "show_quantity_select": true,
         "columns_mobile": "2",
+        "swipe_on_mobile": false,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -50,6 +101,7 @@
   "order": [
     "cart-items",
     "cart-footer",
+    "cart-gift",
     "featured-collection"
   ]
 }

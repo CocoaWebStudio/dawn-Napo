@@ -9,6 +9,18 @@
     },
     "form": {
       "type": "contact-form",
+      "blocks": {
+        "dropdown_GYm7Yc": {
+          "type": "dropdown",
+          "settings": {
+            "title": "Inquiry Type",
+            "values": "General Inquiry, Suggestions, Order Inquiry, Payment, Delivery, Order Issues, Promotions, Website \/ Technical, Other"
+          }
+        }
+      },
+      "block_order": [
+        "dropdown_GYm7Yc"
+      ],
       "settings": {
         "heading": "",
         "heading_size": "h1",

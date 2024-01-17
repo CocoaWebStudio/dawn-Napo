@@ -106,6 +106,20 @@
     "settings": [
       {
         "type": "header",
+        "content": "Global"
+      },
+      {
+        "type": "range",
+        "id": "global_letter_spacing",
+        "min": 0,
+        "max": 5,
+        "step": 0.1,
+        "unit": "px",
+        "label": "Letter spacing",
+        "default": 2.7
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.typography.settings.header__1.content"
       },
       {

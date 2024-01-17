@@ -492,6 +492,12 @@ span.active-facets__button-inner {
   display: flex;
   align-items: stretch;
 }
+.facets__form span.active-facets__button-inner {
+color: white;
+}
+.facets__form span.active-facets__button-inner:hover {
+color: black;
+}
 
 span.active-facets__button-inner:before,
 span.active-facets__button-inner:after {

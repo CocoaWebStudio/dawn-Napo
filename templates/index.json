@@ -6,7 +6,10 @@
         "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-7.png",
+            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-21.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE-16.png",
+            "image_link": "shopify:\/\/collections\/all",
+            "show_header_box": false,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -21,10 +24,14 @@
             "text_alignment_mobile": "center"
           }
         },
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-2": {
+        "1d5ae447-f446-495d-aeac-e406ef3e351a": {
           "type": "slide",
           "settings": {
-            "heading": "Image slide",
+            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-10.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE-9.png",
+            "image_link": "",
+            "show_header_box": false,
+            "heading": "",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
             "button_label": "Button label",
@@ -34,63 +41,35 @@
             "show_text_box": true,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "color_scheme": "",
+            "color_scheme": "scheme-1",
             "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
         "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1",
-        "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-2"
+        "1d5ae447-f446-495d-aeac-e406ef3e351a"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
-        "slider_visual": "counter",
+        "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5,
         "image_behavior": "none",
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
+        "show_product_price": true,
         "title": "GIFT ENCHANTED ADVENTURES",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "collection": "gift-enchanted-adventures",
-        "products_to_show": 11,
-        "columns_desktop": 4,
-        "full_width": true,
-        "show_view_all": true,
-        "view_all_style": "link",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "enable_quick_add": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 28,
-        "padding_bottom": 36
-      }
-    },
-    "55c28b18-ad23-4f11-8a01-a7e5af5bbd18": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "NEW IN",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "16-oz-lush-pumps",
         "products_to_show": 11,
         "columns_desktop": 4,
         "full_width": true,
@@ -104,6 +83,37 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    },
+    "55c28b18-ad23-4f11-8a01-a7e5af5bbd18": {
+      "type": "featured-collection",
+      "settings": {
+        "show_product_price": true,
+        "title": "NEW IN",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "16-oz-lush-pumps",
+        "products_to_show": 11,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "enable_quick_add": true,
+        "show_quantity_select": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -112,7 +122,9 @@
     },
     "cd18fe12-15a3-4805-b1a9-380030c6ab1b": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
+        "show_product_price": true,
         "title": "FALL STYLE MUST HAVES",
         "heading_size": "h2",
         "description": "",
@@ -132,6 +144,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": false,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -141,6 +154,7 @@
     "4091bccf-4305-4446-aed5-d8c73fa3d6ae": {
       "type": "featured-collection",
       "settings": {
+        "show_product_price": true,
         "title": "AWARD WINNING RAHUA",
         "heading_size": "h2",
         "description": "",
@@ -160,6 +174,7 @@
         "show_vendor": false,
         "show_rating": true,
         "enable_quick_add": true,
+        "show_quantity_select": true,
         "columns_mobile": "2",
         "swipe_on_mobile": true,
         "padding_top": 28,
@@ -173,7 +188,8 @@
           "type": "slide",
           "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL-2.jpg",
+            "image_link": "",
+            "show_header_box": true,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -191,6 +207,8 @@
         "03c05369-ad5c-4315-944c-9eb5d472e01c": {
           "type": "slide",
           "settings": {
+            "image_link": "",
+            "show_header_box": true,
             "heading": "Image slide",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through images",
@@ -213,7 +231,6 @@
       "disabled": true,
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -229,7 +246,7 @@
           "type": "heading",
           "settings": {
             "heading": "RAHUA IS RAINFOREST GROWN BEAUTY",
-            "heading_size": "h1"
+            "heading_size": "h2"
           }
         },
         "text": {
@@ -257,23 +274,26 @@
       "settings": {
         "heading": "Our Story",
         "heading_size": "h2",
-        "enable_video_looping": false,
         "video_url": "https:\/\/www.youtube.com\/watch?v=lIqsrxl4VkE&t=14s",
+        "extra_youtube": "rel=0&autoplay=1&playsinline=0",
         "cover_image": "shopify:\/\/shop_images\/THE_STORY_OF_RAHUA.png",
         "description": "",
-        "full_width": false,
+        "full_width": true,
         "color_scheme": "scheme-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "142e04e9-2532-4356-8480-7f92b382a886": {
+    "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2": {
       "type": "slideshow",
       "blocks": {
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-1": {
+        "template--15041622769751__e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2-slide-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1560_x_500_px_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1560_x_500_px_1.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/RAHUA_CARBON_NEUTRAL_1000_x_800_px_2.jpg",
+            "image_link": "",
+            "show_header_box": true,
             "heading": "",
             "heading_size": "h1",
             "subheading": "",
@@ -281,24 +301,7 @@
             "link": "",
             "button_style_secondary": false,
             "box_align": "middle-center",
-            "show_text_box": true,
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "color_scheme": "",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-2": {
-          "type": "slide",
-          "settings": {
-            "heading": "Image slide",
-            "heading_size": "h1",
-            "subheading": "Tell your brand's story through images",
-            "button_label": "Button label",
-            "link": "",
-            "button_style_secondary": false,
-            "box_align": "middle-center",
-            "show_text_box": true,
+            "show_text_box": false,
             "text_alignment": "center",
             "image_overlay_opacity": 0,
             "color_scheme": "",
@@ -307,12 +310,10 @@
         }
       },
       "block_order": [
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-1",
-        "template--15041622769751__142e04e9-2532-4356-8480-7f92b382a886-slide-2"
+        "template--15041622769751__e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2-slide-1"
       ],
       "settings": {
         "layout": "full_bleed",
-        "slide_height": "medium",
         "slider_visual": "counter",
         "auto_rotate": false,
         "change_slides_speed": 5,
@@ -431,6 +432,60 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "test": {
+      "type": "home-page-banner",
+      "blocks": {
+        "company_logo_wpxawG": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/Harper_s_Bazaar_Logo_svg.png"
+          }
+        },
+        "company_logo_TiYJdY": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/VOGUE_LOGO_svg.png"
+          }
+        },
+        "company_logo_6X4a8c": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/allure-logo-163A9213E6-seeklogo.com.png"
+          }
+        },
+        "company_logo_CiEkM7": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/Forbes-logo.png"
+          }
+        },
+        "company_logo_yrt9YP": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/ELLE_Magazine_Logo_svg.png"
+          }
+        },
+        "company_logo_Yay3CK": {
+          "type": "company_logo",
+          "settings": {
+            "company_logo": "shopify:\/\/shop_images\/PS23_POPSUGAR_LOGO_BLACK.png"
+          }
+        }
+      },
+      "block_order": [
+        "company_logo_wpxawG",
+        "company_logo_TiYJdY",
+        "company_logo_6X4a8c",
+        "company_logo_CiEkM7",
+        "company_logo_yrt9YP",
+        "company_logo_Yay3CK"
+      ],
+      "settings": {
+        "enable_section": true,
+        "home_page_banner_title": "Loved by",
+        "heading_size": "h2"
+      }
     }
   },
   "order": [
@@ -442,9 +497,10 @@
     "6fc42e5f-8e7e-4c56-8ee1-b17e988a1358",
     "rich_text",
     "video",
-    "142e04e9-2532-4356-8480-7f92b382a886",
+    "e5f87c29-a8ff-47d7-be7b-b73bb8ba0db2",
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8",
     "collage",
-    "multicolumn"
+    "multicolumn",
+    "test"
   ]
 }

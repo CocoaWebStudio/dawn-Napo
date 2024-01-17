@@ -134,7 +134,6 @@
 }
 
 .card__information {
-  grid-row-start: 2;
   padding: 1.3rem 1rem;
 }
 
@@ -150,9 +149,31 @@
 
 @media screen and (min-width: 750px) {
   .card__information {
-    padding-bottom: 1.7rem;
+    padding-bottom: 0;
     padding-top: 1.7rem;
   }
+.product__info-container .price-item.price-item--regular{
+opacity: 1;
+-webkit-transform: translateY(0px);
+    transform: translateY(0px);
+}
+.price-item.price-item--regular {
+  margin-top: 0.7rem;
+margin-bottom: 1rem;
+  opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+.card-wrapper:hover .price-item.price-item--regular {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+.card__heading.h5{
+  min-height: 35px;
+}
 }
 
 .card__badge {
@@ -229,7 +250,7 @@
   top: calc(var(--border-width) * -1);
 }
 
-.card__heading a::after {
+/* .card__heading a::after {
   bottom: 0;
   content: '';
   left: 0;
@@ -241,7 +262,7 @@
 
 .card__heading a:after {
   outline-offset: 0.3rem;
-}
+} */
 
 .card__heading a:focus:after {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)), 0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
@@ -284,6 +305,9 @@
     transition: transform var(--duration-long) ease;
     transform: scale(1.03);
   }
+.card__inner:hover.color-scheme-2.gradient.ratio .badge-images-wrapper{
+  display: none;
+}
 
   .underline-links-hover:hover a {
     text-decoration: underline;
@@ -309,8 +333,9 @@
 }
 
 .card--standard>.card__content .card__information {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
+min-height: 127px;
 }
 
 .card--card.card--media .card__inner .card__information,
@@ -371,13 +396,8 @@
   margin-top: 0.4rem;
 }
 
-.card-information>*:not(.visually-hidden:first-child)+*:not(.rating):not(.card__information-volume-pricing-note) {
-  margin-top: 0.7rem;
-}
 
-.card-information .caption {
-  letter-spacing: 0.07rem;
-}
+
 
 .card-article-info {
   margin-top: 1rem;
