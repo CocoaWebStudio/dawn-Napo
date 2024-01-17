@@ -1,20 +1,25 @@
-<div class="tab-container">
-  <div class="tabs">
-    {% for block in section.blocks %}
-      <input
-        type="radio"
-        name="tabs"
-        id="tab-{{ forloop.index0 }}"
-        {% if forloop.first %}
-          checked
-        {% endif %}
-      >
-      <label for="tab-{{ forloop.index0 }}">{{ block.settings.title }}</label>
-      <div class="tab">{{ block.settings.tab_page.content }}</div>
-    {% endfor %}
+<div class="custom-tabs">
+  <div class="tab-container">
+    <div class="tabs">
+      {% for block in section.blocks %}
+        <input
+          type="radio"
+          name="tabs"
+          id="tab-{{ forloop.index0 }}"
+          {% if forloop.first %}
+            checked
+          {% endif %}
+        >
+        <label for="tab-{{ forloop.index0 }}">{{ block.settings.title }}</label>
+        <div class="tab">{{ block.settings.tab_page.content }}</div>
+      {% endfor %}
+    </div>
   </div>
 </div>
 {% stylesheet %}
+  .custom-tabs {
+    margin: 2rem auto;
+  }
   .tab-container .tabs {
     display: flex;
     flex-wrap: wrap; // make sure it wraps
@@ -49,20 +54,11 @@
     display: block;
   }
 
-  /**
- * Generic Styling
-*/
   .tab-container {
-    /* background: #eee; */
-    /* min-height: 100vh; */
     box-sizing: border-box;
     padding: 0 5rem;
-    /* font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',
-      sans-serif; */
     font-weight: 300;
     line-height: 1.5em;
-    /* max-width: 60rem; */
-    /* margin: 0 auto; */
     font-size: 112%;
   }
 
