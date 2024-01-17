@@ -12,7 +12,7 @@
   position: absolute;
   z-index: 2;
   top: 100%;
-  width: 100%;
+  width: auto;
   height: auto;
   overflow-y: auto;
 }
@@ -70,8 +70,11 @@
 }
 
 .header--top-center .mega-menu__list > li {
-  width: 16%;
   padding-right: 2.4rem;
+}
+
+.header--top-center .page-width > li {
+  width: 16%;
 }
 
 .mega-menu__link:hover,
@@ -86,6 +89,7 @@
 
 .mega-menu .mega-menu__list--condensed {
   display: block;
+  width: auto;
 }
 
 .mega-menu__list--condensed .mega-menu__link {
