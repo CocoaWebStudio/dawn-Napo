@@ -2175,7 +2175,7 @@ row-gap: 20px;
     display: none;
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1400px) {
 product-form .form{
 width: 65%;
 margin: auto;
