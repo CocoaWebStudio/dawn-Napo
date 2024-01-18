@@ -11,18 +11,18 @@
       <li>
         {%- if link.links != blank -%}
           <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}">
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="dropdown-menu">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
               >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
-                  {% endif %}
+                <a
+                  href="{{ link.url }}"
+                  class="{%- if link.child_active %}header__active-menu-item{% endif %}"
+                  style="text-decoration: none; color: inherit;"
                 >
-                  {{- link.title | escape -}}
-                </span>
+                  {{- link.title | upcase | escape -}}
+                </a>
                 {% render 'icon-caret' %}
               </summary>
               <ul
@@ -93,7 +93,7 @@
                 class="header__active-menu-item"
               {% endif %}
             >
-              {{- link.title | escape -}}
+              {{- link.title | upcase | escape -}}
             </span>
           </a>
         {%- endif -%}
