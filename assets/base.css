@@ -2129,13 +2129,15 @@ product-info .loading__spinner:not(.hidden)~*,
   .utility-bar--bottom-border-social-only {
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   }
-.button {
-	max-width: 100%;
-	margin: auto;
-}
-.form .button{
-  margin: auto 0;
-}
+
+  .button {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .form .button{
+    margin: auto 0;
+  }
 }
 
 product-form .form{

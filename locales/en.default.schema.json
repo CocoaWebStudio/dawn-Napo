@@ -1787,7 +1787,11 @@
           "name": "Checkout button"
         },
         "order_note": {
-          "name": "Order note"
+          "name": "Order note",
+          "heading": "Order heading",
+          "placeholder": "Order note placeholder",
+          "paragraph__1": "Order paragraph 1",
+          "paragraph__2": "Order paragraph 2"
         },
         "free_shipping": {
           "name": "Free shipping",
@@ -1821,7 +1825,11 @@
           }
         },
         "discount_code": {
-          "name": "Discount code"
+          "name": "Discount code",
+          "show_apply_button": {
+            "label": "Show apply button"
+          },
+          "placeholder": "Discount code placeholder"
         }
       }
     },

@@ -28,19 +28,19 @@
         {%- if block.type == 'order_note' -%}
           <div class="cart__note_container">
             <cart-note class="cart__note field">
-              <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+              <label for="Cart-note">{{ block.settings.order_note_heading }}</label>
               <textarea
                 class="text-area"
                 name="note"
                 form="cart"
                 rows="4"
                 id="Cart-note"
-                placeholder="How can we help you?"
+                placeholder="{{ block.settings.order_note_placeholder }}"
               >{{ cart.note }}</textarea>
             </cart-note>
             <div>
-              <p>Global supply chain strain has impacted shipping times.</p>
-              <p><strong>Shipping times may be delayed.</strong></p>
+              <p>{{ block.settings.order_note_paragraph__1 }}</p>
+              <p>{{ block.settings.order_note_paragraph__2 }}</p>
             </div>
           </div>
         {%- endif -%}
@@ -102,7 +102,7 @@
                   {% endif %}
                   form="cart"
                 >
-                  {{ 'sections.cart.checkout' | t }}
+                  {{ 'sections.cart.checkout' | t | upcase }}
                 </button>
               </div>
 
@@ -163,9 +163,27 @@
                   type="text"
                   name="discount"
                   form="cart"
-                  placeholder="Enter discount code here..."
+                  placeholder="{{ block.settings.discount_code_placeholder }}"
                   class="form-control"
                 >
+                {%- if block.settings.show_apply_button -%}
+                  <button
+                    type="submit"
+                    id="checkout"
+                    class="cart__checkout-button button"
+                    name="checkout"
+                    {% if cart == empty %}
+                      disabled
+                    {% endif %}
+                    form="cart"
+                  >
+                    {{ 'sections.cart.apply' | t | upcase }}
+                  </button>
+                {%- endif -%}
+              </div>
+            {%- when 'text' -%}
+              <div class="rte {{ block.settings.text_alignment }}">
+                <p>{{ block.settings.subtext }}</p>
               </div>
           {%- endcase -%}
         {% endfor %}
@@ -243,7 +261,33 @@
     {
       "type": "order_note",
       "name": "t:sections.main-cart-footer.blocks.order_note.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "order_note_heading",
+          "default": "Order special instructions",
+          "label": "t:sections.main-cart-footer.blocks.order_note.heading"
+        },
+        {
+          "type": "text",
+          "id": "order_note_placeholder",
+          "default": "How can we help you?",
+          "label": "t:sections.main-cart-footer.blocks.order_note.placeholder"
+        },
+        {
+          "type": "richtext",
+          "id": "order_note_paragraph__1",
+          "default": "<p>Global supply chain strain has impacted shipping times.</p>",
+          "label": "t:sections.main-cart-footer.blocks.order_note.paragraph__1"
+        },
+        {
+          "type": "richtext",
+          "id": "order_note_paragraph__2",
+          "default": "<p>Shipping times may be delayed.</p>",
+          "label": "t:sections.main-cart-footer.blocks.order_note.paragraph__2"
+        }
+      ]
     },
     {
       "type": "free_shipping",
@@ -318,7 +362,45 @@
     {
       "type": "discount_code",
       "name": "t:sections.main-cart-footer.blocks.discount_code.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_apply_button",
+          "label": "t:sections.main-cart-footer.blocks.discount_code.show_apply_button.label",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "discount_code_placeholder",
+          "default": "Enter discount code here...",
+          "label": "t:sections.main-cart-footer.blocks.discount_code.placeholder"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "Text block",
+          "label": "t:sections.footer.blocks.text.settings.heading.label"
+        },
+        {
+          "type": "text_alignment",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "default": "right"
+        },
+        {
+          "type": "richtext",
+          "id": "subtext",
+          "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
+          "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        }
+      ]
     },
     {
       "type": "@app"
