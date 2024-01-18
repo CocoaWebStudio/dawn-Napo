@@ -1255,6 +1255,11 @@ button.shopify-payment-button__button--unbranded {
 		color: black;
 }
 
+.button-without-bg-animation {
+  background: none;
+  color: rgb(var(--color-button-text));
+}
+
 .button:before,
 .shopify-challenge__button:before,
 .customer button:before,
