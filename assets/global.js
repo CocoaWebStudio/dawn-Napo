@@ -1661,22 +1661,15 @@ megaMenuContent.onmouseover = () => {
 
   detailsMegaMenu.setAttribute("open", true)
 
-  console.log("hover 5")
-
 }
 
 megaMenuContent.onmouseout = () => {
 
-  // setTimeout(() => {
   closeMegaMenu = true
 
   const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
 
   detailsMegaMenu.removeAttribute("open")
-
-  console.log("hover 5")
-
-  // }, 100)
 
 
 }
@@ -1686,8 +1679,6 @@ megaMenuButton.onmouseover = () => {
   const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
 
   detailsMegaMenu.setAttribute("open", true)
-
-  console.log("hover 5")
 
 }
 
@@ -1707,4 +1698,67 @@ megaMenuButton.onmouseleave = () => {
 
 }
 
-// hover effect code finished
+// hover effect "SHOP ALL" code finished
+
+// This piece of code for making the hover effect over the element "ABOUT US" in the menu
+
+const megaMenuButtonAboutUs = document.querySelector("#HeaderMenu-about-us")
+
+const megaMenuContentAboutUs = document.querySelector("#header-nav-about-submenu")
+
+megaMenuContentAboutUs.style.display = "block"
+
+let closeAboutSubMenu = true
+
+megaMenuContentAboutUs.onmouseover = () => {
+
+  closeAboutSubMenu = false
+
+  const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
+
+  detailsAboutSubMenu.setAttribute("open", true)
+
+}
+
+megaMenuContentAboutUs.onmouseout = () => {
+
+  closeAboutSubMenu = true
+
+  const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
+
+  detailsAboutSubMenu.removeAttribute("open")
+
+
+}
+
+megaMenuButtonAboutUs.onmouseover = () => {
+
+  const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
+
+  detailsAboutSubMenu.setAttribute("open", true)
+
+}
+
+megaMenuButtonAboutUs.onmouseleave = () => {
+
+  setTimeout(function () {
+    const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
+
+    if (closeAboutSubMenu) {
+
+      detailsAboutSubMenu.removeAttribute("open")
+
+    }
+
+  }, 500);
+
+
+}
+
+// const megaMenuContentAboutUsCopy = megaMenuButtonAboutUs
+
+// megaMenuButtonAboutUs.remove()
+
+// megaMenuButtonAboutUs.appendChild(megaMenuContentAboutUsCopy)
+
+// hover effect "ABOUT US" code finished
