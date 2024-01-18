@@ -92,17 +92,3 @@
     {%- endfor -%}
   </ul>
 </nav>
-
-<script>
-  const details = document.querySelectorAll('.mega-menu');
-
-  for (let detail of details) {
-    detail.addEventListener('mouseover', () => {
-      detail.open = true;
-    });
-
-    detail.addEventListener('mouseleave', () => {
-      detail.open = false;
-    });
-  }
-</script>
