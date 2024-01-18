@@ -28,14 +28,16 @@
 {% style %}
   @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   .home-page-banner {
-    background-color: #dfc3a0;
+    background-color: {{ section.settings.background_color }};
     padding: 1rem 0;
+    margin: 1rem auto;
   }
   .home-page-banner-title {
     text-align: center;
     margin: 0;
-    color: black;
+    color: {{ section.settings.title_color }};
     font-family: 'Tinos', serif;
+    text-transform: uppercase;
   }
   .home-page-banner-title a {
     text-decoration: none;
@@ -94,6 +96,18 @@
         }
       ],
       "default": "h2"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:sections.home_page_banner.background_color",
+      "default": "#dfc3a0"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "t:sections.home_page_banner.title_color",
+      "default": "#000000"
     }
   ],
   "blocks": [

@@ -1,0 +1,53 @@
+{% comment %}
+  Quantity input
+
+  Accepts:
+  - variant: {Object} Variant object
+  - variant_id: {String} Variant ID (optional)
+  - form_id: {String} Product form id (optional)
+  - input_name: {String} Name for the input
+
+  Usage:
+  {% render 'quantity-input' variant: variant %}
+{% endcomment %}
+
+<style>
+  .quantity__select {
+    padding: 1rem 1.8rem;
+    text-align: center;
+    border: 1px solid #ced4da;
+    color: #495057;
+  }
+
+  .quantity__select option {
+    font-size: 1.5rem;
+  }
+</style>
+
+<select
+  class="quantity__select"
+  data-quantity-variant-id="{{ variant.id }}"
+  {% if input_name %}
+  name="{{ input_name }}"
+  {% else %}
+  name="updates[{{ variant.id }}]"
+  {% endif %}
+  {% # theme-check-disable %}
+  value="{{ cart | item_count_for_variant: variant.id }}"
+  data-cart-quantity="{{ cart | item_count_for_variant: variant.id }}"
+  {% # theme-check-enable %}
+  aria-label="{{ 'products.product.quantity.input_label' | t: product: variant.title | escape }}"
+  id="Quantity-{{ variant.id }}"
+  data-index="{{ variant.id }}"
+  {% if form_id %}
+  form="{{ form_id }}"
+  {% endif %}
+  {% if variant.available == false %}
+  disabled
+  {% endif %}>
+  {%- for option in (1..6) -%}
+    <option style="text-align: center;" value="{{ option }}">
+      <span>{{- option -}}</span>
+    </option>
+  {%- endfor -%}
+</select>
