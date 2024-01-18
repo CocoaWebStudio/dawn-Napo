@@ -62,7 +62,6 @@
             {%- endif -%}
 
           </div>
-
           {%- if card_product.featured_media -%}
             <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
               <div class="media media--transparent media--hover-effect">
@@ -132,7 +131,7 @@
             </div>
           </div>
         </div>
-
+      </a>
       <div class="card__content">
         <div class="card__information">
           <h3
@@ -246,7 +245,7 @@
                 {%- form 'product'
                   , card_product
                   , id: product_form_id
-                  , class: 'form'
+                  , class: 'form form-with-quantity'
                   , novalidate: 'novalidate'
                   , data-type: 'add-to-cart-form'
                 -%}
@@ -259,7 +258,7 @@
                     disabled
                     {% endif %}>
                   {% if section.settings.show_quantity_select %}
-                    {% render 'quantity-input'
+                    {% render 'quantity-select'
                       , variant: card_product.selected_or_first_available_variant
                       , form_id: product_form_id
                       , input_name: 'quantity'
@@ -357,28 +356,23 @@
     </div>
   </div>
 {%- endif -%}
+
 {% style %}
   {% if section.settings.show_quantity_select %}
 
-    form[id='{{ product_form_id }}'] {
+    .form-with-quantity {
       display: flex;
       justify-content: space-around;
     }
-    form[id='{{ product_form_id }}'] .quick-add__submit {
+
+    .form-with-quantity .quick-add__submit {
       min-width: unset;
-      width: 50%;
+      flex-grow: 1;
     }
+
     @media screen and (max-width: 749px) {
-      form[id='{{ product_form_id }}'] {
+      .form-with-quantity {
         flex-direction: column;
-        align-items: center;
-      }
-      form[id='{{ product_form_id }}'] .quantity {
-        width: 100%;
-        margin-bottom: 0.5rem;
-      }
-      form[id='{{ product_form_id }}'] .quick-add__submit {
-        width: 100%;
       }
     }
 
