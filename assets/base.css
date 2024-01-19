@@ -1238,7 +1238,7 @@ button.shopify-payment-button__button--unbranded {
   justify-content: center;
   align-items: center;
   border: 0;
-  padding: 4px;
+  padding: 8px;
   cursor: pointer;
   font: inherit;
   font-size: 1.5rem;
@@ -1253,6 +1253,11 @@ button.shopify-payment-button__button--unbranded {
 	.button:hover {
 		background-position: left;
 		color: black;
+}
+
+.button-without-bg-animation {
+  background: none;
+  color: rgb(var(--color-button-text));
 }
 
 .button:before,
@@ -1331,7 +1336,7 @@ button.shopify-payment-button__button--unbranded {
 .shopify-challenge__button,
 .customer button {
   font-size: 1.5rem;
-  line-height: calc(1 + 0.2 / var(--font-body-scale));
+  line-height: calc(1.5 + 0.2 / var(--font-body-scale));
 }
 
 .button--tertiary {
@@ -2129,13 +2134,15 @@ product-info .loading__spinner:not(.hidden)~*,
   .utility-bar--bottom-border-social-only {
     border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
   }
-.button {
-	max-width: 100%;
-	margin: auto;
-}
-.form .button{
-  margin: auto 0;
-}
+
+  .button {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .form .button{
+    margin: auto 0;
+  }
 }
 
 product-form .form{
@@ -2174,12 +2181,6 @@ row-gap: 20px;
   .utility-bar .utility-bar__grid .list-social {
     display: none;
   }
-}
-@media screen and (min-width: 750px) {
-product-form .form{
-width: 65%;
-margin: auto;
-}
 }
 
 @media screen and (max-width: 700px) {
