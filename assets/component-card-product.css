@@ -1,9 +1,14 @@
 .card__content h3 {
-	font-size: 14.85px;
+	font-size: 13.5px;
+	font-weight: 700;
   min-height: 35px;
 	text-transform: uppercase;
-	letter-spacing: 0.2em;
+	letter-spacing: 2.7px;
 	color: rgb(85, 85, 85);
+}
+
+.jdgm-star {
+	color: rgb(84, 117, 43) !important;
 }
 
 .rating-star {
@@ -35,12 +40,4 @@
 	top: 0;
 	right: 0;
 	z-index: 1000;
-}
-
-/* mobile */
-
-@media screen and (max-width: 700px) {
-.card__content h3 {
-	font-weight: 700;
-}
 }
