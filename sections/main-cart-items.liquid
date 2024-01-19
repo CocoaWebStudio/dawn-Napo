@@ -102,7 +102,7 @@
                         <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                       {%- endif -%}
 
-                      <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
+                      <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape | upcase }}</a>
 
                       {%- if item.original_price != item.final_price -%}
                         <div class="cart-item__discounted-prices">
@@ -279,10 +279,10 @@
                           >
                             <a
                               href="{{ item.url_to_remove }}"
-                              class="button button--tertiary"
+                              class="button button--tertiary button-without-bg-animation"
                               aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
                             >
-                              {% render 'icon-remove' %}
+                              {% render 'icon-cart-remove' %}
                             </a>
                           </cart-remove-button>
                         </div>

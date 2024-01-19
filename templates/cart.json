@@ -14,6 +14,10 @@
         "order_note_f3fCHG": {
           "type": "order_note",
           "settings": {
+            "order_note_heading": "Order special instructions",
+            "order_note_placeholder": "How can we help you?",
+            "order_note_paragraph__1": "<p>Global supply chain strain has impacted shipping times.<\/p>",
+            "order_note_paragraph__2": "<p><strong>Shipping times may be delayed.<\/strong><\/p><p>1 BOTTLE = 1 ACRE PRESERVED<\/p>"
           }
         },
         "subtotal": {
@@ -37,6 +41,16 @@
         "discount_code_jxTL4E": {
           "type": "discount_code",
           "settings": {
+            "show_apply_button": true,
+            "discount_code_placeholder": "Enter discount code here..."
+          }
+        },
+        "text_wppNBX": {
+          "type": "text",
+          "settings": {
+            "heading": "Text block",
+            "text_alignment": "right",
+            "subtext": "<p>Discounts cannot be combined<\/p>"
           }
         },
         "buttons": {
@@ -50,6 +64,7 @@
         "subtotal",
         "free_shipping_n6zK3A",
         "discount_code_jxTL4E",
+        "text_wppNBX",
         "buttons"
       ],
       "settings": {
@@ -71,25 +86,26 @@
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
-        "show_product_price": true,
-        "title": "Featured collection",
+        "collection": "all",
+        "title": "RELATED PRODUCTS",
         "heading_size": "h2",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
-        "collection": "all",
         "products_to_show": 4,
+        "enable_desktop_slider": true,
+        "color_scheme": "scheme-1",
         "columns_desktop": 4,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
-        "enable_desktop_slider": true,
-        "color_scheme": "scheme-1",
-        "image_ratio": "square",
-        "image_shape": "default",
         "show_secondary_image": true,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
+        "image_ratio": "square",
+        "image_shape": "default",
         "enable_quick_add": true,
         "show_quantity_select": true,
         "columns_mobile": "2",

@@ -1,10 +1,10 @@
 {% if section.settings.enable_section %}
+  <h2 class="home-page-banner-title {{ section.settings.heading_size }}">
+    <a href="/pages/press">
+      {{ section.settings.home_page_banner_title }}
+    </a>
+  </h2>
   <section class="home-page-banner">
-    <h2 class="home-page-banner-title {{ section.settings.heading_size }}">
-      <a href="/pages/press">
-        {{ section.settings.home_page_banner_title }}
-      </a>
-    </h2>
     <section class="home-page-banner-logos">
       {% for logo in section.blocks %}
         {% if logo.settings.company_logo != null %}
@@ -34,7 +34,7 @@
   }
   .home-page-banner-title {
     text-align: center;
-    margin: 0;
+    margin: 2rem auto 1rem;
     color: {{ section.settings.title_color }};
     font-family: 'Tinos', serif;
     text-transform: uppercase;
