@@ -45,6 +45,14 @@
             "discount_code_placeholder": "Enter discount code here..."
           }
         },
+        "text_wppNBX": {
+          "type": "text",
+          "settings": {
+            "heading": "Text block",
+            "text_alignment": "right",
+            "subtext": "<p>Discounts cannot be combined<\/p>"
+          }
+        },
         "buttons": {
           "type": "buttons",
           "settings": {
@@ -56,6 +64,7 @@
         "subtotal",
         "free_shipping_n6zK3A",
         "discount_code_jxTL4E",
+        "text_wppNBX",
         "buttons"
       ],
       "settings": {
