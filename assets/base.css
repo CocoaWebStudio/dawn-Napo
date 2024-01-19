@@ -2182,6 +2182,12 @@ row-gap: 20px;
     display: none;
   }
 }
+@media screen and (min-width: 750px) {
+product-form .form{
+width: 65%;
+margin: auto;
+}
+}
 
 @media screen and (max-width: 700px) {
 .badge-images-wrapper img {
@@ -3596,6 +3602,12 @@ max-width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
   gap: 1rem;
   padding: 1rem;
+}
+
+@media screen and (min-width: 990px) {
+.custom__grid-container {
+  grid-template-columns: repeat(auto-fit, minmax(225px, 365px));
+}
 }
 
 .custom__grid-item {

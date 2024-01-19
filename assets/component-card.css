@@ -1,6 +1,5 @@
 .card-wrapper {
   color: inherit;
-  height: 100%;
   position: relative;
   text-decoration: none;
 }
@@ -171,9 +170,7 @@ margin-bottom: 1rem;
     -webkit-transform: translateY(0);
     transform: translateY(0);
 }
-.card__heading.h5{
-  min-height: 35px;
-}
+
 }
 
 .card__badge {
@@ -379,7 +376,7 @@ min-height: 127px;
   width: 100%;
 }
 
-.card-information>* {
+.card-information>*:not(.rating) {
   line-height: calc(1 + 0.4 / var(--font-body-scale));
   color: rgb(var(--color-foreground));
 }
