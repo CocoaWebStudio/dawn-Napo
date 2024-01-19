@@ -2182,12 +2182,6 @@ row-gap: 20px;
     display: none;
   }
 }
-@media screen and (min-width: 750px) {
-product-form .form{
-width: 65%;
-margin: auto;
-}
-}
 
 @media screen and (max-width: 700px) {
 .badge-images-wrapper img {
