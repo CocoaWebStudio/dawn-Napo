@@ -5,6 +5,10 @@
   {% render 'header-mega-menu' %}
 {% endcomment %}
 
+{% liquid
+  assign shop_all = 'SHOP ALL'
+%}
+
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
@@ -16,22 +20,22 @@
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
               >
-                <span
-                  {%- if link.child_active %}
-                    class="header__active-menu-item"
-                  {% endif %}
+                <a
+                  href="{{ link.url }}"
+                  class="{%- if link.child_active %}header__active-menu-item{% endif %}"
+                  style="text-decoration: none; color: inherit;"
                 >
                   {{- link.title | upcase | escape -}}
-                </span>
+                </a>
                 {% render 'icon-caret' %}
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup {% if link.levels >= 2  %}mega-menu__full-width{% endif %}"
                 tabindex="-1"
               >
                 <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  class="{% if link.title == shop_all %}shop-all{% else %} mega-menu__list{% endif %}{% if link.levels >= 2  %} page-width {% endif %}{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
                 >
                   {%- for childlink in link.links -%}
@@ -66,6 +70,19 @@
                       {%- endif -%}
                     </li>
                   {%- endfor -%}
+                  {% if link.title == shop_all %}
+                    <div>
+                      <a href="{{ link.url }}">
+                        <img
+                          src="//rahua.com/cdn/shop/files/Untitled_design_3_300x.gif?v=1677704827"
+                          alt=""
+                          loading="lazy"
+                          width="225"
+                          height="225"
+                        >
+                      </a>
+                    </div>
+                  {% endif %}
                 </ul>
               </div>
             </details>
