@@ -334,8 +334,7 @@
   }
 
   .footer--social_networks{
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-column: 4 / 5;
     margin: 0;
     border-top: currentColor 1px solid;
   }
@@ -352,9 +351,9 @@
   }
 
   .policies{
-    grid-column: 3 / 5;
+    grid-column: 2 / 3;
     grid-row: 2 / 3;
-    justify-self: end;
+    justify-content: start;
     align-self: center;
     max-width: none;
   }
