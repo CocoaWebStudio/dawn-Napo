@@ -56,6 +56,13 @@
   padding-right: 2rem;
 }
 
+@media screen and (max-width: 750px) {
+  .blog__posts .article-card .card__information {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .article-card__info {
   padding-top: 0.4rem;
 }

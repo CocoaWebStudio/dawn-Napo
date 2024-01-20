@@ -466,6 +466,9 @@
         },
         "label": "Image shape",
         "info": "Standard-styled cards have no borders when an image shape is active."
+      },
+      "text_alignment": {
+        "label": "Text alignment"
       }
     },
     "announcement-bar": {
@@ -708,6 +711,9 @@
       "settings": {
         "heading": {
           "label": "Heading"
+        },
+        "sub_heading": {
+          "label": "Sub heading"
         },
         "blog": {
           "label": "Blog"
