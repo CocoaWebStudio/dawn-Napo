@@ -29,15 +29,6 @@
   <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.heading == blank -%}
       <div class="{% if posts_displayed > 2 %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
-        <h2
-          id="SectionHeading-{{ section.id }}"
-          class="blog__title inline-richtext {{ section.settings.heading_size }} {{ heading_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-          {% if settings.animations_reveal_on_scroll %}
-            data-cascade
-          {% endif %}
-        >
-          {{ section.settings.heading }}
-        </h2>
         {% if section.settings.sub_heading %}
           <h3
             id="SectionHeading-{{ section.id }}"
@@ -49,6 +40,15 @@
             {{ section.settings.sub_heading }}
           </h3>
         {% endif %}
+        <h2
+          id="SectionHeading-{{ section.id }}"
+          class="blog__title inline-richtext {{ section.settings.heading_size }} {{ heading_alignment }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+          {% endif %}
+        >
+          {{ section.settings.heading }}
+        </h2>
       </div>
     {%- endunless -%}
 
@@ -170,15 +170,15 @@
   "settings": [
     {
       "type": "inline_richtext",
-      "id": "heading",
-      "default": "Blog posts",
-      "label": "t:sections.featured-blog.settings.heading.label"
-    },
-    {
-      "type": "inline_richtext",
       "id": "sub_heading",
       "default": "Sub heading blog posts",
       "label": "t:sections.featured-blog.settings.sub_heading.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "Blog posts",
+      "label": "t:sections.featured-blog.settings.heading.label"
     },
     {
       "type": "select",
