@@ -144,7 +144,45 @@
 }
 
 .article-template__social-sharing {
+  display: flex;
+  align-items: center;
   margin-top: 3rem;
+}
+
+.article-template__social-sharing .article__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 45px;
+  color: rgb(var(--color-foreground));
+  transition: all 0.2s ease-in-out;
+}
+
+.article-template__social-sharing .icon {
+  width: 2.5rem;
+  height: 2.5rem;	
+}
+
+.article-template__social-sharing .article__link:has(.icon):hover {
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.article-template__social-sharing .article__link:has(.icon-facebook):hover {
+  background-color: #4469af;
+}
+
+.article-template__social-sharing .article__link:has(.icon-twitter):hover {
+  background-color: #00aced;
+}
+
+.article-template__social-sharing .article__link:has(.icon-pinterest):hover {
+  background-color: #c8232c;
+}
+
+.article-template__social-sharing share-button button {
+  padding-left: 2rem;
 }
 
 .article-template__social-sharing + header,
