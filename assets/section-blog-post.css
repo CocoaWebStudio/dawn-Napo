@@ -80,6 +80,11 @@
   padding: 24px 24px 0;
 }
 
+.article__wrapper a {
+  color: #ff8000;
+  transition: color 0.2s ease-in-out;
+}
+
 @media screen and (min-width: 750px) {
   .article__wrapper {
     max-width: 650px;
