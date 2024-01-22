@@ -166,7 +166,7 @@
                 }}
               {%- else -%}
                 {% if video_desktop %}
-                  {{ section.settings | video_tag }}
+                  {{ video_desktop | video_tag: autoplay: true, muted: true, controls: true }}
                 {% else %}
                   {{
                     image_desktop
