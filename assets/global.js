@@ -89,22 +89,40 @@ function liProductCard(productData = {}) {
                      <input type="hidden" name="form_type" value="product">
                      <input type="hidden" name="utf8" value="✓">
                      <input type="hidden" name="id" value="${product_id}" class="product-variant-id">
-                     <quantity-input class="quantity cart-quantity">
-                        <button class="quantity__button no-js-hidden disabled" name="minus" type="button">
-                           <span class="visually-hidden">Decrease quantity for Default Title</span>
-                           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-minus" fill="none" viewBox="0 0 10 2">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M.5 1C.5.7.7.5 1 .5h8a.5.5 0 110 1H1A.5.5 0 01.5 1z" fill="currentColor"></path>
-                           </svg>
-                        </button>
-                        <input class="quantity__input" data-quantity-variant-id="${product_id}" type="number" name="quantity" value="0" data-cart-quantity="0" min="1" step="1" aria-label="Quantity for Default Title" id="Quantity-${product_id}" data-index="${product_id}">
-                        <button class="quantity__button no-js-hidden" name="plus" type="button">
-                           <span class="visually-hidden">Increase quantity for Default Title</span>
-                           <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" class="icon icon-plus" fill="none" viewBox="0 0 10 10">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor">
-                              </path>
-                           </svg>
-                        </button>
-                     </quantity-input>
+                     
+                      <style>
+                        .quantity__select {
+                          padding: 1rem 1.8rem;
+                          text-align: center;
+                          border: 1px solid #ced4da;
+                          color: #495057;
+                        }
+
+                        .quantity__select option {
+                          font-size: 1.5rem;
+                        }
+                      </style>
+                      <select
+                        class="quantity__select"
+                        data-quantity-variant-id="${product_id}"
+                        name="quantity"
+                        value="0"
+                        data-cart-quantity="0"
+                      >
+                          <option style="text-align: center;" value="1">
+                            <span>1</span>
+                          </option><option style="text-align: center;" value="2">
+                            <span>2</span>
+                          </option><option style="text-align: center;" value="3">
+                            <span>3</span>
+                          </option><option style="text-align: center;" value="4">
+                            <span>4</span>
+                          </option><option style="text-align: center;" value="5">
+                            <span>5</span>
+                          </option><option style="text-align: center;" value="6">
+                            <span>6</span>
+                          </option>
+                      </select>
                      <button id="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit" type="submit" name="add" class="quick-add__submit button button--full-width " aria-haspopup="dialog" aria-labelledby="quick-add-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd186919162462295-submit title-template--15041843593303__55c28b18-ad23-4f11-8a01-a7e5af5bbd18-6919162462295" aria-live="polite" data-sold-out-message="true">
                         <span>Add to cart</span>
                         <span class="sold-out-message hidden">Sold out</span>
@@ -1643,122 +1661,3 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
-
-
-// This piece of code for making the hover effect over the element "SHOP ALL" in the menu 
-
-const megaMenuButton = document.querySelector("#HeaderMenu-shop-all")
-
-const megaMenuContent = document.querySelector("#MegaMenu-Content-1")
-
-let closeMegaMenu = true
-
-megaMenuContent.onmouseover = () => {
-
-  closeMegaMenu = false
-
-  const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
-
-  detailsMegaMenu.setAttribute("open", true)
-
-}
-
-megaMenuContent.onmouseout = () => {
-
-  closeMegaMenu = true
-
-  const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
-
-  detailsMegaMenu.removeAttribute("open")
-
-
-}
-
-megaMenuButton.onmouseover = () => {
-
-  const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
-
-  detailsMegaMenu.setAttribute("open", true)
-
-}
-
-megaMenuButton.onmouseleave = () => {
-
-  setTimeout(function () {
-    const detailsMegaMenu = document.querySelector("#Details-HeaderMenu-1")
-
-    if (closeMegaMenu) {
-
-      detailsMegaMenu.removeAttribute("open")
-
-    }
-
-  }, 500);
-
-
-}
-
-// hover effect "SHOP ALL" code finished
-
-// This piece of code for making the hover effect over the element "ABOUT US" in the menu
-
-const megaMenuButtonAboutUs = document.querySelector("#HeaderMenu-about-us")
-
-const megaMenuContentAboutUs = document.querySelector("#header-nav-about-submenu")
-
-megaMenuContentAboutUs.style.display = "block"
-
-let closeAboutSubMenu = true
-
-megaMenuContentAboutUs.onmouseover = () => {
-
-  closeAboutSubMenu = false
-
-  const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
-
-  detailsAboutSubMenu.setAttribute("open", true)
-
-}
-
-megaMenuContentAboutUs.onmouseout = () => {
-
-  closeAboutSubMenu = true
-
-  const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
-
-  detailsAboutSubMenu.removeAttribute("open")
-
-
-}
-
-megaMenuButtonAboutUs.onmouseover = () => {
-
-  const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
-
-  detailsAboutSubMenu.setAttribute("open", true)
-
-}
-
-megaMenuButtonAboutUs.onmouseleave = () => {
-
-  setTimeout(function () {
-    const detailsAboutSubMenu = document.querySelector("#Details-HeaderMenu-8")
-
-    if (closeAboutSubMenu) {
-
-      detailsAboutSubMenu.removeAttribute("open")
-
-    }
-
-  }, 500);
-
-
-}
-
-// const megaMenuContentAboutUsCopy = megaMenuButtonAboutUs
-
-// megaMenuButtonAboutUs.remove()
-
-// megaMenuButtonAboutUs.appendChild(megaMenuContentAboutUsCopy)
-
-// hover effect "ABOUT US" code finished
