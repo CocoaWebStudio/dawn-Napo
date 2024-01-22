@@ -79,7 +79,35 @@
             class="article-template__social-sharing {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
             {{ block.shopify_attributes }}
           >
+            {% if block.settings.share_label %}
+              {{ block.settings.share_label | escape }}
+            {% endif %}
+
             {% assign share_url = request.origin | append: article.url %}
+            <a
+              class="article__link"
+              href="https://www.facebook.com/sharer.php?u={{ share_url }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {% render 'icon-facebook' %}
+            </a>
+            <a
+              class="article__link"
+              href="https://twitter.com/share?url={{ share_url }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {% render 'icon-twitter' %}
+            </a>
+            <a
+              class="article__link"
+              href="https://pinterest.com/pin/create/button/?url={{ share_url }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {% render 'icon-pinterest' %}
+            </a>
             {% render 'share-button', block: block, share_link: share_url %}
           </div>
       {%- endcase -%}

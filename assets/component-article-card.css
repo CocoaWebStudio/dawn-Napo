@@ -6,7 +6,6 @@
 
 .article {
   display: flex;
-  align-items: center;
 }
 
 .article.grid__item {
@@ -54,6 +53,13 @@
 .blog__posts .article-card .card__information {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+@media screen and (max-width: 750px) {
+  .blog__posts .article-card .card__information {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .article-card__info {
