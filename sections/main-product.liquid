@@ -30,6 +30,20 @@
     .jdgm-rev__buyer-badge-wrapper {
       display: none;
     }
+    .ssw-instagram-slide-title {
+      text-align: center;
+      position: relative;
+      color: transparent;
+    }
+    .ssw-instagram-slide-title::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: "Instagram";
+      top: 0;
+      left: 0;
+      color: rgb(var(--color-foreground));
+    }
   {%- endstyle -%}
 
   <link
@@ -901,6 +915,22 @@
 
 {% javascript %}
   const authorElements = document.querySelectorAll('.jdgm-rev__author');
+
+  // window.onload = () => {
+  //   const instagramContainer = document.querySelector('.ssw-instagram-section');
+
+  //   const observer = new MutationObserver((mutations) => {
+  //     console.log({ mutations });
+
+  //     const instagramTitle = document.querySelector('.ssw-instagram-slide-title');
+
+  //     if (instagramTitle != null) {
+  //       instagramTitle.innerHTML = 'Instagram';
+  //     }
+  //   });
+
+  //   observer.observe(instagramContainer, { characterData: false, attributes: false, childList: true, subtree: true });
+  // };
 
   authorElements.forEach(
     (authorElement) =>
