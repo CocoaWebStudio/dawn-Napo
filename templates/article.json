@@ -16,22 +16,26 @@
             "blog_show_author": false
           }
         },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": ""
           }
-        },
-        "content": {
-          "type": "content"
         }
       },
       "block_order": [
         "featured_image",
         "title",
-        "share",
-        "content"
-      ]
+        "content",
+        "share"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
