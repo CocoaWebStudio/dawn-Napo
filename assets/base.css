@@ -3747,3 +3747,39 @@ font-size: 13.5px;
 text-align: center;
 text-transform: uppercase;
 }
+/* suscribe widget */
+.rc-radio-group__options[data-v-2f3bc686]{
+border: none!important;
+border-radius: 0;
+}
+.price-label{
+display: none;
+}
+[data-v-2f3bc686] .rc-radio.rc-radio--active:not(:first-child){
+border-top: none!important;
+}
+.rc-widget::before{
+content: "Subscribe and save!";
+font-weight: 700;
+text-transform: uppercase;
+}
+
+.subscription-radio .rc-radio__label::after{
+content: "Subscribe & Save 5% ($1.60 USD) on your first order and 5% ($1.60 USD) on all remaining orders";
+}
+.subscription-radio .rc-radio__label .discount-label{
+display: none;
+}
+.subscription-radio{
+display: flex!important;
+align-items: start !important;
+}
+.rc-radio--active{
+font-weight: inherit;
+}
+.rc-radio__input{
+width: 13px!important;
+}
+.rc-selling-plans-dropdown__label{
+display: none !important;
+}
