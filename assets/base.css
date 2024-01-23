@@ -3713,3 +3713,37 @@ predictive-search {
 .predictive-search {
   overflow-x: hidden;
 }
+/* default product custom styles */
+.product__info-wrapper .product__title h1{
+font-size: 18.9px;
+text-transform: uppercase;
+text-align: center;
+}
+
+.product__info-container .jdgm-prev-badge{
+display: flex !important;
+flex-direction: column;
+align-items: center;
+}
+
+.price.price--large.price--show-badge{
+display: flex;
+justify-content: center;
+color: #939393;
+}
+.price.price--large.price--show-badge span{
+font-size: 17.55px;
+}
+.jdgm-prev-badge__text{
+font-size: 13.5px;
+color: #54301b;
+letter-spacing: 2.7px;
+}
+.product__description.rte.quick-add-hidden{
+color: #54301b;
+font-size: 13.5px;
+}
+.related-products__heading{
+text-align: center;
+text-transform: uppercase;
+}
