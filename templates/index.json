@@ -395,8 +395,10 @@
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8": {
       "type": "featured-blog",
       "settings": {
-        "heading": "The Rahua Blog",
+        "sub_heading": "RECOMMENDED READING",
+        "heading": "THE RAHUA BLOG",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "blog": "beauty-is-power",
         "post_limit": 3,
         "columns_desktop": 3,
