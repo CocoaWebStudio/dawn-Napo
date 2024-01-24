@@ -8,45 +8,47 @@
         "padding_bottom": 28
       }
     },
-    "image_banner_YfQQxP": {
-      "type": "image-banner",
+    "slideshow_VDh6ic": {
+      "type": "slideshow",
       "blocks": {
-        "heading_pcGkaA": {
-          "type": "heading",
+        "slide_fLWQ7C": {
+          "type": "slide",
           "settings": {
-            "heading": "",
-            "heading_size": "h1"
-          }
-        },
-        "text_ykKAbY": {
-          "type": "text",
-          "settings": {
-            "text": "",
-            "text_style": "body"
+            "image_desktop": "shopify:\/\/shop_images\/Rahua_Rituals_Desktop_Banner_3.17_e5e121d9-5d5c-4fef-b4e7-fd92c8248485.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/Shower_Rituals_Mobile_Slider_-_3.17_12f45f9b-7f61-4fe5-9e1f-2cdbfd2db4e6.jpg",
+            "image_link": "",
+            "show_header_box": false,
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "heading_pcGkaA",
-        "text_ykKAbY"
+        "slide_fLWQ7C"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rahua_Rituals_Desktop_Banner_3.17.jpg",
-        "image_overlay_opacity": 0,
-        "image_height": "medium",
-        "desktop_content_position": "middle-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "layout": "full_bleed",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     }
   },
   "order": [
     "main",
-    "image_banner_YfQQxP"
+    "slideshow_VDh6ic"
   ]
 }
