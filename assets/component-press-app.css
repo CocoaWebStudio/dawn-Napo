@@ -4,6 +4,10 @@
   min-height: 100vh;
 }
 
+.press-container a {
+  display: block;
+}
+
 .press-items-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -11,8 +15,6 @@
 
 .card {
   position: relative;
-  display: flex;
-  flex-direction: column;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -49,5 +51,16 @@
 
 .press-container .press-observer {
   width: 100%;
-  display: block;
+  height: 50vh;
+  display: grid;
+  place-content: center;
+}
+
+.press-container .press-observer .loading__spinner {
+  position: relative;
+}
+
+.press-container .press-observer .loading__spinner svg {
+  width: 3rem !important;
+  height: 3rem !important;
 }
