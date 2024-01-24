@@ -376,6 +376,21 @@
           "label": "Select a company logo from your images"
         }
       }
+    },
+    "rewards": {
+      "title": "How it works",
+      "join": {
+        "title": "Join",
+        "create_account": "Create an account"
+      },
+      "earn": {
+        "title": "Earn",
+        "collect_points": "Collect points everytime you shop"
+      },
+      "redeem": {
+        "title": "Redeem",
+        "exclusive_discounts": "Use points for exclusive discounts"
+      }
     }
   },
   "localization": {

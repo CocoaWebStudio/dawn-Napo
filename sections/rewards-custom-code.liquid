@@ -1,0 +1,42 @@
+<div class="rewards-custom-code">
+  <section>
+    <h2 class="h2 rewards-custom-code-title">{{ 'sections.rewards.title' | t }}</h2>
+  </section>
+  <section>
+    <div class="how-it-works-images">
+      <div class="how-it-works-images-image">
+        <h3 class="h3" style="color: white;">{{ 'sections.rewards.join.title' | t }}</h3>
+        <h5 class="h5" style="color: white;">{{ 'sections.rewards.join.create_account' | t }}</h5>
+      </div>
+      <div class="how-it-works-images-image">
+        <h3 class="h3" style="color: white;">{{ 'sections.rewards.earn.title' | t }}</h3>
+        <h5 class="h5" style="color: white;">{{ 'sections.rewards.earn.collect_points' | t }}</h5>
+      </div>
+      <div class="how-it-works-images-image">
+        <h3 class="h3" style="color: white;">{{ 'sections.rewards.redeem.title' | t }}</h3>
+        <h5 class="h5" style="color: white;">{{ 'sections.rewards.redeem.exclusive_discounts' | t }}</h5>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% style %}
+  .rewards-custom-code {
+    padding: 3rem 5rem;
+  }
+  .rewards-custom-code-title {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .how-it-works-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .how-it-works-images-image {
+    text-align: center;
+    background-image: url("{{ 'lushGreenWithGradient2.jpg' | file_img_url: '400x' }}");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+{% endstyle %}
