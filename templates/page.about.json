@@ -6,9 +6,61 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "video_pdM46R": {
+      "type": "video",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "show_text_over_image": false,
+        "vertical_alignment": "center",
+        "video_url": "https:\/\/youtu.be\/lIqsrxl4VkE",
+        "extra_youtube": "rel=0&autoplay=1&playsinline=0",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_tabs_rRBPg4": {
+      "type": "custom-tabs",
+      "blocks": {
+        "tab_biN7FH": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Story",
+            "tab_page": "our-story"
+          }
+        },
+        "tab_qne3L4": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Products",
+            "tab_page": ""
+          }
+        },
+        "tab_t9YbGL": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Founders",
+            "tab_page": ""
+          }
+        }
+      },
+      "block_order": [
+        "tab_biN7FH",
+        "tab_qne3L4",
+        "tab_t9YbGL"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "video_pdM46R",
+    "custom_tabs_rRBPg4"
   ]
 }
