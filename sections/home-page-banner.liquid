@@ -26,7 +26,6 @@
   </section>
 {% endif %}
 {% style %}
-  @import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
   .home-page-banner {
     background-color: {{ section.settings.background_color }};
     padding: 1rem 0;
@@ -36,7 +35,7 @@
     text-align: center;
     margin: 2rem auto 1rem;
     color: {{ section.settings.title_color }};
-    font-family: 'Tinos', serif;
+    font-family: var(--font-heading-family);
     text-transform: uppercase;
   }
   .home-page-banner-title a {
@@ -44,21 +43,28 @@
     color: inherit;
   }
   .home-page-banner-logos {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
   .home-page-banner-logos-logo {
-    max-width: 40%;
+    width: 20%;
     display: flex;
+    height: auto;
     justify-content: center;
     align-items: center;
-    margin: 1rem 2vw;
+    padding: 1rem 1vw;
   }
   .home-page-banner-logos-logo img {
     width: 100%;
-    max-width: 220px;
     height: auto;
+  }
+  @media screen and (max-width: 480px) {
+    .home-page-banner-logos-logo {
+      width: 40%;
+    }
   }
 {% endstyle %}
 {% schema %}
