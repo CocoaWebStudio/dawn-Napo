@@ -3783,3 +3783,36 @@ width: 13px!important;
 .rc-selling-plans-dropdown__label{
 display: none !important;
 }
+.rc-radio--active .discount-label{
+font-weight: 400!important;
+}
+.rc-subscription-details__button::after{
+content: "See details";
+}
+.rc-subscription-details__button span{
+display: none;
+}
+.rc-subscription-details__button svg{
+display: none;
+}
+.rc-tooltip{
+top: 35px!important;
+}
+.rc-tooltip__content > *{
+display: none !important;
+}
+.rc-tooltip__content::after{
+content:"Auto-Delivery Details \A Set it and forget it! \A Pause, edit or cancel anytime. ";
+  white-space: pre;
+}
+.rc-tooltip{
+opacity: 0.9;
+
+}
+.rc-tooltip__content{
+background-color: #000000!important;
+}
+
+.arrow.bottom::after,.arrow.bottom::before{
+background-color: #000000 !important;
+}
