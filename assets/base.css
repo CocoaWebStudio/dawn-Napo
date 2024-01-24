@@ -3816,3 +3816,7 @@ background-color: #000000!important;
 .arrow.bottom::after,.arrow.bottom::before{
 background-color: #000000 !important;
 }
+.rc-subscription-details__button{
+color: black!important;
+}
+
