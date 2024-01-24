@@ -1,0 +1,66 @@
+{{ 'component-press-app.css' | asset_url | stylesheet_tag }}
+
+<script src="node_modules/minimasonry/build/minimasonry.min.js"></script>
+<script src="{{ 'press.js' | asset_url }}" defer="defer"></script>
+
+<div class="press-container color-{{ section.settings.color_scheme }} section-{{ section.id }}-padding">
+  <press-app>
+    <div class="page-width press-items-container"></div>
+    <div class="press-observer"></div>
+  </press-app>
+</div>
+
+{% schema %}
+{
+  "name": "Featured press",
+  "class": "shopify-section--bordered",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show section",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image",
+      "info": "square or vertical images are recommended"
+    },
+    {
+      "type": "url",
+      "id": "link_image",
+      "label": "Image Link"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Press content",
+      "default": "<p>Here the featured Press content  dfafa af af a f</p>"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Press title",
+      "default": "Press Title"
+    },
+    {
+      "type": "text",
+      "id": "date",
+      "label": "Date",
+      "default": "January 2021"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "svg image format is recommended"
+    },
+    {
+      "type": "url",
+      "id": "link_logo",
+      "label": "Logo Link"
+    }
+  ]
+}
+{% endschema %}
