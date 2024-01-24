@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -10,10 +9,12 @@
     },
     "1a9416ef-d532-4561-b24c-eeb162367ba5": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-paradise-boxed",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -25,6 +26,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -39,10 +41,12 @@
     },
     "21763d25-2113-4e1d-bb9b-87114fa9608c": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-enchanted-potions",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -54,6 +58,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -101,6 +106,7 @@
         "d6a3bbdc-2950-4cb8-a2e4-d8b71296d294",
         "c20cb092-c68e-46d2-a015-74ed1f4badc6"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_6.jpg",
         "image_overlay_opacity": 0,
@@ -117,10 +123,12 @@
     },
     "af1feafd-9a71-43e1-b929-b621f1924360": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-earthly-wonders",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -132,6 +140,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -179,6 +188,7 @@
         "621caf51-70ce-4f6e-a818-67ffb3cabdc7",
         "4ab46c45-4922-486b-be51-954deefc9b4f"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_7.jpg",
         "image_overlay_opacity": 0,
@@ -195,10 +205,12 @@
     },
     "8eeb9c8c-7134-46a4-9c2e-4c2b86116ac9": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-floral-delights",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -210,6 +222,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -257,6 +270,7 @@
         "f1362423-1830-45ce-bee4-c8880a0322ee",
         "23c70884-17e1-48d4-ad62-b32909b90ce4"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_8.jpg",
         "image_overlay_opacity": 0,
@@ -273,10 +287,12 @@
     },
     "2e40725c-377f-4538-a881-d5607194fe5a": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-nature-therapy",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -288,6 +304,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -335,6 +352,7 @@
         "5bbd898c-d644-477e-8a5b-f19d6bb039ac",
         "1a978a48-d202-4b80-a22c-68576f6f1565"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_9.jpg",
         "image_overlay_opacity": 0,
@@ -351,10 +369,12 @@
     },
     "727c766b-a533-41de-afdb-2777b712e182": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-dream-hair",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -366,6 +386,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -413,6 +434,7 @@
         "81427472-0019-4de3-aacd-7554d686182d",
         "aee174c9-056e-48ea-a72f-8682380f9302"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_12.jpg",
         "image_overlay_opacity": 0,
@@ -429,10 +451,12 @@
     },
     "71d0f23d-3052-4b9f-8b8c-dc475dd3d55b": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "little-luxuries-2022",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -444,6 +468,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
@@ -491,6 +516,7 @@
         "1779d706-86dc-49e4-8026-3b3c0b449466",
         "5b8dd7e6-dd4a-4d64-b2d0-2dddb07210e7"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_13.jpg",
         "image_overlay_opacity": 0,
@@ -507,10 +533,12 @@
     },
     "b7403332-a4eb-43be-9a3d-585694e09662": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "gift-lush-pumps",
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
@@ -522,6 +550,7 @@
         "show_view_all": true,
         "view_all_style": "solid",
         "show_secondary_image": false,
+        "show_product_price": true,
         "show_vendor": false,
         "show_rating": true,
         "image_ratio": "adapt",
