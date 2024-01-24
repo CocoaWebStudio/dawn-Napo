@@ -18,6 +18,88 @@
       </div>
     </div>
   </section>
+  <section>
+    <div class="rewards-explanation">
+      <div class="ways-to-earn">
+        <h3 class="h3 ways-to-earn-title">{{ 'sections.rewards.explanation.ways_to_earn.title' | t }}</h3>
+        <section style="padding: 1rem">
+          <div class="way-to-earn">
+            {% render 'icon-dollar' %}
+            <h5 class="h5">{{ 'sections.rewards.explanation.ways_to_earn.one_per_item' | t }}</h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-user' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.hundred_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.welcome_points' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-bag' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.twenty_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.first_purchase' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-gift' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.hundred_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.birthday_bonus' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.three_hundred_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.refer_friend' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            <span>
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+            </span>
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.fifty_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.leave_review' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-instagram-2' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.ten_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.follow_instagram' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-twitter-2' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.ten_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.follow_twitter' | t }}
+            </h5>
+          </div>
+        </section>
+      </div>
+      <div class="reward-perks">
+        <h3 class="h3 reward-perks-title">{{ 'sections.rewards.explanation.reward_perks.title' | t }}</h3>
+        <h4 class="h4 reward-perks-description">
+          {{ 'sections.rewards.explanation.reward_perks.description' | t -}}
+          <br>
+          {{ 'sections.rewards.explanation.reward_perks.description-2' | t }}
+        </h4>
+      </div>
+    </div>
+  </section>
 </div>
 
 {% style %}
@@ -38,5 +120,44 @@
     background-image: url("{{ 'lushGreenWithGradient2.jpg' | file_img_url: '400x' }}");
     background-repeat: no-repeat;
     background-position: center;
+    border-radius: 0.5rem;
+  }
+  .rewards-explanation {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 33.33% 1fr;
+  }
+  .ways-to-earn,
+  .reward-perks {
+    margin-top: 1rem;
+  }
+
+  .ways-to-earn-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .way-to-earn {
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: thin solid rgba(0, 0, 0, 0.125);
+  }
+  .way-to-earn h5 {
+    margin: 0.5rem 0;
+  }
+
+  .reward-perks {
+    background-color: rgb(250, 240, 230);
+  }
+
+  .reward-perks-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .reward-perks-description {
+    text-align: center;
+    font-size: 2rem;
   }
 {% endstyle %}

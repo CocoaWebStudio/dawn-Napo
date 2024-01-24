@@ -390,6 +390,29 @@
       "redeem": {
         "title": "Redeem",
         "exclusive_discounts": "Use points for exclusive discounts"
+      },
+      "explanation": {
+        "ways_to_earn": {
+          "title": "Ways to earn points",
+          "one_per_item": "1 point per $1 spent",
+          "ten_points": "10 points",
+          "twenty_points": "20 points",
+          "fifty_points": "50 points",
+          "hundred_points": "100 points",
+          "three_hundred_points": "300 points",
+          "welcome_points": "welcome points",
+          "first_purchase": "first purchase",
+          "birthday_bonus": "birthday bonus",
+          "refer_friend": "refer a friend",
+          "leave_review": "leave a review",
+          "follow_instagram": "follow us on instagram",
+          "follow_twitter": "follow us on twitter"
+        },
+        "reward_perks": {
+          "title": "Reward perks",
+          "description": "When you become a Rahua insider you automatically start earning.",
+          "description-2": "Move up the tiers to unlock more perks!"
+        }
       }
     }
   },
