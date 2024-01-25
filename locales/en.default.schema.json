@@ -439,6 +439,9 @@
           "label": "Bottom"
         }
       },
+      "text_size": {
+        "label": "Text size"
+      },
       "image_shape": {
         "options__1": {
           "label": "Default"
@@ -1221,6 +1224,9 @@
             "label": "Large"
           },
           "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+        },
+        "opacity_banner_box": {
+          "label": "Container opacity"
         },
         "desktop_content_position": {
           "options__1": {
