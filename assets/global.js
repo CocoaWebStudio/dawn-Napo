@@ -96,9 +96,16 @@ function liProductCard(productData = {}) {
                           text-align: center;
                           border: 1px solid #ced4da;
                           color: #495057;
-                          width: 100%;
                         }
-
+                        @media screen and (max-width: 750px) {
+                          .quantity__select {
+                            padding: 1rem 1.8rem;
+                            text-align: center;
+                            border: 1px solid #ced4da;
+                            color: #495057;
+                            width: 100%;
+                          }
+                        }
                         .quantity__select option {
                           font-size: 1.5rem;
                         }
