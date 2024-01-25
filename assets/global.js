@@ -20,13 +20,13 @@ function liProductCard(productData = {}) {
          <div class="card__inner color-scheme-2 gradient ratio" style="--ratio-percent: 100%;">
             <div class="card__media">
                <div class="media media--transparent media--hover-effect">
-                  <img 
-                     src="${image_src}" 
-                     sizes="(min-width: 1200px) 267px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)" 
-                     alt="${product_title}" 
-                     class="motion-reduce" 
-                     loading="lazy" 
-                     width="" 
+                  <img
+                     src="${image_src}"
+                     sizes="(min-width: 1200px) 267px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+                     alt="${product_title}"
+                     class="motion-reduce"
+                     loading="lazy"
+                     width=""
                      height=""
                      >
                </div>
@@ -89,13 +89,14 @@ function liProductCard(productData = {}) {
                      <input type="hidden" name="form_type" value="product">
                      <input type="hidden" name="utf8" value="✓">
                      <input type="hidden" name="id" value="${product_id}" class="product-variant-id">
-                     
+
                       <style>
                         .quantity__select {
                           padding: 1rem 1.8rem;
                           text-align: center;
                           border: 1px solid #ced4da;
                           color: #495057;
+                          width: 100%;
                         }
 
                         .quantity__select option {

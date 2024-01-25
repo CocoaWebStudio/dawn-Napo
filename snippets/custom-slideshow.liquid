@@ -5,21 +5,20 @@
   aria-label="{{ section.settings.accessibility_info | escape }}"
   style="margin: 2rem auto"
   look-for-product-grid="true"
-  id="principal-slideshow-ingredients-page"
->
+  id="principal-slideshow-ingredients-page">
   <div
-    class="slideshow banner banner--small grid grid--1-col slider slider--everywhere {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
+    class="slideshow banner banner--small grid grid--1-col slider slider--everywhere ingredients_slideshow {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
     id="Slider-{{ section.id }}"
     aria-live="polite"
     aria-atomic="true"
     data-autoplay="false"
     data-speed="null"
-    style="overflow-y: hidden;"
-  >
+    style="overflow-y: hidden;">
     {%- for block in section.blocks -%}
       {%- assign collection = collections[block.settings.collection] -%}
       <style>
-        #Slide-{{ section.id }}-{{ forloop.index }} .banner__media::after {
+        #Slide-{{ section.id }}-{{ forloop.index }}
+        .banner__media::after {
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
       </style>
@@ -32,8 +31,7 @@
         aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
         tabindex="-1"
         images-loaded="{%- if forloop.first %}true{% else %}false{% endif %}"
-        handle="{{ collection.handle }}"
-      >
+        handle="{{ collection.handle }}">
         <div class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}">
           {%- if collection.image -%}
             {%- liquid
@@ -58,14 +56,8 @@
                   {{ 'onboarding.collection_title' | t }}
                 {%- endif -%}
               </h1>
-              <div
-                class="image-collection-container media"
-                style="text-align: center; background-color: white; place-items: center center"
-              >
-                <img
-                  src="{{ collection.image | image_url }}"
-                  style="max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)"
-                >
+              <div class="image-collection-container media" style="text-align: center; background-color: white; place-items: center center">
+                <img src="{{ collection.image | image_url }}" style="max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)">
               </div>
             {%- else -%}
               <h1 style="margin: 0 auto; height: auto; z-index: 1; text-align: center;">
@@ -75,15 +67,12 @@
                   {{ 'onboarding.collection_title' | t }}
                 {%- endif -%}
               </h1>
-              <div
-                class="image-collection-container media"
-                style="text-align: center; background-color: white; place-items: center center"
-              >
+              <div class="image-collection-container media" style="text-align: center; background-color: white; place-items: center center">
                 {% comment %}
                   <img
-                    src="{{ collection.image | image_url }}"
-                    loading="lazy"
-                    style="max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)"
+                  src="{{ collection.image | image_url }}"
+                  loading="lazy"
+                  style="max-width: 300px; width: 90%; left: 50%; transform: translate(-50%, 0)"
                   >
                 {% endcomment %}
               </div>
@@ -113,12 +102,12 @@
               <div class="banner__buttons">
                 <a
                   {% if block.settings.link %}
-                    href="{{ block.settings.link }}"
+                  href="{{ block.settings.link }}"
                   {% else %}
-                    role="link" aria-disabled="true"
+                  role="link"
+                  aria-disabled="true"
                   {% endif %}
-                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}"
-                >
+                  class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">
                   {{- block.settings.button_label | escape -}}
                 </a>
               </div>
@@ -135,46 +124,46 @@
         class="slider-button slider-button--prev"
         name="previous"
         aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
-        aria-controls="Slider-{{ section.id }}"
-      >
+        aria-controls="Slider-{{ section.id }}">
         {% render 'icon-caret' %}
       </button>
       <div class="slider-counter slider-counter--counter{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
         <span class="slider-counter--current">1</span>
-        <span aria-hidden="true"> / </span>
+        <span aria-hidden="true">
+          /
+        </span>
         <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
         <span class="slider-counter--total">{{ section.blocks.size }}</span>
-        {% comment %}
-          {%- if section.settings.slider_visual == 'counter' -%}
-          {% endif %}
-        {% endcomment %}
-        {% comment %}
-          {%- else -%}
-            <div class="slideshow__control-wrapper">
-              {%- for block in section.blocks -%}
-                <button
-                  class="slider-counter__link slider-counter__link--counter link"
-                  aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
-                  aria-controls="Slider-{{ section.id }}"
-                >
-                  {%- if section.settings.slider_visual == 'numbers' -%}
-                    {{ forloop.index -}}
-                  {%- else -%}
-                    <span class="dot"></span>
-                  {%- endif -%}
-                </button>
-              {%- endfor -%}
-            </div>
-          {%- endif -%}
-        {% endcomment %}
+      {% comment %}
+        {%- if section.settings.slider_visual == 'counter' -%}
+        {% endif %}
+      {% endcomment %}
+      {% comment %}
+        {%- else -%}
+        <div class="slideshow__control-wrapper">
+        {%- for block in section.blocks -%}
+        <button
+        class="slider-counter__link slider-counter__link--counter link"
+        aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+        aria-controls="Slider-{{ section.id }}"
+        >
+        {%- if section.settings.slider_visual == 'numbers' -%}
+        {{ forloop.index -}}
+        {%- else -%}
+        <span class="dot"></span>
+        {%- endif -%}
+        </button>
+        {%- endfor -%}
+        </div>
+        {%- endif -%}
+      {% endcomment %}
       </div>
       <button
         type="button"
         class="slider-button slider-button--next"
         name="next"
         aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
-        aria-controls="Slider-{{ section.id }}"
-      >
+        aria-controls="Slider-{{ section.id }}">
         {% render 'icon-caret' %}
       </button>
     </div>
@@ -185,8 +174,7 @@
             <a
               href="#Slide-{{ section.id }}-{{ forloop.index }}"
               class="slider-counter__link link"
-              aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
-            >
+              aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}">
               {{ forloop.index }}
             </a>
           {%- endfor -%}
@@ -202,8 +190,7 @@
         type="radio"
         name="tabs"
         id="tab-products"
-        checked
-      >
+        checked>
       <label for="tab-products" style="text-align: center">
         <h4>
           {{- 'sections.ingredients.products' | t -}}
@@ -216,16 +203,14 @@
           aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
           aria-label="{{ section.settings.accessibility_info | escape }}"
           style="margin: 2rem auto"
-          id="products-slide-show-component"
-        >
+          id="products-slide-show-component">
           <div
             class="slideshow banner--small grid grid--1-col slider slider--everywhere {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
             id="Slider-{{ section.id }}"
             aria-live="polite"
             aria-atomic="true"
             data-autoplay="false"
-            data-speed="null"
-          >
+            data-speed="null">
             {%- for block in section.blocks -%}
               {%- assign collection = collections[block.settings.collection] -%}
               <style>
@@ -239,29 +224,28 @@
                 role="group"
                 aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
-                tabindex="-1"
-              >
+                tabindex="-1">
                 <ul
                   images-loaded="{% if forloop.index0 == 0 %}true{% else %}false{% endif %}"
                   id="Slider-products-{{ section.id }}-tabs"
                   class="grid product-grid contains-card contains-card--product grid--4-col-desktop grid--2-col-tablet-down grid--2-col-tablet-down{% if show_mobile_slider or show_desktop_slider %} slider{% if show_desktop_slider %} slider--desktop{% endif %}{% if show_mobile_slider %} slider--tablet grid--peek{% endif %}{% endif %}"
                   role="list"
-                  handle="{{ collection.handle }}"
-                >
+                  handle="{{ collection.handle }}">
                   {% if forloop.index0 == 0 %}
                     {%- for product in collection.products -%}
-                      <li
-                        class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
-                      >
-                        {% render 'card-product', card_product: product, section_id: section.id, show_quick_add: true %}
+                      <li class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}">
+                        {% render 'card-product'
+                          , card_product: product
+                          , section_id: section.id
+                          , show_quick_add: true %}
                       </li>
                     {%- endfor -%}
                     {% comment %}
                       {% else %}
                       <li
-                        class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
+                      class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
                       >
-                        hello world {{ forloop.index }}
+                      hello world {{ forloop.index }}
                       </li>
                     {% endcomment %}
                   {% endif %}
@@ -275,8 +259,7 @@
       <input
         type="radio"
         name="tabs"
-        id="tab-benefits"
-      >
+        id="tab-benefits">
       <label for="tab-benefits" style="text-align: center">
         <h4>
           {{- 'sections.ingredients.benefits' | t -}}
@@ -289,16 +272,14 @@
           aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
           aria-label="{{ section.settings.accessibility_info | escape }}"
           style="margin: 2rem auto"
-          id="benefits-slide-show-component"
-        >
+          id="benefits-slide-show-component">
           <div
             class="slideshow banner banner--small grid grid--1-col slider slider--everywhere {% if section.blocks.first.settings.image == blank %} slideshow--placeholder{% endif %}"
             id="Slider-{{ section.id }}"
             aria-live="polite"
             aria-atomic="true"
             data-autoplay="false"
-            data-speed="null"
-          >
+            data-speed="null">
             {%- for block in section.blocks -%}
               {%- assign collection = collections[block.settings.collection] -%}
               <div
@@ -308,8 +289,7 @@
                 role="group"
                 aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
                 aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
-                tabindex="-1"
-              >
+                tabindex="-1">
                 <span style="position: absolute">{{ collection.description }}</span>
               </div>
             {%- endfor -%}
