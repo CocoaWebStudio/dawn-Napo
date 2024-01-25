@@ -395,11 +395,15 @@
         "ways_to_earn": {
           "title": "Ways to earn points",
           "one_per_item": "1 point per $1 spent",
+          "five_off": "$5 off",
+          "fifteen_off": "$15 off",
+          "thirty_off": "$30 off",
           "ten_points": "10 points",
           "twenty_points": "20 points",
           "fifty_points": "50 points",
           "hundred_points": "100 points",
           "three_hundred_points": "300 points",
+          "six_hundred_points": "600 points",
           "welcome_points": "welcome points",
           "first_purchase": "first purchase",
           "birthday_bonus": "birthday bonus",
@@ -411,8 +415,28 @@
         "reward_perks": {
           "title": "Reward perks",
           "description": "When you become a Rahua insider you automatically start earning.",
-          "description-2": "Move up the tiers to unlock more perks!"
+          "description-2": "Move up the tiers to unlock more perks!",
+          "redeem_points": "redeem points for discounts"
         }
+      },
+      "table": {
+        "benefits": "Benefits",
+        "green_guardian": "Green guardian",
+        "spend": "Spend",
+        "range_1": "$0 - 250",
+        "beauty_warrior": "Beauty warrior",
+        "range_2": "$251 - 749",
+        "ecoagent": "ECOAGENT®",
+        "range_3": "$750 + ",
+        "welcome_points": "Welcome Points",
+        "firts_purchase": "First Purchase",
+        "birthday_bonus": "Birthday Bonus",
+        "sneak_peaks": "Sneak Peaks",
+        "early_access": "Early Access",
+        "free_shipping": "Free Shipping On All Orders"
+      },
+      "button": {
+        "title": "Join now"
       }
     }
   },

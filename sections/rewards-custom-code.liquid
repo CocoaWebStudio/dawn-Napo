@@ -97,6 +97,132 @@
           <br>
           {{ 'sections.rewards.explanation.reward_perks.description-2' | t }}
         </h4>
+        <table class="rewards-table">
+          <thead>
+            <tr>
+              <th>
+                <span>{{ 'sections.rewards.table.benefits' | t }}</span>
+              </th>
+              <th>
+                <span>{{ 'sections.rewards.table.green_guardian' | t }}</span>
+                <p>
+                  <span style="">{{ 'sections.rewards.table.spend' | t }}</span><br>
+                  <span>{{ 'sections.rewards.table.range_1' | t }}</span>
+                </p>
+              </th>
+              <th>
+                <span>{{ 'sections.rewards.table.beauty_warrior' | t }}</span>
+                <p>
+                  <span>{{ 'sections.rewards.table.spend' | t }}</span><br>
+                  <span>{{ 'sections.rewards.table.range_2' | t }}</span>
+                </p>
+              </th>
+              <th>
+                <span>{{ 'sections.rewards.table.ecoagent' | t }}</span>
+                <p>
+                  <span>{{ 'sections.rewards.table.spend' | t }}</span><br>
+                  <span>{{ 'sections.rewards.table.range_3' | t }}</span>
+                </p>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>{{ 'sections.rewards.table.welcome_points' | t }}</th>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+            </tr>
+            <tr>
+              <th>{{ 'sections.rewards.table.firts_purchase' | t }}</th>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+            </tr>
+            <tr>
+              <th>{{ 'sections.rewards.table.birthday_bonus' | t }}</th>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+            </tr>
+            <tr>
+              <th>{{ 'sections.rewards.table.sneak_peaks' | t }}</th>
+              <td></td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">{{ 'sections.rewards.table.early_access' | t }}</th>
+              <td></td>
+              <td></td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+            </tr>
+            <tr class="border-bottom">
+              <th scope="row">{{ 'sections.rewards.table.free_shipping' | t }}</th>
+              <td></td>
+              <td></td>
+              <td>
+                {% render 'icon-rahua' %}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h3 class="h3 reward-perks-redeem-points">
+          {{ 'sections.rewards.explanation.reward_perks.redeem_points' | t }}
+        </h3>
+        <div class="how-it-works-images">
+          <div style="padding: 1.5rem" class="how-it-works-images-image">
+            <h3 class="h3" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.hundred_points' | t }}
+            </h3>
+            <h5 class="h5" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.five_off' | t }}
+            </h5>
+          </div>
+          <div style="padding: 1.5rem" class="how-it-works-images-image">
+            <h3 class="h3" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.three_hundred_points' | t }}
+            </h3>
+            <h5 class="h5" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.fifteen_off' | t }}
+            </h5>
+          </div>
+          <div style="padding: 1.5rem" class="how-it-works-images-image">
+            <h3 class="h3" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.six_hundred_points' | t }}
+            </h3>
+            <h5 class="h5" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.thirty_off' | t }}
+            </h5>
+          </div>
+        </div>
+        <section>
+          <button class="button">{{ 'sections.rewards.button.title' | t }}</button>
+        </section>
       </div>
     </div>
   </section>
@@ -159,5 +285,38 @@
   .reward-perks-description {
     text-align: center;
     font-size: 2rem;
+  }
+
+  .reward-perks-redeem-points {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .rewards-table {
+    padding: 1rem;
+    border-collapse: collapse;
+  }
+
+  .rewards-table th {
+    color: rgb(33, 37, 41) !important;
+    padding: 1rem;
+  }
+
+  .rewards-table th * {
+    text-transform: uppercase;
+  }
+
+  .rewards-table th p span {
+    font-weight: 100;
+  }
+
+  .rewards-table tr {
+    border-top: thin solid rgb(222, 226, 230);
+    border-bottom: thin solid rgb(222, 226, 230);
+  }
+
+  .rewards-table td {
+    padding: 2rem 0;
+    text-align: center;
   }
 {% endstyle %}
