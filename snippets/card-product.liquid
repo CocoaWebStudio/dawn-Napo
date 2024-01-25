@@ -272,12 +272,16 @@
                     aria-haspopup="dialog"
                     aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                     aria-live="polite"
-                    data-sold-out-message="true">
+                    data-sold-out-message="true"
+                    {% if card_product.selected_or_first_available_variant.available == false %}
+                    disabled
+                    {% endif %}>
                     <span>
-
-                      {{ 'products.product.add_to_cart' | t }}
-
-
+                      {%- if card_product.selected_or_first_available_variant.available -%}
+                        {{ 'products.product.add_to_cart' | t }}
+                      {%- else -%}
+                        {{ 'products.product.sold_out' | t }}
+                      {%- endif -%}
                     </span>
                     <span class="sold-out-message hidden">
                       {{ 'products.product.sold_out' | t }}
