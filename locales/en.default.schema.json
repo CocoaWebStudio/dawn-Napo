@@ -415,9 +415,6 @@
           "label": "Extra large"
         }
       },
-      "text_size": {
-        "label": "Text size"
-      },
       "heading_alignment": {
         "label": "Heading alignment",
         "options__1": {
