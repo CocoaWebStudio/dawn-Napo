@@ -45,10 +45,14 @@
         "show_text_below": true,
         "accessibility_info": ""
       }
+    },
+    "custom-code": {
+      "type": "rewards-custom-code"
     }
   },
   "order": [
     "main",
-    "slideshow_VDh6ic"
+    "slideshow_VDh6ic",
+    "custom-code"
   ]
 }

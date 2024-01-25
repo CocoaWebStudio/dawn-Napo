@@ -1,0 +1,378 @@
+<div class="rewards-custom-code">
+  <section>
+    <h2 class="h2 rewards-custom-code-title">{{ 'sections.rewards.title' | t }}</h2>
+  </section>
+  <section>
+    <div class="how-it-works-images">
+      <a href="/account/login">
+        <div class="how-it-works-images-image">
+          <h3 class="h3" style="color: white;">{{ 'sections.rewards.join.title' | t }}</h3>
+          <h5 class="h5" style="color: white;">{{ 'sections.rewards.join.create_account' | t }}</h5>
+        </div>
+      </a>
+      <a href="/account/login">
+        <div class="how-it-works-images-image">
+          <h3 class="h3" style="color: white;">{{ 'sections.rewards.earn.title' | t }}</h3>
+          <h5 class="h5" style="color: white;">{{ 'sections.rewards.earn.collect_points' | t }}</h5>
+        </div>
+      </a>
+      <a href="/account/login">
+        <div class="how-it-works-images-image">
+          <h3 class="h3" style="color: white;">{{ 'sections.rewards.redeem.title' | t }}</h3>
+          <h5 class="h5" style="color: white;">{{ 'sections.rewards.redeem.exclusive_discounts' | t }}</h5>
+        </div>
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="rewards-explanation">
+      <div class="ways-to-earn">
+        <h3 class="h3 ways-to-earn-title">{{ 'sections.rewards.explanation.ways_to_earn.title' | t }}</h3>
+        <section style="padding: 1rem">
+          <div class="way-to-earn">
+            {% render 'icon-dollar' %}
+            <h5 class="h5">{{ 'sections.rewards.explanation.ways_to_earn.one_per_item' | t }}</h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-user' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.hundred_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.welcome_points' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-bag' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.twenty_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.first_purchase' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-gift' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.hundred_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.birthday_bonus' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.three_hundred_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.refer_friend' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            <span>
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+              {% render 'icon-filledstar' %}
+            </span>
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.fifty_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.leave_review' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-instagram-2' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.ten_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.follow_instagram' | t }}
+            </h5>
+          </div>
+          <div class="way-to-earn">
+            {% render 'icon-twitter-2' %}
+            <h5 class="h5">
+              {{ 'sections.rewards.explanation.ways_to_earn.ten_points' | t }}
+              <br>
+              {{ 'sections.rewards.explanation.ways_to_earn.follow_twitter' | t }}
+            </h5>
+          </div>
+        </section>
+      </div>
+      <div class="reward-perks">
+        <h3 class="h3 reward-perks-title">{{ 'sections.rewards.explanation.reward_perks.title' | t }}</h3>
+        <h4 class="h4 reward-perks-description">
+          {{ 'sections.rewards.explanation.reward_perks.description' | t -}}
+          <br>
+          {{ 'sections.rewards.explanation.reward_perks.description-2' | t }}
+        </h4>
+        <div class="table-wrapper">
+          <table class="rewards-table">
+            <thead>
+              <tr>
+                <th>
+                  <span>{{ 'sections.rewards.table.benefits' | t }}</span>
+                </th>
+                <th>
+                  <span>{{ 'sections.rewards.table.green_guardian' | t }}</span>
+                  <p>
+                    <span style="">{{ 'sections.rewards.table.spend' | t }}</span><br>
+                    <span>{{ 'sections.rewards.table.range_1' | t }}</span>
+                  </p>
+                </th>
+                <th>
+                  <span>{{ 'sections.rewards.table.beauty_warrior' | t }}</span>
+                  <p>
+                    <span>{{ 'sections.rewards.table.spend' | t }}</span><br>
+                    <span>{{ 'sections.rewards.table.range_2' | t }}</span>
+                  </p>
+                </th>
+                <th>
+                  <span>{{ 'sections.rewards.table.ecoagent' | t }}</span>
+                  <p>
+                    <span>{{ 'sections.rewards.table.spend' | t }}</span><br>
+                    <span>{{ 'sections.rewards.table.range_3' | t }}</span>
+                  </p>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>{{ 'sections.rewards.table.welcome_points' | t }}</th>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+              </tr>
+              <tr>
+                <th>{{ 'sections.rewards.table.firts_purchase' | t }}</th>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+              </tr>
+              <tr>
+                <th>{{ 'sections.rewards.table.birthday_bonus' | t }}</th>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+              </tr>
+              <tr>
+                <th>{{ 'sections.rewards.table.sneak_peaks' | t }}</th>
+                <td></td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">{{ 'sections.rewards.table.early_access' | t }}</th>
+                <td></td>
+                <td></td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+              </tr>
+              <tr class="border-bottom">
+                <th scope="row">{{ 'sections.rewards.table.free_shipping' | t }}</th>
+                <td></td>
+                <td></td>
+                <td>
+                  {% render 'icon-rahua' %}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h3 class="h3 reward-perks-redeem-points">
+          {{ 'sections.rewards.explanation.reward_perks.redeem_points' | t }}
+        </h3>
+        <div class="how-it-works-images">
+          <div style="padding: 1.5rem" class="how-it-works-images-image">
+            <h3 class="h3" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.hundred_points' | t }}
+            </h3>
+            <h5 class="h5" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.five_off' | t }}
+            </h5>
+          </div>
+          <div style="padding: 1.5rem" class="how-it-works-images-image">
+            <h3 class="h3" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.three_hundred_points' | t }}
+            </h3>
+            <h5 class="h5" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.fifteen_off' | t }}
+            </h5>
+          </div>
+          <div style="padding: 1.5rem" class="how-it-works-images-image">
+            <h3 class="h3" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.six_hundred_points' | t }}
+            </h3>
+            <h5 class="h5" style="color: white;">
+              {{ 'sections.rewards.explanation.ways_to_earn.thirty_off' | t }}
+            </h5>
+          </div>
+        </div>
+        <section>
+          <a href="/account/login">
+            <button class="button">{{ 'sections.rewards.button.title' | t }}</button>
+          </a>
+        </section>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% style %}
+  .rewards-custom-code {
+    padding: 3rem 1.5rem;
+  }
+  .rewards-custom-code-title {
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .how-it-works-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .how-it-works-images-image {
+    text-align: center;
+    background-image: url("{{ 'lushGreenWithGradient2.jpg' | file_img_url: '400x' }}");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 0.5rem;
+    padding: 45px
+  }
+  .rewards-explanation {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 33.33% 1fr;
+  }
+  .ways-to-earn,
+  .reward-perks {
+    margin-top: 1rem;
+  }
+
+  .ways-to-earn-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .way-to-earn {
+    padding: 0.75rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-bottom: thin solid rgba(0, 0, 0, 0.125);
+  }
+  .way-to-earn h5 {
+    margin: 0.5rem 0;
+  }
+
+  .rewards-table {
+    background-color: rgb(250, 240, 230);
+  }
+
+  .reward-perks-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .reward-perks-description {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .reward-perks-redeem-points {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .rewards-table {
+    padding: 1rem;
+    border-collapse: collapse;
+    width: 100%
+  }
+
+  .rewards-table th {
+    color: rgb(33, 37, 41) !important;
+    padding: 1rem;
+  }
+
+  .rewards-table th * {
+    text-transform: uppercase;
+  }
+
+  .rewards-table th p span {
+    font-weight: 100;
+  }
+
+  .rewards-table tr {
+    border-top: thin solid rgb(222, 226, 230);
+    border-bottom: thin solid rgb(222, 226, 230);
+  }
+
+  .rewards-table td {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .rewards-explanation button {
+    width: 100%;
+    max-width: 50%;
+  }
+  .how-it-works-images {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem
+  }
+  .reward-perks a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+  }
+  .how-it-works-images a {
+    text-decoration: none
+  }
+  .how-it-works-images h3 {
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    .how-it-works-images {
+      grid-template-columns: 100%;
+    }
+    .rewards-explanation {
+      grid-template-columns: 100%;
+    }
+    .rewards-explanation button {
+      width: 100%;
+      max-width: 100%;
+    }
+    .table-wrapper {
+      max-width: 100% !important;
+      overflow-x: scroll;
+      flex-wrap: nowrap;
+      --tw-scroll-snap-strictness: mandatory;
+      scroll-snap-type: x mandatory;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+    }
+
+  }
+{% endstyle %}
