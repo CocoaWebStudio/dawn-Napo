@@ -4,18 +4,24 @@
   </section>
   <section>
     <div class="how-it-works-images">
-      <div class="how-it-works-images-image">
-        <h3 class="h3" style="color: white;">{{ 'sections.rewards.join.title' | t }}</h3>
-        <h5 class="h5" style="color: white;">{{ 'sections.rewards.join.create_account' | t }}</h5>
-      </div>
-      <div class="how-it-works-images-image">
-        <h3 class="h3" style="color: white;">{{ 'sections.rewards.earn.title' | t }}</h3>
-        <h5 class="h5" style="color: white;">{{ 'sections.rewards.earn.collect_points' | t }}</h5>
-      </div>
-      <div class="how-it-works-images-image">
-        <h3 class="h3" style="color: white;">{{ 'sections.rewards.redeem.title' | t }}</h3>
-        <h5 class="h5" style="color: white;">{{ 'sections.rewards.redeem.exclusive_discounts' | t }}</h5>
-      </div>
+      <a href="/account/login">
+        <div class="how-it-works-images-image">
+          <h3 class="h3" style="color: white;">{{ 'sections.rewards.join.title' | t }}</h3>
+          <h5 class="h5" style="color: white;">{{ 'sections.rewards.join.create_account' | t }}</h5>
+        </div>
+      </a>
+      <a href="/account/login">
+        <div class="how-it-works-images-image">
+          <h3 class="h3" style="color: white;">{{ 'sections.rewards.earn.title' | t }}</h3>
+          <h5 class="h5" style="color: white;">{{ 'sections.rewards.earn.collect_points' | t }}</h5>
+        </div>
+      </a>
+      <a href="/account/login">
+        <div class="how-it-works-images-image">
+          <h3 class="h3" style="color: white;">{{ 'sections.rewards.redeem.title' | t }}</h3>
+          <h5 class="h5" style="color: white;">{{ 'sections.rewards.redeem.exclusive_discounts' | t }}</h5>
+        </div>
+      </a>
     </div>
   </section>
   <section>
@@ -221,7 +227,9 @@
           </div>
         </div>
         <section>
-          <button class="button">{{ 'sections.rewards.button.title' | t }}</button>
+          <a href="/account/login">
+            <button class="button">{{ 'sections.rewards.button.title' | t }}</button>
+          </a>
         </section>
       </div>
     </div>
@@ -247,6 +255,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 0.5rem;
+    padding: 45px
   }
   .rewards-explanation {
     margin-top: 2rem;
@@ -273,7 +282,7 @@
     margin: 0.5rem 0;
   }
 
-  .reward-perks {
+  .rewards-table {
     background-color: rgb(250, 240, 230);
   }
 
@@ -295,6 +304,7 @@
   .rewards-table {
     padding: 1rem;
     border-collapse: collapse;
+    width: 100%
   }
 
   .rewards-table th {
@@ -318,5 +328,24 @@
   .rewards-table td {
     padding: 2rem 0;
     text-align: center;
+  }
+
+  .rewards-explanation button {
+    width: 100%;
+    max-width: 50%;
+  }
+  .how-it-works-images {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem
+  }
+  .reward-perks a {
+    display: flex;
+    text-decoration: none;
+  }
+  .how-it-works-images a {
+    text-decoration: none
+  }
+  .how-it-works-images h3 {
+    text-transform: uppercase;
   }
 {% endstyle %}
