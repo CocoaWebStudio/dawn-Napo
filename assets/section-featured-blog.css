@@ -2,6 +2,11 @@
   height: 100%;
 }
 
+.article-card {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 @media screen and (min-width: 990px) {
   .grid--1-col-desktop .article-card .card__content {
     text-align: center;
@@ -28,7 +33,7 @@
 
 @media screen and (max-width: 749px) {
   .blog__post.article {
-    width: 80%;
+    width: 85%;
   }
 }
 
