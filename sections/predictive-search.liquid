@@ -72,17 +72,40 @@
               {%- endfor -%}
             </ul>
           {% endcomment %}
-          <div class="custom__grid-container">
-            <div style="display: none">
-              <form></form>
-            </div>
-            {%- for product in predictive_search.resources.products -%}
-              <div class="custom__grid-item">
-                {% comment %} TODO: Delete all duplicate code "custom-..." {% endcomment %}
-                {% render 'custom__product-card', product: product %}
+          <ul
+            class="
+              grid product-grid contains-card contains-card--product grid--2-col-tablet-down
+              grid--4-col-desktop
+            "
+          >
+            {% comment %}
+              <div style="display: none">
+                <form></form>
               </div>
-            {%- endfor -%}
-          </div>
+              {%- for product in predictive_search.resources.products -%}
+                <div class="custom__grid-item">
+                  {% comment %} TODO: Delete all duplicate code "custom-..." {% endcomment %}
+                  {% render 'custom__product-card', product: product %}
+                </div>
+              {%- endfor -%}
+            {% endcomment %}
+            <li class="grid__item" style="display: none">
+              <form></form>
+            </li>
+            {%- for product in predictive_search.resources.products -%}
+              <li class="grid__item">
+                {%
+                  render 'card-product',
+                  card_product: product,
+                  show_quick_add: true,
+                  show_quantity_select: true,
+                  show_variants_options: false,
+                  show_product_price: false,
+                  show_relative_notification: true,
+                %}
+              </li>
+            {% endfor %}
+          </ul>
         </div>
       {%- endif -%}
       {%- if predictive_search.resources.articles.size > 0 or predictive_search.resources.pages.size > 0 -%}
