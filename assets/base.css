@@ -3660,23 +3660,6 @@ max-width: 100%;
 column-gap: 17px;
 }
 
-.custom__quick-add-form-content select {
-  width: 25%;
-  background-color: #ffffff;
-  color: #495057;
-  font-size: 1.5rem;
-  grid-area: auto;
-  margin: 0 .5rem 0 0;
-  padding: .30rem .60rem;
-}
-
-.custom__quick-add-form-content select:focus,
-.custom__quick-add-form-content select:hover {
-  outline: none;
-  border: thin solid #719ECE;
-  box-shadow: 0 0 3pt 2pt #719ECE;
-}
-
 .custom__quick-add-form-content button[type="submit"] {
   position: relative;
   width: 50%;
