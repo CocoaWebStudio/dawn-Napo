@@ -1635,6 +1635,18 @@ details[open]>.share-button__fallback {
   z-index: 1;
 }
 
+.quantity__select {
+  padding: 1rem 1.8rem;
+  text-align: center;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+
+.quantity__select > option {
+  font-size: 1.5rem;
+  text-align: center
+}
+
 .select__select {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
