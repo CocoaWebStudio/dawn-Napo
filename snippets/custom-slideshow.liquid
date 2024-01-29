@@ -237,7 +237,9 @@
                         {% render 'card-product'
                           , card_product: product
                           , section_id: section.id
-                          , show_quick_add: true %}
+                          , show_quick_add: true 
+                          , show_quantity_select: true
+                        %}
                       </li>
                     {%- endfor -%}
                     {% comment %}

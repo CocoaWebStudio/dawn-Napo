@@ -78,6 +78,7 @@
             </div>
             {%- for product in predictive_search.resources.products -%}
               <div class="custom__grid-item">
+                {% comment %} TODO: Delete all duplicate code "custom-..." {% endcomment %}
                 {% render 'custom__product-card', product: product %}
               </div>
             {%- endfor -%}
