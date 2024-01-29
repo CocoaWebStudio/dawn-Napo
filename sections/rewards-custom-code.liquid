@@ -230,7 +230,7 @@
         </div>
         <section>
           <a href="/account/login">
-            <button class="button">{{ 'sections.rewards.button.title' | t }}</button>
+            <button class="button">{{ 'sections.rewards.button.title' | t | upcase }}</button>
           </a>
         </section>
       </div>
@@ -257,8 +257,13 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 0.5rem;
-    padding: 45px
+    padding: 35px
   }
+  
+  .how-it-works-images-image > h5 {
+    min-height: 3.3rem;
+  }
+  
   .rewards-explanation {
     margin-top: 2rem;
     display: grid;
