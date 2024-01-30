@@ -51,6 +51,14 @@ class PressApp extends HTMLElement {
     <div class="card-container">
       <div class="card">
         <div class="card-body">
+          <a href="${logoLink}" target="_blank">
+            <img
+              src="${logoUrl}"
+              alt="${productName}-${title}"
+              width="300px"
+              height="150px"
+            >
+          </a>
           <svg
             version="1.1"
             id="Layer_1"
@@ -81,12 +89,8 @@ class PressApp extends HTMLElement {
           <img
             src="${photoUrl}"
             alt="${productName}"
-          >
-        </a>
-        <a href="${logoLink}" target="_blank">
-          <img
-            src="${logoUrl}"
-            alt="${productName}-${title}"
+            width="300px"
+            height="300px"
           >
         </a>
       </div>

@@ -5,7 +5,7 @@
 }
 
 .press-container a {
-  display: block;
+  display: flex;
 }
 
 .press-items-container {
