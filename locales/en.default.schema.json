@@ -1101,6 +1101,9 @@
     "header": {
       "name": "Header",
       "settings": {
+        "full_width": {
+          "label": "Full width header"
+        },
         "logo_help": {
           "content": "Edit your logo in [theme settings](\/editor?context=theme&category=logo)."
         },
