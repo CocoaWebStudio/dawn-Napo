@@ -6,8 +6,8 @@
         "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-21.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE-16.png",
             "image_link": "shopify:\/\/collections\/all",
             "show_header_box": false,
             "heading": "",
@@ -27,8 +27,8 @@
         "1d5ae447-f446-495d-aeac-e406ef3e351a": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE_1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE_1.jpg",
+            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE-10.png",
+            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE-9.png",
             "image_link": "",
             "show_header_box": false,
             "heading": "",
@@ -386,7 +386,7 @@
       ],
       "settings": {
         "enable_section": true,
-        "home_page_banner_title": "Love by",
+        "home_page_banner_title": "Loved by",
         "heading_size": "h2",
         "background_color": "#dfc3a0",
         "title_color": "#000000"
@@ -504,6 +504,46 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collection_list_XeJL84": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_p7RptY": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_Cmr9my": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_N48WWN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_p7RptY",
+        "featured_collection_Cmr9my",
+        "featured_collection_N48WWN"
+      ],
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -519,6 +559,7 @@
     "test",
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8",
     "collage",
-    "multicolumn"
+    "multicolumn",
+    "collection_list_XeJL84"
   ]
 }
