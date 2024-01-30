@@ -63,8 +63,8 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "gift-enchanted-adventures",
-        "title": "GIFT ENCHANTED ADVENTURES",
+        "collection": "scalp-care",
+        "title": "GIVE YOUR SCALP A FRESH START",
         "heading_size": "h2",
         "heading_alignment": "center",
         "description": "",
@@ -258,11 +258,23 @@
           "settings": {
             "text": "<p>Named for the oil that has beautified the hair of Amazonian women for centuries, Rahua (Ra-wa) uses powerful rainforest ingredients to craft products for hair and body that heal and transform. We are honored to share this gift with you.<\/p><p>Everything we put on our hair, skin, and scalp is absorbed into our bodies. Scented with the exotic fragrance of organic Palo Santo oil and featuring the potent reparative and restorative Rahua, Morete, and Sacha Inchi oils, Rahua products offer a luxurious experience and lasting results that have created a cult following on five continents.<\/p><p>Plant-derived, organic ingredients, vegan and cruelty-free, contains no parabens, sulfates, or gluten.<\/p>"
           }
+        },
+        "button_w9mqjK": {
+          "type": "button",
+          "settings": {
+            "button_label": "Our Story",
+            "button_link": "shopify:\/\/pages\/about",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "text",
+        "button_w9mqjK"
       ],
       "settings": {
         "desktop_content_position": "center",

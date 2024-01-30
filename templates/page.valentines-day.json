@@ -57,10 +57,330 @@
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
+    },
+    "rich_text_AFAxE9": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_EjTbRN": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_mNea6b": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>explore our curated selection of thoughtful gifts that the hair, skin, and planet will love<\/h2>"
+          }
+        },
+        "button_gACfH4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_EjTbRN",
+        "text_mNea6b",
+        "button_gACfH4"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "featured_collection_6xN4Ey": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "love-for-the-body",
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "products_to_show": 4,
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "show_secondary_image": false,
+        "show_product_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "enable_quick_add": true,
+        "show_quantity_select": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_x3HeMj": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_aM7YBQ": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_99EWTV": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_size": 1.6
+          }
+        },
+        "buttons_wyVdFR": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_aM7YBQ",
+        "text_99EWTV",
+        "buttons_wyVdFR"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "opacity_banner_box": 100,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection_kVxKka": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "love-for-the-hair",
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "products_to_show": 4,
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "show_secondary_image": false,
+        "show_product_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "enable_quick_add": true,
+        "show_quantity_select": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_9Wimnn": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_8f9Xy7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_c4ytC6": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_size": 1.6
+          }
+        },
+        "buttons_XxfriV": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_8f9Xy7",
+        "text_c4ytC6",
+        "buttons_XxfriV"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "opacity_banner_box": 100,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection_ccBNci": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "love-for-the-scalp",
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "products_to_show": 4,
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "show_secondary_image": false,
+        "show_product_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "enable_quick_add": true,
+        "show_quantity_select": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_qqjtKf": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Ri7yVk": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_pYhUqD": {
+          "type": "text",
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_size": 1.6
+          }
+        },
+        "buttons_rUYAPD": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Ri7yVk",
+        "text_pYhUqD",
+        "buttons_rUYAPD"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "opacity_banner_box": 100,
+        "desktop_content_alignment": "center",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection_HaLrBq": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "love-for-the-senses",
+        "title": "Featured collection",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "products_to_show": 4,
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "show_secondary_image": false,
+        "show_product_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "enable_quick_add": true,
+        "show_quantity_select": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "valentine",
-    "6a6e0ac4-066b-4680-824b-964411dbd1aa"
+    "6a6e0ac4-066b-4680-824b-964411dbd1aa",
+    "rich_text_AFAxE9",
+    "featured_collection_6xN4Ey",
+    "image_banner_x3HeMj",
+    "featured_collection_kVxKka",
+    "image_banner_9Wimnn",
+    "featured_collection_ccBNci",
+    "image_banner_qqjtKf",
+    "featured_collection_HaLrBq"
   ]
 }
