@@ -60,6 +60,10 @@
   margin-top: 2rem;
 }
 
+.collection-list-wrapper .collection-list-title {
+  width: 100%;
+}
+
 .collection-list-wrapper .card .card__content {
   z-index: 1;
   padding: 1rem;

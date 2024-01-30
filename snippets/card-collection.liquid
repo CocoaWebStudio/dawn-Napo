@@ -126,7 +126,7 @@
               </h3>
             {% endif %}
 
-            {% if heading %}
+            {% if heading != blank %}
               <h2
                 class="inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
                 {% if settings.animations_reveal_on_scroll %}
@@ -147,12 +147,12 @@
               {% endif %}
             >
               <a
-                href="{%if button_link %} {{ button_link }} {% else %} {{ card_collection.url }} {% endif %}"
+                href="{%if button_link %}{{ button_link }}{% else %}{{ card_collection.url }}{% endif %}"
                 id="ViewAll-{{ section.id }}"
                 class="button"
                 aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
               >
-                {{ button_text | upcase }}
+                {{ button_text }}
               </a>
             </div>
           </div>
