@@ -14,14 +14,15 @@
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-text-1": {
           "type": "text",
           "settings": {
-            "text": "THE RAHUA HOLIDAY GIFT SHOP"
+            "text": "THE RAHUA VALENTINE’S DAY GIFT SHOP",
+            "text_size": 3.1
           }
         },
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "ENCHANTED ADVENTURES",
-            "heading_size": "h1"
+            "heading": "RADIANT LOVE",
+            "heading_size": "h2"
           }
         },
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-buttons-1": {
@@ -43,13 +44,14 @@
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-buttons-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_1560_x_300_px_2.gif",
+        "image": "shopify:\/\/shop_images\/Untitled-4.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
+        "opacity_banner_box": 42,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-5",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
@@ -91,7 +93,8 @@
         "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-text-1": {
           "type": "text",
           "settings": {
-            "text": "Each gift is a journey waiting to be unwrapped, an exploration designed to transport you on an enchanted beauty adventure."
+            "text": "Each gift is a journey waiting to be unwrapped, an exploration designed to transport you on an enchanted beauty adventure.",
+            "text_size": 1.6
           }
         },
         "template--15041623031895__a0baf05e-5f0e-4807-8f6f-f832fb3e8eaa-buttons-1": {
@@ -118,6 +121,7 @@
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -170,7 +174,8 @@
         "b58c2126-345d-4440-8a6e-34d3b7473e18": {
           "type": "text",
           "settings": {
-            "text": "An instant journey to a lush tropical paradise, where the scents of coconut, guava,and passionfruit whisk you away to white sandy beaches and turquoise waters."
+            "text": "An instant journey to a lush tropical paradise, where the scents of coconut, guava,and passionfruit whisk you away to white sandy beaches and turquoise waters.",
+            "text_size": 1.6
           }
         },
         "6f6b05fd-6a9e-42be-8bb4-a051a7eb30f6": {
@@ -197,6 +202,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -249,7 +255,8 @@
         "d6a3bbdc-2950-4cb8-a2e4-d8b71296d294": {
           "type": "text",
           "settings": {
-            "text": "Experience the magic of the rainforest with our curated classics. Indulge in the earthy scent of palo santo, transporting you to the heart of nature."
+            "text": "Experience the magic of the rainforest with our curated classics. Indulge in the earthy scent of palo santo, transporting you to the heart of nature.",
+            "text_size": 1.6
           }
         },
         "c20cb092-c68e-46d2-a015-74ed1f4badc6": {
@@ -276,6 +283,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -328,7 +336,8 @@
         "621caf51-70ce-4f6e-a818-67ffb3cabdc7": {
           "type": "text",
           "settings": {
-            "text": "Celebrate vibrant beauty and reawaken hair's brilliance. Embrace the sweet scent of blooming gardens and gardenia enfleurage."
+            "text": "Celebrate vibrant beauty and reawaken hair's brilliance. Embrace the sweet scent of blooming gardens and gardenia enfleurage.",
+            "text_size": 1.6
           }
         },
         "4ab46c45-4922-486b-be51-954deefc9b4f": {
@@ -355,6 +364,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -407,7 +417,8 @@
         "f1362423-1830-45ce-bee4-c8880a0322ee": {
           "type": "text",
           "settings": {
-            "text": "Relax with nature. Invigorate the senses and uplift hair with the refreshment of cucumber, eucalyptus, and lavender."
+            "text": "Relax with nature. Invigorate the senses and uplift hair with the refreshment of cucumber, eucalyptus, and lavender.",
+            "text_size": 1.6
           }
         },
         "23c70884-17e1-48d4-ad62-b32909b90ce4": {
@@ -434,6 +445,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -486,7 +498,8 @@
         "5bbd898c-d644-477e-8a5b-f19d6bb039ac": {
           "type": "text",
           "settings": {
-            "text": "Share the gift of enchanting style. From sleek updos to carefree waves, discover the Rahua holiday-style edit."
+            "text": "Share the gift of enchanting style. From sleek updos to carefree waves, discover the Rahua holiday-style edit.",
+            "text_size": 1.6
           }
         },
         "1a978a48-d202-4b80-a22c-68576f6f1565": {
@@ -513,6 +526,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -565,7 +579,8 @@
         "81427472-0019-4de3-aacd-7554d686182d": {
           "type": "text",
           "settings": {
-            "text": "Small treasures with big impact. These are a few of our favorite things."
+            "text": "Small treasures with big impact. These are a few of our favorite things.",
+            "text_size": 1.6
           }
         },
         "aee174c9-056e-48ea-a72f-8682380f9302": {
@@ -592,6 +607,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
@@ -644,7 +660,8 @@
         "1779d706-86dc-49e4-8026-3b3c0b449466": {
           "type": "text",
           "settings": {
-            "text": "Explore the new iconic Rahua 16 oz Lush Pumps, a lavish shampoo and conditioner sensation, now available upsized and ready for gifting."
+            "text": "Explore the new iconic Rahua 16 oz Lush Pumps, a lavish shampoo and conditioner sensation, now available upsized and ready for gifting.",
+            "text_size": 1.6
           }
         },
         "5b8dd7e6-dd4a-4d64-b2d0-2dddb07210e7": {
@@ -671,6 +688,7 @@
         "image_height": "medium",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
+        "opacity_banner_box": 100,
         "desktop_content_alignment": "center",
         "color_scheme": "",
         "image_behavior": "none",
