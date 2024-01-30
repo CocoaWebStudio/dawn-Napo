@@ -900,9 +900,14 @@ summary::-webkit-details-marker {
   flex-grow: 1;
   flex-shrink: 0;
 }
+@media screen and (max-width: 750px) {
+  #Slider-products-template--15194782728279__ingredients-tabs .grid__item {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }}
 .grid__item {
-    padding-left: 12px !important;
-    padding-right: 12px!important;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 @media screen and (min-width: 750px) {
   .grid__item {
@@ -1630,6 +1635,18 @@ details[open]>.share-button__fallback {
   z-index: 1;
 }
 
+.quantity__select {
+  padding: 1rem 1.8rem;
+  text-align: center;
+  border: 1px solid #ced4da;
+  color: #495057;
+}
+
+.quantity__select > option {
+  font-size: 1.5rem;
+  text-align: center
+}
+
 .select__select {
   font-family: var(--font-body-family);
   font-style: var(--font-body-style);
@@ -2140,6 +2157,22 @@ product-info .loading__spinner:not(.hidden)~*,
 product-form .form{
 column-gap: 15px;
 row-gap: 20px;
+}
+
+.form-with-quantity {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-with-quantity .quick-add__submit {
+  min-width: unset;
+  flex-grow: 1;
+}
+
+@media screen and (max-width: 749px) {
+  .form-with-quantity {
+    flex-direction: column;
+  }
 }
 
 .badge-images-wrapper {
@@ -3627,23 +3660,6 @@ max-width: 100%;
 column-gap: 17px;
 }
 
-.custom__quick-add-form-content select {
-  width: 25%;
-  background-color: #ffffff;
-  color: #495057;
-  font-size: 1.5rem;
-  grid-area: auto;
-  margin: 0 .5rem 0 0;
-  padding: .30rem .60rem;
-}
-
-.custom__quick-add-form-content select:focus,
-.custom__quick-add-form-content select:hover {
-  outline: none;
-  border: thin solid #719ECE;
-  box-shadow: 0 0 3pt 2pt #719ECE;
-}
-
 .custom__quick-add-form-content button[type="submit"] {
   position: relative;
   width: 50%;
@@ -3783,3 +3799,40 @@ width: 13px!important;
 .rc-selling-plans-dropdown__label{
 display: none !important;
 }
+.rc-radio--active .discount-label{
+font-weight: 400!important;
+}
+.rc-subscription-details__button::after{
+content: "See details";
+}
+.rc-subscription-details__button span{
+display: none;
+}
+.rc-subscription-details__button svg{
+display: none;
+}
+.rc-tooltip{
+top: 35px!important;
+}
+.rc-tooltip__content > *{
+display: none !important;
+}
+.rc-tooltip__content::after{
+content:"Auto-Delivery Details \A Set it and forget it! \A Pause, edit or cancel anytime. ";
+  white-space: pre;
+}
+.rc-tooltip{
+opacity: 0.9;
+
+}
+.rc-tooltip__content{
+background-color: #000000!important;
+}
+
+.arrow.bottom::after,.arrow.bottom::before{
+background-color: #000000 !important;
+}
+.rc-subscription-details__button{
+color: black!important;
+}
+

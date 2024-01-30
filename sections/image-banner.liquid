@@ -116,18 +116,29 @@
     </div>
   {%- endif -%}
   <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient">
+    <div
+      class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }} gradient"
+      style="background-color: rgb(var(--color-background), {{ section.settings.opacity_banner_box | divided_by: 100.00 }})"
+    >
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
             <h2
-              class="banner__heading inline-richtext {{ block.settings.heading_size }}"
+              class="banner__heading text-{{ block.id }}-block inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
             </h2>
           {%- when 'text' -%}
-            <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
+            {%- style -%}
+              .text-{{ block.id }}-block {
+                font-size: {{ block.settings.text_size }}rem;
+              }
+            {%- endstyle -%}
+            <div
+              class="banner__text rte text-{{ block.id }}-block"
+              {{ block.shopify_attributes }}
+            >
               <p>{{ block.settings.text }}</p>
             </div>
           {%- when 'buttons' -%}
@@ -271,6 +282,16 @@
       "label": "t:sections.image-banner.settings.show_text_box.label"
     },
     {
+      "type": "range",
+      "id": "opacity_banner_box",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "label": "t:sections.image-banner.settings.opacity_banner_box.label"
+    },
+    {
       "type": "select",
       "id": "desktop_content_alignment",
       "options": [
@@ -407,24 +428,14 @@
           "label": "t:sections.image-banner.blocks.text.settings.text.label"
         },
         {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
-            },
-            {
-              "value": "subtitle",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
-            }
-          ],
-          "default": "body",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+          "type": "range",
+          "id": "text_size",
+          "min": 0.1,
+          "max": 4,
+          "step": 0.1,
+          "unit": "rem",
+          "label": "t:sections.all.text_size.label",
+          "default": 1.6
         }
       ]
     },

@@ -1,0 +1,66 @@
+.press-container {
+  background-color: rgb(236, 236, 236);
+  padding-top: 1rem;
+  min-height: 100vh;
+}
+
+.press-container a {
+  display: block;
+}
+
+.press-items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  position: relative;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin: 2rem;
+}
+
+.card-body {
+  padding: 2rem;
+  flex: 1 0 auto;
+}
+
+.card-body :is(h4, a) {
+  text-transform: uppercase;
+}
+
+.card-body a {
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.card-body a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.3rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.press-container .press-observer {
+  width: 100%;
+  height: 50vh;
+  display: grid;
+  place-content: center;
+}
+
+.press-container .press-observer .loading__spinner {
+  position: relative;
+}
+
+.press-container .press-observer .loading__spinner svg {
+  width: 3rem !important;
+  height: 3rem !important;
+}

@@ -16,6 +16,7 @@
   - horizontal_quick_add: {Boolean} Changes the quick add button styles when set to true. Default: false (optional)
   - placeholder_image: {String} The placeholder image to use when no product exists. Default: 'product-apparel-2' (optional)
   - show_product_price: {Boolean} The product price is shown.
+  - show_quantity_select: {Boolean} Show the quantity select. Default: false (optional)
 
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
@@ -242,10 +243,16 @@
               </quick-add-modal>
             {%- else -%}
               <product-form data-section-id="{{ section.id }}">
+                {% liquid
+                  assign class_form = "form"
+                  if show_quantity_select
+                    assign class_form = "form form-with-quantity"
+                  endif
+                %}
                 {%- form 'product'
                   , card_product
                   , id: product_form_id
-                  , class: 'form form-with-quantity'
+                  , class: class_form
                   , novalidate: 'novalidate'
                   , data-type: 'add-to-cart-form'
                 -%}
@@ -257,7 +264,7 @@
                     {% if card_product.selected_or_first_available_variant.available == false %}
                     disabled
                     {% endif %}>
-                  {% if section.settings.show_quantity_select %}
+                  {% if show_quantity_select %}
                     {% render 'quantity-select'
                       , variant: card_product.selected_or_first_available_variant
                       , form_id: product_form_id
@@ -356,25 +363,3 @@
     </div>
   </div>
 {%- endif -%}
-
-{% style %}
-  {% if section.settings.show_quantity_select %}
-
-    .form-with-quantity {
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .form-with-quantity .quick-add__submit {
-      min-width: unset;
-      flex-grow: 1;
-    }
-
-    @media screen and (max-width: 749px) {
-      .form-with-quantity {
-        flex-direction: column;
-      }
-    }
-
-  {% endif %}
-{% endstyle %}

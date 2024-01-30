@@ -26,7 +26,7 @@
         <div class="custom__quick-add-form-content">
           <input type="hidden" name="id" value="{{ selected_variant.id }}">
           {%
-            render 'quantity-input',
+            render 'quantity-select',
             variant: selected_variant,
             form_id: "custom__add-to-card-form-product-{{ product.id }}",
             input_name: 'quantity'
@@ -35,8 +35,16 @@
             data-product_id="{{ product.id }}"
             data-variant_id="{{ selected_variant.id }}"
             type="submit"
+            {% if selected_variant.available == false %}
+              style="cursor: not-allowed; opacity: 0.5;"
+              disabled
+            {% endif %}
           >
-            {{ 'products.product.add_to_cart' | t }}
+            {%- if selected_variant.available -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
             {% render 'loading-spinner' %}
           </button>
         </div>

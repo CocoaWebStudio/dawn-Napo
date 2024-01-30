@@ -439,6 +439,9 @@
           "label": "Bottom"
         }
       },
+      "text_size": {
+        "label": "Text size"
+      },
       "image_shape": {
         "options__1": {
           "label": "Default"
@@ -856,6 +859,9 @@
         "name": "Featured collection"
       }
     },
+    "featured-press": {
+      "name": "Featured press"
+    },
     "featured-product": {
       "name": "Featured product",
       "blocks": {
@@ -1218,6 +1224,9 @@
             "label": "Large"
           },
           "info": "For best results, use an image with a 3:2 aspect ratio. [Learn more](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
+        },
+        "opacity_banner_box": {
+          "label": "Container opacity"
         },
         "desktop_content_position": {
           "options__1": {
@@ -3155,6 +3164,14 @@
             "image_mobile": {
               "label": "Image Mobile",
               "info": "750 x 1100px jpg recommended. If none is set desktop image will be cropped"
+            },
+            "video_desktop": {
+              "label": "Video Desktop",
+              "info": "16:9 aspect ratio (horizontal video) recommended"
+            },
+            "video_mobile": {
+              "label": "Video Mobile",
+              "info": "16:9 aspect ratio (vertical video) recommended. If none is set desktop video will be cropped"
             },
             "image_link": {
               "label": "Slider Link"

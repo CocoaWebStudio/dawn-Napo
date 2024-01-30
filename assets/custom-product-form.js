@@ -41,8 +41,8 @@ customElements.define(
             }
             if (!formData.has('quantity')) {
 
-                const quantity = this.form.querySelector("input[name='quantity']")
-                    ? this.form.querySelector("input[name='quantity']").value
+                const quantity = this.form.querySelector(".quantity__select")
+                    ? this.form.querySelector(".quantity__select").value
                     : 1
 
                 formData.append('quantity', quantity)
