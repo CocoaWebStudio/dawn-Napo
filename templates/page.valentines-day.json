@@ -14,19 +14,20 @@
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-text-1": {
           "type": "text",
           "settings": {
-            "text": "THE RAHUA HOLIDAY GIFT SHOP",
-            "text_size": 1.6
+            "text": "THE RAHUA VALENTINE’S DAY GIFT SHOP",
+            "text_size": 2.6
           }
         },
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-heading-1": {
           "type": "heading",
           "settings": {
-            "heading": "ENCHANTED ADVENTURES",
-            "heading_size": "h1"
+            "heading": "RADIANT LOVE",
+            "heading_size": "h2"
           }
         },
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-buttons-1": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Button label",
             "button_link_1": "shopify:\/\/pages\/valentines-day-gift-guide",
@@ -43,14 +44,14 @@
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-buttons-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rahua_Holiday_Gift_Guide_1560_x_400_px_1560_x_300_px_2.gif",
+        "image": "shopify:\/\/shop_images\/Untitled-4.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
-        "opacity_banner_box": 100,
+        "opacity_banner_box": 56,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-5",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
