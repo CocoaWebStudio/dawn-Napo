@@ -683,6 +683,28 @@
           "settings": {
             "collection": {
               "label": "Collection"
+            },
+            "image": {
+              "label": "Image",
+              "info": "1120 x 1200px jpg recommended"
+            },
+            "sub_heading": {
+              "label": "Sub heading"
+            },
+            "title": {
+              "label": "Heading",
+              "info": "If none is set, collection title will be used."
+            },
+            "button_text": {
+              "label": "Button text"
+            },
+            "button_url": {
+              "label": "Button link",
+              "info": "If none is set, collection link will be used."
+            },
+            "overlay": {
+              "label": "Apply overlay on image",
+              "info": "This can improve text visibility."
             }
           }
         }
