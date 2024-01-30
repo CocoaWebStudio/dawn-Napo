@@ -144,9 +144,9 @@
             </div>
           {%- endif -%}
           <div class="article-card__info underline-links-hover">
-            <a href="{{ article.url }}" class="full-unstyled-link" style="font-weight: bold;">
+            <a href="{{ article.url }}" class="full-unstyled-link">
               {{ 'Read more' | truncate: 50 | escape }}
-              {% render 'icon-arrow' %}
+              {% comment %} {% render 'icon-arrow' %} {% endcomment %}
             </a>
           </div>
         </div>
