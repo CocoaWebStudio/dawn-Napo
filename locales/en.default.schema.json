@@ -696,8 +696,7 @@
               "info": "If none is set, collection title will be used."
             },
             "button_text": {
-              "label": "Button text",
-              "default": "View products"
+              "label": "Button text"
             },
             "button_url": {
               "label": "Button link",
