@@ -33,10 +33,10 @@
   }
   .home-page-banner-title {
     text-align: center;
-    margin: 2rem auto 1rem;
-    color: {{ section.settings.title_color }};
-    font-family: var(--font-heading-family);
+    color: rgb(var(--color-foreground));
+    font-family: var(--font-heading-family) !important;
     text-transform: uppercase;
+    /* font-size: calc(var(--font-heading-scale) * 2rem);s */
   }
   .home-page-banner-title a {
     text-decoration: none;
@@ -108,12 +108,6 @@
       "id": "background_color",
       "label": "t:sections.home_page_banner.background_color",
       "default": "#dfc3a0"
-    },
-    {
-      "type": "color",
-      "id": "title_color",
-      "label": "t:sections.home_page_banner.title_color",
-      "default": "#000000"
     }
   ],
   "blocks": [
