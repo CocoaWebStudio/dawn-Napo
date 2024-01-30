@@ -61,17 +61,6 @@
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
   <div class="video-section isolate{% unless section.settings.full_width %} page-width{% endunless %} section-{{ section.id }}-padding">
-    <div
-      class="{% if section.settings.show_text_over_image %}show-text-over-image{% endif %}{% if section.settings.full_width %} page-width{% endif %}"
-    >
-      {%- unless section.settings.heading == blank -%}
-        <div class="video-title title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <h2 class="{{heading_alignment}} inline-richtext {{ section.settings.heading_size }}">
-            {{ section.settings.heading }}
-          </h2>
-        </div>
-      {%- endunless -%}
-    </div>
     <noscript>
       <div
         class="video-section__media"
@@ -116,6 +105,17 @@
           type="button"
           aria-label="{{ alt }}"
         >
+          <div
+            class="show-text-over-image{% if section.settings.full_width %} page-width{% endif %}"
+          >
+            {%- unless section.settings.heading == blank -%}
+              <div class="video-title title-wrapper--no-top-margin{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+                <h2 class="{{heading_alignment}} inline-richtext {{ section.settings.heading_size }}">
+                  {{ section.settings.heading }}
+                </h2>
+              </div>
+            {%- endunless -%}
+          </div>
           {{
             poster
             | image_url: width: 3840
@@ -219,12 +219,6 @@
       ],
       "default": "center",
       "label": "t:sections.all.heading_alignment.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_text_over_image",
-      "label": "t:sections.video.settings.show_text_over_image.label",
-      "default": false
     },
     {
       "type": "select",
