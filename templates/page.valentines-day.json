@@ -231,8 +231,8 @@
         "color_scheme": "scheme-5",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
     "featured_collection_kVxKka": {
@@ -313,8 +313,8 @@
         "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
     "featured_collection_ccBNci": {
@@ -395,8 +395,8 @@
         "color_scheme": "scheme-55320735-67ec-41c9-9cb8-4b8d68647ff0",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
-        "show_text_below": true
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     },
     "featured_collection_HaLrBq": {
