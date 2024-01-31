@@ -34,24 +34,16 @@
             "button_link": "shopify:\/\/pages\/about"
           }
         },
-        "tab_qne3L4": {
-          "type": "tab",
-          "settings": {
-            "title": "Our Products",
-            "button_link": ""
-          }
-        },
         "tab_t9YbGL": {
           "type": "tab",
           "settings": {
             "title": "Our Founders",
-            "button_link": ""
+            "button_link": "shopify:\/\/pages\/our-founders-page"
           }
         }
       },
       "block_order": [
         "tab_biN7FH",
-        "tab_qne3L4",
         "tab_t9YbGL"
       ],
       "settings": {
