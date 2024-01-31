@@ -101,7 +101,7 @@
           "type": "left-col-tab",
           "settings": {
             "heading": "Ingredients",
-            "content": "{{ product.metafields.tabs.ingredients.value }}",
+            "content": "{{ product.metafields.tabs.ingredients.value }}\n<br>\n{{ product.metafields.tabs.ingredients_list.value }}",
             "page": "",
             "mobile-exclusive": false,
             "desktop-exclusive": false
