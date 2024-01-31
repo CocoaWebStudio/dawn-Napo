@@ -31,6 +31,13 @@
           "type": "tab",
           "settings": {
             "title": "Our Story",
+            "button_link": "shopify:\/\/pages\/about"
+          }
+        },
+        "tab_qne3L4": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Products",
             "button_link": ""
           }
         },
@@ -44,6 +51,7 @@
       },
       "block_order": [
         "tab_biN7FH",
+        "tab_qne3L4",
         "tab_t9YbGL"
       ],
       "settings": {
