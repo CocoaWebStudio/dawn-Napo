@@ -54,7 +54,7 @@
         "color_scheme": "scheme-5",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
-        "stack_images_on_mobile": true,
+        "stack_images_on_mobile": false,
         "show_text_below": true
       }
     },
