@@ -3887,3 +3887,33 @@ predictive-search {
 .relative-notification {
   position: relative !important;
 }
+.article-card__info.underline-links-hover .full-unstyled-link {
+    color: #555;
+    position: relative;
+
+    display: inline-block; /* Hacer que el enlace sea un bloque en línea */
+}
+
+.article-card__info.underline-links-hover .full-unstyled-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 0; /* Inicialmente establece el ancho en 0 */
+    height: 1px;
+    background-color: #555;
+    transition: width 0.5s ease;
+}
+
+.article-card__info.underline-links-hover .full-unstyled-link:hover::before {
+    width: 100%; /* Hacer que el subrayado coincida con el ancho del texto */
+}
+
+.article-card__info.underline-links-hover .full-unstyled-link{
+text-decoration: underline;
+text-underline-offset: 9px;
+}
+.article-card__info.underline-links-hover:hover .full-unstyled-link{
+text-decoration: none;
+transition: text-decoration 0.5s ease;
+}
