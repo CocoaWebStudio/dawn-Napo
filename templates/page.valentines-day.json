@@ -15,7 +15,7 @@
           "type": "text",
           "settings": {
             "text": "THE RAHUA VALENTINE’S DAY GIFT SHOP",
-            "text_size": 2.6
+            "text_size": 3.5
           }
         },
         "template--15041623031895__6a6e0ac4-066b-4680-824b-964411dbd1aa-heading-1": {
@@ -49,7 +49,7 @@
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
-        "opacity_banner_box": 51,
+        "opacity_banner_box": 1,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-5",
         "image_behavior": "none",
