@@ -102,49 +102,19 @@
         "padding_bottom": 52
       }
     },
-    "featured_collection_6xN4Ey": {
-      "type": "featured-collection",
-      "settings": {
-        "collection": "love-for-the-body",
-        "title": "Featured collection",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "products_to_show": 4,
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "show_secondary_image": false,
-        "show_product_price": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "enable_quick_add": true,
-        "show_quantity_select": true,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "image_banner_x3HeMj": {
       "type": "image-banner",
       "blocks": {
         "heading_aM7YBQ": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "LOVE FOR THE BODY",
             "heading_size": "h1"
           }
         },
         "text_99EWTV": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_size": 1.6
@@ -152,6 +122,7 @@
         },
         "buttons_wyVdFR": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Button label",
             "button_link_1": "",
@@ -168,35 +139,36 @@
         "buttons_wyVdFR"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/ligth-trace-background-valentines-day-2.jpg",
         "image_overlay_opacity": 0,
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
-        "opacity_banner_box": 100,
+        "opacity_banner_box": 39,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-4",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
         "show_text_below": true
       }
     },
-    "featured_collection_kVxKka": {
+    "featured_collection_6xN4Ey": {
       "type": "featured-collection",
       "settings": {
-        "collection": "love-for-the-hair",
-        "title": "Featured collection",
+        "collection": "love-for-the-body",
+        "title": "",
         "heading_size": "h1",
         "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "products_to_show": 4,
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "",
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "show_secondary_image": false,
         "show_product_price": true,
@@ -207,7 +179,89 @@
         "enable_quick_add": true,
         "show_quantity_select": true,
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_eBhzpr": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_n96M3J": {
+          "type": "heading",
+          "settings": {
+            "heading": "LOVE FOR THE HAIR",
+            "heading_size": "h1"
+          }
+        },
+        "text_MkdEf4": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text_size": 1.6
+          }
+        },
+        "buttons_QWEGRc": {
+          "type": "buttons",
+          "disabled": true,
+          "settings": {
+            "button_label_1": "Button label",
+            "button_link_1": "",
+            "button_style_secondary_1": false,
+            "button_label_2": "Button label",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_n96M3J",
+        "text_MkdEf4",
+        "buttons_QWEGRc"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/ligth-trace-background-valentines-day3.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "opacity_banner_box": 30,
+        "desktop_content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "featured_collection_kVxKka": {
+      "type": "featured-collection",
+      "settings": {
+        "collection": "love-for-the-hair",
+        "title": "",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "products_to_show": 4,
+        "enable_desktop_slider": true,
+        "color_scheme": "",
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "show_secondary_image": false,
+        "show_product_price": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "enable_quick_add": true,
+        "show_quantity_select": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -218,12 +272,13 @@
         "heading_8f9Xy7": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "LOVE FOR THE SCALP",
             "heading_size": "h1"
           }
         },
         "text_c4ytC6": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_size": 1.6
@@ -231,6 +286,7 @@
         },
         "buttons_XxfriV": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Button label",
             "button_link_1": "",
@@ -247,13 +303,14 @@
         "buttons_XxfriV"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/ligth-trace-background-valentines-day4.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
-        "opacity_banner_box": 100,
+        "opacity_banner_box": 45,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
@@ -271,11 +328,11 @@
         "show_description": false,
         "description_style": "body",
         "products_to_show": 4,
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "",
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "show_secondary_image": false,
         "show_product_price": true,
@@ -286,7 +343,7 @@
         "enable_quick_add": true,
         "show_quantity_select": true,
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -297,12 +354,13 @@
         "heading_Ri7yVk": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "LOVE FOR THE SENSES",
             "heading_size": "h1"
           }
         },
         "text_pYhUqD": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "Give customers details about the banner image(s) or content on the template.",
             "text_size": 1.6
@@ -310,6 +368,7 @@
         },
         "buttons_rUYAPD": {
           "type": "buttons",
+          "disabled": true,
           "settings": {
             "button_label_1": "Button label",
             "button_link_1": "",
@@ -326,13 +385,14 @@
         "buttons_rUYAPD"
       ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/ligth-trace-background-valentines-day.jpg",
         "image_overlay_opacity": 0,
-        "image_height": "medium",
+        "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": true,
-        "opacity_banner_box": 100,
+        "opacity_banner_box": 36,
         "desktop_content_alignment": "center",
-        "color_scheme": "",
+        "color_scheme": "scheme-55320735-67ec-41c9-9cb8-4b8d68647ff0",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
         "stack_images_on_mobile": true,
@@ -343,18 +403,18 @@
       "type": "featured-collection",
       "settings": {
         "collection": "love-for-the-senses",
-        "title": "Featured collection",
+        "title": "",
         "heading_size": "h1",
         "heading_alignment": "center",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "products_to_show": 4,
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "color_scheme": "",
         "columns_desktop": 4,
         "full_width": false,
-        "show_view_all": true,
+        "show_view_all": false,
         "view_all_style": "solid",
         "show_secondary_image": false,
         "show_product_price": true,
@@ -365,7 +425,7 @@
         "enable_quick_add": true,
         "show_quantity_select": true,
         "columns_mobile": "2",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -375,8 +435,9 @@
     "valentine",
     "6a6e0ac4-066b-4680-824b-964411dbd1aa",
     "rich_text_AFAxE9",
-    "featured_collection_6xN4Ey",
     "image_banner_x3HeMj",
+    "featured_collection_6xN4Ey",
+    "image_banner_eBhzpr",
     "featured_collection_kVxKka",
     "image_banner_9Wimnn",
     "featured_collection_ccBNci",
