@@ -491,7 +491,7 @@ h6:empty {
   text-underline-offset: 0.3rem;
   color: rgb(var(--color-link));
   background-color: transparent;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   font-family: inherit;
 }
 
@@ -2861,6 +2861,7 @@ details[open]>.header__icon--menu .icon-hamburger {
 .js details>.header__submenu {
   opacity: 0;
   transform: translateY(-1.5rem);
+  width: 22rem;
 }
 
 details[open]>.header__submenu {
@@ -2925,7 +2926,7 @@ details[open]>.header__submenu {
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 0.3rem;
 }
 
@@ -2971,9 +2972,8 @@ details[open]>.header__menu-item .icon-caret {
 }
 
 .header__submenu .header__submenu {
-  background-color: rgba(var(--color-foreground), 0.03);
-  padding: 1rem 0;
-  margin: 1rem 0;
+  background-color: var(--gradient-background);
+  padding: 0;
 }
 
 .header__submenu .header__menu-item:after {
@@ -2982,11 +2982,15 @@ details[open]>.header__menu-item .icon-caret {
 
 .header__submenu .header__menu-item {
   justify-content: space-between;
-  padding: 0.8rem 2rem;
+  padding: 0.8rem 1.5rem;
+  transition: all 50ms linear;
 }
 
 .header__submenu .header__menu-item:hover {
-  text-decoration-line: underline;
+  background-color: rgba(var(--color-foreground), 0.8);
+  color: rgb(var(--color-background));
+  transition: all 50ms linear;
+  text-decoration: none;
 }
 
 .header__menu-item .icon-caret {
