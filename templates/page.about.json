@@ -48,11 +48,161 @@
       ],
       "settings": {
       }
+    },
+    "image_with_text_gYzVhy": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_yrkENN": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_NPiJiJ": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Rahua products—known for their pure ingredients and unparalleled performance—would not be available today if not for a marvelous confluence of events. Fabian Lliguin, a renowned hairstylist and colorist in New York City, found himself immersed in the heart of the Amazon rainforest, a biodiverse wonder spanning nine countries including Brazil, Peru, and Ecuador, as an environmentalist, educating indigenous people about their land rights and human rights when he realized he was surrounded by women with fantastically long, lustrous hair that cascaded past their waists.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_wEzkYF": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_yrkENN",
+        "text_NPiJiJ",
+        "button_wEzkYF"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Jungle_River_1.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_WXkafz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_dBDWCm": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_UbT3a7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The secret, the women told Fabian, was rahua oil. For centuries the members of the tribe, who live deep within the rainforest, had relied on this oil to nourish their hair and skin.<\/p><p>The women gave Fabian one bottle of rahua oil, which he carefully transported back to New York in his suitcase. In his salon on Fifth Avenue, he decided—as an experiment, and without any expectations—to use the oil as a treatment for a client with extremely dry, damaged hair. After 10 minutes, her hair was completely transformed: from brittle and lifeless to healthy, shiny, and bouncy. Fabian was as shocked as his client. Here was solid proof that this ingredient, used for centuries, produced tangible results.<\/p><p>Fabian knew he had something very special on his hands and knew too that he needed to handle it with respect. Rahua oil was -and is- produced by the Quechua-Shuar tribe in the same complex, ritualistic, and sustainable fashion it has been for generations. Fabian, who had long worked to support the rainforest’s indigenous people, didn’t want to disrupt this process.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_6afcE4": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_dBDWCm",
+        "text_UbT3a7",
+        "button_6afcE4"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/fisherman_9eb67d6f-e693-49e4-b06d-bec0c714d0e8.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_E6j9Gw": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_djCkyA": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_Hh4yNV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>In 2008 Anna Ayers—Fabian’s wife and business partner—came onboard, joining her expertise as a fashion designer and New York-based trend forecaster to Fabian’s as a hairstylist and colorist to design a purposeful beauty experience for consumers around the world. Together they launched the Rahua brand, drawing on the wisdom of a legendary people to formulate a singular line of innovative, plant-based products to heal, nourish, beautify, and transform.<\/p><p>Today, more than 500 families from the Quechua-Shuar, Achuar, and neighboring tribes work with Fabian and Anna to cultivate the rainforest grown ingredients used in the<a href=\"https:\/\/rahua.com\/collections\/hair\">Rahua hair care<\/a>and<a href=\"https:\/\/rahua.com\/collections\/body\">body care<\/a>collections.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "button_JMErNa": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_djCkyA",
+        "text_Hh4yNV",
+        "button_JMErNa"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/quichua_woman_08ccf924-fc4e-4172-8af3-7fb7a85a4754.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "video_pdM46R",
-    "custom_tabs_rRBPg4"
+    "custom_tabs_rRBPg4",
+    "image_with_text_gYzVhy",
+    "image_with_text_WXkafz",
+    "image_with_text_E6j9Gw"
   ]
 }
