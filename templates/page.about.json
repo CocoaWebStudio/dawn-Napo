@@ -16,7 +16,7 @@
         "heading_alignment": "center",
         "vertical_alignment": "center",
         "video_url": "https:\/\/youtu.be\/lIqsrxl4VkE",
-        "extra_youtube": "rel=0&autoplay=1&playsinline=0",
+        "extra_youtube": "rel=0&autoplay=0&playsinline=0",
         "description": "",
         "full_width": false,
         "color_scheme": "",
