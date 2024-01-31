@@ -291,7 +291,6 @@
         "heading": "OUR STORY",
         "heading_size": "h2",
         "heading_alignment": "center",
-        "show_text_over_image": true,
         "vertical_alignment": "center",
         "video_url": "https:\/\/www.youtube.com\/watch?v=lIqsrxl4VkE&t=14s",
         "extra_youtube": "rel=0&autoplay=1&playsinline=0",
@@ -348,21 +347,21 @@
           "type": "company_logo",
           "settings": {
             "company_logo": "shopify:\/\/shop_images\/Harper_s_Bazaar_Logo_svg.png",
-            "press_url": ""
+            "press_url": "https:\/\/www.harpersbazaar.com.sg\/beauty\/best-shampoos-for-dry-hair\/"
           }
         },
         "company_logo_TiYJdY": {
           "type": "company_logo",
           "settings": {
             "company_logo": "shopify:\/\/shop_images\/VOGUE_LOGO_svg.png",
-            "press_url": ""
+            "press_url": "https:\/\/www.vogue.com\/article\/best-leave-in-conditioner-sprays"
           }
         },
         "company_logo_6X4a8c": {
           "type": "company_logo",
           "settings": {
             "company_logo": "shopify:\/\/shop_images\/allure-logo-163A9213E6-seeklogo.com.png",
-            "press_url": ""
+            "press_url": "https:\/\/www.allure.com\/review\/rahua-classic-shampoo"
           }
         },
         "company_logo_CiEkM7": {
@@ -376,7 +375,7 @@
           "type": "company_logo",
           "settings": {
             "company_logo": "shopify:\/\/shop_images\/ELLE_Magazine_Logo_svg.png",
-            "press_url": ""
+            "press_url": "https:\/\/www.ellecanada.com\/beauty\/health-and-fitness\/wellness-fitness-launches-2020"
           }
         },
         "company_logo_Yay3CK": {
@@ -398,8 +397,8 @@
       ],
       "settings": {
         "enable_section": true,
-        "home_page_banner_title": "Love by",
-        "heading_size": "h1",
+        "home_page_banner_title": "Loved by",
+        "heading_size": "h2",
         "background_color": "#dfc3a0",
         "title_color": "#000000"
       }
