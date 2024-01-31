@@ -28,7 +28,6 @@
   .tab-container .tabs label {
     order: 1; // Put the labels first
     display: block;
-    padding: 1rem 2rem;
     margin-right: 0.2rem;
     cursor: pointer;
     font-weight: bold;
@@ -53,6 +52,11 @@
   }
   .tab-container .tabs input:checked + label + .tab {
     display: block;
+  }
+
+  .tab-container .tabs label a {
+    display: flex;
+    padding: 1rem 2rem;
   }
 
   .tab-container {
