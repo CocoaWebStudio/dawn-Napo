@@ -10,8 +10,9 @@
             checked
           {% endif %}
         >
-        <label for="tab-{{ forloop.index0 }}">{{ block.settings.title }}</label>
-        <div class="tab">{{ block.settings.tab_page.content }}</div>
+        <label for="tab-{{ forloop.index0 }}"
+          ><a href="{{ block.settings.button_link }}">{{ block.settings.title }}</a></label
+        >
       {% endfor %}
     </div>
   </div>
@@ -98,9 +99,9 @@
           "default": "New tab"
         },
         {
-          "id": "tab_page",
-          "type": "page",
-          "label": "Tab content"
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
         }
       ]
     }
