@@ -49,7 +49,7 @@
         "image_height": "small",
         "desktop_content_position": "middle-center",
         "show_text_box": false,
-        "opacity_banner_box": 56,
+        "opacity_banner_box": 1,
         "desktop_content_alignment": "center",
         "color_scheme": "scheme-5",
         "image_behavior": "none",
