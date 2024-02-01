@@ -6,9 +6,9 @@
         "template--15041622769751__c455dde9-30e7-42c9-b22d-81602e59035f-slide-1": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE.jpg",
-            "image_link": "shopify:\/\/collections\/all",
+            "image_desktop": "shopify:\/\/shop_images\/1_753418a8-d0d2-40e0-807a-6378d5623d76.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/1_e2c5c6ce-a788-4be7-bdfa-f617341e18c1.jpg",
+            "image_link": "shopify:\/\/collections\/enchanted-island™-body-glow-collection",
             "show_header_box": false,
             "heading": "",
             "heading_size": "h1",
@@ -27,9 +27,9 @@
         "1d5ae447-f446-495d-aeac-e406ef3e351a": {
           "type": "slide",
           "settings": {
-            "image_desktop": "shopify:\/\/shop_images\/DESKTOP_BANNER_TEMPLATE_1.jpg",
-            "image_mobile": "shopify:\/\/shop_images\/MOBILE_BANNER_TEMPLATE_1.jpg",
-            "image_link": "",
+            "image_desktop": "shopify:\/\/shop_images\/2_297f2203-8837-43d5-83a1-28520ec54410.jpg",
+            "image_mobile": "shopify:\/\/shop_images\/2_d31ff192-61e1-40a4-83b6-c5494ce7fafe.jpg",
+            "image_link": "shopify:\/\/collections\/bestsellers",
             "show_header_box": false,
             "heading": "",
             "heading_size": "h1",
