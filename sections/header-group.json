@@ -8,12 +8,12 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "title": "THE HOLIDAY SHOP IS OPEN ✨ GIFT MAGICAL ELIXIRS & PARADISE POTIONS",
-            "title_link": "shopify:\/\/pages\/2023-holiday-gift-guide",
+            "title": "Get Skin with Glowing Energy ✨ Introducing Enchanted Island™ Body Glow Collection",
+            "title_link": "shopify:\/\/collections\/enchanted-island™-body-glow-collection",
             "sub_title": "FREE SHIPPING WITH ALL ORDERS $85+",
             "sub_title_link": "shopify:\/\/collections\/all",
-            "cad_title": "THE HOLIDAY SHOP IS OPEN ✨ GIFT MAGICAL ELIXIRS & PARADISE POTIONS",
-            "cad_title_link": "shopify:\/\/pages\/2023-holiday-gift-guide",
+            "cad_title": "Get Skin with Glowing Energy ✨ Introducing Enchanted Island™ Body Glow Collection",
+            "cad_title_link": "shopify:\/\/collections\/enchanted-island™-body-glow-collection",
             "cad_sub_title": "",
             "can_sub_title_link": ""
           }
@@ -23,7 +23,7 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "color_scheme": "",
+        "color_scheme": "scheme-4",
         "show_line_separator": true,
         "show_social": false,
         "auto_rotate": false,
@@ -35,6 +35,7 @@
     "header": {
       "type": "header",
       "settings": {
+        "full_width_header": true,
         "logo_position": "top-center",
         "menu": "main-menu",
         "top_left_menu": "header_left",
