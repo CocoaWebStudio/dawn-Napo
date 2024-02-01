@@ -60,11 +60,11 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "featured_collection": {
+    "55c28b18-ad23-4f11-8a01-a7e5af5bbd18": {
       "type": "featured-collection",
       "settings": {
-        "collection": "scalp-care",
-        "title": "GIVE YOUR SCALP A FRESH START",
+        "collection": "enchanted-island™-body-glow-collection",
+        "title": "GLOW WITH NEW ENCHANTED ISLAND™",
         "heading_size": "h2",
         "heading_alignment": "center",
         "description": "",
@@ -91,11 +91,11 @@
         "padding_bottom": 36
       }
     },
-    "55c28b18-ad23-4f11-8a01-a7e5af5bbd18": {
+    "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "collection": "16-oz-lush-pumps",
-        "title": "NEW IN",
+        "collection": "scalp-care",
+        "title": "GIVE YOUR SCALP A FRESH START",
         "heading_size": "h2",
         "heading_alignment": "center",
         "description": "",
@@ -519,8 +519,8 @@
   },
   "order": [
     "c455dde9-30e7-42c9-b22d-81602e59035f",
-    "featured_collection",
     "55c28b18-ad23-4f11-8a01-a7e5af5bbd18",
+    "featured_collection",
     "cd18fe12-15a3-4805-b1a9-380030c6ab1b",
     "4091bccf-4305-4446-aed5-d8c73fa3d6ae",
     "6fc42e5f-8e7e-4c56-8ee1-b17e988a1358",
