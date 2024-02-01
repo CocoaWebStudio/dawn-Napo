@@ -145,9 +145,6 @@
         tabindex="-1"
       >
         <div>
-          {%- if block.settings.image_link != blank -%}
-            <a target="_self" href="{{ block.settings.image_link }}">
-          {%- endif -%}
           <picture class="slideshow__media banner__media media{% if block.settings.image == blank %} placeholder{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}">
             {%- if block.settings.image_mobile != blank or block.settings.video_mobile != blank -%}
               {% if block.settings.video_mobile != blank %}
@@ -209,12 +206,13 @@
               {%- endif -%}
             {%- endif -%}
           </picture>
-          {%- if block.settings.image_link != blank -%}
-            </a>
-          {%- endif -%}
+
         </div>
         {% if block.settings.video_desktop or block.settings.video_mobile %}
         {% else %}
+          {%- if block.settings.image_link != blank -%}
+            <a target="_self" href="{{ block.settings.image_link }}">
+          {%- endif -%}
           <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}{% if settings.animations_reveal_on_scroll and forloop.index == 1 %} scroll-trigger animate--slide-in{% endif %}">
             {% if block.settings.show_header_box %}
               <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}">
@@ -245,6 +243,9 @@
               </div>
             {% endif %}
           </div>
+          {%- if block.settings.image_link != blank -%}
+            </a>
+          {%- endif -%}
         {% endif %}
       </div>
     {%- endfor -%}

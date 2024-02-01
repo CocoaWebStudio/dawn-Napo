@@ -3925,3 +3925,6 @@ transition: text-decoration 0.5s ease;
 color: inherit;
   text-decoration: inherit;
 }
+.slideshow__slide.grid__item a{
+height: 100%;
+}
