@@ -85,7 +85,7 @@ function liProductCard(productData = {}) {
             </div>
             <div class="quick-add no-js-hidden">
                <product-form>
-                  <form method="post" id="product-quick-add-form-${product_id}" action="/cart/add" accept-charset="UTF-8" class="form" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form">
+                  <form method="post" id="product-quick-add-form-${product_id}" action="/cart/add" accept-charset="UTF-8" class="form form-with-quantity" enctype="multipart/form-data" novalidate="novalidate" data-type="add-to-cart-form">
                      <input type="hidden" name="form_type" value="product">
                      <input type="hidden" name="utf8" value="✓">
                      <input type="hidden" name="id" value="${product_id}" class="product-variant-id">
