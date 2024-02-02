@@ -49,6 +49,11 @@
   object-position: center;
 }
 
+.logo_image {
+  height: 150px;
+  margin-bottom: 2rem;
+}
+
 .press-container .press-observer {
   width: 100%;
   height: 50vh;

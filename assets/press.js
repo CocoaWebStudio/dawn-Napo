@@ -51,7 +51,7 @@ class PressApp extends HTMLElement {
     <div class="card-container">
       <div class="card">
         <div class="card-body">
-          <a href="${logoLink}" target="_blank">
+          <a class="logo_image" href="${logoLink}" target="_blank">
             <img
               src="${logoUrl}"
               alt="${productName}-${title}"
