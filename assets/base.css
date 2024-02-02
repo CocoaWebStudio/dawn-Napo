@@ -314,7 +314,9 @@ h1,
     font-size: calc(var(--font-heading-scale) * 4rem);
   }
 }
-
+.image-with-text__heading.inline-richtext.h2 strong{
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+}
 h2,
 .h2 {
   font-size: calc(var(--font-heading-scale) * 2rem);
