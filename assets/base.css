@@ -3930,3 +3930,6 @@ color: inherit;
 .slideshow__slide.grid__item a{
 height: 100%;
 }
+.product-form__submit.button.button--full-width.button--primary span{
+text-transform: uppercase !important;
+}
