@@ -1,6 +1,7 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}{{ 'section-image-banner.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag -}}
+{{- 'section-image-banner.css' | asset_url | stylesheet_tag }}
 {% comment %} {{ 'component-slider.css' | asset_url | stylesheet_tag }} {% endcomment %}
 {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
 
@@ -136,13 +137,13 @@
     </ul>
     </div>
   {% endcomment %}
-  {% render 'custom-slideshow' %}
-  {% render 'custom-collection-list' %}
+  <div class="ingredients-page-wrapper" style="overflow-x: hidden;">
+    {% render 'custom-slideshow' %}
+    {% render 'custom-collection-list' %}
+  </div>
 {%- endif -%}
 
 {% javascript %}
-
-
   /*
    document.addEventListener('DOMContentLoaded', function () {
    const sliderWrapper = document.querySelector('.custom-slider-wrapper');
@@ -204,9 +205,7 @@
       event.preventDefault();
       event.stopPropagation();
 
-      const tabInputSelected = document.querySelector(`#${
-        event.currentTarget.getAttribute('for')
-      }`);
+      const tabInputSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
 
       const tabInputs = document.querySelectorAll('.tab-container#tab-container-ingredients .tabs input[type="radio"]');
 
@@ -216,16 +215,16 @@
         }
       });
 
-      tabInputSelected.checked = ! tabInputSelected.checked;
+      tabInputSelected.checked = !tabInputSelected.checked;
     };
 
-// tabLabel.onmousedown = (event) => {
-// event.preventDefault();
-// event.stopPropagation();
+    // tabLabel.onmousedown = (event) => {
+    // event.preventDefault();
+    // event.stopPropagation();
 
-// const tabSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
-// console.log('mouse', { tabSelected });
-// };
+    // const tabSelected = document.querySelector(`#${event.currentTarget.getAttribute('for')}`);
+    // console.log('mouse', { tabSelected });
+    // };
   });
 
   const customCardsCollection = document.querySelectorAll('.custom-card-collection');
@@ -233,7 +232,7 @@
 
   console.log('customCardsCollection');
 
-  console.log({customCardsCollection});
+  console.log({ customCardsCollection });
 
   customCardsCollection.forEach((customCardCollection) => {
     const aLinks = customCardCollection.querySelectorAll('a');
@@ -241,9 +240,9 @@
       event.preventDefault();
       const slideNumber = customCardCollection.getAttribute('product-index');
       const scrollPositionPrincipalSlider = principalSlideShow.slider.clientWidth * (slideNumber - 1);
-      console.log({scrollPositionPrincipalSlider});
+      console.log({ scrollPositionPrincipalSlider });
       window.focus();
-      window.scrollTo({top: 0, behavior: 'smooth'});
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       principalSlideShow.setSlidePosition(scrollPositionPrincipalSlider);
     };
     aLinks.forEach((aLink) => {
@@ -251,9 +250,9 @@
         event.preventDefault();
         const slideNumber = customCardCollection.getAttribute('product-index');
         const scrollPositionPrincipalSlider = principalSlideShow.slider.clientWidth * (slideNumber - 1);
-        console.log({scrollPositionPrincipalSlider});
+        console.log({ scrollPositionPrincipalSlider });
         window.focus();
-        window.scrollTo({top: 0, behavior: 'smooth'});
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         principalSlideShow.setSlidePosition(scrollPositionPrincipalSlider);
       };
     });
@@ -330,9 +329,17 @@
   .custom-card-collection .card__heading {
     text-align: center;
   }
+
+  .custom-card-collection:hover {
+    cursor: pointer;
+  }
 {% endstyle %}
 
 {% stylesheet %}
+  .slider-button-strong-svg svg {
+    stroke: rgb(var(--color-foreground));
+    stroke-width: 1;
+  }
   .tab-container#tab-container-ingredients .tabs {
     display: flex;
     flex-wrap: wrap;
@@ -379,7 +386,6 @@
     border-bottom: thin solid rgba(0, 0, 0, 0.1);
   }
 
-
   /**
  * Generic Styling
 */
@@ -401,8 +407,6 @@
   }
 
   @media (max-width: 750px) {
-
-
     /*
    .tab-container#tab-container-ingredients .tabs .tab,
    .tab-container#tab-container-ingredients .tabs label {
@@ -430,34 +434,34 @@
 {{ 'quick-add.css' | asset_url | stylesheet_tag }}
 
 {% schema %}
-  {
-    "name": "t:sections.ingredients.title",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "enable_section",
-        "label": "t:sections.ingredients.enable_section",
-        "default": true
-      },
-      {
-        "type": "checkbox",
-        "id": "show_quantity_select",
-        "label": "t:sections.ingredients.show_quantity_select",
-        "default": true
-      }
-    ],
-    "blocks": [
-      {
-        "type": "ingredient",
-        "name": "t:sections.ingredients.blocks.add_ingredient.name",
-        "settings": [
-          {
-            "type": "collection",
-            "id": "collection",
-            "label": "t:sections.ingredients.blocks.add_ingredient.label"
-          }
-        ]
-      }
-    ]
-  }
+{
+  "name": "t:sections.ingredients.title",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "t:sections.ingredients.enable_section",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_quantity_select",
+      "label": "t:sections.ingredients.show_quantity_select",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "t:sections.ingredients.blocks.add_ingredient.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.ingredients.blocks.add_ingredient.label"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

@@ -14,7 +14,7 @@
     aria-atomic="true"
     data-autoplay="false"
     data-speed="null"
-    style="overflow-y: hidden;"
+    style="overflow-y: hidden; position: auto"
   >
     {%- for block in section.blocks -%}
       {%- assign collection = collections[block.settings.collection] -%}
@@ -71,7 +71,7 @@
             {%- else -%}
               <h1 style="margin: 0 auto; height: auto; z-index: 1; text-align: center;">
                 {%- if collection.title != blank -%}
-                  {{- collection.title | escape -}}
+                  {{- collection.title | escape | upcase -}}
                 {%- else -%}
                   {{ 'onboarding.collection_title' | t }}
                 {%- endif -%}
@@ -131,17 +131,24 @@
     {%- endfor -%}
   </div>
   {%- if section.blocks.size > 1 -%}
-    <div class="slideshow__controls slider-buttons no-js-hidden">
+    <div
+      style="position: absolute; width: 100%; height: 100%; z-index: 2; border: none; border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08)"
+      class="slideshow__controls slider-buttons no-js-hidden"
+    >
       <button
         type="button"
-        class="slider-button slider-button--prev"
+        class="slider-button slider-button--prev slider-button-strong-svg"
         name="previous"
         aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}"
         aria-controls="Slider-{{ section.id }}"
+        style="position: absolute; left: 3%; transform: scale(2)"
       >
         {% render 'icon-caret' %}
       </button>
-      <div class="slider-counter slider-counter--counter{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+      <div
+        style="display: none"
+        class="slider-counter slider-counter--counter{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}"
+      >
         <span class="slider-counter--current">1</span>
         <span aria-hidden="true"> / </span>
         <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -172,10 +179,11 @@
       </div>
       <button
         type="button"
-        class="slider-button slider-button--next"
+        class="slider-button slider-button--next slider-button-strong-svg"
         name="next"
         aria-label="{{ 'sections.slideshow.next_slideshow' | t }}"
         aria-controls="Slider-{{ section.id }}"
+        style="position: absolute; right: 10%; transform: scale(2)"
       >
         {% render 'icon-caret' %}
       </button>
@@ -207,7 +215,7 @@
         checked
       >
       <label for="tab-products" style="text-align: center">
-        <h4>
+        <h4 style="font-weight: bolder !important;">
           {{- 'sections.ingredients.products' | t -}}
         </h4>
       </label>
@@ -228,6 +236,7 @@
             data-autoplay="false"
             data-speed="null"
           >
+            {% assign show_rate = true %}
             {%- for block in section.blocks -%}
               {%- assign collection = collections[block.settings.collection] -%}
               <style>
@@ -253,22 +262,59 @@
                   {% if forloop.index0 == 0 %}
                     {%- for product in collection.products -%}
                       <li class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}">
-                        {% render 'card-product',
+                        {%
+                          render 'card-product',
                           card_product: product,
                           section_id: section.id,
                           show_quick_add: true,
-                          show_quantity_select: true
+                          show_quantity_select: true,
+                          show_product_price: true,
+                          show_rating: show_rate,
                         %}
                       </li>
                     {%- endfor -%}
-                    {% comment %}
-                      {% else %}
-                      <li
-                      class="grid__item{% if show_mobile_slider or show_desktop_slider %} slider__slide{% endif %}"
-                      >
-                      hello world {{ forloop.index }}
-                      </li>
-                    {% endcomment %}
+                  {% else %}
+                    {% if show_rate %}
+                      {%- for product in collection.products -%}
+                        {%- if product.metafields.reviews.rating.value != blank -%}
+                          <div id="custom-slide-show-product-stars-{{ product.handle }}" style="display: none">
+                            {% liquid
+                              assign rating_decimal = 0
+                              assign decimal = product.metafields.reviews.rating.value.rating | modulo: 1
+                              if decimal >= 0.3 and decimal <= 0.7
+                                assign rating_decimal = 0.5
+                              elsif decimal > 0.7
+                                assign rating_decimal = 1
+                              endif
+                            %}
+                            <div
+                              class="rating"
+                              role="img"
+                              aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: product.metafields.reviews.rating.value, rating_max: product.metafields.reviews.rating.value.scale_max }}"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="rating-star"
+                                style="--rating: {{ product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+                              ></span>
+                            </div>
+                            <p class="rating-text caption">
+                              <span aria-hidden="true">
+                                {{- product.metafields.reviews.rating.value }} /
+                                {{ product.metafields.reviews.rating.value.scale_max -}}
+                              </span>
+                            </p>
+                            <p class="rating-count caption">
+                              <span aria-hidden="true">{{ product.metafields.reviews.rating_count }} reviews</span>
+                              <span class="visually-hidden">
+                                {{- product.metafields.reviews.rating_count }}
+                                {{ 'accessibility.total_reviews' | t -}}
+                              </span>
+                            </p>
+                          </div>
+                        {%- endif -%}
+                      {% endfor %}
+                    {% endif %}
                   {% endif %}
                 </ul>
               </div>
@@ -283,7 +329,7 @@
         id="tab-benefits"
       >
       <label for="tab-benefits" style="text-align: center">
-        <h4>
+        <h4 style="font-weight: bolder !important;">
           {{- 'sections.ingredients.benefits' | t -}}
         </h4>
       </label>

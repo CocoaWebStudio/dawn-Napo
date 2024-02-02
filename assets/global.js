@@ -1,4 +1,4 @@
-function liProductCard(productData = {}) {
+function liProductCard(productData = {}, productReview = null) {
 
   const {
 
@@ -50,6 +50,7 @@ function liProductCard(productData = {}) {
                   </a>
                </h3>
                <div class="card-information">
+                  ${productReview ? productReview.innerHTML : ""}
                   <span class="caption-large light"></span>
                   <div class="
                      price ">
@@ -1148,6 +1149,10 @@ class SlideshowComponent extends SliderComponent {
 
           for (let [i, product] of products.entries()) {
 
+            const productHandler = product.handle
+
+            const productReview = document.querySelector(`#custom-slide-show-product-stars-${productHandler}`)
+
             const dataToCreateLiElement = {
               image_src: "",
               product_title: "",
@@ -1162,7 +1167,7 @@ class SlideshowComponent extends SliderComponent {
             dataToCreateLiElement.product_url = `/products/${product.handle}`
             dataToCreateLiElement.product_id = product.variants[0].id
 
-            const liProductCardElement = liProductCard(dataToCreateLiElement)
+            const liProductCardElement = liProductCard(dataToCreateLiElement, productReview)
             const stylesForQuickAddForm = quickAddFormStyles(dataToCreateLiElement.product_id)
 
             liProductCards.push(liProductCardElement)
