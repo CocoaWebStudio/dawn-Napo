@@ -111,10 +111,9 @@
       "blocks": {
         "heading_dBDWCm": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "<strong>AND THE SECRET?<\/strong>",
+            "heading_size": "h2"
           }
         },
         "text_UbT3a7": {
