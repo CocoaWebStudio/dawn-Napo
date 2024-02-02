@@ -8,6 +8,55 @@
         "padding_bottom": 28
       }
     },
+    "video_9iGkqM": {
+      "type": "video",
+      "settings": {
+        "heading": "Video",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "vertical_alignment": "center",
+        "video_url": "https:\/\/youtu.be\/lIqsrxl4VkE",
+        "extra_youtube": "rel=0&autoplay=0&playsinline=0",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "custom_tabs_EfkmXd": {
+      "type": "custom-tabs",
+      "blocks": {
+        "tab_abkmKC": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Story",
+            "button_link": "shopify:\/\/pages\/about"
+          }
+        },
+        "tab_z37wYA": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Products",
+            "button_link": "shopify:\/\/pages\/our-products-page"
+          }
+        },
+        "tab_LdcncP": {
+          "type": "tab",
+          "settings": {
+            "title": "Our Founders",
+            "button_link": "shopify:\/\/pages\/our-founders-page"
+          }
+        }
+      },
+      "block_order": [
+        "tab_abkmKC",
+        "tab_z37wYA",
+        "tab_LdcncP"
+      ],
+      "settings": {
+      }
+    },
     "5331b37d-4ad0-4006-849c-e584cbcff803": {
       "type": "image-with-text",
       "blocks": {
@@ -79,6 +128,8 @@
   },
   "order": [
     "main",
+    "video_9iGkqM",
+    "custom_tabs_EfkmXd",
     "5331b37d-4ad0-4006-849c-e584cbcff803",
     "03a48542-31cd-4955-abc1-f4ea7e41dc96"
   ]

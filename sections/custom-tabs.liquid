@@ -1,4 +1,4 @@
-<div class="custom-tabs">
+<div class="custom-tabs page-width" id="tabs">
   <div class="tab-container">
     <div class="tabs">
       {% for block in section.blocks %}
@@ -6,12 +6,13 @@
           type="radio"
           name="tabs"
           id="tab-{{ forloop.index0 }}"
-          {% if forloop.first %}
+          {% if request.path == block.settings.button_link %}
             checked
           {% endif %}
         >
-        <label for="tab-{{ forloop.index0 }}">{{ block.settings.title }}</label>
-        <div class="tab">{{ block.settings.tab_page.content }}</div>
+        <label for="tab-{{ forloop.index0 }}"
+          ><a href="{{ block.settings.button_link }}#tabs">{{ block.settings.title }}</a></label
+        >
       {% endfor %}
     </div>
   </div>
@@ -27,7 +28,6 @@
   .tab-container .tabs label {
     order: 1; // Put the labels first
     display: block;
-    padding: 1rem 2rem;
     margin-right: 0.2rem;
     cursor: pointer;
     font-weight: bold;
@@ -52,6 +52,11 @@
   }
   .tab-container .tabs input:checked + label + .tab {
     display: block;
+  }
+
+  .tab-container .tabs label a {
+    display: flex;
+    padding: 1rem 2rem;
   }
 
   .tab-container {
@@ -98,9 +103,9 @@
           "default": "New tab"
         },
         {
-          "id": "tab_page",
-          "type": "page",
-          "label": "Tab content"
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
         }
       ]
     }

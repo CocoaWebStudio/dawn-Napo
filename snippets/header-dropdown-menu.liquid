@@ -5,13 +5,28 @@
   {% render 'header-dropdown-menu' %}
 {% endcomment %}
 
+{% style %}
+  .dropdown-menu details {
+    position: relative;
+  }
+
+  .dropdown-menu details > ul {
+    position: absolute;
+    top: 0;
+    left: 100%;
+  }
+{% endstyle %}
+
 <nav class="header__inline-menu">
   <ul class="list-menu list-menu--inline" role="list">
     {%- for link in section.settings.menu.links -%}
       <li>
         {%- if link.links != blank -%}
           <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}" class="dropdown-menu">
+            <details
+              id="Details-HeaderMenu-{{ forloop.index }}"
+              class="dropdown-menu {%if link.title == "Shop all" %} uppercase {% endif %}"
+            >
               <summary
                 id="HeaderMenu-{{ link.handle }}"
                 class="header__menu-item list-menu__item link focus-inset"
@@ -27,7 +42,7 @@
               </summary>
               <ul
                 id="HeaderMenu-MenuList-{{ forloop.index }}"
-                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce"
                 role="list"
                 tabindex="-1"
               >
@@ -48,10 +63,16 @@
                       <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
                         <summary
                           id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                          class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                          class="focus-inset caption-large"
                         >
-                          <span>{{ childlink.title | escape }}</span>
-                          {% render 'icon-caret' %}
+                          <a
+                            href="{{ childlink.url }}"
+                            class="header__menu-item link link--text list-menu__item {%- if childlink.child_active %}header__active-menu-item{% endif %}"
+                            style="text-decoration: none;"
+                          >
+                            {{- childlink.title | escape -}}
+                          </a>
+                          {% comment %} {% render 'icon-caret' %} {% endcomment %}
                         </summary>
                         <ul
                           id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
@@ -101,3 +122,18 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+<script>
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const details = dropdownMenu.querySelectorAll('details');
+
+  for (let detail of details) {
+    detail.addEventListener('mouseover', () => {
+      detail.open = true;
+    });
+
+    detail.addEventListener('mouseleave', () => {
+      detail.open = false;
+    });
+  }
+</script>

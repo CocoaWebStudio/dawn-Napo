@@ -2,7 +2,7 @@ class CartNotification extends HTMLElement {
   constructor() {
     super();
 
-    this.notification = document.getElementById('cart-notification');
+    this.notification = this.querySelector(".cart-notification");
     this.header = document.querySelector('sticky-header');
     this.onBodyClick = this.handleBodyClick.bind(this);
 
@@ -37,7 +37,14 @@ class CartNotification extends HTMLElement {
   renderContents(parsedState) {
     this.cartItemKey = parsedState.key;
     this.getSectionsToRender().forEach((section) => {
-      document.getElementById(section.id).innerHTML = this.getSectionInnerHTML(
+      if (!this.querySelector(`#${section.id}`)) {
+        document.getElementById(section.id).innerHTML = this.getSectionInnerHTML(
+          parsedState.sections[section.id],
+          section.selector
+        );
+        return
+      }
+      this.querySelector(`#${section.id}`).innerHTML = this.getSectionInnerHTML(
         parsedState.sections[section.id],
         section.selector
       );

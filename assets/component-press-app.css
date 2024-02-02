@@ -5,7 +5,7 @@
 }
 
 .press-container a {
-  display: block;
+  display: flex;
 }
 
 .press-items-container {
@@ -47,6 +47,11 @@
   height: auto;
   object-fit: contain;
   object-position: center;
+}
+
+.logo_image {
+  height: 150px;
+  margin-bottom: 2rem;
 }
 
 .press-container .press-observer {

@@ -8,6 +8,13 @@
   - extend_height: {Boolean} Card height extends to available container space. Default: false (optional)
   - wrapper_class: {String} Wrapper class for card (optional)
   - placeholder_image: {String} Placeholder image when collection is empty (optional)
+  - selected_image: {Object} Image object to use instead of collection featured image (optional)
+  - overlay: {Boolean} Whether to show the overlay (optional)
+  - card_color_scheme: {String} Color scheme for card. Values are "light" and "dark". Default is "light" (optional)
+  - subheading: {String} Subheading for card (optional)
+  - heading: {String} Heading for card (optional)
+  - button_text: {String} Button text for card (optional)
+  - button_url: {String} Button URL for card (optional)
 
   Usage:
   {% render 'card-collection' %}
@@ -36,7 +43,7 @@
     class="
       card
       card--{{ card_style }}
-      {% if card_collection.featured_image %} card--media{% else %} card--text{% endif %}
+      card--text
       {% if card_style == 'card' %} color-{{ card_color_scheme }} gradient{% endif %}
       {% if extend_height %} card--extend-height{% endif %}
       {% if card_collection.featured_image == nil and card_style == 'card' %} ratio{% endif %}
@@ -44,10 +51,35 @@
     style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
   >
     <div
-      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %}"
+      class="card__inner {% if card_style == 'standard' %}color-{{ card_color_scheme }} gradient{% endif %}{% if card_collection.featured_image or card_style == 'standard' %} ratio{% endif %} {% if overlay %}overlay{% endif %}"
       style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
     >
-      {%- if card_collection.featured_image -%}
+      {%- if selected_image -%}
+        <div class="card__media">
+          <div class="media media--transparent media--hover-effect">
+            <img
+              srcset="
+                {%- if selected_image.width >= 750 -%}{{ selected_image | image_url: width: 750 }} 750w,{%- endif -%}
+                {%- if selected_image.width >= 1000 -%}{{ selected_image | image_url: width: 1000 }} 1000w,{%- endif -%}
+                {%- if selected_image.width >= 1500 -%}{{ selected_image | image_url: width: 1500 }} 1500w,{%- endif -%}
+                {%- if selected_image.width >= 3000 -%}{{ selected_image | image_url: width: 3000 }} 3000w,{%- endif -%}
+                {{ selected_image | image_url }} {{ selected_image.width }}w
+              "
+              src="{{ selected_image | image_url: width: 1500 }}"
+              sizes="
+                (min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: columns }}px,
+                (min-width: 750px) {% if columns > 1 %}calc((100vw - 10rem) / 2){% else %}calc(100vw - 10rem){% endif %},
+                calc(100vw - 3rem)
+              "
+              alt=""
+              height="{{ selected_image.height }}"
+              width="{{ selected_image.width }}"
+              loading="lazy"
+              class="motion-reduce"
+            >
+          </div>
+        </div>
+      {%- elsif card_collection.featured_image -%}
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">
             <img
@@ -83,36 +115,55 @@
       {%- else -%}
         <div class="card__content">
           <div class="card__information">
-            <h3 class="card__heading">
-              <a
-                {% if card_collection == blank %}
-                  role="link" aria-disabled="true"
-                {% else %}
-                  href="{{ card_collection.url }}"
+            {% if subheading %}
+              <h3
+                class="inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
                 {% endif %}
-                class="full-unstyled-link"
               >
-                {%- if card_collection.title != blank -%}
-                  {{- card_collection.title | escape -}}
-                {%- else -%}
-                  {{ 'onboarding.collection_title' | t }}
-                {%- endif -%}
-                {%- if card_collection.description == blank -%}
-                  <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-                {%- endif %}
-              </a>
-            </h3>
-            {%- if card_collection.description != blank -%}
-              <p class="card__caption">
-                {{- card_collection.description | strip_html | truncatewords: 12 -}}
-                <span class="icon-wrap">&nbsp;{% render 'icon-arrow' %}</span>
-              </p>
+                {{ subheading }}
+              </h3>
+            {% endif %}
+
+            {% if heading != blank %}
+              <h2
+                class="inline-richtext {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                {% if settings.animations_reveal_on_scroll %}
+                  data-cascade
+                {% endif %}
+              >
+                {{ heading }}
+              </h2>
+            {%- elsif card_collection.title != blank -%}
+              <h2>{{- card_collection.title | escape -}}</h2>
+            {%- else -%}
+              {{ 'onboarding.collection_title' | t }}
             {%- endif -%}
+            <div
+              class="{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              {% if settings.animations_reveal_on_scroll %}
+                data-cascade
+              {% endif %}
+            >
+              <a
+                href="{%if button_link %}{{ button_link }}{% else %}{{ card_collection.url }}{% endif %}"
+                id="ViewAll-{{ section.id }}"
+                class="button"
+                aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}"
+              >
+                {{ button_text }}
+              </a>
+            </div>
           </div>
         </div>
       {%- endif -%}
     </div>
-    {%- if card_collection != blank and card_style == 'card' or card_collection.featured_image -%}
+    {%- if card_collection != blank
+      and card_style == 'card'
+      or card_collection.featured_image == false
+      and selected_image == false
+    -%}
       <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading">
