@@ -919,7 +919,7 @@
 {% javascript %}
   const stars = document.querySelectorAll('.jdgm-rev__rating');
   for (const starRating of stars) {
-    if (Number(starRating.dataset.score) <= 2) {
+    if (Number(starRating.dataset.score) <= 3) {
       const review = starRating.closest('.jdgm-rev');
       review.remove();
       console.log(`Elemento review eliminado del dom:`, review);
