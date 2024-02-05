@@ -397,10 +397,9 @@
       ],
       "settings": {
         "enable_section": true,
-        "home_page_banner_title": "Love by",
+        "home_page_banner_title": "Loved by",
         "heading_size": "h2",
-        "background_color": "#ffffff",
-        "title_color": "#000000"
+        "background_color": "#ffffff"
       }
     },
     "fe53521f-a1d2-42cf-8be0-f6dd3a96e5b8": {
