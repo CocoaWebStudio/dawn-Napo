@@ -1398,7 +1398,7 @@ button.shopify-payment-button__button--unbranded {
 }
 
 .button.loading>.loading__spinner .path {
-  stroke: rgb(var(--color-button-text));
+  stroke: black;
 }
 
 /* Button - social share */
